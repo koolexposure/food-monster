@@ -1,0 +1,57 @@
+@import url(dark-hive/jquery-ui-1.8.11.custom.css);
+
+#ui-datepicker-div {
+	height: auto;
+	width: auto;
+}
+.ui-datepicker, .ui-datepicker select, .ui-datepicker input, .ui-datepicker td {
+	font-size:11px;
+	line-height:15px;
+}
+.ui-datepicker select, .ui-datepicker option {
+	padding:0;
+}
+.ui-datepicker thead tr th {
+	font-size:10px;
+}
+#ui-datepicker-div{ font-size: 80%; padding: 5px; }
+
+.ui-multiselect-filter input { width: 200px; }
+/* css for timepicker */
+.ui-timepicker-div .ui-widget-header{ margin-bottom: 8px; }
+.ui-timepicker-div dl{ text-align: left; }
+.ui-timepicker-div dl dt{ height: 25px; }
+.ui-timepicker-div dl dd{ margin: -25px 0 10px 65px; }
+.ui-timepicker-div td { font-size: 90%; }
+
+#dyn_price_table { width: 280px; }
+#gb_deal_price td {
+	padding:7px;
+}
+td.centered_text {text-align:center;}
+#dyn_price_fieldset { border: 1px solid #DFDFDF;width: 250px; padding:10px }
+#gb_deal_price td input { margin-top: -3px ;}
+#dyn_shipping_table { width:auto };
+.cloak { display:none; }
+.gb_meta_column { width:45%; float: left;  };
+.gb_meta_column.float_right { float: right; }
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix {
+	display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+	display: block;
+}
+ 
+* html .clearfix {
+	height: 1%;
+}

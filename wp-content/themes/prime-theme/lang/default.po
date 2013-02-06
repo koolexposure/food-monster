@@ -1,0 +1,3696 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Group Buying\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-04-18 11:22-0800\n"
+"PO-Revision-Date: 2012-04-18 11:22-0800\n"
+"Last-Translator: Sprout Venture <lang@sproutventure.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;self::__;self::_e\n"
+"X-Poedit-Basepath: /Users/dancameron/MASTER_REPO/GroupBuying/core/wp-content/\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-SearchPath-0: plugins/group-buying\n"
+"X-Poedit-SearchPath-1: themes/response\n"
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:30
+msgid "Accounts"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:52
+msgid "Custom URL Paths"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:56
+msgid "Account Path"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:61
+msgid "<h4>Customize the Account paths</h4>"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:69
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:495
+msgid "Contact Info"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:70
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:307
+msgid "Purchases"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:71
+msgid "Credits"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:329
+msgid "Your Account"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:337
+msgid "Edit Accounts"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:360
+msgid "Account ID"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:387
+msgid "Account Edit Path"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:495
+msgid "Account updated"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:551
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:938
+msgid "Email Address"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:558
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:944
+msgid "Password"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:565
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:950
+msgid "Confirm Password"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:625
+#, php-format
+msgid "Editing %s&rsquo;s Profile"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:655
+msgid "Account Registration Path"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:658
+msgid "Registration Settings"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:662
+msgid "Registration Fields"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:666
+msgid "Minimal Registration with Username, E-Mail and Password."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:667
+msgid "Full Registration with all contact fields"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:682
+msgid "Registration Disabled."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:786
+msgid "Please enter a password."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:788
+msgid "Passwords did not match."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:792
+msgid "Please enter a username."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:794
+msgid "This username is invalid because it uses illegal characters. Please enter a valid username."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:797
+msgid "This username is already registered, please choose another one."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:802
+msgid "Please type your e-mail address."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:804
+msgid "The email address isn&#8217;t correct."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:807
+msgid "This email is already registered, please choose another one."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:825
+#: plugins/group-buying/controllers/groupBuyingCheckouts.class.php:453
+#: plugins/group-buying/controllers/groupBuyingCreditCardProcessors.class.php:306
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:1005
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:1539
+#: plugins/group-buying/controllers/groupBuyingMerchants.class.php:374
+#, php-format
+msgid "\"%s\" field is required."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:836
+msgid "Couldn&#8217;t register you... please contact the site administrator!"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:932
+msgid "Username"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:981
+msgid "Register"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:1015
+msgid "Account Login Path"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:1133
+msgid "Cookies are Disabled"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:1136
+msgid "Registration Disabled"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:1138
+msgid "Registered"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:1140
+msgid "Error: Expired"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:1142
+msgid "Username and/or Password Incorrect."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:1182
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:1452
+msgid "Cookies are blocked or not supported by your browser. You must <a href='http://www.google.com/cookies.html'>enable cookies</a> to use this site."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:1183
+msgid "You are now logged out."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:1184
+msgid "User registration is currently not allowed."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:1185
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:1453
+msgid "Check your e-mail for the password reset link."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:1186
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:1454
+msgid "Check your e-mail for your new password."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:1187
+msgid "Registration complete. Please log in"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:1188
+msgid "Your session has expired. Please log in again."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:1228
+msgid "Sign In Now"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:1250
+msgid "Login"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:1276
+msgid "Account Retrieve Password Path"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:1294
+msgid "Password Reset Successful."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:1455
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:1457
+msgid "Your username or email is incorrect"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:1456
+msgid "Password reset is not allowed."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:1458
+msgid "Invalid Password Reset Key."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:1510
+msgid "Retrieve Password"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:1621
+msgid "Login unsuccessful. Please try again."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:1627
+msgid "Registration failed. Please try again."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:1629
+msgid "Registration complete. Please continue with your purchase."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAccounts.class.php:1764
+#: plugins/group-buying/controllers/groupBuyingGifts.class.php:434
+msgid "Filter"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAddons.class.php:25
+msgid "Deal Attributes"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAddons.class.php:26
+msgid "Add attributes (e.g., color, size) that customers can choose when buying deals"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAddons.class.php:46
+msgid "GBS Add-ons"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAddons.class.php:46
+#: plugins/group-buying/controllers/groupBuyingAddons.class.php:110
+msgid "Add-ons"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAddons.class.php:114
+msgid "Enable Addons"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAddons.class.php:166
+msgid "Manage Add-ons"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAddons.class.php:167
+msgid "Browse Add-ons"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAffiliates.class.php:65
+msgid "Affiliate Credits"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAffiliates.class.php:106
+msgid "Member: "
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAffiliates.class.php:128
+#, php-format
+msgid "%s Credit from %s (#%s)"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAffiliates.class.php:356
+msgid "Affiliate/Share Settings"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAffiliates.class.php:364
+msgid "Social/Affiliate Credit"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAffiliates.class.php:365
+msgid "Cookie Expiration"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAffiliates.class.php:366
+msgid "Share Path"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAffiliates.class.php:367
+msgid "Bitly Login"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAffiliates.class.php:368
+msgid "Bitly API Key"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAffiliates.class.php:372
+msgid "WP Affiliate Platform Settings"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAffiliates.class.php:375
+msgid "WPAffiliate Key"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAffiliates.class.php:376
+msgid "WPAffiliate Post URL"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAffiliates.class.php:378
+msgid "WP Affiliate Platform Has Been Automatically Integrated"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAffiliates.class.php:383
+#, php-format
+msgid "GBS supports basic integration with <a href=\"%s\" target=\"_blank\">WordPress Affiliate Platform</a> an easy to use WordPress plugin for affiliate recruitment, management and tracking that can be used on any WordPress blog/site."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAffiliates.class.php:400
+msgid "Use the Bitly API to shorten URLs and enables stat functions (e.g. total shares).  Be aware that shortened URLs can sometimes cause emails to be marked as spam or blocked."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAffiliates.class.php:405
+msgid "Find this API key on your <a href=\"http://bitly.com/a/account\">account page</a>."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAffiliates.class.php:410
+msgid "The url the affiliate record needs to be posted to."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAttributes.class.php:74
+msgid "Label"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAttributes.class.php:75
+msgid "Price(s)"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAttributes.class.php:167
+msgid "Sold Out"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAttributes.class.php:186
+msgid "Invalid selection"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingAttributes.class.php:343
+msgid "Items"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingCarts.class.php:54
+msgid "Cart Path"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingCarts.class.php:58
+msgid "<h4>Customize the Cart paths.</h4>"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingCarts.class.php:77
+#: plugins/group-buying/controllers/groupBuyingCarts.class.php:91
+msgid "Unable to add item to cart"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingCarts.class.php:89
+#: plugins/group-buying/controllers/groupBuyingCarts.class.php:264
+msgid "Cart updated"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingCarts.class.php:94
+msgid "You are not eligible to purchase this deal."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingCarts.class.php:290
+msgid "Remove"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingCarts.class.php:291
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:734
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:1258
+msgid "Deal Name"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingCarts.class.php:292
+msgid "Quantity"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingCarts.class.php:293
+msgid "Price"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingCarts.class.php:328
+msgid "Subtotal"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingCarts.class.php:333
+msgid "Total"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingCarts.class.php:342
+msgid "Update"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingCarts.class.php:343
+#: plugins/group-buying/controllers/groupBuyingCheckouts.class.php:370
+msgid "Checkout"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingCarts.class.php:368
+#, php-format
+msgid "%s&rsquo;s Cart"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingCarts.class.php:370
+msgid "Your Cart"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingCheckouts.class.php:71
+msgid "Force SSL on Checkout Pages"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingCheckouts.class.php:76
+msgid "Checkout Path"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingCheckouts.class.php:84
+msgid "Advanced: SSL is highly recommended for production sites accepting credit cards."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingCheckouts.class.php:85
+msgid "The above setting is for advanced users only. GBS recommends changing your site address to https:// instead of redirecting users on checkout to an SSL connection."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingCheckouts.class.php:149
+msgid "Payment"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingCheckouts.class.php:153
+#: plugins/group-buying/controllers/groupBuyingCheckouts.class.php:424
+msgid "Review"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingCheckouts.class.php:157
+msgid "Confirmation"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingCheckouts.class.php:215
+msgid "Your cart is empty."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingCheckouts.class.php:544
+msgid "Sorry, this item is no longer available."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingController.class.php:207
+msgid "Once a Minute"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingController.class.php:211
+msgid "15 Minutes"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingController.class.php:215
+msgid "Twice Hourly"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingController.class.php:576
+msgid "Group Buying Options"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingController.class.php:576
+#: plugins/group-buying/controllers/groupBuyingController.class.php:608
+msgid "Group Buying"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingController.class.php:587
+msgid "Template Override Directory"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingController.class.php:591
+msgid "Advanced: Templates found in this subdirectory of your theme can override the default templates found in the views directory of this plugin."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingController.class.php:714
+msgid "First Name"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingController.class.php:721
+msgid "Last Name"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingController.class.php:728
+msgid "Street Address"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingController.class.php:736
+msgid "City"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingController.class.php:743
+msgid "State"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingController.class.php:745
+msgid "Select a State"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingController.class.php:751
+msgid "ZIP Code"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingController.class.php:758
+msgid "Country"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingController.class.php:761
+msgid "Select a Country"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingCreditCardProcessors.class.php:105
+msgid "Cardholder"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingCreditCardProcessors.class.php:110
+#: plugins/group-buying/controllers/groupBuyingCreditCardProcessors.class.php:154
+msgid "Card Number"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingCreditCardProcessors.class.php:115
+#: plugins/group-buying/controllers/groupBuyingCreditCardProcessors.class.php:164
+#: plugins/group-buying/controllers/groupBuyingCreditCardProcessors.class.php:174
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:33
+msgid "Expiration Date"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingCreditCardProcessors.class.php:120
+msgid "CVV"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingCreditCardProcessors.class.php:145
+msgid "Cardholder Name"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingCreditCardProcessors.class.php:184
+msgid "Security Code"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingCreditCardProcessors.class.php:312
+msgid "Invalid credit card number"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingCreditCardProcessors.class.php:319
+msgid "Invalid credit card security code"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingCreditCardProcessors.class.php:326
+msgid "Credit card is expired."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:34
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:412
+msgid "Pricing"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:35
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:797
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:1321
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:430
+msgid "Purchase Limits"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:36
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:829
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:1353
+msgid "Deal Details"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:37
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:878
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:1402
+msgid "Voucher"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:38
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:448
+msgid "Merchant"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:436
+msgid "Status"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:437
+msgid "Sold"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:438
+msgid "Purchase Reports"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:439
+msgid "Expires"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:440
+#: plugins/group-buying/controllers/groupBuyingMerchants.class.php:278
+msgid "Published"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:441
+msgid "ID"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:463
+msgid "No Expiration"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:472
+msgid "Purchase History"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:473
+msgid "Voucher Report"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:596
+msgid "Edit Deals"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:634
+msgid "Merchant Submit Path"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:725
+msgid "Submit Deal"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:742
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:1266
+msgid "Deal Description"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:750
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:1274
+msgid "Deal Image"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:758
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:1282
+msgid "Deal Expiration"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:766
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:1290
+msgid "Deal Price"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:774
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:1298
+msgid "Deal Shipping Cost"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:787
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:893
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:1311
+msgid "Locations"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:804
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:1328
+msgid "Minimum Purchases"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:812
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:1336
+msgid "Max Purchases"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:820
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:1344
+msgid "Max Purchases Per User"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:836
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:1360
+msgid "Value"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:844
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:1368
+msgid "Savings"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:852
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:1376
+msgid "Highlights"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:860
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:1384
+msgid "Fine Print"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:870
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:1394
+msgid "Voucher Expiration"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:885
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:1409
+msgid "How to use"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:901
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:1425
+msgid "Map ( Google Maps iframe )"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:909
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:1433
+msgid "Voucher Codes"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:988
+msgid "New Deal Submission"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:988
+msgid "A user has submitted a new deal for your review."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:994
+msgid "Deal Submitted for Review."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:1106
+msgid "Merchant Edit Deal Path"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:1417
+msgid "Voucher Locations"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:1447
+#, php-format
+msgid "Edit: %s"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:1518
+msgid "Deal Edited"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:1518
+#, php-format
+msgid "A merchant has updated their deal. Deal ID #%s"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:1528
+msgid "Deal Updated."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:1562
+msgid "Previews"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:1656
+msgid "Sorry but you do not have permission to preview this deal."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:1662
+msgid "Sorry but you do not have permission to preview this voucher."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:1767
+#, php-format
+msgid "Updating Deal \"%s\""
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:1861
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:1918
+#, php-format
+msgid "Updating %d Voucher(s) and Purchase(s) for Deal \"%s\""
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:1878
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:1884
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:1930
+#: plugins/group-buying/controllers/groupBuyingDeals.class.php:1935
+#, php-format
+msgid "Order #%d"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingFeeds.class.php:40
+msgid "Feed Path"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingFeeds.class.php:44
+msgid "<h4>Customize the Feed paths</h4>"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingFeeds.class.php:195
+msgid "Price:"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingFeeds.class.php:196
+msgid "Value:"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingFeeds.class.php:199
+#: plugins/group-buying/controllers/groupBuyingFeeds.class.php:346
+msgid "Expires On:"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingFeeds.class.php:201
+#: plugins/group-buying/controllers/groupBuyingFeeds.class.php:346
+#, php-format
+msgid "<span>%s</span> buyers!"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingFeeds.class.php:201
+#: plugins/group-buying/controllers/groupBuyingFeeds.class.php:346
+msgid "Savings:"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingFeeds.class.php:202
+msgid "Business:"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingGifts.class.php:28
+msgid "Gift Records"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingGifts.class.php:28
+msgid "Gifts"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingGifts.class.php:60
+msgid "Gift Redemption Path"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingGifts.class.php:90
+msgid "Is this purchase a gift for someone?"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingGifts.class.php:97
+msgid "Recipient's Email Address"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingGifts.class.php:103
+msgid "Your Message"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingGifts.class.php:227
+msgid "A valid email address is required."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingGifts.class.php:231
+msgid "A valid coupon code is required."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingGifts.class.php:240
+msgid "Invalid code: please confirm the email address and coupon code."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingGifts.class.php:246
+msgid "Error: this coupon code has already been used."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingGifts.class.php:250
+#, php-format
+msgid "Success! Visit <a href=\"%s\">your purchases page</a> to print your vouchers."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingGifts.class.php:299
+msgid "Redeem a Gift Certificate"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingGifts.class.php:323
+msgid "Resent"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingGifts.class.php:352
+msgid "Purchase ID"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:59
+msgid "Payments Settings"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:61
+msgid "Configuring Payment Settings."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:62
+#, php-format
+msgid "<a href=\"%s\">A walkthrough video</a> is provided in the support forums."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:66
+msgid "SSL on Checkout"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:68
+msgid "Highly recommended for production sites accepting credit cards."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:69
+#, php-format
+msgid "When using on-site purchasing options like PayPal Pro and Authorize.net, it&rsquo;s highly recommended that GBS users purchase and integrate an SSL (Secure Sockets Layer) Certificate for their group buying site. Ideally, you would want your hosting provider to install the SSL certificate for you. You will also need to follow the additional steps in our <a href=\"%s\">SSL Integration Documentation</a> to fully secure your checkout pages."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:73
+msgid "Additional Gateways"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:75
+msgid "Need a payment gateway not provided below?"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:76
+#, php-format
+msgid "Additional payment gateways are provided in <a href=\"%s\">the GBS marketplace</a>. For payment gateways not yet supported, submit a customization request, and GBS will connect you with an experienced developer."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:83
+msgid "Enable Tax"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:85
+msgid "Enable Tax Calculations."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:86
+msgid "To calculate taxes, first enabled Tax Calculation, then create modes and rates."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:91
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:128
+msgid "Location Based"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:93
+msgid "Location based taxation."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:94
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:827
+msgid "Enable this feature to set the tax rate based on the customer&rsquo;s address set during checkout. When this option is checked and saved, region and state options will be available in the rates table below."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:99
+msgid "Tax Modes"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:101
+msgid "What are tax modes?"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:102
+msgid "Your site is not limited to a single tax rate or tax table.  Modes allow you to create multiple rates and/or rate tables and choose the appropriate \"mode\" for each individual deal. For example, you could have a \"Standard\" mode for all of your basic deals, but when a special rate is necessary, you can use a second mode of taxation.  This mode will run simultaneously with the standard mode on other deals."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:107
+msgid "Tax Rates"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:109
+msgid "Tax Rate Table."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:110
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:801
+msgid "First select the \"Mode\" the new rate will be assigned to, then create a percentage rate and whether to include shipping in the calculation. If the location based feature is enabled, options for state and region will also show."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:111
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:148
+msgid "What is the Rate priority?"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:112
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:149
+msgid "The Rates priority is set first by list order above (top to bottom), then (if applicable) location matching criteria in this order: Country+State > State > Country."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:120
+msgid "Enable Shipping"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:122
+msgid "Enable Shipping Calculations."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:123
+msgid "To shipping rates, first Enable Shipping, then create classes and rates."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:130
+msgid "Location based shipping."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:131
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:768
+msgid "Enable this feature to set the shipping rate based on the customer&rsquo;s address set during checkout. When this option is checked and saved, region and state options will be available in the rates table below."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:136
+msgid "Shipping Classes"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:138
+msgid "What are shipping classes?"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:139
+msgid "Your site is not limited to a single shipping rate.  Classes allow you to create multiple rates and choose the appropriate \"class\" for each individual deal. For example, you could have a \"Standard\" class for all of your basic deals, but when a special rate is necessary, you can use a second class of shipping rate.  This class will run simultaneously with the standard class on other deals."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:144
+msgid "Shipping Rates"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:146
+msgid "Shipping Rate Table."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:147
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:742
+msgid "First select the \"Class\" the new rate will be assigned to, then create a percentage rate and whether to include shipping in the calculation. If the location based feature is enabled, options for state and region will also show."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:175
+msgid "Question about GBS"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:177
+msgid "Do you have a question about GBS?"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:178
+#, php-format
+msgid "Try <a href=\"%s\">searching the forums</a> to find a quick answer."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:182
+msgid "Experiencing a problem"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:184
+msgid "Are you experiencing trouble with your GBS site?"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:185
+#, php-format
+msgid "Please see these <a href=\"%s\">tips for troubleshooting</a> and search the forums for a solution. If you can't find a solution after searching the forums, create a forum post and someone will assist you as soon as possible."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:189
+msgid "Critical problem"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:191
+msgid "Critical problem with a production/live site after a recent GBS update?"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:192
+#, php-format
+msgid "<a href=\"%s\">Submit a helpdesk ticket</a> (making sure to read the helpdesk criteria) after creating a forum thread."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:193
+msgid "Helpdesk support is limited, so please make sure to read the criteria and notes before submitting a new ticket."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:197
+msgid "Customizations"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:199
+msgid "In need of a custom feature or custom theme for your site?"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:200
+#, php-format
+msgid "You should never edit GBS plugins or themes directly.  All customizations should be made using a <a href=\"%s\">child theme</a>."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:201
+#, php-format
+msgid "GBS developers provide some custom development services for GBS site owners. Select the &quot;Development Request&quot; option when <a href=\"%s\">submitting a new helpdesk ticket</a> and we will provide assistance."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:202
+#, php-format
+msgid "GBS has a flourishing developer community, a select few have <a href=\"%s\">profiles on our site</a>."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:205
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:236
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:263
+msgid "For more information:"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:206
+msgid "<a href=\"http://groupbuyingsite.com/docs/\" target=\"_blank\">Documentation on GBS</a>"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:207
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:238
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:265
+msgid "<a href=\"http://groupbuyingsite.com/forum/\" target=\"_blank\">Support Forums</a>"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:227
+msgid "Deal Management"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:229
+msgid "How to add a deal."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:230
+#, php-format
+msgid "A video walkthrough of <a href=\"%s\">adding a deal</a> is available in the forum."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:231
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:295
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:312
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:341
+msgid "Warning:"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:232
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:342
+msgid "Deleting completed deals can cause front facing error messages on users' account pages."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:237
+msgid "<a href=\"http://groupbuyingsite.com/forum/showthread.php?745-Adding-a-Deal\" target=\"_blank\">Documentation on Adding Deals</a>"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:249
+msgid "Merchant Management"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:251
+msgid "What is a Merchant?"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:252
+msgid "Merchants provide a method to profile the business associated with a deal. Create merchants is simple."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:253
+#, php-format
+msgid "A video walkthrough of <a href=\"%s\">adding a merchant</a> is available in the forum."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:257
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:995
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:1007
+#: plugins/group-buying/controllers/groupBuyingMerchants.class.php:146
+msgid "Authorized Users"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:259
+msgid "Authorizing Users to Manage Merchants."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:260
+msgid "Authorized users have the ability to manage the business information within their account. Deals associated with a merchant will also show on the \"Business Dashboard\" (if your theme permits), providing the authorized user with quick access to sales reports and voucher reports. Authorized users may also submit new deals for site administrator approval."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:264
+msgid "<a href=\"http://groupbuyingsite.com/forum/showthread.php?808-Adding-a-Merchant\" target=\"_blank\">Documentation on Adding Merchants</a>"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:276
+msgid "Account Management"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:278
+msgid "Edit/Manage an Account."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:279
+msgid "Select the account to edit below. Manage contact information, purchase history, add deals, and manage credits."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:280
+msgid "The \"user\" is the WordPress user associated with the GBS account."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:291
+msgid "Vouchers"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:293
+msgid "Vouchers generated by GBS are shown below."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:294
+msgid "If a voucher is not yet activated an option to manually activate the voucher will be available. Manually activating vouchers should not be common practice, instead allow the GBS system to process payments and activate the vouchers automatically."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:296
+msgid "Deleting vouchers can cause front facing error messages on users' account pages."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:309
+msgid "Purchase history."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:310
+msgid "Purchases are shown below."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:311
+msgid "Note: An \"authorized\" payment is a complete status."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:313
+msgid "Deleting purchases can cause front facing error messages on users' account pages."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:335
+msgid "Deal Reports"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:337
+msgid "Purchase Report."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:338
+msgid "Generate a purchase summary. CSV export available."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:339
+msgid "Voucher Report."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:340
+msgid "Generate a report of all vouchers from deal purchases. CSV export available."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:348
+msgid "Screen Content"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:350
+msgid "You can customize the display of this screen&#8217;s contents in a number of ways:"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:352
+msgid "You can filter the list of deals by post status using the text links in the upper left to show All, Published, Draft, or Trashed deals. The default view is to show all deals."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:353
+msgid "You can refine the list to show only deals in a specific month by using the dropdown menus above the deals list. Click the Filter button after making your selection."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:358
+msgid "Available Actions"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:360
+msgid "Hovering over a row in the deals list will display action links that allow you to manage your post. You can perform the following actions:"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:362
+msgid "<strong>Edit</strong> takes you to the editing screen for that post. You can also reach that screen by clicking on the post title."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:363
+msgid "<strong>Quick Edit</strong> provides inline access to the metadata of your post, allowing you to update post details without leaving this screen."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:364
+msgid "<strong>Trash</strong> removes your post from this list and places it in the trash, from which you can permanently delete it."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:365
+msgid "<strong>Preview</strong> will show you what your draft post will look like if you publish it. View will take you to your live site to view the post. Which link is available depends on your post&#8217;s status."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:371
+msgid "Bulk Actions"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:373
+msgid "You can also edit or move multiple deals to the trash at once. Select the deals you want to act on using the checkboxes, then select the action you want to take from the Bulk Actions menu and click Apply."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:374
+msgid "When using Bulk Edit, you can change the metadata (categories, author, etc.) for all selected deals at once. To remove a post from the grouping, just click the x next to its name in the Bulk Edit area that appears."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:402
+msgid "The title field and the big Editing Area are fixed in place, but you can reposition all the other boxes using drag and drop, and can minimize or expand them by clicking the title bar of each box. Use the Screen Options tab to unhide more boxes (Slug, Custom Fields, Discussion, etc.) or to choose a 1- or 2-column layout for this screen."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:406
+msgid "Customizing This Display"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:414
+msgid "Deal Pricing."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:415
+msgid "Options to set the deal pricing."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:416
+msgid "Dynamic Pricing."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:417
+#, php-format
+msgid "The milestone pricing (a.k.a. dynamic pricing) feature allows you to set lower prices as more sales are generated for a deal or product. Sales milestones must be achieved before a lower price is activated for all buyers and all buyers will pay the same price when the deal ends (<a href=\"%s\">compatible gateway required</a>)."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:419
+msgid "Tax Settings."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:420
+#, php-format
+msgid "Tax rates and options are <a href=\"%s\">are available here</a>."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:421
+#, php-format
+msgid "A video walkthrough of <a href=\"%s\">the tax settings</a> is available in the forum."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:423
+msgid "Shipping Settings."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:424
+#, php-format
+msgid "Shipping rates and options are <a href=\"%s\">are available here</a>."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:425
+#, php-format
+msgid "A video walkthrough of <a href=\"%s\">the shipping settings</a> is available in the forum."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:432
+msgid "Minimum Sales Required."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:433
+#, php-format
+msgid "Some gateways don't allow multiple captures of the same authorization the purchase needs to be captured immediately.  In those cases, there are no tipping points or purchase requirements. <a href=\"%s\">Read more about it here</a>."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:434
+msgid "If you require purchase limits and your gateway has this restriction, GBS has an add-on module that limits the cart to only allow for a single deal purchase; with custom payment gateways that allow for authorization and capturing of funds so purchase limits can be used."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:439
+msgid "Voucher Settings"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:441
+msgid "Voucher details."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:442
+msgid "Details entered will be used to build the voucher generated for deal's purchasers."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:450
+msgid "Associate a Merchant."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:451
+#, php-format
+msgid "Deals associated with a <a href=\"%s\">merchant</a> showcase the deal's business information (if your theme permits). It also allows for the deal to show on the merchant's profile page."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:456
+msgid "<strong>Title</strong> - Enter a title for your deal. After you enter a title, you&#8217;ll see the permalink below, which you can edit."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:457
+msgid "<strong>Post editor</strong> - Enter the text for your deal. There are two modes of editing: Visual and HTML. Choose the mode by clicking on the appropriate tab. Visual mode gives you a WYSIWYG editor. Click the last icon in the row to get a second row of controls. The HTML mode allows you to enter raw HTML along with your post text. You can insert media files by clicking the icons above the post editor and following the directions. You can go to the distraction-free writing screen via the Fullscreen icon in Visual mode (second to last in the top row) or the Fullscreen button in HTML mode (last in the row). Once there, you can make buttons visible by hovering over the top area. Exit Fullscreen back to the regular post editor."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:461
+msgid "Title and Post Editor"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:465
+msgid "<strong>Publish</strong> - You can set the terms of publishing your post in the Publish box. For Status, Visibility, and Publish (immediately), click on the Edit link to reveal more options. Visibility includes options for password-protecting a post or making it stay at the top of your blog indefinitely (sticky). Publish (immediately) allows you to set a future or past date and time, so you can schedule a deal to be published in the future or backdate a deal."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:468
+msgid "<strong>Featured Image</strong> - This allows you to add an image to be displayed at the top of your deal as well as on deals index pages."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:473
+msgid "Publish Box"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:477
+msgid "<strong>Send Trackbacks</strong> - Trackbacks are a way to notify legacy blog systems that you&#8217;ve linked to them. Enter the URL(s) you want to send trackbacks. If you link to other WordPress sites they&#8217;ll be notified automatically using pingbacks, and this field is unnecessary."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:478
+msgid "<strong>Discussion</strong> - You can turn comments and pings on or off, and if there are comments on the post, you can see them here and moderate them."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:482
+msgid "Discussion Settings"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:497
+msgid "Contact Information Edit."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:498
+msgid "Review and change the account's contact information."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:503
+msgid "Purchase Management"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:505
+msgid "Purchase Management and History."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:506
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:1037
+msgid "Manually add a purchase to the account. Review the purchase history of the account."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:511
+msgid "Credit Management"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:513
+msgid "Credits."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:514
+msgid "Manage the user's credits with the ability to add notes for future reference."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:575
+msgid "Next Step"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:576
+msgid "Start Tour"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:577
+msgid "Finish"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:670
+msgid "With GBS 3.7 the Accounts, Purchases, Vouchers administration areas received major updates. New sections for Payments and Gifts have also been added."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:689
+msgid "New Feature: Tax"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:690
+#, php-format
+msgid "Tax and Shipping received major updates in version 3.4; make sure to review the <a href=\"%s\">new tax options</a>."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:702
+msgid "New Feature: Shipping"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:703
+#, php-format
+msgid "Shipping and Tax received major updates in version 3.4; make sure to review the <a href=\"%s\">new shipping options</a>."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:721
+msgid "New Feature: Disable Notification"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:722
+msgid "With GBS 3.4 you can disable notifications easier."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:741
+msgid "New Feature:  Shipping Rates"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:754
+msgid "New Feature: Classes"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:755
+msgid "Classes allow you to create multiple rates and choose the appropriate \"class\" for each individual deal. For example, you could have a \"Standard\" class for all of your basic deals, but when a special rate is necessary, you can use a second class of shipping rate.  This class will run simultaneously with the standard class on other deals."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:767
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:826
+msgid "New Feature: Location Based"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:780
+msgid "New Feature: Shipping Fees"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:781
+msgid "Before shipping rates can be used the feature needs to be enabled first."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:800
+msgid "New Feature:  Tax Rates"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:813
+msgid "New Feature: Modes"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:814
+msgid "Modes allow you to create multiple rates and/or rate tables and choose the appropriate \"mode\" for each individual deal. For example, you could have a \"Standard\" mode for all of your basic deals, but when a special rate is necessary, you can use a second mode of taxation.  This mode will run simultaneously with the standard mode on other deals."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:839
+msgid "New Feature: Calculate Tax"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:840
+msgid "Before taxes can be calculated the feature needs to be enabled first."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:874
+msgid "Set deal&#8217;s price. Set dynamic pricing (if gateway permitted), tax, and shipping below. Tax and Shipping received major updates in version 3.4, make sure to review the new options pages for each."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:888
+msgid "Set purchase requirements and tipping points (if gateway permitted)."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:902
+msgid "Deal details used for front-end display, vouchers, and RSS."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:917
+msgid "Voucher details entered will be used to build the voucher generated for deal&#8217;s purchasers. Some GBS themes use this information for the front end display too."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:931
+msgid "Associating a deal with a merchant will showcase the deal&#8217;s business information (if your theme permits). It also allows for the deal to show on the merchant&#8217;s profile page."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:945
+msgid "Set the deal&#8217;s featured image for the theme to display."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:959
+msgid "Assign locations to the deal. This is critical for most GBS themes since location preferences filter and direct visitors to the relavent deal(s)."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:973
+msgid "Set the deal expiration or select the option for the deal to not expire."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:996
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:1008
+msgid "Authorized users have the ability to manage the business information within their account. Deals associated with a merchant will also show on the \"Business Dashboard\" (if your theme permits), providing the authorized user with quick access to sales reports and voucher reports.  Authorized users can also create new deals for the site administrator to approve."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:1026
+msgid "Review and change the account&#8217;s contact information."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:1048
+msgid "Manage the user&#8217;s credits with the ability to add notes for future reference."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:1070
+msgid "Force Login options allow for the site to be locked down until your site is available for the public."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:1084
+msgid "Select your TOC and PP pages so they can be linked on the registration page. Also set how much information should be required when your users register with full and minimal options."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:1098
+msgid "Set the from name and from email address for all notifications that GBS sends. HTML notifications require you modify your notifications to include HTML formatting first."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:1113
+msgid "Configure the global options that are printed on your vouchers."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:1127
+msgid "Customize the URLs of the GBS sections."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:1141
+msgid "After configuring all of these general settings and options move on to the payments section."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:1155
+msgid "Warning: API Key"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:1156
+msgid "Enter your API key here before you get started. Your API key can be found on your <a href=\"http://groupbuyingsite.com/account/\" target=\"_blank\">account page at gbs.com</a>."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:1179
+msgid "Browse to Extend"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:1180
+msgid "Browse the GBS add-on marketplace and extend your Group Buying Site. New add-ons are added regularly."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:1197
+msgid "Help Section"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:1198
+msgid "Get familiar with this help tab. You&#8217;ll see it on almost every admin page and the GBS support team works really hard to keep it super helpful and up-to-date."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:1212
+msgid "Add-on Marketplace"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:1213
+msgid "Extend your Group Buying Site with add-ons sold in the GBS marketplace. New add-ons are added regularly."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingHelp.class.php:1252
+msgid "<span class=\"gb-icon\"><img\tsrc=\""
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingMerchants.class.php:50
+msgid "Merchant Path"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingMerchants.class.php:54
+msgid "<h4>Customize the Merchant paths.</h4>"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingMerchants.class.php:139
+msgid "Account Merchant"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingMerchants.class.php:145
+msgid "Merchant Details"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingMerchants.class.php:275
+msgid "Authorized"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingMerchants.class.php:276
+#: plugins/group-buying/controllers/groupBuyingMerchants.class.php:420
+msgid "Contact Phone"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingMerchants.class.php:277
+#: plugins/group-buying/controllers/groupBuyingMerchants.class.php:428
+msgid "Website"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingMerchants.class.php:362
+msgid "Edit Merchants"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingMerchants.class.php:388
+msgid "Merchant Name"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingMerchants.class.php:396
+msgid "Merchant Description"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingMerchants.class.php:404
+msgid "Contact Name"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingMerchants.class.php:435
+msgid "Facebook"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingMerchants.class.php:442
+msgid "Twitter"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingMerchants.class.php:497
+msgid "Merchant Registration Path"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingMerchants.class.php:566
+msgid "Register Merchant"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingMerchants.class.php:616
+msgid "New Merchant Registration"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingMerchants.class.php:616
+msgid "A user has registered as a merchant and needs your review."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingMerchants.class.php:620
+msgid "Merchant Registration Submitted for Review."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingMerchants.class.php:654
+msgid "Merchant Edit Path"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingMerchants.class.php:761
+msgid "Merchant Updated."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingMerchants.class.php:795
+msgid "Redeemer Name"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingMerchants.class.php:796
+msgid "Redemption Date"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingMerchants.class.php:797
+msgid "Redemption Total"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingMerchants.class.php:798
+msgid "Redemption Notes"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingMerchants.class.php:825
+#: plugins/group-buying/controllers/groupBuyingMerchants.class.php:826
+msgid "Voucher Management"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingMerchants.class.php:844
+msgid "Merchant Voucher Management Path"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingMerchants.class.php:886
+msgid "Serial claimed."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingMerchants.class.php:894
+msgid "Error: Security code is not valid."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingMerchants.class.php:936
+msgid "Merchant Dashboard Path"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingMerchants.class.php:1002
+msgid "Merchant Dashboard"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:37
+msgid "Notifications"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:37
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:1017
+msgid "Notification Settings"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:62
+msgid "Customize Notifications"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:64
+msgid "Notifications are emails that are generated and sent by the GBS system."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:65
+#, php-format
+msgid "<a href=\"%s\">General Options</a> includes a few notification options, including: \"From Name\", \"From Email\" and Email Format.\"."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:69
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:1026
+msgid "Disable Notifications"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:71
+msgid "How to disable a notification."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:73
+msgid "Select the Notification Type that you'd like to disable."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:74
+msgid "Check the disable notification within the Notification Type meta box on the right."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:75
+msgid "Save or \"Update\" the notification."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:80
+msgid "HTML E-Mails"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:82
+msgid "HTML emails are for advanced users."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:84
+#, php-format
+msgid "Enable HTML emails within <a href=\"%s\">General Options</a> under Notification Settings."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:85
+msgid "HTML emails must include HTML linebreaks. Linebreaks in the Visual editor will not appear in the emails."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:90
+msgid "<a href=\"http://groupbuyingsite.com/forum/showthread.php?724-Customize-Notifications\" target=\"_blank\">Documentation on Managing Notifications</a>"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:132
+msgid "Deal Purchase"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:133
+msgid "Customize the email that is sent to users after purchase."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:139
+msgid "Deal Closed"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:140
+msgid "Customize the email that congratulates users that a deal successfully finished."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:146
+msgid "Deal Failed"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:147
+msgid "Customize the email that informs them the deal they purchases failed to reach the minimum buyers."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:153
+msgid "Registration"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:154
+msgid "Customize the email that is sent to users when they register."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:160
+msgid "Password Reset Confirmation"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:161
+msgid "Customize the confirmation email that is sent to users when they request a password reset."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:167
+msgid "Temporary Password Notification"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:168
+msgid "Customize the notification email that is sent to users when their password has been reset."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:174
+msgid "Gift Notification"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:175
+msgid "Customize the notification email that is sent a gift from a user."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:181
+msgid "Credits Rewarded Notification"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:182
+msgid "Customize the notification email that is sent a a user when they receive a credit."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:188
+msgid "Voucher Activated Notification"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:189
+msgid "Customize the notification email that is sent a a user when a voucher of theirs is created."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:202
+msgid "Used to display the date."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:206
+msgid "Used to display the user&rsquo;s name."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:210
+msgid "Used to display the user&rsquo;s name (registration & password notifications."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:214
+msgid "Used to display the credits used."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:218
+msgid "Used to display the total paid/charge."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:222
+msgid "Used to display purchase details: title, price, shipping & url."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:226
+msgid "Used to display the deal url."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:230
+msgid "Used to display name of the deal."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:234
+msgid "Used to display the transaction id."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:238
+msgid "Used to display the site name."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:242
+msgid "Used to display the site url."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:246
+msgid "Used to display purchase total."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:250
+msgid "Used to display the password reset confirmation url."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:254
+msgid "Used to display the temporary password."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:258
+msgid "Used to display the gifter&rsquo;s name."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:262
+msgid "Used to display the message from the gifter."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:266
+msgid "Used to display the gift code. <strong>This is required!</strong>"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:270
+msgid "Used to display the redemption url. <strong>This is required!</strong>"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:274
+msgid "Used to display the credits rewarded."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:278
+msgid "Used to display the shipping address of the purchaser."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:282
+msgid "Used to display the billing address of the purchaser."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:286
+msgid "Used to display the purchase details for a gift."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:290
+msgid "Used to display the voucher&rsquo;s url."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:294
+msgid "Used to display the voucher&rsquo;s serial code."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:298
+msgid "Used to display the voucher&rsquo;s expiration."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:302
+msgid "Used to display the voucher&rsquo;s how to."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:306
+msgid "Used to display the voucher&rsquo;s locations."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:310
+msgid "Used to display the voucher&rsquo;s fine print."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:314
+msgid "Used to display the voucher&rsquo;s security code."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:318
+msgid "Used to display the voucher&rsquo;s logo."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:329
+#, php-format
+msgid "%s Shortcodes"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:331
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:408
+msgid "Notification Type"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:409
+msgid "Subject"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:410
+msgid "Message"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:676
+msgid "Customer"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:701
+msgid "Your Order Summary"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:707
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:728
+#: plugins/group-buying/controllers/groupBuyingShipping.class.php:149
+msgid "Shipping"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:708
+#: plugins/group-buying/controllers/groupBuyingTax.class.php:165
+msgid "Tax"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:725
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:748
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:761
+msgid "Deal"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:729
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:748
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:762
+msgid "URL"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:735
+msgid "Shipping Total"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:736
+msgid "Tax Total"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:952
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:959
+msgid "N/A"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:1023
+msgid "Default From Name"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:1024
+msgid "Default From Email"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:1025
+msgid "Send e-mail as"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:1038
+msgid "Default notifications are plain text. If setting to HTML you will need create custom HTML notifications."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:1043
+#, php-format
+msgid "Disable <a href=\"%s\">notifications</a> by using the disable option on the edit screen."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingNotifications.class.php:1177
+msgid "Edit Notifications"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingOffsiteProcessors.class.php:90
+msgid "Continue"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingOffsiteProcessors.class.php:115
+#: plugins/group-buying/controllers/payment_processors/groupBuyingCredits.class.php:267
+msgid "Payment Method"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingPaymentProcessors.class.php:21
+msgid "Group Buying Payment Options"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingPaymentProcessors.class.php:107
+msgid "01 - January"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingPaymentProcessors.class.php:108
+msgid "02 - February"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingPaymentProcessors.class.php:109
+msgid "03 - March"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingPaymentProcessors.class.php:110
+msgid "04 - April"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingPaymentProcessors.class.php:111
+msgid "05 - May"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingPaymentProcessors.class.php:112
+msgid "06 - June"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingPaymentProcessors.class.php:113
+msgid "07 - July"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingPaymentProcessors.class.php:114
+msgid "08 - August"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingPaymentProcessors.class.php:115
+msgid "09 - September"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingPaymentProcessors.class.php:116
+msgid "10 - October"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingPaymentProcessors.class.php:117
+msgid "11 - November"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingPaymentProcessors.class.php:118
+msgid "12 - December"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingPaymentProcessors.class.php:153
+msgid "Payment Processor"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingPaymentProcessors.class.php:154
+msgid "Currency Symbol"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingPaymentProcessors.class.php:166
+msgid "If you want the symbol after the value, use a % before your currency symbol. Example, %&pound; "
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingPayments.class.php:15
+msgid "Payment Records"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingPayments.class.php:15
+msgid "Payments"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingPayments.class.php:47
+msgid "Payment ID"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingPurchases.class.php:13
+msgid "Orders"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingPurchases.class.php:36
+msgid "Order ID"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingRecords.class.php:28
+#, php-format
+msgid "%s Credit Applied"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingReports.class.php:34
+msgid "Report Path"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingReports.class.php:35
+msgid "Report Path for CSV Downloads"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingReports.class.php:39
+msgid "<h4>Customize the Report paths</h4>"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingReports.class.php:126
+msgid " report"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingShipping.class.php:52
+msgid "Group Buying Shipping Settings"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingShipping.class.php:52
+msgid "Shipping Settings"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingShipping.class.php:154
+msgid "Calculated Shipping"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingShipping.class.php:154
+msgid "Est. Shipping"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingShipping.class.php:433
+msgid "Shipping Costs Updated."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingShipping.class.php:462
+msgid "Shipping Name"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingShipping.class.php:463
+msgid "Shipping Address"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingShipping.class.php:561
+msgid "Shipping Fees"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingShipping.class.php:571
+msgid "Enable shipping."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingShipping.class.php:574
+msgid "Enable shipping based on location."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingShipping.class.php:579
+#: plugins/group-buying/controllers/groupBuyingTax.class.php:446
+msgid "List 1 per line."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingShipping.class.php:629
+#: plugins/group-buying/controllers/groupBuyingShipping.class.php:696
+#: plugins/group-buying/controllers/groupBuyingShipping.class.php:725
+#: plugins/group-buying/controllers/groupBuyingShipping.class.php:766
+#: plugins/group-buying/controllers/groupBuyingShipping.class.php:780
+msgid "Per Item"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingShipping.class.php:631
+#: plugins/group-buying/controllers/groupBuyingShipping.class.php:698
+#: plugins/group-buying/controllers/groupBuyingShipping.class.php:726
+#: plugins/group-buying/controllers/groupBuyingTax.class.php:498
+#: plugins/group-buying/controllers/groupBuyingTax.class.php:565
+msgid "Remove This Option"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingShipping.class.php:635
+#: plugins/group-buying/controllers/groupBuyingTax.class.php:502
+msgid "Select Regions"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingShipping.class.php:639
+#: plugins/group-buying/controllers/groupBuyingShipping.class.php:650
+#: plugins/group-buying/controllers/groupBuyingTax.class.php:506
+#: plugins/group-buying/controllers/groupBuyingTax.class.php:517
+msgid "Select States"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingShipping.class.php:646
+#: plugins/group-buying/controllers/groupBuyingTax.class.php:513
+msgid "Select Countries"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingShipping.class.php:706
+#: plugins/group-buying/controllers/groupBuyingTax.class.php:573
+msgid "Add New Rate"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingShipping.class.php:708
+#: plugins/group-buying/controllers/groupBuyingTax.class.php:575
+msgid "Rate priority is set by list order above (top to bottom) and matching criteria in this order <big>Country+State</big> > State <small>> Country</small>."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingShipping.class.php:723
+msgid "& up"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingShipping.class.php:741
+msgid "Shipping Fee"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingShipping.class.php:753
+msgid "Shipping Rate"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingShipping.class.php:758
+msgid "Rate Table"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingShipping.class.php:764
+msgid "Purchasing"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingShipping.class.php:765
+msgid "Rate"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingShipping.class.php:789
+msgid "+ Add New Rate"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingShipping.class.php:791
+msgid "Shipping Mode"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingTax.class.php:35
+msgid "Group Buying Tax Settings"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingTax.class.php:35
+msgid "Tax Settings"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingTax.class.php:170
+msgid "Calculated Tax"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingTax.class.php:170
+msgid "Est. Tax"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingTax.class.php:370
+msgid "Tax Costs Updated."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingTax.class.php:428
+msgid "Calculate Tax"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingTax.class.php:438
+msgid "Enable tax."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingTax.class.php:441
+msgid "Enable tax based on location."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingTax.class.php:496
+#: plugins/group-buying/controllers/groupBuyingTax.class.php:563
+msgid "Include Shipping"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingTax.class.php:581
+msgid "Taxable"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingTax.class.php:585
+msgid "Tax Rate"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:23
+msgid "Welcome to Group Buying"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:23
+msgid "General Settings"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:25
+msgid "Internationalization Options"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:25
+msgid "Internationalization"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:201
+msgid "General Options"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:204
+msgid "Expired Deals"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:205
+msgid "Latest Deal URL"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:210
+msgid "Form Options"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:223
+msgid "Remove the expired deals from the main deals loop."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:224
+msgid "Remove the expired deals from location, tags and category loops."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:225
+msgid "Show expired deals. "
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:229
+msgid "Select the states and countries/proviences you would like in your forms."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:234
+msgid "States"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:235
+msgid "Additional statoes can be added by hooking into the <code>gb_state_options</code> filter."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:254
+msgid "Countries"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:255
+msgid "Additional countries can be added by hooking into the <code>gb_country_options</code> filter."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:258
+msgid "Note: Some payment processors country support is limited. For example, Paypal Pro only accepts <a href=\"https://cms.paypal.com/us/cgi-bin/?cmd=_render-content&content_ID=developer/e_howto_api_nvp_country_codes\">these countries</a>."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:300
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:354
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:408
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:463
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:518
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:573
+msgid "Can only be used on the Deal Page, otherwise we will gracefully hide the widget."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:301
+msgid "Group Buying :: Deal Fine Print"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:333
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:387
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:442
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:497
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:552
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:607
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:689
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:771
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:871
+msgid "Title:"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:355
+msgid "Group Buying :: Deal Highlights"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:409
+msgid "Group Buying :: Locations"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:464
+msgid "Group Buying :: Categories"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:519
+msgid "Group Buying :: Tags"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:574
+msgid "Group Buying :: Map"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:628
+msgid "Display a \"Share and Earn\" widget."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:629
+msgid "Group Buying :: Share and Earn"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:709
+msgid "Creates an attractive display of recent deals."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:710
+msgid "Group Buying :: Recent Deals"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:772
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:872
+msgid "Buy now link text:"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:773
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:873
+msgid "Number of deals to display:"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:803
+msgid "Creates an attractive display of related deals. Relationships are based on user&rsquo;s preferred location."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUI.class.php:804
+msgid "Group Buying :: Related Deals"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUpdateCheck.class.php:30
+msgid "Group Buying Site API Key"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUpdateCheck.class.php:34
+msgid "API Key"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUpdateCheck.class.php:38
+msgid "Enter your API key to activate Group Buying Site"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUpdateCheck.class.php:257
+#, php-format
+msgid "In order to use Group Buying Site, you need to <a href=\"%s\">enter a valid API Key</a>."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUpdateCheck.class.php:262
+#, php-format
+msgid "<strong>API ERROR:</strong> Contact your site administrator about this error. <em>Error Code: %s</em>"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUpdateCheck.class.php:264
+#, php-format
+msgid "<strong>Group Buying Site API KEY error:</strong> %s"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUpdateCheck.class.php:269
+msgid "<strong>This version of Group Buying Site is not authorized and compatible with WPMU.</strong>"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUpgrades.class.php:48
+msgid "Upgrading Accounts..."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUpgrades.class.php:51
+msgid "Upgrading Deals, Vouchers, and Purchases..."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUpgrades.class.php:54
+msgid "Upgrading Merchants..."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUpgrades.class.php:58
+msgid "...Done"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUpgrades.class.php:112
+msgid "Update Group Buying"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingUpgrades.class.php:128
+msgid "No updates are available"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingVouchers.class.php:56
+msgid "Voucher Records"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingVouchers.class.php:87
+#, php-format
+msgid "We experienced an error creating a voucher for deal ID %d. Please contact a site administrator for asssistance."
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingVouchers.class.php:371
+msgid "Voucher Logo"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingVouchers.class.php:372
+msgid "Voucher Fine Print"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingVouchers.class.php:373
+#: plugins/group-buying/controllers/groupBuyingVouchers.class.php:374
+msgid "Voucher Support Contact"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingVouchers.class.php:375
+msgid "Voucher Legal Info"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingVouchers.class.php:376
+msgid "Voucher Prefix"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingVouchers.class.php:445
+msgid "Activated"
+msgstr ""
+
+#: plugins/group-buying/controllers/groupBuyingVouchers.class.php:467
+msgid "Voucher ID"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingAuthorize.net.class.php:65
+#: plugins/group-buying/controllers/payment_processors/groupBuyingAuthorize.net.class.php:270
+msgid "Authorize.net"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingAuthorize.net.class.php:274
+msgid "Mode"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingAuthorize.net.class.php:275
+msgid "API Login (Username)"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingAuthorize.net.class.php:276
+msgid "Transaction Key (Password)"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingAuthorize.net.class.php:289
+msgid "Live"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingAuthorize.net.class.php:290
+msgid "Sandbox"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingCredits.class.php:201
+#: plugins/group-buying/controllers/payment_processors/groupBuyingCredits.class.php:252
+msgid "Free"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingCredits.class.php:205
+msgid "Awesome! This item is free. We need nothing more."
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingCredits.class.php:218
+msgid "Credit"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingCredits.class.php:219
+#, php-format
+msgid "You have a credit balance of %s. How much credit would you like to apply to this purchase?"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingCredits.class.php:253
+msgid "On the house."
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingCredits.class.php:268
+msgid "Account Balance"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingCredits.class.php:273
+msgid "Account Credits"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingCredits.class.php:274
+#, php-format
+msgid "%s will be paid from your account credit balance"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingNMI.net.class.php:48
+msgid "NMI (beta)"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingNMI.net.class.php:241
+msgid "NMI"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingPaypal.class.php:87
+#: plugins/group-buying/controllers/payment_processors/groupBuyingPaypalHybrid.class.php:251
+msgid "PayPal"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingPaypal.class.php:236
+#: plugins/group-buying/controllers/payment_processors/groupBuyingPaypal.class.php:449
+msgid "Applied Credit"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingPaypal.class.php:824
+msgid "PayPal Express Checkout"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingPaypal.class.php:833
+#: plugins/group-buying/controllers/payment_processors/groupBuyingPaypalAP.class.php:472
+#: plugins/group-buying/controllers/payment_processors/groupBuyingPaypalWPP.class.php:651
+msgid "API Username"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingPaypal.class.php:834
+#: plugins/group-buying/controllers/payment_processors/groupBuyingPaypalAP.class.php:473
+#: plugins/group-buying/controllers/payment_processors/groupBuyingPaypalWPP.class.php:652
+msgid "API Password"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingPaypal.class.php:835
+#: plugins/group-buying/controllers/payment_processors/groupBuyingPaypalAP.class.php:474
+#: plugins/group-buying/controllers/payment_processors/groupBuyingPaypalWPP.class.php:653
+msgid "API Signature"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingPaypal.class.php:836
+#: plugins/group-buying/controllers/payment_processors/groupBuyingPaypalAP.class.php:476
+#: plugins/group-buying/controllers/payment_processors/groupBuyingPaypalWPP.class.php:654
+msgid "Currency Code"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingPaypal.class.php:838
+#: plugins/group-buying/controllers/payment_processors/groupBuyingPaypalAP.class.php:478
+msgid "Cancel URL"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingPaypal.class.php:839
+#: plugins/group-buying/controllers/payment_processors/groupBuyingPaypal.class.php:885
+msgid "Logs"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingPaypal.class.php:899
+msgid "Paypal Express Checkout"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingPaypalAP.class.php:97
+msgid "PayPal Adaptive Payments (beta)"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingPaypalAP.class.php:462
+msgid "PayPal Adaptive Payments"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingPaypalAP.class.php:475
+msgid "Application ID"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingPaypalAP.class.php:477
+msgid "Return URL"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingPaypalAP.class.php:517
+msgid "Paypal"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingPaypalAP.class.php:522
+msgid "Adaptive Payments"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingPaypalHybrid.class.php:89
+msgid "Credit Card"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingPaypalHybrid.class.php:113
+msgid "PayPal API Settings"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingPaypalHybrid.class.php:240
+#: plugins/group-buying/controllers/payment_processors/groupBuyingPaypalWPP.class.php:61
+#: plugins/group-buying/controllers/payment_processors/groupBuyingPaypalWPP.class.php:644
+msgid "PayPal Website Payments Pro"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingPaypalHybrid.class.php:253
+msgid "Payment Methods"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingPaypalHybrid.class.php:257
+msgid "Express Checkout (off site)"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingPaypalHybrid.class.php:258
+msgid "Website Payments Pro (on site)"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingPaypalHybrid.class.php:259
+msgid "Both"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/groupBuyingPaypalWPP.class.php:277
+#, php-format
+msgid " (Error Code: %s)"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/meta-boxes/deal-adaptive-payments.php:2
+msgid "Primary Receiver Email"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/meta-boxes/deal-adaptive-payments.php:6
+msgid "Secondary Receiver Email"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/meta-boxes/deal-adaptive-payments.php:10
+msgid "Secondary Receiver Payment"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/meta-boxes/deal-adaptive-payments.php:13
+msgid "<strong>Notes:</strong> In a chained payment, the customer pays the primary receiver (you) an amount, from which the primary receiver (you) pays secondary receiver(s) (merchant). The customer only knows about the primary receiver (you), not the secondary receiver(s) (merchant). The secondary receiver(s) (merchant) only know about the primary receiver (you), not the customer."
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/meta-boxes/exp-only.php:2
+msgid "This deal does not expire."
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/meta-boxes/exp-only.php:3
+msgid "Vouchers will show immediately after purchase."
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/meta-boxes/no-tipping.php:2
+msgid "Maximum Purchases"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/meta-boxes/no-tipping.php:4
+msgid "The maximum number of purchases allowed for this deal"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/meta-boxes/no-tipping.php:7
+msgid "Maximum Purchases per User"
+msgstr ""
+
+#: plugins/group-buying/controllers/payment_processors/meta-boxes/no-tipping.php:9
+msgid "The maximum number of purchases allowed for this deal for one user"
+msgstr ""
+
+#: plugins/group-buying/controllers/router/GB_Route.class.php:258
+msgid "You are not authorized to access this page"
+msgstr ""
+
+#: plugins/group-buying/controllers/router/GB_Route.class.php:259
+msgid "Access Denied"
+msgstr ""
+
+#: plugins/group-buying/controllers/router/GB_Router_Page.class.php:79
+msgid "WP Router Placeholder Page"
+msgstr ""
+
+#: plugins/group-buying/controllers/router/GB_Router_Utility.class.php:75
+#, php-format
+msgid "%1$s requires WordPress %2$s or higher and PHP %3$s or higher."
+msgstr ""
+
+#: plugins/group-buying/controllers/syndication-service/GB_Aggregator_Client.php:25
+msgid "Web service URL must be supplied"
+msgstr ""
+
+#: plugins/group-buying/controllers/syndication-service/GB_Aggregator_Destination.php:99
+msgid "Subscription Settings"
+msgstr ""
+
+#: plugins/group-buying/controllers/syndication-service/GB_Aggregator_Destination.php:106
+msgid "Aggregation Notes"
+msgstr ""
+
+#: plugins/group-buying/controllers/syndication-service/GB_Aggregator_Destination.php:107
+msgid "Categories"
+msgstr ""
+
+#: plugins/group-buying/controllers/syndication-service/GB_Aggregator_Destination.php:121
+msgid "Deals with the selected categories (and their sub-categories) will be automatically imported from the aggregation server. If you no categories are selected, deals will be imported regardless of category."
+msgstr ""
+
+#: plugins/group-buying/controllers/syndication-service/GB_Aggregator_Destination.php:149
+msgid "Failed to load categories from the server. Please try reloading the page."
+msgstr ""
+
+#: plugins/group-buying/controllers/syndication-service/GB_Aggregator_Destination.php:177
+msgid "Failed to load locations from the server. Please try reloading the page."
+msgstr ""
+
+#: plugins/group-buying/controllers/syndication-service/GB_Aggregator_Destination.php:183
+msgid "These notes are shown on the deals edit page and could be used to show affiliate IDs for each site your aggregating."
+msgstr ""
+
+#: plugins/group-buying/controllers/syndication-service/GB_Aggregator_Destination.php:193
+msgid "Aggregation Options"
+msgstr ""
+
+#: plugins/group-buying/controllers/syndication-service/GB_Aggregator_Destination.php:244
+msgid "Purchase"
+msgstr ""
+
+#: plugins/group-buying/controllers/syndication-service/GB_Aggregator_Destination.php:338
+#: plugins/group-buying/controllers/syndication-service/GB_Aggregator_Destination.php:341
+msgid "GBS Aggregation Server"
+msgstr ""
+
+#: plugins/group-buying/controllers/syndication-service/GB_Aggregator_Destination.php:633
+msgid "Source"
+msgstr ""
+
+#: plugins/group-buying/controllers/syndication-service/GB_Aggregator_Destination.php:657
+msgid "Platform: "
+msgstr ""
+
+#: plugins/group-buying/controllers/syndication-service/GB_Aggregator_Plugin.php:17
+msgid "Group Buying Network Syndication Settings"
+msgstr ""
+
+#: plugins/group-buying/controllers/syndication-service/GB_Aggregator_Plugin.php:17
+msgid "Syndication"
+msgstr ""
+
+#: plugins/group-buying/controllers/syndication-service/GB_Aggregator_Plugin.php:25
+msgid "Enabled Services"
+msgstr ""
+
+#: plugins/group-buying/controllers/syndication-service/GB_Aggregator_Plugin.php:31
+msgid "Send your deals to the GBS syndication service."
+msgstr ""
+
+#: plugins/group-buying/controllers/syndication-service/GB_Aggregator_Plugin.php:32
+msgid "Receive deals from the GBS syndication service."
+msgstr ""
+
+#: plugins/group-buying/controllers/syndication-service/GB_Aggregator_Plugin.php:33
+msgid "Be the syndication server"
+msgstr ""
+
+#: plugins/group-buying/controllers/syndication-service/GB_Aggregator_Plugin.php:41
+#, php-format
+msgid "Please <a href=\"%s\" target=\"_blank\">read about the GBS syndication service</a> before enabling any services on your site."
+msgstr ""
+
+#: plugins/group-buying/controllers/syndication-service/GB_Aggregator_Source.php:112
+msgid "Default Options for Deals You Create"
+msgstr ""
+
+#: plugins/group-buying/controllers/syndication-service/GB_Aggregator_Source.php:120
+msgid "Syndicate"
+msgstr ""
+
+#: plugins/group-buying/controllers/syndication-service/GB_Aggregator_Source.php:121
+msgid "Default Category"
+msgstr ""
+
+#: plugins/group-buying/controllers/syndication-service/GB_Aggregator_Source.php:122
+msgid "Default Location"
+msgstr ""
+
+#: plugins/group-buying/controllers/syndication-service/GB_Aggregator_Source.php:123
+msgid "Affiliate Platform"
+msgstr ""
+
+#: plugins/group-buying/controllers/syndication-service/GB_Aggregator_Source.php:124
+msgid "Affiliate Sign-up URL"
+msgstr ""
+
+#: plugins/group-buying/controllers/syndication-service/GB_Aggregator_Source.php:125
+msgid "Affiliate Query String"
+msgstr ""
+
+#: plugins/group-buying/controllers/syndication-service/GB_Aggregator_Source.php:135
+msgid "Yes"
+msgstr ""
+
+#: plugins/group-buying/controllers/syndication-service/GB_Aggregator_Source.php:136
+msgid "No"
+msgstr ""
+
+#: plugins/group-buying/controllers/syndication-service/GB_Aggregator_Source.php:163
+#, php-format
+msgid "Let potential affiliates know what affiliate platform you use (e.g. <a href=\"%s\" target=\"_blank\">WordPress Affiliate Platform</a>)."
+msgstr ""
+
+#: plugins/group-buying/controllers/syndication-service/GB_Aggregator_Source.php:195
+msgid "Syndicate This Deal"
+msgstr ""
+
+#: plugins/group-buying/controllers/syndication-service/GB_Aggregator_Source.php:238
+msgid "Syndication Options"
+msgstr ""
+
+#: plugins/group-buying/controllers/syndication-service/GB_Aggregator_Source.php:267
+msgid "Location"
+msgstr ""
+
+#: plugins/group-buying/controllers/syndication-service/GB_Aggregator_Source.php:276
+msgid "Anywhere"
+msgstr ""
+
+#: plugins/group-buying/controllers/syndication-service/GB_Aggregator_Source.php:289
+msgid "Category"
+msgstr ""
+
+#: plugins/group-buying/controllers/syndication-service/GB_Aggregator_Source.php:298
+msgid "Uncategorized"
+msgstr ""
+
+#: plugins/group-buying/controllers/syndication-service/Walker_Category_Checklist_Subscription_Mapper.php:15
+msgid "None"
+msgstr ""
+
+#: plugins/group-buying/controllers/syndication-service/Walker_Category_Checklist_Subscription_Mapper.php:24
+msgid "maps to"
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingAccount.class.php:147
+#: plugins/group-buying/models/groupBuyingAccount.class.php:173
+#: plugins/group-buying/models/groupBuyingCart.class.php:221
+msgid "Anonymous"
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingAttribute.class.php:57
+msgid "Color"
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingAttribute.class.php:58
+msgid "Colors"
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingAttribute.class.php:60
+msgid "Red"
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingAttribute.class.php:61
+msgid "Orange"
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingAttribute.class.php:62
+msgid "Yellow"
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingAttribute.class.php:63
+msgid "Green"
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingAttribute.class.php:64
+msgid "Blue"
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingAttribute.class.php:65
+msgid "Purple"
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingAttribute.class.php:69
+msgid "Size"
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingAttribute.class.php:70
+msgid "Sizes"
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingAttribute.class.php:72
+msgid "Small"
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingAttribute.class.php:73
+msgid "Medium"
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingAttribute.class.php:74
+msgid "Large"
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingAttribute.class.php:78
+msgid "Charity"
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingAttribute.class.php:79
+msgid "Charities"
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingAttribute.class.php:211
+msgid "New Attribute"
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingGift.class.php:63
+#, php-format
+msgid "Gift Purchase #%d"
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingMerchant.class.php:137
+#: plugins/group-buying/models/groupBuyingMerchant.class.php:142
+msgid "Blank Merchant"
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingMerchant.class.php:143
+msgid "blank-merchant"
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingPayment.class.php:80
+#, php-format
+msgid "Payment #%d"
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingPostType.class.php:51
+msgid "Attempting to re-register post type: "
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingPostType.class.php:70
+msgid "Add "
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingPostType.class.php:71
+#: plugins/group-buying/models/groupBuyingPostType.class.php:192
+msgid "Add New "
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingPostType.class.php:72
+#: plugins/group-buying/models/groupBuyingPostType.class.php:190
+msgid "Edit "
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingPostType.class.php:73
+#: plugins/group-buying/models/groupBuyingPostType.class.php:193
+msgid "New "
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingPostType.class.php:75
+msgid "View "
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingPostType.class.php:76
+#: plugins/group-buying/models/groupBuyingPostType.class.php:185
+msgid "Search "
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingPostType.class.php:77
+#: plugins/group-buying/models/groupBuyingPostType.class.php:78
+msgid "No "
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingPostType.class.php:171
+msgid "Attempting to re-register taxonomy: "
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingPostType.class.php:186
+msgid "Popular "
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingPostType.class.php:187
+msgid "All "
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingPostType.class.php:188
+#: plugins/group-buying/models/groupBuyingPostType.class.php:189
+msgid "Parent "
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingPostType.class.php:191
+msgid "Update "
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingPurchase.class.php:96
+msgid "Order"
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingReport.class.php:67
+#: plugins/group-buying/models/groupBuyingReport.class.php:147
+#: plugins/group-buying/models/groupBuyingReport.class.php:370
+msgid "Date"
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingReport.class.php:68
+#: plugins/group-buying/models/groupBuyingReport.class.php:148
+#: plugins/group-buying/models/groupBuyingReport.class.php:216
+#: plugins/group-buying/models/groupBuyingReport.class.php:299
+#: plugins/group-buying/models/groupBuyingReport.class.php:371
+#: plugins/group-buying/models/groupBuyingReport.class.php:474
+msgid "Order #"
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingReport.class.php:71
+#: plugins/group-buying/models/groupBuyingReport.class.php:373
+#: plugins/group-buying/models/groupBuyingReport.class.php:475
+msgid "Purchase Total"
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingReport.class.php:72
+#: plugins/group-buying/models/groupBuyingReport.class.php:151
+#: plugins/group-buying/models/groupBuyingReport.class.php:222
+#: plugins/group-buying/models/groupBuyingReport.class.php:305
+#: plugins/group-buying/models/groupBuyingReport.class.php:374
+#: plugins/group-buying/models/groupBuyingReport.class.php:427
+#: plugins/group-buying/models/groupBuyingReport.class.php:476
+msgid "Name"
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingReport.class.php:73
+#: plugins/group-buying/models/groupBuyingReport.class.php:223
+#: plugins/group-buying/models/groupBuyingReport.class.php:375
+msgid "Email"
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingReport.class.php:74
+msgid "Share Source"
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingReport.class.php:114
+#: plugins/group-buying/models/groupBuyingReport.class.php:186
+#: plugins/group-buying/models/groupBuyingReport.class.php:259
+#: plugins/group-buying/models/groupBuyingReport.class.php:334
+#: plugins/group-buying/models/groupBuyingReport.class.php:402
+#: plugins/group-buying/models/groupBuyingReport.class.php:510
+msgid "Unclaimed Gift"
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingReport.class.php:152
+#: plugins/group-buying/models/groupBuyingReport.class.php:306
+msgid "Postal"
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingReport.class.php:217
+#: plugins/group-buying/models/groupBuyingReport.class.php:301
+msgid "Redeemed"
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingReport.class.php:272
+#: plugins/group-buying/models/groupBuyingReport.class.php:347
+msgid " of "
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingReport.class.php:303
+msgid "Unit Price"
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingReport.class.php:304
+msgid "Voucher(s)"
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingReport.class.php:337
+msgid "Mark Redeemed"
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingReport.class.php:427
+msgid "WP Username"
+msgstr ""
+
+#: plugins/group-buying/models/groupBuyingVoucher.class.php:95
+#, php-format
+msgid "Voucher for %s"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:2
+msgid "Video Tutorials"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:4
+msgid "Installation &amp; setup"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:5
+msgid "Settings overview"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:6
+msgid "Payment settings"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:7
+#: plugins/group-buying/views/admin/docs.php:39
+msgid "SSL Integration"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:8
+msgid "Tax settings"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:9
+msgid "Shipping settings"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:10
+msgid "Adding a deal"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:11
+msgid "Adding a vendor"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:12
+msgid "End user experience"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:13
+#: plugins/group-buying/views/admin/docs.php:62
+msgid "Gift giving overview"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:14
+msgid "Setup Facebook login/registration"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:15
+msgid "Installing and Configuring the Response Theme"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:16
+#: plugins/group-buying/views/admin/docs.php:102
+msgid "Setting up and editing a child theme"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:17
+#: plugins/group-buying/views/admin/docs.php:64
+msgid "Menus"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:19
+#: plugins/group-buying/views/admin/docs.php:45
+msgid "MailChimp Setup"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:20
+#: plugins/group-buying/views/admin/docs.php:46
+msgid "Constant Contact Setup"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:21
+msgid "Share and Earn Credits Setup and Use"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:22
+#: plugins/group-buying/views/admin/docs.php:101
+msgid "Translating GBS"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:23
+msgid "Using the Charity Feature of 3.1"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:24
+msgid "Using Attributes in 3.1"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:25
+msgid "Installing and Configuring the GBS Digital Downloads Add-on "
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:27
+msgid "Notes"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:29
+msgid "Automatic updates for v3.X"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:30
+msgid "What are the GBS Requirements?"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:32
+msgid "Setup and Installation"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:34
+msgid "Important Considerations Before Getting Started"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:35
+msgid "Group Buying Plugin Installation &amp; Setup"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:36
+msgid "End User Experience"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:37
+msgid "Overview of Settings"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:38
+msgid "Payment Settings"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:40
+msgid "How to Setup Paypal Adaptive Payments"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:44
+msgid "Share and Earn Credits"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:48
+msgid "Using the GBS Plugin with a Third Party Theme"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:49
+msgid "Advanced Thumbnail Setup"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:50
+msgid "Response Theme"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:52
+msgid "Using GBS"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:54
+msgid "Testing Before You Go Live"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:55
+msgid "Security and Backup"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:56
+msgid "Adding a Merchant"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:57
+msgid "Adding a Deal"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:58
+msgid "Free Deals"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:59
+msgid "Dynamic Milestone Pricing"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:60
+msgid "Voucher Security Codes"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:63
+msgid "Using Page Templates"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:65
+msgid "Deal Widgets"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:66
+msgid "Adding a logo"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:67
+msgid "Setting up Charities"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:68
+msgid "Add custom backgrounds and logos per location"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:69
+msgid "Allow Users to Login with their Facebook Account"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:70
+msgid "RSS Feeds"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:71
+msgid "QR Codes"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:73
+msgid "Additional Setup"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:75
+msgid "Track pageviews with Google Analytics"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:76
+msgid "Track E-Commerce Transactions Using Google Analytics"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:77
+msgid "Track Click Throughs with MailChimp"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:78
+msgid "Integrating WP Affiliate Platform Plugin"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:79
+msgid "Display Your Deals On Aggregators Like DealRadar"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:80
+msgid "Configuring the Digital Downloads Add-on"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:82
+msgid "Troubleshooting Help"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:84
+msgid "Post-update troubleshooting"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:85
+msgid "Whitescreen or Locked out of the Admin"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:86
+msgid "Purchase Limits Missing"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:87
+msgid "API FAQs"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:88
+msgid "Affiliate Credits and Cookie Issues. "
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:89
+msgid "PHP and GBS Error Logging"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:90
+msgid "Troubleshooting Custom Permalinks"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:91
+msgid "Troubleshooting Emails"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:92
+msgid "Redirects? What is the logic behind theme?"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:93
+#: plugins/group-buying/views/admin/docs.php:111
+msgid "How to Search the Forum"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:94
+msgid "No Header or Footer on Custom Homepage"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:98
+msgid "Developer Documentation"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:99
+msgid "Plugin Recommendations"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:100
+msgid "Custom Front Page"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:103
+msgid "Moving Your Customizations to a Child theme"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:104
+msgid "Customize the Voucher Template"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:105
+msgid "Translate the Courtdown"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:106
+msgid "Blog Section"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:107
+msgid "Displaying Live Deals &amp; Closed Deals"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:108
+msgid "Paypal &mdash; Control How Website Payments Standard Works"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:109
+msgid "Increase Your PHP Memory Limits"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:110
+msgid "Using the SMTP Service Sendgrid"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:112
+msgid "What are Actions and Filters?"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:113
+msgid "Common Actions"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:114
+msgid "Common Filters"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:115
+msgid "CSS, HTML and PHP Questions"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:116
+msgid "Plugin Modification Questions"
+msgstr ""
+
+#: plugins/group-buying/views/admin/docs.php:117
+msgid "Site Owner Chat"
+msgstr ""
+
+#: plugins/group-buying/views/checkout/credit_card.php:18
+msgid "Payment Information"
+msgstr ""
+
+#: plugins/group-buying/views/meta_boxes/account-purchases-add-attributes.php:66
+msgid "Attributes"
+msgstr ""
+
+#: plugins/group-buying/views/meta_boxes/account-purchases-add-attributes.php:68
+msgid "Select an Attribute"
+msgstr ""
+
+#: plugins/group-buying/views/meta_boxes/deal-attributes.php:58
+msgid "Remove New Option"
+msgstr ""
+
+#: plugins/group-buying/views/meta_boxes/deal-attributes.php:64
+msgid "+ Add Another Option"
+msgstr ""
+
+#: plugins/group-buying/views/meta_boxes/deal-merchant.php:3
+msgid "Deal Merchant:"
+msgstr ""
+
+#: plugins/group-buying/views/public/deal.php:30
+#: plugins/group-buying/views/public/merchant.php:28
+msgid "Pages:"
+msgstr ""
+
+#: plugins/group-buying/views/public/deal.php:43
+#: plugins/group-buying/views/public/merchant.php:41
+#, php-format
+msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: plugins/group-buying/views/public/deal.php:51
+msgid "Edit"
+msgstr ""
+
