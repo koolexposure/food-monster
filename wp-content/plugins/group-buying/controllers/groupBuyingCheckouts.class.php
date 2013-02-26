@@ -31,6 +31,7 @@ class Group_Buying_Checkouts extends Group_Buying_Controller {
 		self::register_path_callback( self::$checkout_path, array( get_class(), 'on_checkout_page' ), self::CHECKOUT_QUERY_VAR, 'checkout' );
 		add_filter( 'gbs_require_ssl', array( get_class(), 'require_ssl_on_checkout_pages' ), 10, 2 );
 		add_action( 'admin_init', array( get_class(), 'register_settings_fields' ), 20, 0 );
+		add_filter( 'gb_get_form_field', array( get_class(), 'filter_required_attribute' ), 10, 4 ); 
 	}
 
 	/**
@@ -58,6 +59,18 @@ class Group_Buying_Checkouts extends Group_Buying_Controller {
 		self::get_instance(); // make sure the class is instantiated
 		$user = wp_get_current_user();
 	}
+
+	/**
+	 * Filter the gb_get_form_field to remove the "required" attribute since the form process is handling it.
+	 * Causes issues with logins and credits too.
+	 * 
+	 */
+	function filter_required_attribute( $field, $key, $data, $category ) { 
+		if ( get_query_var( self::CHECKOUT_QUERY_VAR ) ) { 
+			return str_replace( 'required', '', $field ); 
+		} 
+		return $field; 
+	} 
 
 	public static function require_ssl_on_checkout_pages( $required, WP $wp ) {
 		if ( self::$use_ssl && isset( $wp->query_vars[self::CHECKOUT_QUERY_VAR] ) && $wp->query_vars[self::CHECKOUT_QUERY_VAR] ) {

@@ -1398,6 +1398,7 @@ class Group_Buying_Accounts_Retrieve_Password extends Group_Buying_Controller {
 		// Replace WP Login URIs
 		add_filter( 'lostpassword_url', array( get_class(), 'get_url' ), 10, 2 );
 		add_action( 'admin_init', array( get_class(), 'register_settings_fields' ), 10, 1 );
+		add_action( 'parse_request', array( get_class(), 'check_messages' ) );
 	}
 
 	public static function register_settings_fields() {
@@ -1581,7 +1582,7 @@ class Group_Buying_Accounts_Retrieve_Password extends Group_Buying_Controller {
 		add_filter( 'the_title', array( $this, 'get_title' ), 10, 2 );
 	}
 
-	private function check_messages() {
+	public function check_messages() {
 		$messages = array(
 			'test_cookie' => self::__( "Cookies are blocked or not supported by your browser. You must <a href='http://www.google.com/cookies.html'>enable cookies</a> to use this site." ),
 			'confirm' => self::__( 'Check your e-mail for the password reset link.' ),

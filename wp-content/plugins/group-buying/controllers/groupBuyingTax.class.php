@@ -142,7 +142,7 @@ class Group_Buying_Core_Tax extends Group_Buying_Controller {
 		} elseif ( $tax < 0 ) { // we want to safegaurd from people not understanding what a percentage is.
 			$tax = $tax*100;
 		}
-		$calc_tax = ( $tax*( $deal->get_price( $qty, $item_data )*$qty ) );
+		$calc_tax = ( $tax*( $deal->get_price( NULL, $item_data )*$qty ) );
 		return $calc_tax;
 	}
 

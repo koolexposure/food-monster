@@ -96,7 +96,7 @@ class Group_Buying_Purchases extends Group_Buying_Controller {
 	 * @param int     $post_id
 	 * @return string
 	 */
-	public function get_title( $title, $post_id ) {
+	public function get_title( $title = '', $post_id = 0 ) {
 		if ( Group_Buying_Purchase::POST_TYPE == get_post_type( $post_id ) ) {
 			if ( is_single() ) {
 				$filtered = self::__( 'Order Lookup' );

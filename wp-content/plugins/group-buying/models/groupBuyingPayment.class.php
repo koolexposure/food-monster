@@ -138,8 +138,9 @@ class Group_Buying_Payment extends Group_Buying_Post_Type {
 		$args = array(
 			'post_type' => self::POST_TYPE,
 			'post_status' => array( self::STATUS_PARTIAL, self::STATUS_AUTHORIZED ),
-			'post_per_page' => -1,
+			'posts_per_page' => -1,
 			'fields' => 'ids',
+			'gb_bypass_filter' => TRUE
 		);
 		if ( $method ) {
 			$args['meta_query'] = array(

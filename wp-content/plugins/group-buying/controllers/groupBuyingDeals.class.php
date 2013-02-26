@@ -591,6 +591,10 @@ class Group_Buying_Deals extends Group_Buying_Controller {
 		if ( Group_Buying_Deal::is_deal_query() ) {
 			if ( is_single() ) {
 				$template = self::locate_template( array(
+						'products/single-product.php',
+						'products/single.php',
+						'products/product.php',
+						'product.php',
 						'deals/single-deal.php',
 						'deals/single.php',
 						'deals/deal.php',
@@ -598,6 +602,9 @@ class Group_Buying_Deals extends Group_Buying_Controller {
 					), $template );
 			} else {
 				$template = self::locate_template( array(
+						'products/products.php',
+						'products/index.php',
+						'products/archive.php',
 						'deals/deals.php',
 						'deals/index.php',
 						'deals/archive.php',
@@ -607,6 +614,12 @@ class Group_Buying_Deals extends Group_Buying_Controller {
 		if ( Group_Buying_Deal::is_deal_tax_query() ) {
 			$taxonomy = get_query_var( 'taxonomy' );
 			$template = self::locate_template( array(
+					'products/product-'.$taxonomy.'.php',
+					'products/product-type.php',
+					'products/product-types.php',
+					'products/product.php',
+					'products/index.php',
+					'products/archive.php',
 					'deals/deal-'.$taxonomy.'.php',
 					'deals/deal-type.php',
 					'deals/deal-types.php',

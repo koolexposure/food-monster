@@ -330,10 +330,12 @@ class Group_Buying_Merchants extends Group_Buying_Controller {
 				$template = self::locate_template( array(
 						'business/businesses.php',
 						'business/index.php',
+						'business/archive.php',
 						'business/business-index.php',
 						'business/business-archive.php',
 						'merchant/businesses.php',
 						'merchant/index.php',
+						'merchant/archive.php',
 						'merchant/business-index.php',
 						'merchant/business-archive.php',
 					), $template );
@@ -348,12 +350,14 @@ class Group_Buying_Merchants extends Group_Buying_Controller {
 					'business/businesses.php',
 					'business/business-index.php',
 					'business/business-archive.php',
+					'business/archive.php',
 					'merchant/business-'.$taxonomy.'.php',
 					'merchant/business-type.php',
 					'merchant/business-types.php',
 					'merchant/businesses.php',
 					'merchant/business-index.php',
 					'merchant/business-archive.php',
+					'merchant/archive.php',
 				), $template );
 		}
 		return $template;

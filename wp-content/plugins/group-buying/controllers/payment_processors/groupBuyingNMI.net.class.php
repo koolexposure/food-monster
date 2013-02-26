@@ -143,7 +143,6 @@ class Group_Buying_NMI extends Group_Buying_Credit_Card_Processors {
 		}
 		$payment = Group_Buying_Payment::get_instance( $payment_id );
 		do_action( 'payment_authorized', $payment );
-		$payment->set_data( $response );
 		return $payment;
 	}
 

@@ -282,27 +282,30 @@ abstract class Group_Buying_Payment_Processors extends Group_Buying_Controller {
 				// do we still need to capture this payment
 				if ( isset( $data['uncaptured_deals'][$item['deal_id']] ) && count( $data['uncaptured_deals'][$item['deal_id']] ) > 0 ) {
 					$deal = Group_Buying_Deal::get_instance( $item['deal_id'] );
-					// is the deal successful OR is this returning payments for release?
-					if ( $deal->is_successful() || ( $release_payment && !$deal->is_successful() && $deal->is_expired() ) ) {
-						// how much do we need to capture for this deal
-						$items_to_capture[$item['deal_id']] = 0;
-						foreach ( $data['uncaptured_deals'][$item['deal_id']] as $item ) {
-							// if the deal has a dynamic price, or simply the admin changed the price.
-							$subtotal = $deal->get_price( null, $item['data'] )*$item['quantity']; // don't forget about quantity purchases and attributes.
-							$tax = $purchase->get_item_tax( $item );
-							$shipping = $purchase->get_item_shipping( $item );
+					if ( is_a( $deal, 'Group_Buying_Deal' ) ) {
+						// is the deal successful OR is this returning payments for release?
+						if ( $deal->is_successful() || ( $release_payment && !$deal->is_successful() && $deal->is_expired() ) ) {
+							// how much do we need to capture for this deal
+							$items_to_capture[$item['deal_id']] = 0;
+							foreach ( $data['uncaptured_deals'][$item['deal_id']] as $item ) {
+								// if the deal has a dynamic price, or simply the admin changed the price.
+								$subtotal = $deal->get_price( null, $item['data'] )*$item['quantity']; // don't forget about quantity purchases and attributes.
+								$tax = $purchase->get_item_tax( $item );
+								$shipping = $purchase->get_item_shipping( $item );
 
-							// only capture the portion handled by this payment method
-							$ratio = 1;
-							if ( $item['payment_method'][$this->get_payment_method()] != $item['price'] && $item['price'] > 0 ) {
-								$ratio = $item['payment_method'][$this->get_payment_method()] / $item['price'];
+								// only capture the portion handled by this payment method
+								$ratio = 1;
+								if ( $item['payment_method'][$this->get_payment_method()] != $item['price'] && $item['price'] > 0 ) {
+									$ratio = $item['payment_method'][$this->get_payment_method()] / $item['price'];
+								}
+
+								$total = ( $subtotal + $tax + $shipping ) * $ratio;
+
+								$items_to_capture[$item['deal_id']] += apply_filters( 'gb_item_to_capture_total', number_format( floatval( $total ), 2, '.', '' ), $total, $item, $release_payment ); // Make sure it's a number others can use, otherwise gateways will complain about x.00000001.
 							}
-
-							$total = ( $subtotal + $tax + $shipping ) * $ratio;
-
-							$items_to_capture[$item['deal_id']] += apply_filters( 'gb_item_to_capture_total', number_format( floatval( $total ), 2, '.', '' ), $total, $item, $release_payment ); // Make sure it's a number others can use, otherwise gateways will complain about x.00000001.
 						}
 					}
+					
 				}
 			}
 		}

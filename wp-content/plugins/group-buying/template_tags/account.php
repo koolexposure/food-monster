@@ -380,3 +380,24 @@ function gb_get_purchased_deals( $user_id = 0 ) {
 	}
 	return apply_filters( 'gb_get_purchased_deals', $deal_ids, $user_id, $purchases );
 }
+
+/**
+ * Get the profile url
+ * @param  integer $user_id $user->ID
+ * @return string
+ */
+function gb_get_profile_link( $user_id = 0 ) {
+	if ( !$user_id ) {
+		$user_id = get_current_user_id();
+	}
+	$account = Group_Buying_Account::get_instance( $user_id );
+	return apply_filters( 'gb_get_profile_link', get_permalink( $account->get_id() ), $user_id );
+}
+/**
+ * Get the profile url
+ * @param  integer $user_id $user->ID
+ * @return string
+ */
+function gb_profile_link( $user_id = 0 ) {
+	echo apply_filters( 'gb_profile_link', gb_get_profile_link( $user_id ) );
+}

@@ -19,6 +19,7 @@ abstract class Group_Buying_Credit_Card_Processors extends Group_Buying_Payment_
 		add_action( 'gb_checkout_action_'.Group_Buying_Checkouts::PAYMENT_PAGE, array( $this, 'process_payment_page' ), 20, 1 );
 
 		add_filter( 'gb_checkout_panes_'.Group_Buying_Checkouts::REVIEW_PAGE, array( $this, 'review_pane' ), 10, 2 );
+ 
 	}
 
 	/**

@@ -1006,7 +1006,7 @@ class Group_Buying_API extends Group_Buying_Controller {
 	 * @param bool    $die If TRUE, execution will stop on failure
 	 * @return int|bool The authenticated user's ID, or FALSE on failure
 	 */
-	private static function authenticate_request( $die = TRUE ) {
+	protected static function authenticate_request( $die = TRUE ) {
 		$user_id = FALSE;
 		if ( !empty( $_REQUEST['user'] ) && !empty( $_REQUEST['signature'] ) && !empty( $_REQUEST['timestamp'] ) ) {
 			$user = self::get_user();

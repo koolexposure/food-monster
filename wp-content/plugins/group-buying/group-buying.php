@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Group Buying Plugin
-Version: 4.2.3
+Version: 4.2.5.1
 Plugin URI: http://groupbuyingsite.com/feature-tour/
 Description: Allows for groupon like functionality. By installing this plugin you agree to the <a href="http://groupbuyingsite.com/tos/" title="I agree">terms and conditions</a> of GroupBuyingSite.
 Author: GroupBuyingSite.com

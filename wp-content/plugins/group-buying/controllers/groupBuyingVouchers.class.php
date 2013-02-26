@@ -110,6 +110,7 @@ class Group_Buying_Vouchers extends Group_Buying_Controller {
 				$template = self::locate_template( array(
 						'account/voucher.php',
 						'vouchers/single-voucher.php',
+						'vouchers/single.php',
 						'vouchers/voucher.php',
 						'voucher.php',
 					), $template );

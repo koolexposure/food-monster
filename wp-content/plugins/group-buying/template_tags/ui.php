@@ -75,8 +75,6 @@ function gb_get_truncate( $text, $excerpt_length = 44, $more_link = false ) {
     }
     if ( $more_link ) {
         $text = $text.' '.'<a href="'.$more_link.'" class="more">&nbsp;&raquo;</a>';
-    } else {
-        $text .= '...';
     }
     return apply_filters( 'gb_get_truncate', $text, $excerpt_length, $more_link );
 }

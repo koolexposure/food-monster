@@ -581,6 +581,7 @@ class Group_Buying_Notifications extends Group_Buying_Controller {
 		$headers = implode( "\r\n", $headers ) . "\r\n";
 		$filtered_headers = apply_filters( 'gb_notification_headers', $headers, $notification_name, $data, $from_email, $from_name, $html );
 
+		if ( self::DEBUG ) error_log( "notification content: " . print_r( $notification_content, true ) );
 		wp_mail( $to, $notification_title, $notification_content, $filtered_headers );
 		self::mark_notification_sent( $notification_name, $data, $to );
 	}
@@ -1338,7 +1339,7 @@ class Group_Buying_Notifications extends Group_Buying_Controller {
 			// If the preference is allowed, if not disabled and if the notification is still registered (e.g. disabled add-on )
 			if ( $preference_available && !$notification->is_disabled() && !empty( $registered_notification ) ) {
 				// build the view for each option
-				$view .= '<span class="notification_preference_wrap clearfix"><label><input type="checkbox" name="'.self::NOTIFICATION_SUB_OPTION.'[]" value="'.$notification_type.'" '.checked( self::user_disabled_notification( $notification_type, $account ), FALSE, FALSE ).'>'.$registered_notification['name'].'<br/><small>Subject: "'.get_the_title( $notification->get_ID() ).'"</small></label></span>';
+				$view .= '<span class="notification_preference_wrap clearfix"><label class="checkbox"><input type="checkbox" name="'.self::NOTIFICATION_SUB_OPTION.'[]" value="'.$notification_type.'" '.checked( self::user_disabled_notification( $notification_type, $account ), FALSE, FALSE ).' class="checkbox">'.$registered_notification['name'].'<br/><small>Subject: "'.get_the_title( $notification->get_ID() ).'"</small></label></span>';
 			}			
 		}
 

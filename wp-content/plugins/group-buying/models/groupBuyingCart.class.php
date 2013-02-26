@@ -393,7 +393,7 @@ class Group_Buying_Cart extends Group_Buying_Post_Type {
 	public function quantity_allowed( $product_id, $quantity = 1, $data = NULL ) {
 		$account = Group_Buying_Account::get_instance( $this->user_id );
 		$allowed = $account->can_purchase( $product_id, $data ); // how many the user is allowed to have
-		$total_quantity = $this->get_quantity( $product_id, $data, TRUE ); // how many are currently in the cart
+		$total_quantity = $this->get_quantity( $product_id, $data ); // how many are currently in the cart
 		if ( $allowed != Group_Buying_Account::NO_MAXIMUM && $allowed < $total_quantity + $quantity ) { // we have too many
 			$subtract = $total_quantity+$quantity - $allowed;
 			$new_quantity = $quantity + $this->get_quantity( $product_id, $data ) - $subtract; // take out as many as necessary to make this legal

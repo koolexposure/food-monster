@@ -1387,6 +1387,25 @@ function gb_deal_categories( $post_id = 0 ) {
 // Categories, Tags and Locations //
 ////////////////////////////////////
 
+
+/**
+ * Get the current merchant type being viewed
+ * @param  boolean $slug Return the type slug, default to name
+ * @return string        
+ */
+function gb_get_current_deal_category( $slug = false ) {
+	$taxonomy = get_query_var( 'taxonomy' );
+	if ( $taxonomy == Group_Buying_Deal::CAT_TAXONOMY ) {
+		global $wp_query;
+		if ( $slug ) {
+			return apply_filters( 'gb_get_current_deal_category', $wp_query->get_queried_object()->slug );
+		} else {
+			return apply_filters( 'gb_get_current_deal_category', $wp_query->get_queried_object()->name );
+		}
+	}
+	return FALSE;
+}
+
 /**
  * Return the categories object
  *
@@ -1452,7 +1471,7 @@ function gb_get_tags( $hide_empty = TRUE ) {
 function gb_list_tags( $format = 'ul' ) {
 	$tags = gb_get_tags();
 
-	if ( empty( $categories ) )
+	if ( empty( $tags ) )
 		return '';
 
 	$tag = $format;
@@ -1460,19 +1479,19 @@ function gb_list_tags( $format = 'ul' ) {
 	$list = '';
 	if ( $format == 'ul' || $format == 'ol' ) {
 		$list .= "<".$format." class='tags-ul clearfix'>";
-		$tag = 'li';
+		$html_tag = 'li';
 	}
 
 	foreach ( $tags as $tag ) {
 		$link = get_term_link( $tag->slug, gb_get_deal_tag_slug() );
 		$active = ( $tag->name == gb_get_current_location() ) ? 'current_item' : 'item';
-		$list .= "<".$tag." id='tag_slug_".$tag->slug."' class='tag-item ".$active."'>";
+		$list .= "<".$html_tag." id='tag_slug_".$tag->slug."' class='tag-item ".$active."'>";
 		$list .= "<a href='".apply_filters( 'gb_list_tag_link', $link )."' title='".sprintf( gb__( 'Visit %s Deals' ), $tag->name )."' id=tag_slug_".$tag->slug."'>".$tag->name."</a>";
-		$list .= "</".$tag.">";
+		$list .= "</".$html_tag.">";
 	}
 
 	if ( $format == 'ul' || $format == 'ol' )
 		$list .= "</".$format.">";
 
-	echo apply_filters( 'gb_list_categories', $list, $format );
+	echo apply_filters( 'gb_list_tags', $list, $format );
 }

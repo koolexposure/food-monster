@@ -191,13 +191,13 @@ class Group_Buying_Attributes extends Group_Buying_Controller {
 		return $fields;
 	}
 
-	public function filter_add_to_cart_add_category_selection( $fields, $deal_id ) {
+	public function filter_add_to_cart_add_category_selection( $unfiltered_fields, $deal_id ) {
 		$attributes = Group_Buying_Attribute::get_attributes( $deal_id, 'object' );
 		if ( !$attributes ) {
-			return $fields;
+			return $unfiltered_fields;
 		}
-		$attribite_taxonomies = Group_Buying_Attribute::get_attribute_taxonomies();
-		if ( !empty( $attribite_taxonomies ) ) {
+		$attribute_taxonomies = Group_Buying_Attribute::get_attribute_taxonomies();
+		if ( !empty( $attribute_taxonomies ) ) {
 			ob_start();
 			?>
 				<script type="text/javascript">
@@ -219,7 +219,7 @@ class Group_Buying_Attributes extends Group_Buying_Controller {
 									selections: $dropdowns.serialize() // serialize all of the selection dropdowns for quering
 								},
 								success: function(attribute) {
-									$att_id = attribute[0];
+									$att_id = attribute['0'];
 									if ( $att_id ) {
 										enable_submit($att_id);
 									}
@@ -256,28 +256,41 @@ class Group_Buying_Attributes extends Group_Buying_Controller {
 			<?php
 			$fields[] = ob_get_clean();
 
+			// Build pricing spans and collect which taxonomies this attribute uses.
+			$pricing = array();
+			$categories = array();
+			foreach ( $attributes as $attribute ) {
+				/* @var Group_Buying_Attribute $attribute */
+				$sold_out = ( $attribute->get_max_purchases() == Group_Buying_Attribute::NO_MAXIMUM || $attribute->remaining_purchases() > 0 ) ? '' : ' sold_out' ;
+				$prices[] = '<span id="att_price_'.$attribute->get_id().'" class="attribute_price cloak'.$sold_out.'"><span class="price_label">Price:</span> '.gb_get_formatted_money( $attribute->the_price() ).'</span>';
+				foreach ( $attribute->get_categories() as $category_name => $value) {
+					if ( !in_array( $category_name, $categories ) ) {
+						$categories[] = $category_name;
+					}
+				}
+			}
+
 			// Add the category selections
-			foreach ( $attribite_taxonomies as $taxonomy ) {
-				$drop_down = wp_dropdown_categories( array(
+			foreach ( $attribute_taxonomies as $taxonomy ) {
+				if ( in_array( $taxonomy->name, $categories ) ) {
+					$drop_down = wp_dropdown_categories( array(
 								'taxonomy' => $taxonomy->name,
 								'name' => $taxonomy->name,
 								'class' => 'gb-attribute-category-selections',
 								'hide_empty' => FALSE,
 								'echo' => 0
 							) );
-				$fields[] = '<span class="attribute_category_selection clearfix"><label for="'.$taxonomy->name.'">'.$taxonomy->labels->singular_name.': </label>' . $drop_down . '</span>';
+					$fields[] = '<span class="attribute_category_selection clearfix"><label for="'.$taxonomy->name.'">'.$taxonomy->labels->singular_name.': </label>' . $drop_down . '</span>';
+				}
 			}
-
-			$pricing = array();
-			foreach ( $attributes as $attribute ) {
-				/* @var Group_Buying_Attribute $attribute */
-				$sold_out = ( $attribute->get_max_purchases() == Group_Buying_Attribute::NO_MAXIMUM || $attribute->remaining_purchases() > 0 ) ? '' : ' sold_out' ;
-				$prices[] = '<span id="att_price_'.$attribute->get_id().'" class="attribute_price cloak'.$sold_out.'"><span class="price_label">Price:</span> '.gb_get_formatted_money( $attribute->the_price() ).'</span>';
-
-			}
+			// Add the pricing spans
 			if ( $prices ) {
 				$price_html = implode( "\n", $prices );
 				$fields[] = $price_html;
+			}
+
+			if ( !empty( $fields ) ) {
+				return array_merge( $unfiltered_fields, $fields );
 			}
 		}
 		return $fields;

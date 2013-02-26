@@ -54,6 +54,16 @@ function gb_on_deal_submit_page() {
 	return;
 }
 
+
+/**
+ * Merchant category taxonomy name
+ *
+ * @return string taxonomy slug
+ */
+function gb_get_merchant_cat_slug() {
+	return Group_Buying_Merchant::MERCHANT_TYPE_TAXONOMY;
+}
+
 //////////
 // URLS //
 //////////
@@ -234,6 +244,20 @@ function gb_get_merchants_by_account( $user_id = 0 ) {
 	}
 	$merchants = Group_Buying_Merchant::get_merchants_by_account( $user_id );
 	return apply_filters( 'gb_get_merchants_by_account', $merchants, $user_id );
+}
+
+/**
+ * Return all merchants this user is authorized to manage
+ * @param  integer $user_id $user->ID
+ * @return array         array of merchant IDs
+ */
+function gb_get_merchant_authorized_users( $post_id = 0 ) {
+	if ( !$post_id ) {
+		global $post;
+		$post_id = $post->ID;
+	}
+	$merchant = Group_Buying_Merchant::get_instance( $post_id );
+	return apply_filters( 'gb_get_merchant_authorized_users', $merchant->get_authorized_users(), $post_id );
 }
 
 /**

@@ -193,6 +193,19 @@ class Group_Buying_Feeds extends Group_Buying_Controller {
 			$markets = implode( ',', $market_array );
 			$market_names = implode( ',', $market_name_array );
 
+			// Categories
+			$categories = array();
+			$category_names = array();
+			$category_array = array();
+			$category_name_array = array();
+			$cats = gb_get_deal_categories( $deal_id );
+			foreach ( $cats as $cat ) {
+				$category_array[] = $cat->slug;
+				$category_name_array[] = $cat->name;
+			}
+			$categories = implode( ',', $category_array );
+			$category_names = implode( ',', $category_name_array );
+
 			// thumbnails
 			if ( has_post_thumbnail() ) {
 				$post_thumbnail_id = get_post_thumbnail_id( $deal_id );
@@ -213,12 +226,12 @@ class Group_Buying_Feeds extends Group_Buying_Controller {
 				'title' => get_the_title(),
 				'highlights' => gb_get_highlights(),
 				'restrictions' => gb_get_fine_print(),
-				'description' => $get_the_content,
+				'description' => $the_content,
 				'value' => gb_get_formatted_money( gb_get_deal_worth() ),
 				'price' => gb_get_formatted_money( gb_get_price() ),
 				'required_qty' => gb_get_min_purchases(),
 				'purchased_qty' => gb_get_number_of_purchases(),
-				'category' => '',
+				'category' => $categories,
 				'purchase_link' => gb_get_add_to_cart_url(),
 				'savings' => gb_get_amount_saved()
 			);

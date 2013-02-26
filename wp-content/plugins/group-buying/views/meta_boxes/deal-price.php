@@ -12,6 +12,7 @@
 		<?php do_action( 'gb_meta_box_deal_price_left', $price, $dynamic_price, $shipping, $shippable, $shipping_dyn, $shipping_mode, $tax, $taxable, $taxrate ) ?>
 	</div>
 	<div class="gb_meta_column float_right">
+		<div id="dynamic_pricing">
 			<legend><strong><?php gb_e( 'Dynamic Pricing' ); ?></strong></legend>
 			<table id="dyn_price_table" class="widefat">
 				<thead>
@@ -55,6 +56,7 @@ if ( is_array( $dynamic_price ) ) {
 ?>
 				</tbody>
 			</table>
+		</div>
 		<?php do_action( 'gb_meta_box_deal_price_right', $price, $dynamic_price, $shipping, $shippable, $shipping_dyn, $shipping_mode, $tax, $taxable, $taxrate ) ?>
 	</div>
 </div>

@@ -453,12 +453,7 @@ class Group_Buying_Attribute extends Group_Buying_Post_Type {
 		return $terms;
 	}
 
-	public function remaining_purchases() {
-		$max = $this->get_max_purchases();
-		if ( $max == self::NO_MAXIMUM ) {
-			return self::NO_MAXIMUM;
-		}
-
+	public function purchases_count() {
 		// How many have been purchased?
 		$deal = Group_Buying_Deal::get_instance( $this->get_deal_id() );
 		$purchases = $deal->get_purchases();
@@ -470,6 +465,16 @@ class Group_Buying_Attribute extends Group_Buying_Post_Type {
 				$number_of_purchases += $purchase_quantity;
 			}
 		}
+		return $number_of_purchases;
+	}
+
+	public function remaining_purchases() {
+		$max = $this->get_max_purchases();
+		if ( $max == self::NO_MAXIMUM ) {
+			return self::NO_MAXIMUM;
+		}
+
+		$number_of_purchases = $this->purchases_count();
 
 		// How many does that leave?
 		if ( $max - $number_of_purchases > 0 ) {

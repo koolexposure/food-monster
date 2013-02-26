@@ -69,23 +69,23 @@ function gb_display_messages( $type = null, $ajax = FALSE ) {
 	if ( apply_filters( 'gb_display_messages_via_ajax', $ajax ) ) {
 		$success = apply_filters( 'gb_display_messages_success_js', "$('#gb_ajax_messages').parent().has('.gb-message').show().delay(5000).slideUp();" );
 		?>
-<script type="text/javascript">
-	jQuery(document).ready(function($){
-		$.ajax({
-			url: <?php echo admin_url('admin-ajax.php'); ?>,
-			type: "POST",
-			data: {
-				action: 'gb_display_messages',
-				gb_message_type: '<?php echo $type ?>'
-			},
-			success: function(result){
-				$("#gb_ajax_messages").append(result);
-				<?php echo $success; ?>
-			}
-		});
-	});
-</script>
-<div id="gb_ajax_messages"></div><!-- #gb_ajax_messages -->
+		<script type="text/javascript">
+			jQuery(document).ready(function($){
+				$.ajax({
+					url: <?php echo admin_url('admin-ajax.php'); ?>,
+					type: "POST",
+					data: {
+						action: 'gb_display_messages',
+						gb_message_type: '<?php echo $type ?>'
+					},
+					success: function(result){
+						$("#gb_ajax_messages").append(result);
+						<?php echo $success; ?>
+					}
+				});
+			});
+		</script>
+		<div id="gb_ajax_messages"></div><!-- #gb_ajax_messages -->
 		<?php
 	} else {
 		Group_Buying_Controller::display_messages( $type );

@@ -43,9 +43,9 @@ function gb_get_form_field( $key, $data, $category ) {
 ?>
 	<span class="<?php gb_form_field_classes( $data ); ?>">
 	<?php if ( $data['type'] == 'textarea' ): ?>
-		<textarea name="gb_<?php echo $category; ?>_<?php echo $key; ?>" id="gb_<?php echo $category; ?>_<?php echo $key; ?>" rows="<?php echo isset( $data['rows'] )?$data['rows']:4; ?>" cols="<?php echo isset( $data['cols'] )?$data['cols']:40; ?>" <?php foreach ( $data['attributes'] as $attr => $attr_value ) { echo $attr.'="'.$attr_value.'" '; } ?>><?php echo $data['default']; ?></textarea>
+		<textarea name="gb_<?php echo $category; ?>_<?php echo $key; ?>" id="gb_<?php echo $category; ?>_<?php echo $key; ?>" rows="<?php echo isset( $data['rows'] )?$data['rows']:4; ?>" cols="<?php echo isset( $data['cols'] )?$data['cols']:40; ?>" <?php foreach ( $data['attributes'] as $attr => $attr_value ) { echo $attr.'="'.$attr_value.'" '; } ?> <?php if ( isset( $data['required'] ) && $data['required'] ) echo 'required'; ?>><?php echo $data['default']; ?></textarea>
 	<?php elseif ( $data['type'] == 'select-state' ):  // TODO AJAX based on country selection  ?>
-		<select name="gb_<?php echo $category; ?>_<?php echo $key; ?>" id="gb_<?php echo $category; ?>_<?php echo $key; ?>" <?php foreach ( $data['attributes'] as $attr => $attr_value ) { echo $attr.'="'.$attr_value.'" '; } ?>>
+		<select name="gb_<?php echo $category; ?>_<?php echo $key; ?>" id="gb_<?php echo $category; ?>_<?php echo $key; ?>" <?php foreach ( $data['attributes'] as $attr => $attr_value ) { echo $attr.'="'.$attr_value.'" '; } ?> <?php if ( isset( $data['required'] ) && $data['required'] ) echo 'required'; ?>>
 			<?php foreach ( $data['options'] as $group => $states ) : ?>
 				<optgroup label="<?php echo $group ?>">
 					<?php foreach ( $states as $option_key => $option_label ): ?>
@@ -55,13 +55,13 @@ function gb_get_form_field( $key, $data, $category ) {
 			<?php endforeach; ?>
 		</select>
 	<?php elseif ( $data['type'] == 'select' ): ?>
-		<select name="gb_<?php echo $category; ?>_<?php echo $key; ?>" id="gb_<?php echo $category; ?>_<?php echo $key; ?>" <?php foreach ( $data['attributes'] as $attr => $attr_value ) { echo $attr.'="'.$attr_value.'" '; } ?>>
+		<select name="gb_<?php echo $category; ?>_<?php echo $key; ?>" id="gb_<?php echo $category; ?>_<?php echo $key; ?>" <?php foreach ( $data['attributes'] as $attr => $attr_value ) { echo $attr.'="'.$attr_value.'" '; } ?> <?php if ( isset( $data['required'] ) && $data['required'] ) echo 'required'; ?>>
 			<?php foreach ( $data['options'] as $option_key => $option_label ): ?>
 			<option value="<?php echo $option_key; ?>" <?php selected( $option_key, $data['default'] ) ?>><?php echo $option_label; ?></option>
 			<?php endforeach; ?>
 		</select>
 	<?php elseif ( $data['type'] == 'multiselect' ): ?>
-		<select name="gb_<?php echo $category; ?>_<?php echo $key; ?>[]" id="gb_<?php echo $category; ?>_<?php echo $key; ?>" <?php foreach ( $data['attributes'] as $attr => $attr_value ) { echo $attr.'="'.$attr_value.'" '; } ?> multiple="multiple">
+		<select name="gb_<?php echo $category; ?>_<?php echo $key; ?>[]" id="gb_<?php echo $category; ?>_<?php echo $key; ?>" <?php foreach ( $data['attributes'] as $attr => $attr_value ) { echo $attr.'="'.$attr_value.'" '; } ?> multiple="multiple" <?php if ( isset( $data['required'] ) && $data['required'] ) echo 'required'; ?>>
 			<?php foreach ( $data['options'] as $option_key => $option_label ): ?>
 				<option value="<?php echo $option_key; ?>" <?php if ( in_array( $option_key, $data['default'] ) ) echo 'selected="selected"' ?>><?php echo $option_label; ?></option>
 			<?php endforeach; ?>
@@ -73,18 +73,18 @@ function gb_get_form_field( $key, $data, $category ) {
 			</span>
 		<?php endforeach; ?>
 	<?php elseif ( $data['type'] == 'checkbox' ): ?>
-		<input type="checkbox" name="gb_<?php echo $category; ?>_<?php echo $key; ?>" id="gb_<?php echo $category; ?>_<?php echo $key; ?>" <?php checked( TRUE, $data['default'] ); ?> value="<?php echo isset( $data['value'] )?$data['value']:'On'; ?>" <?php foreach ( $data['attributes'] as $attr => $attr_value ) { echo $attr.'="'.$attr_value.'" '; } ?> />
+		<input type="checkbox" name="gb_<?php echo $category; ?>_<?php echo $key; ?>" id="gb_<?php echo $category; ?>_<?php echo $key; ?>" <?php checked( TRUE, $data['default'] ); ?> value="<?php echo isset( $data['value'] )?$data['value']:'On'; ?>" <?php foreach ( $data['attributes'] as $attr => $attr_value ) { echo $attr.'="'.$attr_value.'" '; } ?> <?php if ( isset( $data['required'] ) && $data['required'] ) echo 'required'; ?>/>
 	<?php elseif ( $data['type'] == 'hidden' ): ?>
 		<input type="hidden" name="gb_<?php echo $category; ?>_<?php echo $key; ?>" id="gb_<?php echo $category; ?>_<?php echo $key; ?>" value="<?php echo $data['value']; ?>" <?php foreach ( $data['attributes'] as $attr => $attr_value ) { echo $attr.'="'.$attr_value.'" '; } ?> />
 	<?php elseif ( $data['type'] == 'file' ): ?>
-		<input type="file" name="gb_<?php echo $category; ?>_<?php echo $key; ?>" id="gb_<?php echo $category; ?>_<?php echo $key; ?>" />
+		<input type="file" name="gb_<?php echo $category; ?>_<?php echo $key; ?>" id="gb_<?php echo $category; ?>_<?php echo $key; ?>" <?php if ( isset( $data['required'] ) && $data['required'] ) echo 'required'; ?>/>
 	<?php elseif ( $data['type'] == 'bypass' ): ?>
 		<?php echo $data['output']; ?>
 	<?php else: ?>
-		<input type="<?php echo $data['type']; ?>" name="gb_<?php echo $category; ?>_<?php echo $key; ?>" id="gb_<?php echo $category; ?>_<?php echo $key; ?>" class="text-input" value="<?php echo $data['default']; ?>" placeholder="<?php echo isset( $data['placeholder'] )?$data['placeholder']:''; ?>" size="<?php echo isset( $data['size'] )?$data['size']:40; ?>" <?php foreach ( $data['attributes'] as $attr => $attr_value ) { echo $attr.'="'.$attr_value.'" '; } ?> />
+		<input type="<?php echo $data['type']; ?>" name="gb_<?php echo $category; ?>_<?php echo $key; ?>" id="gb_<?php echo $category; ?>_<?php echo $key; ?>" class="text-input" value="<?php echo $data['default']; ?>" placeholder="<?php echo isset( $data['placeholder'] )?$data['placeholder']:''; ?>" size="<?php echo isset( $data['size'] )?$data['size']:40; ?>" <?php foreach ( $data['attributes'] as $attr => $attr_value ) { echo $attr.'="'.$attr_value.'" '; } ?> <?php if ( isset( $data['required'] ) && $data['required'] ) echo 'required'; ?>/>
 	<?php endif; ?>
 	<?php if ( !empty( $data['description'] ) ): ?>
-		<p class="description"><?php echo $data['description'] ?></p>
+		<p class="description help_block"><?php echo $data['description'] ?></p>
 	<?php endif; ?>
 	</span>
 	<?php

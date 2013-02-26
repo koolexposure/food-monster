@@ -145,6 +145,7 @@ abstract class Group_Buying_Controller extends Group_Buying {
 		'Lancashire' => 'Lancashire',
 		'Leicestershire' => 'Leicestershire',
 		'Lincolnshire' => 'Lincolnshire',
+		'London' => 'London',
 		'Lothian' => 'Lothian',
 		'Merseyside' => 'Merseyside',
 		'Mid Glamorgan' => 'Mid Glamorgan',
