@@ -12,3 +12,17 @@ template: prime-theme
 Add your custom styles below:
 */
 
+
+.prime {
+	background-position: center bottom;
+	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid rgba(0,0,0,.1);
+	box-shadow: 0 1px 1px #7d7d7d;
+}
+
+#header_wrap, #footer_wrap{
+	background-color: #181818;
+    color: white;
+	
+}
+}
