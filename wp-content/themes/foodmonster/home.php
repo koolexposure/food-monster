@@ -30,10 +30,5 @@ get_header(); ?>
 		
 	</div>		
 
-<?php // get_footer(); Manually added footer code below ?>
+<?php get_footer(); ?>
 
-	</div><!-- #wrapper -->	
-	
-<?php wp_footer(); ?>
-</body>
-</html>

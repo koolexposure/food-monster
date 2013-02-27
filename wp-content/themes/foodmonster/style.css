@@ -17,12 +17,22 @@ Add your custom styles below:
 	background-position: center bottom;
 	border-bottom: 1px solid #ccc;
 	border-bottom: 1px solid rgba(0,0,0,.1);
-	box-shadow: 0 1px 1px #7d7d7d;
+	box-sshadow: 0 1px 1px #7d7d7d;
 }
 
-#header_wrap, #footer_wrap{
+#header_wrap{
+	background-color: #181818;
+	opacity: 0.85;
+    color: white;
+	
+}
+
+#footer_wrap{
 	background-color: #181818;
     color: white;
 	
 }
+
+.home #footer {
+    display: block;
 }

@@ -113,7 +113,7 @@
 
 	<?php
 		if ( is_home() || is_front_page() ) {
-			get_template_part( 'inc/home-navigation', 'header' );
+			get_template_part( 'inc/navigation', 'header' );
 		} else {
 			get_template_part( 'inc/navigation', 'header' );
 		} ?>
