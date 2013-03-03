@@ -27,12 +27,80 @@ Add your custom styles below:
 	
 }
 
+.home #content{
+	margin-bottom: -30px;
+	background-color: #181818;
+	opacity: 0.85;
+	
+}
+
+#home_page {
+	width:100%;
+}
+
 #footer_wrap{
 	background-color: #181818;
     color: white;
+	height:100%;
+	min-height:0;
 	
 }
 
 .home #footer {
     display: block;
+}
+
+#home_page{
+	height: 500px;
+}
+
+#top_footer_wrap{
+
+}
+
+#slide_btnbng{
+	background: url("img/slide_btnbng") no-repeat right top;
+   cursor: pointer;
+   height: 57px;
+   width: 103px;
+margin: 0 auto;
+}
+
+
+.footer_widget_wrap_one{
+	float:left;
+	width:30%;
+	
+}
+.footer_widget_wrap_two{
+	float:left;
+	width:30%;
+	
+}
+.footer_widget_wrap_three{
+	float:left;
+	width:30%;
+}
+
+#navigation, #main_navigation li a, #navigation ul.sub-menu li a:hover, .account_sidebar a:hover{
+	background:none;
+	
+}
+
+#navigation{
+	float:none;
+	z-index: 0;
+}
+
+#navigation li{
+	border-right: 1px solid white;
+}
+
+#main_navigation{
+	padding-top: 40px;
+}
+
+#logo{
+	margin:0;
+}
 }

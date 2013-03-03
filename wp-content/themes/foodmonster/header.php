@@ -39,6 +39,7 @@
 	<?php wp_head(); ?>
 
 <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/supersized.3.1.3.min.js"></script>
+<script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/template.js"></script>
 
 	
 	

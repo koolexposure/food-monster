@@ -40,8 +40,7 @@
 			<div id="login_form">
 				<div id="login_wrap" class="gb_ff font_small clearfix">
 					<?php if ( !is_user_logged_in() ): ?>
-						<a href="<?php echo wp_login_url(); ?>" class="head-login-drop-link"><?php gb_e( 'Login' ) ?></a>
-						<a href="<?php gb_account_register_url(); ?>" class="head-register"><?php gb_e( 'Register' ) ?></a>
+						<a href="<?php echo wp_login_url(); ?>" class="head-login-drop-link"><?php gb_e( 'Become a Food Monster' ) ?></a>
 
 						<?php gb_facebook_button(); ?>
 					<?php else: ?>

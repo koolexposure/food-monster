@@ -5,26 +5,23 @@
 get_header(); ?>
 
 	<div id="home_page" class="container clearfix">
-		
+		<div id="slide_btn">
+			<div id="slide_btnbng" class="slide_open"></div>
+		</div>		
 		<div id="content" class="home prime clearfix">
-			
-			<div class="mini_header home">
-				
-				<img src="<?php gb_header_logo(); ?>" />
-			
-				<h2><?php bloginfo('description') ?></h2>
-			
-				<?php gb_e('Edit this text by using a child theme or by using the translator.') ?>
-			
-			</div><!-- // .mini_header -->
-		
-			<div id="subscription_form" class="split_right clearfix">
 
-				<h2><?php gb_e('Start Here!'); ?></h2>
+			<div id="top_footer_wrap">
 
-				<?php gb_subscription_form() ?>
+				<div class="footer_widget_wrap_one">
+					<?php dynamic_sidebar( 'deal_footer_one' ); ?>
+				</div>
+				<div class="footer_widget_wrap_two">
+					<?php dynamic_sidebar( 'deal_footer_two' ); ?>
+				</div>
+				<div class="footer_widget_wrap_three">
+					<?php dynamic_sidebar( 'deal_footer_three' ); ?>		
+				</div>
 
-			</div>
 			
 		</div>
 		

@@ -1,16 +1,8 @@
 	</div><!-- #wrapper -->	
-		
-	<div id="footer_wrap" class="main_wrap prime boxed_prime clearfix">
-		<div class="footer_widget_wrap">
-			<?php dynamic_sidebar( 'deal_footer_one' ); ?>
-		</div>
-		<div class="footer_widget_wrap">
-			<?php dynamic_sidebar( 'deal_footer_two' ); ?>
-		</div>
-		<div class="footer_widget_wrap">
-			<?php dynamic_sidebar( 'deal_footer_three' ); ?>		
-		</div>
 
+	
+	</div>		
+	<div id="footer_wrap" class="main_wrap prime boxed_prime clearfix">
 
 		<div id="footer" class="container clearfix">
 	
