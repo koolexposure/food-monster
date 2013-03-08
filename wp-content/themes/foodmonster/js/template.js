@@ -1,12 +1,20 @@
 jQuery(document).ready(function($) {
-var window_height;
-var $content;
-var content_height;
-$("#slide_btnbng").click(function(){
-$("#content").slideUp("slow");
-		});
 
 
-});	
+	// Get a reference to the container.
+	var content = $("#content");
 
-	
+
+	// Bind the link to toggle the slide.
+	$("#slide_btnbng").click(
+
+	function() {
+
+		$("#top_footer_wrap").slideToggle(2000);
+	}, function() {
+		//hide its submenu
+		$("#top_footer_wrap").slideToggle(2000);
+
+	});
+
+});

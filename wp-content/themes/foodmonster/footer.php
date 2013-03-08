@@ -1,7 +1,6 @@
 	</div><!-- #wrapper -->	
 
 	
-	</div>		
 	<div id="footer_wrap" class="main_wrap prime boxed_prime clearfix">
 
 		<div id="footer" class="container clearfix">

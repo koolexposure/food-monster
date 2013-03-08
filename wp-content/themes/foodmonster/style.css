@@ -12,6 +12,10 @@ template: prime-theme
 Add your custom styles below:
 */
 
+.font_medium, body, .add-to-cart option {
+    font-size: 0.9em;
+}
+
 
 .prime {
 	background-position: center bottom;
@@ -20,17 +24,26 @@ Add your custom styles below:
 	box-sshadow: 0 1px 1px #7d7d7d;
 }
 
+.home h2 {
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 20px;
+}
+
 #header_wrap{
-	background-color: #181818;
-	opacity: 0.85;
+	background-color: #181818 ;
+	 background-color: rgba(0,0,0, .7);
     color: white;
 	
 }
 
 .home #content{
-	margin-bottom: -30px;
-	background-color: #181818;
-	opacity: 0.85;
+	
+	position:absolute;
+	bottom:-103px;
+	display:block;
+	background:none;
+	
 	
 }
 
@@ -51,11 +64,22 @@ Add your custom styles below:
 }
 
 #home_page{
-	height: 500px;
+	min-height: 500px;
 }
 
 #top_footer_wrap{
+	background-color: #181818;
+	 background-color: rgba(0,0,0, 0.7);
 
+}
+
+#wrapper{
+	
+}
+
+#slide_btn{
+	display:block;
+	
 }
 
 #slide_btnbng{
@@ -64,6 +88,8 @@ Add your custom styles below:
    height: 57px;
    width: 103px;
 margin: 0 auto;
+display:block;
+
 }
 
 
