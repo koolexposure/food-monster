@@ -3,7 +3,7 @@
 	<div id="header" class="container clearfix">
 
 		<h1 id="logo" class="clearfix">
-			<a href="<?php echo site_url() ?>"><img src="<?php gb_header_logo() ?>"></a>
+			<a href="<?php echo site_url() ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/img/logo.png"></a>
 		</h1>
 		
 		<div id="navigation" class="container gb_ff clearfix">
@@ -40,7 +40,8 @@
 			<div id="login_form">
 				<div id="login_wrap" class="gb_ff font_small clearfix">
 					<?php if ( !is_user_logged_in() ): ?>
-						<a href="<?php echo wp_login_url(); ?>" class="head-login-drop-link"><?php gb_e( 'Become a Food Monster' ) ?></a>
+<a href="<?php echo wp_login_url(); ?>?height=475&width=600&modal=true" class="thickbox head-login-drop-link"><?php gb_e( 'Become a Food Monster' ) ?></a>
+
 
 						<?php gb_facebook_button(); ?>
 					<?php else: ?>

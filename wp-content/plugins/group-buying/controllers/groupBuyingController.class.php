@@ -678,7 +678,8 @@ abstract class Group_Buying_Controller extends Group_Buying {
 	public static function login_required( $redirect = '' ) {
 		if ( !get_current_user_id() && apply_filters( 'gb_login_required', TRUE ) ) {
 			if ( !$redirect && self::using_permalinks() ) {
-				$redirect = "http://".$_SERVER['SERVER_NAME'].htmlspecialchars( $_SERVER['REQUEST_URI'] );
+				$schema = is_ssl() ? 'https://' : 'http://';
+				$redirect = $schema.$_SERVER['SERVER_NAME'].htmlspecialchars( $_SERVER['REQUEST_URI'] );
 				if ( isset( $_REQUEST ) ) {
 					$redirect = urlencode( add_query_arg( $_REQUEST, $redirect ) );
 				}
@@ -777,8 +778,8 @@ abstract class Group_Buying_Controller extends Group_Buying {
 	}
 
 	public static function register_settings_fields() {
-		register_setting( Group_Buying_UI::get_settings_page(), self::TEMPLATE_PATH_OPTION );
-		add_settings_field( self::TEMPLATE_PATH_OPTION, self::__( 'Template Override Directory' ), array( get_class(), 'display_template_path_settings_field' ), Group_Buying_UI::get_settings_page(), 'gb_general_settings' );
+		// register_setting( Group_Buying_UI::get_settings_page(), self::TEMPLATE_PATH_OPTION );
+		// add_settings_field( self::TEMPLATE_PATH_OPTION, self::__( 'Template Override Directory' ), array( get_class(), 'display_template_path_settings_field' ), Group_Buying_UI::get_settings_page(), 'gb_general_settings' );
 	}
 
 	public static function display_template_path_settings_field() {

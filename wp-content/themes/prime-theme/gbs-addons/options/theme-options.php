@@ -133,7 +133,7 @@ if ( class_exists( 'Group_Buying_Controller' ) ) {
 			add_action( 'wp_footer', array( get_class(), 'gbs_footer_scripts' ), 100 );
 			// Location Flavor
 			add_action( gb_get_location_tax_slug().'_edit_form_fields', array( $this, 'location_input_metabox' ), 10, 2 );
-			add_action( 'admin_init', array( get_class(), 'add_colorpicker' ) );
+			add_action( 'admin_enqueue_scripts', array( get_class(), 'iris_admin_enqueue_scripts' ) );
 			add_action( 'edited_terms', array( get_class(), 'save_location_meta_data' ) );
 			add_action( 'wp_head', array( get_class(), 'location_css' ) );
 			add_filter( 'theme_mod_background_image', array( get_class(), 'background_image_filter' ) , 10, 1 );
@@ -549,14 +549,16 @@ if ( class_exists( 'Group_Buying_Controller' ) ) {
 		}
 
 		/**
-		 * Enqueue color selection within admin.
+		 * Enqueue color selection on the theme options page only
 		 *
 		 * @author Dan Cameron
 		 */
-		public static function add_colorpicker() {
-			wp_enqueue_script( 'gb_colorpicker', get_bloginfo( 'template_directory' ) . '/gbs-addons/options/js/colorpicker.js', array( 'jquery' ) );
-			wp_enqueue_script( 'gb_colorpicker_load', get_bloginfo( 'template_directory' ) . '/gbs-addons/options/js/jquery.scripts.js', array( 'jquery', 'gb_colorpicker' ) );
-			wp_enqueue_style( 'gb_colorpicker_style', get_bloginfo( 'template_directory' ) . '/gbs-addons/options/css/colorpicker.css', '', '1', 'screen' );
+		public static function iris_admin_enqueue_scripts( $hook ) {
+			if( 'group-buying_page_group-buying/theme_options' == $hook || 'edit-tags.php' == $hook ) {
+				wp_enqueue_script( 'wp-color-picker' );
+				wp_enqueue_style( 'wp-color-picker' );
+				wp_enqueue_script( 'gb_colorpicker_load', get_bloginfo( 'template_directory' ) . '/gbs-addons/options/js/jquery.scripts.js', array( 'jquery', 'wp-color-picker' ) );
+			}
 		}
 
 
@@ -573,7 +575,7 @@ if ( class_exists( 'Group_Buying_Controller' ) ) {
 			$background_image_repeat = self::location_background_image_repeat( $term_id );
 
 			if ( $background_color ) {
-				$background_css .= "body { background-color:#$background_color; }";
+				$background_css .= "body { background-color:$background_color; }";
 			}
 			if ( $background_image_url ) {
 				$background_css .= "body { background-image:url($background_image_url); background-repeat:".$background_image_repeat."; }";
@@ -897,6 +899,7 @@ if ( class_exists( 'Group_Buying_Controller' ) ) {
 		}
 
 		public static function display_css_textarea() {
+			do_action('gb_theme_options_display_css_textarea');
 			echo '<textarea rows="5" cols="40" name="'.self::CUSTOM_CSS_OPTION.'">'.self::$custom_css.'</textarea>';
 		}
 
@@ -954,7 +957,7 @@ if ( class_exists( 'Group_Buying_Controller' ) ) {
 					<tbody>
 						<tr class="form-field">
 							<th scope="row" valign="top"><label for="background_color"><?php gb_e( 'Background Color' ) ?></label></th>
-							<td>#<input type="text" class="color_picker" value="<?php echo $background_color; ?>" id="background_color" name="background_color" style="width:5em"/></td>
+							<td><input type="text" class="color_picker" value="<?php echo $background_color; ?>" id="background_color" name="background_color" style="width:5em"/></td>
 						</tr>
 						<tr class="form-field">
 							<th scope="row" valign="top"><label for="background_image_url"><?php gb_e( 'Background Image URL' ) ?></label></th>

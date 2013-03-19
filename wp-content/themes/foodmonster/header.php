@@ -35,13 +35,26 @@
 	<script src="//ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js"></script>
 	<![endif]-->
  <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/css/supersized.css" media="screen" />
+ <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/css/flexslider.css" media="screen" />
 
 	<?php wp_head(); ?>
 
-<script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/supersized.3.1.3.min.js"></script>
-<script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/template.js"></script>
 
-	
+<script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/template.js"></script>
+<script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/jquery.flexslider-min.js"></script>
+
+
+<script type="text/javascript">
+jQuery(function($)
+            $(window).load(function() {
+              $('.flexslider').flexslider({
+                animation: "slide"
+              });
+            }));
+</script>
+
+	 <?php if ( is_home() ) {?>
+		<script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/supersized.3.1.3.min.js"></script>
 	
 	<script type="text/javascript">  
 
@@ -106,6 +119,7 @@
 	}); 
 	});
 	</script>
+<?php } ?>
 
 	
 </head>

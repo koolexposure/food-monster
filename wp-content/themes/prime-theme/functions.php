@@ -5,7 +5,7 @@
  */
 define( 'GBS_THEME_NAME', 'Prime' );
 define( 'GBS_THEME_SLUG', 'prime_theme' ); // theme slug for updater
-define( 'GBS_THEME_VERSION', '2.2' );
+define( 'GBS_THEME_VERSION', '2.3' );
 define( 'GB_THEME_COMPAT_VERSION', '3.8' );
 define( 'GB_THEME_CHILD_THEME', 'https://github.com/GroupBuyingSite/gbs-prime-child-theme/zipball/master' );
 

@@ -538,7 +538,7 @@ class Group_Buying_Paypal_WPP extends Group_Buying_Credit_Card_Processors {
 			return;
 		}
 		// Get the profile status
-		//  - see https://cms.paypal.com/us/cgi-bin/?cmd=_render-content&content_ID=developer/e_howto_api_nvp_r_GetRecurringPaymentsProfileDetails
+		//  - see https://www.x.com/developers/paypal/documentation-tools/api/getrecurringpaymentsprofiledetails-api-operation-nvp
 		$status = $this->get_recurring_payment_status( $data['api_response']['PROFILEID'] );
 		if ( $status != 'Active' ) {
 			$payment->set_status( Group_Buying_Payment::STATUS_CANCELLED );

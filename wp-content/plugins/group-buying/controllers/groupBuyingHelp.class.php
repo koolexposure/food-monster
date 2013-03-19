@@ -8,6 +8,8 @@
  */
 class Group_Buying_Help extends Group_Buying_Controller {
 
+	protected static $entire_admin_hook = 'pointers_for_all_admin_pages';
+
 	public static function init() {
 
 		add_action( 'gb_settings_page_sub_heading_group-buying', array( get_class(), 'display_help_section' ), 10, 0 );
@@ -543,10 +545,24 @@ class Group_Buying_Help extends Group_Buying_Controller {
 			'group-buying_page_group-buying/translation' => 'gb_help_tab_options',
 			'group-buying_page_group-buying/subscription' => 'gb_help_tab_options',
 			'group-buying_page_group-buying/gb_addons' => 'gb_addons_options',
-			'group-buying_page_group-buying/gb_aggregator_settings' => 'gb_help_tab_options'
+			'group-buying_page_group-buying/gb_aggregator_settings' => 'gb_help_tab_options',
+			// Pointers for all admin pages should be added to an array
+			self::$entire_admin_hook => array(
+				'gb_marketplace_ad',
+				'gb_new_addons_options' )
+			
 		);
 
 		$registered_pointers = apply_filters( 'gb_pointers', $defaults );
+		
+		// Check for pointers that show throughout the admin
+		foreach ( $registered_pointers as $hook => $pt ) {
+			if ( is_array($pt) && $hook === self::$entire_admin_hook ) {
+				foreach ( $pt as $point ) {
+					add_action( 'admin_print_footer_scripts', array( get_class(), 'pointer_' . $point ) );
+				}
+			}
+		}
 
 		// Check if screen related pointer is registered
 		if ( empty( $registered_pointers[ $hook_suffix ] ) )
@@ -554,15 +570,14 @@ class Group_Buying_Help extends Group_Buying_Controller {
 
 		$pointer = $registered_pointers[ $hook_suffix ];
 
+		// TODO, if necessary
 		$caps_required = array();
-
 		if ( isset( $caps_required[ $pointer ] ) ) {
 			foreach ( $caps_required[ $pointer ] as $cap ) {
 				if ( ! current_user_can( $cap ) )
 					return;
 			}
 		}
-
 		// Bind pointer print function
 		add_action( 'admin_print_footer_scripts', array( get_class(), 'pointer_' . $pointer ) );
 	}
@@ -1220,6 +1235,46 @@ class Group_Buying_Help extends Group_Buying_Controller {
 				'pointerWidth' => 240,
 				'pointerClass' => 'gb_pointer gb_pointer_addons',
 				'position' => array( 'edge' => 'top', 'align' => 'left' ) )
+		);
+	}
+
+	/**
+	 * Help tab function used for posts, edit screens and option pages.
+	 * @since  4.2.6
+	 */
+	public static function pointer_gb_new_addons_options() {
+
+		$content  = '<h3>' . esc_js( self::__( 'UPDATE! Add-on Changes and Additions.' ) ). '</h3>';
+		$content .= '<p>' . self::__( 'Dynamic attribute selection has been disabled. Enable it under add-ons if you would like to bring the feature back. You may also remove any child theme modifications you might have implemented to disable dynamic attribute selection (since the add-on option now disables it for you).' ) . '</p>';
+
+		self::print_js(
+			'gb_settings_new_addons',
+			'[href="admin.php?page=group-buying/gb_addons"], #toplevel_page_group-buying.wp-not-current-submenu',
+			array(
+				'content'  => $content,
+				'pointerWidth' => 350,
+				'pointerClass' => 'gb_pointer gb_pointer_addons',
+				'position' => array( 'edge' => 'left', 'align' => 'right' ) )
+		);
+	}
+
+	/**
+	 * Help tab function used for posts, edit screens and option pages.
+	 * @since  4.2.6
+	 */
+	public static function pointer_gb_marketplace_ad() {
+
+		$content  = '<h3>' . esc_js( self::__( 'Marketplace!' ) ). '</h3>';
+		$content .= '<p>' . self::__( 'Did you know you can purchase add-ons from the GBS marketplace from the admin? Check it out now!' ) . '</p>';
+
+		self::print_js(
+			'gb_marketplace_ad',
+			'[href="admin.php?page=group-buying/gb_addon_marketplace"]',
+			array(
+				'content'  => $content,
+				'pointerWidth' => 240,
+				'pointerClass' => 'gb_pointer gb_pointer_addons',
+				'position' => array( 'edge' => 'left', 'align' => 'right' ) )
 		);
 	}
 

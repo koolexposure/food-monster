@@ -1,3 +1,4 @@
+<li>
 <div id="post_content <?php the_ID() ?>" <?php post_class('post loop_deal background_alt deal_status-'.gb_get_status().' clearfix'); ?>>
 	<?php 
 		if ( gb_has_merchant() ) {
@@ -42,4 +43,4 @@
 
 	</div>
 
-</div>
+</div></li>

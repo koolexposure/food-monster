@@ -330,7 +330,7 @@ class Group_Buying_Accounts extends Group_Buying_Controller {
 		}
 		if ( is_a( $account, 'Group_Buying_Account' ) ) {
 
-			header( 'Content-Type: application/json; charset=utf8' );
+			header( 'Content-Type: application/json' );
 			$response = array(
 				'account_id' => $account->get_ID(),
 				'user_id' => $account->get_user_id(),
@@ -1027,6 +1027,18 @@ class Group_Buying_Accounts_Registration extends Group_Buying_Controller {
 		}
 	}
 
+	public static function get_registration_form() {
+		$registration = Group_Buying_Accounts_Registration::get_instance(); // make sure the class is instantiated
+		$panes = apply_filters( 'gb_account_registration_panes', array() );
+		uasort( $panes, array( get_class(), 'sort_by_weight' ) );
+		$args = array();
+		if ( isset( $_GET['redirect_to'] ) ) {
+			$redirect = str_replace( home_url(), '', $_GET['redirect_to'] );
+			$args['redirect'] = $redirect;
+		}
+		return self::load_view_to_string( 'account/register', array( 'panes'=>$panes, 'args' => $args ) );
+	}
+
 	/**
 	 * Get the panes for the registration page
 	 *
@@ -1044,12 +1056,10 @@ class Group_Buying_Accounts_Registration extends Group_Buying_Controller {
 				'body' => $this->contact_info_pane(),
 			);
 		}
-		if ( self::$on_registration_page ) {
-			$panes['controls'] = array(
-				'weight' => 100,
-				'body' => $this->load_view_to_string( 'account/register-controls', array() ),
-			);
-		}
+		$panes['controls'] = array(
+			'weight' => 100,
+			'body' => $this->load_view_to_string( 'account/register-controls', array() ),
+		);
 		return $panes;
 	}
 
@@ -1200,7 +1210,7 @@ class Group_Buying_Accounts_Login extends Group_Buying_Controller {
 				}
 				exit();
 			}
-		} elseif ( isset( $_GET['action'] ) && $_GET['action'] = 'logout' ) {
+		} elseif ( self::log_out_attempt() ) {
 			// logout
 			wp_logout();
 
@@ -1245,8 +1255,7 @@ class Group_Buying_Accounts_Login extends Group_Buying_Controller {
 			$redirect = str_replace( home_url(), '', $redirect );
 			$url = add_query_arg( array( 'redirect_to' => $redirect, 'action' => 'logout', 'message' => 'loggedout' ), $url );
 		} else {
-			$redirect = str_replace( home_url(), '', Group_Buying_Accounts::get_url() );
-			$url = add_query_arg( array( 'redirect_to' => $redirect, 'action' => 'logout', 'message' => 'loggedout' ), $url );
+			$url = add_query_arg( array( 'action' => 'logout', 'message' => 'loggedout' ), $url );
 		}
 		return $url;
 	}

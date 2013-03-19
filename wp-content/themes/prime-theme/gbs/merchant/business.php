@@ -82,14 +82,16 @@
 							
 						</div>
 						
-						<div class="discussion section clearfix">
-							<div class="section_title clearfix">
-								<h4 class="font_large"><?php gb_e('Discussion') ?><span class="expand font_x_small background_alt"><?php gb_e('Toggle') ?></span></h4>
+						<?php if ( comments_open() || '0' != get_comments_number() ) : ?>
+							<div class="discussion section clearfix">
+								<div class="section_title clearfix">
+									<h4 class="font_large"><?php gb_e('Discussion') ?><span class="expand font_x_small background_alt"><?php gb_e('Toggle') ?></span></h4>
+								</div>
+								<div class="section_content">	
+									<?php comments_template( '', true ); ?>
+								</div>	
 							</div>
-							<div class="section_content">	
-								<?php comments_template( '', true ); ?>
-							</div>	
-						</div>
+						<?php endif; ?>
 								
 						
 					</div><!-- End .merchants-entry -->

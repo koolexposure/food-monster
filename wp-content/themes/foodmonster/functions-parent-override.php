@@ -9,6 +9,16 @@ include 'metabox.php';
  *
  */
 
+function add_themescript(){
+    if(!is_admin()){
+    wp_enqueue_script('jquery');
+    wp_enqueue_script('thickbox',null,array('jquery'));
+    wp_enqueue_style('thickbox.css', '/'.WPINC.'/js/thickbox/thickbox.css', null, '1.0');
+    }
+
+}
+add_action('init','add_themescript');
+
 
 function post_type_slides() {
 register_post_type(
@@ -42,7 +52,100 @@ register_post_type(
 				} 
 add_action('init', 'post_type_slides');
 
+/*
+function my_connection_types() {
+	p2p_register_connection_type( array(
+		'name' => 'pages_to_gb_merchant',
+		'from' => 'page',
+		'to' => 'gb_merchant'
+	) );
+}
+add_action( 'wp_loaded', 'my_connection_types' );
+*/	
+/*	
+	if ( ! function_exists('post_type_merchant_page') ) {
 
+	// Register Custom Post Type
+	function post_type_merchant_page() {
+		$labels = array(
+			'name'                => _x( 'Merchant Pages', 'Post Type General Name', 'text_domain' ),
+			'singular_name'       => _x( 'Merchant Page', 'Post Type Singular Name', 'text_domain' ),
+			'menu_name'           => __( 'Merchant Pages', 'text_domain' ),
+			'parent_item_colon'   => __( 'Merchant:', 'text_domain' ),
+			'all_items'           => __( 'All Merchant Pages', 'text_domain' ),
+			'view_item'           => __( 'View Merchant Pages', 'text_domain' ),
+			'add_new_item'        => __( 'Add Merchant Page', 'text_domain' ),
+			'add_new'             => __( 'New Merchant Page', 'text_domain' ),
+			'edit_item'           => __( 'Edit Merchant Page', 'text_domain' ),
+			'update_item'         => __( 'Update Merchant Page', 'text_domain' ),
+			'search_items'        => __( 'Search Merchant Page', 'text_domain' ),
+			'not_found'           => __( 'No Merchant Page found', 'text_domain' ),
+			'not_found_in_trash'  => __( 'No Merchant Pagefound in Trash', 'text_domain' ),
+		);
 
+		$rewrite = array(
+			'slug'                => 'business/page',
+			'with_front'          => false,
+
+		);
+
+		$args = array(
+			'label'               => __( 'merchant_page', 'text_domain' ),
+			'description'         => __( 'Merchant Page', 'text_domain' ),
+			'labels'              => $labels,
+			'supports'            => array( 'title', 'editor', 'thumbnail', 'custom-fields', 'page-attributes', 'post-formats', ),
+			'taxonomies'          => array( 'category', 'post_tag' ),
+			'hierarchical'        => true,
+			'public'              => true,
+			'show_ui'             => true,
+			'show_in_menu'        => true,
+			'show_in_nav_menus'   => true,
+			'show_in_admin_bar'   => true,
+			'menu_position'       => 5,
+			'menu_icon'           => '',
+			'can_export'          => true,
+			'has_archive'         => true,
+			'exclude_from_search' => false,
+			'publicly_queryable'  => true,
+			'query_var'           => 'merchant_page',
+			'rewrite'             => $rewrite,
+			'capability_type'     => 'page',
+		);
+
+		register_post_type( 'merchant_page', $args );
+	}
+
+	// Hook into the 'init' action
+	add_action( 'wp_loaded', 'post_type_merchant_page', 0 );
+
+	}
+	*/
+/*	
+	function modify_merchant() {
+	    if ( post_type_exists( 'gb_merchant' ) ) {
+
+	        global $wp_post_types;
+	        $wp_post_types['gb_merchant']->hierarchical = true;
+	        $args = $wp_post_types['gb_merchant'];
+	        add_post_type_support('gb_merchant','page-attributes');
+	    }
+	}
+	add_action( 'wp_loaded', 'modify_merchant', 1 );	
+		
+	
+add_action('add_meta_boxes',  'merchant_parent_meta_box');
+function merchant_parent_meta_box() { 
+	add_meta_box('gb_merchant-parent', 'Merchant', 'merchant_attributes_meta_box', 'merchant_page', 'side', 'high');}
+
+function merchant_attributes_meta_box($post) {
+ $post_type_object = get_post_type_object($post->post_type);
+    if ( $post_type_object->hierarchical ) {
+      $pages = wp_dropdown_pages(array('post_type' => 'gb_merchant', 'selected' => $post->post_parent, 'name' => 'parent_id', 'show_option_none' => __('(no parent)'), 'sort_column'=> 'menu_order, post_title', 'echo' => 0));
+      if ( ! empty($pages) ) {
+        echo $pages;
+      } // end empty pages check
+    } // end hierarchical check.
+  }
+*/
 
 ?>

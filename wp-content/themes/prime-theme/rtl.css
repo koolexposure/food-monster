@@ -1,0 +1,701 @@
+/* @group structure */
+
+#sidebar, .sidebar {
+	float: left;
+	background: url("img/divider.png") no-repeat right top;
+}
+#content {
+	float: right;
+}
+
+/* @end */
+
+/* @group general */
+
+.message {
+	text-shadow: rgba(255,254,255,0.4) -1px 1px 2px;
+}
+blockquote {
+	border-right: 5px solid #aaa;
+	border-left: none;
+}
+.page_title .heading_section_right {
+	right: auto;
+	left: 0;
+}
+.ta-left {
+	text-align: right;
+}
+.ta-right {
+	text-align: left;
+}
+.alignleft {
+	float: left;
+	margin-left: 1em;
+	margin-right: 0;
+}
+.alignright {
+	float: right;
+	margin-right: 1em;
+	margin-left: 0;
+}
+ul.inline li {
+	margin-left: 10px;
+	margin-right: 0;
+}
+ul, ol {
+	padding-right: 10px;
+	padding-left: 0;
+}
+.split_left {
+	float: left;
+	margin-right: 0;
+}
+.split_right {
+	float: right;
+	margin-left: 0;
+}
+.required {
+	margin-left: -9px;
+	margin-right: 0;
+}
+
+/* @end */
+
+/* @group home (landing) page */
+
+.home_login_wrap {
+	float: right;
+}
+.mini_header {
+	float: left;
+}
+.home #subscription_form {
+	float: right;
+}
+.home #email_address {
+	margin: 10px 0 0 10px;
+}
+#gb_subscription_form span.submit {
+	float: right;
+	margin-left: 60px;
+	margin-right: 0;
+}
+
+/* @end */
+
+/* @group header */
+
+#logo {
+	float: right;
+}
+.header_meta {
+	float: left;
+	left: 0;
+	right: auto;
+}
+
+/* @group login stuff */
+
+#login_form {
+	float: left;
+}
+#login_wrap {
+	left: 0;
+	right: auto;
+	-webkit-box-shadow: inset -1px 1px 1px rgba(0,0,0,0.2);
+	-moz-box-shadow: inset -1px 1px 1px rgba(0,0,0,0.2);
+	box-shadow: inset -1px 1px 1px rgba(0,0,0,0.2);
+}
+.ie7 #login_wrap {
+	float: right;
+}
+#login_wrap .gravatar {
+	float: right;
+	margin-left: 10px;
+	margin-right: 0;
+}
+.logged-in-hello {
+	float: right;
+}
+
+/* @end */
+
+/* @end */
+
+/* @group footer */
+
+#footer .footer_widget_wrap {
+	float: right;
+}
+#footer .legal {
+	float: right;
+}
+
+/*
+
+ @end */
+
+/* @group navigation */
+
+#navigation ul {
+	float: right;
+}
+#navigation li {
+	float: right;
+}
+#navigation li #facebook_login_button a {
+	padding: 0 1px 0 0;
+}
+#navigation .right_menu {
+	float: left;
+}
+
+/* @group subscription dropdown */
+
+#nav_subscription {
+	left: 0;
+	right: auto;
+}
+#subscribe_dd {
+	text-align: left;
+	left: 0;
+	-moz-border-radius-bottomleft: 8px;
+	-webkit-border-bottom-left-radius: 8px;
+	border-bottom-left-radius: 8px;
+}
+#subscription_form_wrap {
+	float: left;
+	left: 6px;
+	right: auto;
+}
+#subscription_form_wrap #email_address {
+	float: right;
+}
+#subscription_form_wrap .location_options_wrap {
+	float: right;
+	margin-right: 0;
+}
+#subscription_form_wrap #gb_subscription {
+	left: 8px;
+	right: auto;
+}
+
+/* @end */
+
+/* @end */
+
+/* @group deal */
+
+.page_title span {
+	float: right;
+}
+.purchase_options_meta {
+	float: right;
+}
+#main_deal_wrap .deal_thumbnail {
+	float: left;
+}
+#main_deal_wrap .featured_content iframe, #main_deal_wrap .featured_content object, #main_deal_wrap .featured_content embed {
+	right: 0;
+	left: auto;
+}
+.buy_button a span {
+	left: 10px;
+	right: auto;
+}
+#deal_buy_now_attribute_buttons a {
+	float: right;
+	margin-left: 5px;
+	margin-right: 0;
+}
+#deal_attributes_wrap .attribute_price {
+	float: left;
+	left: 5px;
+	right: auto;
+}
+.deal_meta_wrapper, .meta_column {
+	padding: 8px 8px 8px 0;
+}
+.meta_column {
+	float: right;
+	margin: 0 0 0 8px;
+}
+.deal_details {
+	float: right;
+}
+.section_content_column {
+	margin: 5px 0 5px 2%;
+	float: right;
+}
+.expand {
+	float: left;
+}
+.merchant_thumb_meta {
+	float: right;
+	margin: 0 0 20px 20px;
+}
+.biz-content ul.merchant-type-ul li, ul.merchant-meta li {
+	border-left: 1px solid #ccc;
+	border-right: none;
+}
+.biz-content ul.merchant-type-ul li.last, ul.merchant-meta li.last {
+	border-left: none;
+}
+.amount_bought {
+	float: left;
+}
+.social_share {
+	float: left;
+}
+.social_share .follow_text {
+	float: right;
+	margin-left: 5px;
+	margin-right: 0;
+}
+.social_share img {
+	float: right;
+	margin-left: 5px;
+	margin-right: 0;
+}
+
+/* @group countdown */
+
+#deal_countdown {
+	padding: 4px 46px 4px 4px;
+	background-position: 212px -88px;
+}
+.countdown_section {
+	float: right;
+}
+
+/* @end */
+
+/* @group dynamic pricing */
+
+.milestone_pricing .ms {
+	float: right;
+}
+.milestone_pricing .ms:before {
+/* reduce the damage in FF3.0 */
+	right: 0;
+	left: auto;
+	border-right-color: #ccc;
+	border-right-color: rgba(255,254,255,0.2);
+	border-left-color: transparent;
+}
+
+/* @end */
+
+/* @group progress bar */
+
+.remaining_tip {
+	float: left;
+	padding-left: 15px;
+	padding-right: 0;
+}
+#progress_bar .progress_bar_progress {
+	padding-right: 10px;
+	padding-left: 0;
+	left: 0;
+}
+
+/* @end */
+
+/* @end */
+
+/* @group deals loop */
+
+/* @group nav */
+
+.nav_previous {
+	float: right;
+}
+.nav_next {
+	float: left;
+}
+
+/* @end */
+
+#deals_loop .excerpt_content {
+	float: left;
+}
+#deals_loop .post {
+	margin-left: 10px;
+	margin-right: 0;
+}
+#deals_loop h2.entry_title {
+	margin: 10px 0 0 -20px;
+}
+#deals_loop h2.entry_title:after {
+	left: 0;
+	right: auto;
+	border-color: #666 #666 transparent transparent;
+}
+#deals_loop h2.entry_title a .title_text, .page-template-page-futuredeals-php #deals_loop h2.entry_title .title_text {
+	float: right;
+}
+.deals_loop_price {
+	float: left;
+	border-right: 1px solid #ccc;
+	border-right: 1px solid rgba(0,0,0,.2);
+	border-left: none;
+	padding-right: 5px;
+	padding-left: 0;
+}
+#deals_loop .meta_value {
+	float: right;
+}
+.loop_thumb {
+	float: right;
+}
+.loop_thumb .logo_thumbnail {
+	float: right;
+}
+.deals-loop-buy {
+	float: left;
+}
+
+/* @end */
+
+/* @group widget */
+
+.widget {
+	padding: 8px 16px 8px 8px;
+}
+.widget li {
+	margin-right: 5px;
+	margin-left: 0;
+}
+.widget .deal_block {
+	margin: 0 10px 20px 0;
+}
+.widget .deal_block .buynow {
+	float: right;
+}
+.widget .deal_block .buynow .button_price {
+	margin-right: 5px;
+	margin-left: 0;
+}
+.widget .deal_block .deal-price {
+	float: right;
+}
+.widget_info {
+	float: right;
+	margin-right: 8px;
+	margin-left: 0;
+}
+.widget .deal_thumbnail {
+	float: right;
+}
+
+/* @end */
+
+/* @group dashboard elements */
+
+.section_heading_link {
+	float: left;
+}
+.contact_title {
+	float: right;
+}
+
+/* @group account edit */
+
+#gb-account-account-info td.first, #gb-account-contact-info td.first {
+	text-align: left;
+}
+#gb_account_edit select {
+	margin-right: 10px;
+	margin-left: 0;
+}
+
+/* @end */
+
+/* @end */
+
+/* @group purchases */
+
+.voucher_left {
+	float: right;
+}
+.voucher_table_wrap {
+	float: left;
+}
+
+/* @end */
+
+/* @group login */
+
+#gbs_login .submit_td {
+	text-align: left;
+	margin-right: 0;
+}
+#gbs_login .remember_me_td {
+	padding: 10px 50px 0 0;
+}
+#gbs_login .forgot_password {
+	float: left;
+	padding-left: 15px;
+	padding-right: 0;
+}
+
+/* @end */
+
+/* @group register */
+
+#facebook_registration_button {
+	left: 0;
+	right: auto;
+}
+.location_pref_input_wrap, .notification_preference_wrap {
+	margin-left: 25px;
+	margin-right: 0;
+	float: right;
+}
+
+/* @end */
+
+/* @group merchants */
+
+/* @group Merchants Loop */
+
+.biz-arrow {
+	float: left;
+	margin-left: 5px;
+	margin-right: 0;
+}
+.merchant-logo {
+	float: right;
+	margin: 0 0 5px 10px;
+}
+.biz_content {
+	float: right;
+}
+.biz_content .merchant-title a {
+	padding-right: 44px;
+	padding-left: 0;
+}
+.biz_moreinfo {
+	margin: 10px 0 0 15px;
+}
+.merchant_logo {
+	float: right;
+	margin-left: 20px;
+	margin-right: 0;
+}
+.merchant_logo img {
+	float: right;
+}
+
+/* @end */
+
+/* @group merchant single page */
+
+#merchant_meta {
+	float: right;
+	padding: 0 0 0 15px;
+}
+.merchants-entry {
+	float: left;
+}
+.merchant_cat_link {
+	margin: 10px 10px -10px 0;
+}
+#merchant_content .page_title h2 {
+	padding-right: 44px;
+	padding-left: 0;
+}
+.merchant_deals .page_title h2 {
+	padding-right: 44px;
+	padding-left: 0;
+}
+.voucher_info.button {
+	clear: right;
+}
+
+/* @end */
+
+/* @end */
+
+/* @group data tables */
+
+/* @group table */
+
+th {
+	text-align: right;
+}
+tbody tr td + label {
+	float: right;
+	text-align: left;
+	margin-left: 10px;
+	margin-right: 0;
+}
+tbody tr td span.required,
+#checkout_registration_form table.account tbody tr td span.required {
+	float: left;
+}
+
+/* @end */
+
+.table_heading {
+	text-shadow: #999 -1px 1px 2px;
+	text-shadow: rgba(255,254,255,0.45) -1px 1px 2px;
+}
+th.cart-name {
+	text-align: right
+}
+tr.cart-line-item th {
+	text-align: left;
+}
+
+/* @end */
+
+/* @group cart, checkout & purchase */
+
+.checkout_block table td {
+	margin-left: 10px;
+	margin-right: 0;
+}
+.checkout_block th {
+	text-align: left;
+	margin-left: 10px;
+	margin-right: 0;
+}
+.checkout_block.left_form {
+	float: right;
+	clear: right;
+}
+.checkout_block.right_form {
+	float: left;
+	clear: left;
+}
+#gb_checkout_payment input.form-submit, #gb_checkout_review input.form-submit {
+	float: left;
+}
+#gb_checkout_review .checkout_block th, #gb_checkout_review .checkout_block td {
+	margin-left: 0;
+}
+#gb_checkout_confirmation .checkout_block th, #gb_checkout_confirmation .checkout_block td {
+	margin-left: 0;
+}
+#gb-credit-card span.gb-form-field-radios label {
+	text-align: right;
+}
+#gb-credit-card span.gb-form-field-radios label #paypal_icon {
+	float: left;
+}
+.credit-card .gb-form-field-radios .gb-form-field-radio {
+	float: right;
+}
+#guest_purchase_checkbox_wrap {
+	float: right;
+}
+
+/* @end */
+
+/* @group account sidebar */
+
+.account_sidebar li a {
+	padding: 8px 45px 8px 8px;
+	background-image: none;
+}
+.account_sidebar li.current_page a, .account_sidebar li a:hover {
+	padding: 8px 35px 8px 8px;
+}
+.account_sidebar ul ul {
+	margin: 5px 10px 0 0;
+}
+.current_balance_amount {
+	float: left;
+}
+
+/* @end */
+
+/* @group blog template */
+
+.postdate {
+	float: left;
+}
+.meta_container {
+	float: right;
+	margin-left: 10px;
+	margin-right: 0;
+}
+
+/* @end */
+
+/* @group subscription drop down */
+
+#subscribe {
+	text-align: left;
+}
+.arrow-down {
+	left: 32px;
+	right: auto;
+}
+
+/* @end */
+
+/* @group location dropdown */
+
+#location {
+	left: 315px;
+	right: auto;
+}
+#location .current_location {
+	background-position: 130px -243px;
+	margin-right: 0;
+	margin-left: 20px;
+	padding-left: 0;
+	padding-right: 20px;
+}
+#location .current_location:before {
+/* reduce the damage in FF3.0 */
+	left: -30px;
+	right: auto;
+}
+#locations_header_wrap {
+	right: 0;
+	left: auto;
+}
+#locations_header_wrap ul {
+	padding: 5px 15px 10px 10px;
+}
+#location ul li {
+	text-align: right;
+}
+
+/* @end */
+
+/* @group time notifications */
+
+#main_deal_wrap.less_hour_remaining:before {
+	right: 195px;
+	left: auto;
+}
+
+/* @end */
+
+/* @group reports */
+
+span.csv_download_link {
+	float: left;
+}
+
+/* @end */
+
+/* @group community classes */
+
+.border_left {
+	border-right: 1px dotted #ccc;
+	border-right: 1px dotted rgba(0,0,0,0.15);
+	border-left: none;
+}
+.border_right {
+	border-left: 1px dotted #ccc;
+	border-left: 1px dotted rgba(0,0,0,0.15);
+	border-right: none;
+}
+
+/* @end */

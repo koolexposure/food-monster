@@ -81,7 +81,7 @@ function gb_deal_submission_url() {
  * @return string|integer     permalink|deal_id
  */
 function gb_get_latest_deal_link( $location = null, $return_id = false ) {
-	// get prefered location if it's set from the premium theme
+	// get preferred location if it's set from the premium theme
 	if ( function_exists( 'gb_get_preferred_location' ) && null == $location ) {
 		if ( term_exists( gb_get_preferred_location() ) ) {
 			$location = gb_get_preferred_location();

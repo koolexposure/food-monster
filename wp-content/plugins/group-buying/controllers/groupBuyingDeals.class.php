@@ -44,7 +44,7 @@ class Group_Buying_Deals extends Group_Buying_Controller {
 		$deal = Group_Buying_Deal::get_instance( $id );
 		if ( is_a( $deal, 'Group_Buying_Deal' ) ) {
 
-			header( 'Content-Type: application/json; charset=utf8' );
+			header( 'Content-Type: application/json' );
 			$response = array(
 				'deal_id' => $deal->get_ID(),
 				'title' => $deal->get_title(),

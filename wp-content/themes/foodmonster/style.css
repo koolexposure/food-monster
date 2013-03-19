@@ -12,6 +12,10 @@ template: prime-theme
 Add your custom styles below:
 */
 
+h1{
+	color:#0c79c4;
+}
+
 .font_medium, body, .add-to-cart option {
     font-size: 0.9em;
 }
@@ -22,6 +26,10 @@ Add your custom styles below:
 	border-bottom: 1px solid #ccc;
 	border-bottom: 1px solid rgba(0,0,0,.1);
 	box-sshadow: 0 1px 1px #7d7d7d;
+}
+
+.container{
+	width:1125px;
 }
 
 .home h2 {
@@ -128,5 +136,28 @@ display:block;
 
 #logo{
 	margin:0;
+	z-index:10;
+	position:relative;
 }
+
+#side_navigation{
+	 float: left;
+	    padding: 30px;
+	    width: 162px;
+}
+
+#side_navigation li{
+	list-style: none outside none;
+}
+
+.container.main{
+	margin-left: 200px;
+	    overflow: inherit;
+	    padding: 20px;
+	    width: 980px;
+}
+
+
+#subscribe_dd{
+	display:none;
 }

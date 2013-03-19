@@ -78,11 +78,15 @@
 		?>
 			<div id="purchase_vouchers" class="clearfix">
 				
-				<?php if ( !$all_vouchers_active ): // only show if necessary ?>
-					<?php if ( Group_Buying_Purchase::POST_TYPE != get_query_var('post_type') ): // Don't show on purchase template ?>
-						<?php if ( !is_user_logged_in() || ( function_exists( 'gb_is_user_guest_purchaser' ) && gb_is_user_guest_purchaser() ) ) : // Don't show if the user is logged in and a guest user ?>
-						
+
+				<?php if ( Group_Buying_Purchase::POST_TYPE != get_query_var('post_type') ): // Don't show on purchase template ?>
+
+					<?php if ( !is_user_logged_in() || ( function_exists( 'gb_is_user_guest_purchaser' ) && gb_is_user_guest_purchaser() ) ) : // Don't show if the user is logged in and a guest user ?>
+
+						<?php if ( !$all_vouchers_active ): // only show if necessary ?>
 							<p class="contrast_light message"><strong><?php gb_e( 'Some of your order is pending.' ); ?></strong>  <br/><?php gb_e( 'Save this url to retrieve your invoice(s) later:' ); ?> <a href="<?php echo $lookup_url; ?>"><?php echo $lookup_url; ?></a></p>
+						<?php else: ?>
+							<p class="contrast_light message"><?php gb_e( 'Save this url to retrieve your invoice(s) later:' ); ?> <a href="<?php echo $lookup_url; ?>"><?php echo $lookup_url; ?></a></p>
 						<?php endif ?>
 					<?php endif; ?>
 				<?php endif ?>

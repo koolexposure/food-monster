@@ -4,7 +4,7 @@ Theme URI: http://groupbuyingsite.com
 Description: A responsive rewrite of the classic GBS Premium theme that is optimized for all viewing devices. By installing this theme you agree to the <a href="http://groupbuyingsite.com/tos/" title="I agree">terms and conditions</a> of GroupBuyingSite.
 Author: Group Buying Site
 Author URI: http://groupbuyingsite.com
-Version: 2.2
+Version: 2.3
 Theme Author: Sprout Venture
 Theme Author URI: http://sproutventure.com/
 Contributors: Nathan Stryker and Dan Cameron
@@ -925,7 +925,9 @@ input.text-input, .gb-form-field input, .text-area, .gb-form-field textarea, inp
 	text-align: left;
 	position: absolute;
 	bottom: 0;
+	display: block; 
 }
+
 .deal_meta {
 	padding: 8px;
 	text-shadow: 0 1px 1px rgba(0,0,0,.6);

@@ -40,7 +40,7 @@ if ( class_exists( 'Group_Buying_Theme_UI' ) && !class_exists( 'Group_Buying_Adv
 			self::$align = get_option( self::ALIGN, '0' );
 			self::$sharpen = get_option( self::SHARPEN, '0' );
 			self::$zc = get_option( self::ZC, '2' );
-			self::$cc = get_option( self::COLOR, '0000000' );
+			self::$cc = get_option( self::COLOR, '#0000000' );
 			add_action( 'admin_init', array( get_class(), 'register_settings_fields' ), 10, 0 );
 
 			if ( self::$active == '1' ) {
@@ -108,7 +108,7 @@ if ( class_exists( 'Group_Buying_Theme_UI' ) && !class_exists( 'Group_Buying_Adv
 						's' => self::$sharpen,
 						'a' => self::$align,
 						'q' => self::$quality,
-						'cc' => self::$cc,
+						'cc' => str_replace( '#', '', self::$cc),
 					),
 					get_bloginfo( 'template_url' ) . '/gbs-addons/advanced-thumbnail/timthumb.php' );
 
@@ -159,7 +159,7 @@ if ( class_exists( 'Group_Buying_Theme_UI' ) && !class_exists( 'Group_Buying_Adv
 		}
 
 		public static function display_option_background_color() {
-			echo '#<input id="background_color" type="text" maxlength="6" class="color_picker" name="'.self::COLOR.'" value="'.self::$cc.'" style="width:5em;"/>';
+			echo '<input id="background_color" type="text" maxlength="6" class="color_picker" name="'.self::COLOR.'" value="'.self::$cc.'" style="width:5em;"/>';
 		}
 
 		/*

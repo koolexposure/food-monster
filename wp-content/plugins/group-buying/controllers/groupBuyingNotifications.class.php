@@ -526,16 +526,22 @@ class Group_Buying_Notifications extends Group_Buying_Controller {
 	}
 
 	public static function send_notification( $notification_name, $data = array(), $to, $from_email = null, $from_name = null, $html = null ) {
+		// The options registered in the notification type array
+		$registered_notification = self::$notification_types[$notification_type];
+
 		// don't send disabled notifications
 		if ( self::is_disabled( $notification_name ) ) {
 			return;
 		}
 
-		// Check to see if the user has disabled this notification
-		if ( isset( $data['user_id'] ) ) {
-			$account = Group_Buying_Account::get_instance( $data['user_id'] );
-			if ( is_a( $account, 'Group_Buying_Account' ) && self::user_disabled_notification( $notification_name, $account ) ) {
-				return;
+		// Check to see if this notification can be disabled first
+		if ( isset( $registered_notification['allow_preference'] ) && $registered_notification['allow_preference'] ) {
+			// Check to see if the user has disabled this notification
+			if ( isset( $data['user_id'] ) ) {
+				$account = Group_Buying_Account::get_instance( $data['user_id'] );
+				if ( is_a( $account, 'Group_Buying_Account' ) && self::user_disabled_notification( $notification_name, $account ) ) {
+					return;
+				}
 			}
 		}
 

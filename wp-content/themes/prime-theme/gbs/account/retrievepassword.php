@@ -1,5 +1,5 @@
 <form name="lostpasswordform" id="lostpasswordform" action="<?php echo wp_lostpassword_url(); ?>" method="post" class="registration_layout main_block clearfix">
-	<h3 class="register_message message clearfix"><?php gb_e('Please enter your username or the e-mail address you used when signing up.'); ?></h3>
+	<h3 class="register_message contrast_light message clearfix"><?php gb_e('Please enter your username or the e-mail address you used when signing up.'); ?></h3>
 	<table class="collapsable account form-table">
 		<tbody>
 			<tr>

@@ -70,6 +70,14 @@ class Group_Buying_Addons extends Group_Buying_Controller {
 				array( 'Group_Buying_Query_Optimization', 'init' ),
 			),
 		);
+		self::$addons['dynamic_attribute_selection'] = array(
+			'label' => self::__( 'Dynamic Attribute Selection' ),
+			'description' => self::__( 'Instead of sifting through a long list of "labels" (e.g.  "Medium – Orange", "Small – Orange", "Large – Orange", "XL – Orange"...etc.) the customer can select from separate category dropdowns (e.g.  "size" and "color") and a dynamically generated add-to-cart button will show. ' ),
+			'files' => array(),
+			'callbacks' => array(
+				array( 'Group_Buying_Attributes', 'activate_dynamic_category_selection' ),
+			),
+		);
 		self::$addons = apply_filters( 'gb_addons', self::$addons );
 		return self::$addons;
 	}

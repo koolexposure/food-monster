@@ -15,7 +15,6 @@ class Group_Buying_Attributes extends Group_Buying_Controller {
 		add_action( 'add_meta_boxes', array( get_class(), 'add_meta_boxes' ) );
 		add_action( 'save_post', array( get_class(), 'save_meta_boxes' ), self::SAVE_POST_PRIORITY, 2 );
 		add_filter( 'gb_add_to_cart_form_fields', array( get_class(), 'filter_add_to_cart_form_fields' ), 10, 2 );
-		add_filter( 'gb_add_to_cart_form_fields', array( get_class(), 'filter_add_to_cart_add_category_selection' ), 10, 2 );
 		add_action( 'purchase_completed', array( get_class(), 'purchase_completed' ), 6, 1 );
 		add_filter( 'gb_deal_title', array( get_class(), 'filter_deal_title' ), 10, 2 );
 
@@ -74,6 +73,10 @@ class Group_Buying_Attributes extends Group_Buying_Controller {
 			add_filter( 'gb_get_form_field', array( get_class(), 'attribute_form_field'), 10, 4 );
 			add_action( 'submit_deal',  array( get_class(), 'submit_deal' ), 10, 1 );
 		}
+	}
+
+	public function activate_dynamic_category_selection() {
+		add_filter( 'gb_add_to_cart_form_fields', array( get_class(), 'filter_add_to_cart_add_category_selection' ), 10, 2 );
 	}
 
 	public static function filter_voucher_titles( $title, $id = 0 ) {
@@ -194,10 +197,31 @@ class Group_Buying_Attributes extends Group_Buying_Controller {
 	public function filter_add_to_cart_add_category_selection( $unfiltered_fields, $deal_id ) {
 		$attributes = Group_Buying_Attribute::get_attributes( $deal_id, 'object' );
 		if ( !$attributes ) {
-			return $unfiltered_fields;
+			return $unfiltered_fields; 
 		}
 		$attribute_taxonomies = Group_Buying_Attribute::get_attribute_taxonomies();
 		if ( !empty( $attribute_taxonomies ) ) {
+
+			// Build pricing spans and collect which taxonomies this attribute uses.
+			$prices = array();
+			$categories = array();
+			foreach ( $attributes as $attribute ) {
+				/* @var Group_Buying_Attribute $attribute */
+				$sold_out = ( $attribute->get_max_purchases() == Group_Buying_Attribute::NO_MAXIMUM || $attribute->remaining_purchases() > 0 ) ? '' : ' sold_out' ;
+				$prices[] = '<span id="att_price_'.$attribute->get_id().'" class="attribute_price cloak'.$sold_out.'"><span class="price_label">Price:</span> '.gb_get_formatted_money( $attribute->the_price() ).'</span>';
+				foreach ( $attribute->get_categories() as $category_name => $value) {
+					if ( !in_array( $category_name, $categories ) ) {
+						$categories[] = $category_name;
+					}
+				}
+			}
+
+			// If the attributes are not using categories don't attempt to use the dynamic selection
+			if ( empty( $categories ) ) {
+				return $unfiltered_fields; 
+			}
+
+			// Create a "field" with jQuery AJAX bits
 			ob_start();
 			?>
 				<script type="text/javascript">
@@ -255,20 +279,6 @@ class Group_Buying_Attributes extends Group_Buying_Controller {
 				</script>
 			<?php
 			$fields[] = ob_get_clean();
-
-			// Build pricing spans and collect which taxonomies this attribute uses.
-			$pricing = array();
-			$categories = array();
-			foreach ( $attributes as $attribute ) {
-				/* @var Group_Buying_Attribute $attribute */
-				$sold_out = ( $attribute->get_max_purchases() == Group_Buying_Attribute::NO_MAXIMUM || $attribute->remaining_purchases() > 0 ) ? '' : ' sold_out' ;
-				$prices[] = '<span id="att_price_'.$attribute->get_id().'" class="attribute_price cloak'.$sold_out.'"><span class="price_label">Price:</span> '.gb_get_formatted_money( $attribute->the_price() ).'</span>';
-				foreach ( $attribute->get_categories() as $category_name => $value) {
-					if ( !in_array( $category_name, $categories ) ) {
-						$categories[] = $category_name;
-					}
-				}
-			}
 
 			// Add the category selections
 			foreach ( $attribute_taxonomies as $taxonomy ) {
@@ -657,7 +667,7 @@ class Group_Buying_Attributes extends Group_Buying_Controller {
 	 * @return void
 	 */
 	public static function ajax_get_attributes() {
-		header( 'Content-Type: application/json; charset=utf8' );
+		header( 'Content-Type: application/json' );
 		$response = array(
 			'deal_id' => 0,
 			'attributes' => array(),
@@ -721,7 +731,7 @@ class Group_Buying_Attributes extends Group_Buying_Controller {
 				}
 			}
 		}
-		header( 'Content-Type: application/json; charset=utf8' );		
+		header( 'Content-Type: application/json' );		
 		echo json_encode( $response );
 		exit();
 	}

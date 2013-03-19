@@ -39,11 +39,7 @@ class Group_Buying_Hybrid_Payment_Processor extends Group_Buying_Payment_Process
 		// parent::__construct();
 		add_action( 'admin_init', array( $this, 'register_settings' ), 10, 0 );
 		add_action( 'gb_processing_cart', array( $this, 'load_enabled_processors' ), 10, 0 );
-		if ( GBS_DEV ) {
-			add_action( 'init', array( $this, 'load_enabled_processors' ), -100, 0 );
-		} else {
-			add_action( self::CRON_HOOK, array( $this, 'load_enabled_processors' ), -100, 0 );
-		}
+		add_action( self::CRON_HOOK, array( $this, 'load_enabled_processors' ), -100, 0 );
 		add_filter( 'gb_payment_fields', array( $this, 'payment_fields' ), 10, 3 );
 		add_filter( 'gb_checkout_payment_controls', array( $this, 'payment_controls' ), 10, 2 );
 		add_filter( 'gb_checkout_panes', array( $this, 'payment_method_cache_pane' ), 10, 2 );

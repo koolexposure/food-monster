@@ -13,7 +13,7 @@ remove_action( 'loop_start', array( 'Group_Buying_Controller', 'do_loop_start' )
 // Location redirects, etc. //
 //////////////////////////////
 
-// redirect from homepage -- CJH commented this out, we want to user to access the homepage.
+// redirect from homepage CJH removed
 //add_action( 'pre_gbs_head', 'gb_redirect_from_home' );
 // Set location
 add_action( 'gb_deal_view', 'gb_set_location_preference' );

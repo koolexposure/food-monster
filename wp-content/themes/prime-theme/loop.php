@@ -34,9 +34,11 @@
 				</div>
 				
 				<div class="postmeta clearfix">
-					<div class="meta_container comments">
-						<?php comments_popup_link( gb__( 'Leave a comment' ), gb__( '1 Comment' ), gb__( '% Comments' ) ); ?>
-					</div>
+					<?php if ( comments_open() || '0' != get_comments_number() ) : ?>
+						<div class="meta_container comments">
+							<?php comments_popup_link( gb__( 'Leave a comment' ), gb__( '1 Comment' ), gb__( '% Comments' ) ); ?>
+						</div>
+					<?php endif; ?>
 					<div class="meta_container">
 						<?php the_category(', '); ?>
 					</div>	
