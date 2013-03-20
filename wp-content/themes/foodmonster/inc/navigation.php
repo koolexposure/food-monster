@@ -1,3 +1,4 @@
+<?php include 'popupbox.php' ?>
 <div id="header_wrap" class="prime boxed_prime clearfix">
 
 	<div id="header" class="container clearfix">
@@ -40,7 +41,7 @@
 			<div id="login_form">
 				<div id="login_wrap" class="gb_ff font_small clearfix">
 					<?php if ( !is_user_logged_in() ): ?>
-<a href="<?php echo wp_login_url(); ?>?height=475&width=600&modal=true" class="thickbox head-login-drop-link"><?php gb_e( 'Become a Food Monster' ) ?></a>
+<a href="#TB_inline?height=300&width=500&inlineId=popupform" class="thickbox head-login-drop-link"><?php gb_e( 'Become a Food Monster' ) ?></a>
 
 
 						<?php gb_facebook_button(); ?>
