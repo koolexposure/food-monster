@@ -12,6 +12,10 @@ template: prime-theme
 Add your custom styles below:
 */
 
+
+html, body {height: 100%;}
+
+
 h1{
 	color:#0c79c4;
 }
@@ -48,7 +52,7 @@ h1{
 .home #content{
 	
 	position:absolute;
-	bottom:-103px;
+	bottom:-60px;
 	display:block;
 	background:none;
 	
@@ -57,22 +61,20 @@ h1{
 
 #home_page {
 	width:100%;
+	overflow:auto;
+	padding-bottom: 150px;
 }
 
 #footer_wrap{
 	background-color: #181818;
     color: white;
-	height:100%;
-	min-height:0;
-	
+	height:150px;
+	margin-top: -150px;
+min-height:150px;
 }
 
 .home #footer {
     display: block;
-}
-
-#home_page{
-	min-height: 500px;
 }
 
 #top_footer_wrap{
@@ -81,9 +83,7 @@ h1{
 
 }
 
-#wrapper{
-	
-}
+#wrapper {min-height: 100%;}
 
 #slide_btn{
 	display:block;
