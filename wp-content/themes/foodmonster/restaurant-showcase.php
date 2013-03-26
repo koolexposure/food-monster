@@ -5,17 +5,24 @@ Template Name: Restaurant Showcase
 
 get_header(); ?>
 <?php
-if (isset($_GET['resID']) && is_numeric($_GET['resID'])) { // to verify that fileID is passed
-      // we now have the post ID in downloads page and can create download link
-      $res_content = gb_get_merchant_meta2($_GET['resID']);
-}
+$args = array( 'post_type' => 'gb_merchant', 'orderby' => 'date', 'posts_per_page=7' );
+$loop = new WP_Query( $args );
+
+
+
 ?>
 <div id="page_template" class="container prime main clearfix">
 
 	<div id="content" class="clearfix">
-
-		<?php echo $res_content ?>
-	
+<?php
+		while ( $loop->have_posts() ) : $loop->the_post();
+			the_title();
+			echo '<div class="entry-content">';
+			the_content();
+			echo '</div>';
+		endwhile;
+		wp_reset_postdata();
+?>	
 	</div>
 	<div id="page_sidebar" class="sidebar clearfix">
 		<?php dynamic_sidebar('page-sidebar'); ?>
