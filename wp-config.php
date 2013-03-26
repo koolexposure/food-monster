@@ -19,10 +19,10 @@
 define('DB_NAME', 'foodmonster_db_01');
 
 /** MySQL database username */
-define('DB_USER', 'root');
+define('DB_USER', 'fmadmin');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'root');
+define('DB_PASSWORD', 'ba1tFMdb');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
