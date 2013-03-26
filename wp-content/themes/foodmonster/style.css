@@ -52,7 +52,7 @@ h1{
 .home #content{
 	
 	position:absolute;
-	bottom:-60px;
+	bottom:-110px;
 	display:block;
 	background:none;
 	
@@ -68,9 +68,10 @@ h1{
 #footer_wrap{
 	background-color: #181818;
     color: white;
-	height:150px;
-	margin-top: -150px;
-min-height:150px;
+	height:100px;
+	margin-top: -100px;
+min-height:100px;
+font-size: 20px;
 }
 
 .home #footer {
@@ -160,4 +161,24 @@ display:block;
 
 #subscribe_dd{
 	display:none;
+}
+
+.social_footer{
+	float:right;
+}
+
+.footer_menu ul{
+	float: left;
+	height: 36px;
+	margin: 0;
+	padding: 0;
+	}
+	
+.footer_menu li{
+	float: left;
+    list-style: none outside none;
+    position: relative;
+	padding:0 20px;
+}
+	
 }
