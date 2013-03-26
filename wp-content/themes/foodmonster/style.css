@@ -33,7 +33,7 @@ h1{
 }
 
 .container{
-	width:1125px;
+	width:100%;
 }
 
 .home h2 {
@@ -119,11 +119,15 @@ display:block;
 
 #navigation, #main_navigation li a, #navigation ul.sub-menu li a:hover, .account_sidebar a:hover{
 	background:none;
+
+	
 	
 }
 
 #navigation{
+		border:none;
 	float:none;
+	box-shadow:none;
 	z-index: 0;
 }
 
@@ -152,10 +156,9 @@ display:block;
 }
 
 .container.main{
-	margin-left: 200px;
-	    overflow: inherit;
-	    padding: 20px;
-	    width: 980px;
+	    overflow: auto;
+	    padding: 20px 20px 100px 20px;
+	    width: 78%;
 }
 
 
