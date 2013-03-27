@@ -237,4 +237,23 @@ display:block;
 		z-index:10;
 	}
 
+	.excerpt_background{
+		background-color: rgba(0, 0, 0, 0.7);
+		width: 200px;
+		position:relative;
+		margin-left: 340px;
+		z-index:80;
+	}
+
+	.social_icon{
+		list-style:none;
+	}
+
+	.social_icon img{
+		width: 40px;
+		height: 40px;
+	}
+	
+
+
 }

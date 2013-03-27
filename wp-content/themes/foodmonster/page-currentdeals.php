@@ -66,11 +66,6 @@ get_header(); ?>
 
 			</div><!-- #content_wrap -->
 			
-			<div id="page_sidebar" class="sidebar clearfix">
-				<?php do_action('gb_above_default_sidebar') ?>
-				<?php dynamic_sidebar( 'deals-sidebar' );?> 
-				<?php do_action('gb_below_default_sidebar') ?>
-			</div>
 
 		</div><!-- #single_page -->
 

@@ -1,14 +1,10 @@
 <?php
-
-
 include 'metabox.php';
-
 /**
  * This function file is loaded after the parent theme's function file. It's a great way to override functions, e.g. add_image_size sizes.
  *
  *
  */
-
 function add_themescript(){
     if(!is_admin()){
     wp_enqueue_script('jquery');
@@ -18,8 +14,6 @@ function add_themescript(){
 
 }
 add_action('init','add_themescript');
-
-
 function post_type_slides() {
 register_post_type(
                      'slides', 
@@ -51,7 +45,6 @@ register_post_type(
 					);
 				} 
 add_action('init', 'post_type_slides');
-
 /*
 function my_connection_types() {
 	p2p_register_connection_type( array(
@@ -64,7 +57,6 @@ add_action( 'wp_loaded', 'my_connection_types' );
 */	
 /*	
 	if ( ! function_exists('post_type_merchant_page') ) {
-
 	// Register Custom Post Type
 	function post_type_merchant_page() {
 		$labels = array(
@@ -82,13 +74,10 @@ add_action( 'wp_loaded', 'my_connection_types' );
 			'not_found'           => __( 'No Merchant Page found', 'text_domain' ),
 			'not_found_in_trash'  => __( 'No Merchant Pagefound in Trash', 'text_domain' ),
 		);
-
 		$rewrite = array(
 			'slug'                => 'business/page',
 			'with_front'          => false,
-
 		);
-
 		$args = array(
 			'label'               => __( 'merchant_page', 'text_domain' ),
 			'description'         => __( 'Merchant Page', 'text_domain' ),
@@ -114,10 +103,8 @@ add_action( 'wp_loaded', 'my_connection_types' );
 
 		register_post_type( 'merchant_page', $args );
 	}
-
 	// Hook into the 'init' action
 	add_action( 'wp_loaded', 'post_type_merchant_page', 0 );
-
 	}
 	*/
 /*	
@@ -130,13 +117,10 @@ add_action( 'wp_loaded', 'my_connection_types' );
 	        add_post_type_support('gb_merchant','page-attributes');
 	    }
 	}
-	add_action( 'wp_loaded', 'modify_merchant', 1 );	
-		
-	
+	add_action( 'wp_loaded', 'modify_merchant', 1 );		
 add_action('add_meta_boxes',  'merchant_parent_meta_box');
 function merchant_parent_meta_box() { 
 	add_meta_box('gb_merchant-parent', 'Merchant', 'merchant_attributes_meta_box', 'merchant_page', 'side', 'high');}
-
 function merchant_attributes_meta_box($post) {
  $post_type_object = get_post_type_object($post->post_type);
     if ( $post_type_object->hierarchical ) {
@@ -147,5 +131,31 @@ function merchant_attributes_meta_box($post) {
     } // end hierarchical check.
   }
 */
-
+// Front end only, don't hack on the settings page
+if ( ! is_admin() ) {
+    // Hook in early to modify the menu
+    // This is before the CSS "selected" classes are calculated
+    add_filter( 'wp_get_nav_menu_items', 'replace_placeholder_nav_menu_item_with_latest_post', 10, 3 );
+}
+// Replaces a custom URL placeholder with the URL to the latest post
+function replace_placeholder_nav_menu_item_with_latest_post( $items, $menu, $args ) {
+    // Loop through the menu items looking for placeholder(s)
+    foreach ( $items as $item ) {
+ 
+        // Is this the placeholder we're looking for?
+        if ( '#latest' != $item->url )
+            continue;
+ 
+        // Get the latest post
+        $latestpost = get_posts( array(
+            'numberposts' => 1, 'post_type' => 'gb_merchant',
+        ) );
+        if ( empty( $latestpost ) )
+            continue;
+        // Replace the placeholder with the real URL
+        $item->url = get_permalink( $latestpost[0]->ID );
+    }
+    // Return the modified (or maybe unmodified) menu items array
+    return $items;
+}
 ?>

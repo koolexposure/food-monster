@@ -7,11 +7,11 @@
 			<?php
 		} ?>
 	<?php if ( has_post_thumbnail() ): ?>
-		<a href="<?php the_permalink() ?>" title="<?php gb_e('Read'); ?> <?php the_title() ?>"><div class="loop_thumb contrast"><?php the_post_thumbnail('gbs_208x120') ?></div></a>
+		<a href="<?php the_permalink() ?>" title="<?php gb_e('Read'); ?> <?php the_title() ?>"><div class="loop_thumb contrast"><?php the_post_thumbnail() ?></div></a>
 	<?php else : ?>
 		<a href="<?php the_permalink() ?>" title="<?php gb_e('Read'); ?> <?php the_title() ?>"><div class="loop_thumb no_thumb contrast"><span class="logo_thumbnail" style="background: #FFF url(<?php gb_header_logo(); ?>) no-repeat center;">&nbsp;</span></div></a>
 	<?php endif; ?>
-			
+	
 	<div class="excerpt_content clearfix">
 		
 		<h2 class="entry_title contrast gb_ff"><a href="<?php the_permalink() ?>" title="Read <?php the_title() ?>" class="clearfix"><span class="title_text"><?php the_title() ?></span><span class="deals_loop_price"><?php gb_price(); ?></span></a></h2>
@@ -41,6 +41,8 @@
 					<?php } ?>
 				</div>	
 
+	
 	</div>
+<div class="excerpt_background clearfix">	</div>
 
 </div></li>

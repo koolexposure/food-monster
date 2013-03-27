@@ -7,9 +7,6 @@
 	<div class="main_block">
 		<?php the_content(); ?>
 		
-		<div id="comments_wrap"  class="border_top clearfix">
-			<?php comments_template( '', true ); ?>
-		</div>
 		
 	</div>
 	

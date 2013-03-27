@@ -21,11 +21,14 @@ if (isset($_GET['resID']) && is_numeric($_GET['resID'])) { // to verify that fil
 <div id="page_template" class="container prime main clearfix">
 
 	<div id="content" class="clearfix">
+<div class="page_title business_page"><!-- Begin #page_title -->
+					<h2 class="gb_ff"><?php printf(gb__('Restaurant Info'), get_the_title() ); ?></h2>
+				</div><!-- End #page_title -->
 
 		<?php echo $res_content ?>
 		
 		<div class="section_content">
-			<?php gb_get_merchants_types_list(get_the_ID()) ?>
+			<?php echo get_post_meta($post->ID, 'restaurant_info', true); ?>
 		</div>
 		<div class="section_content">
 			<ul class="clearfix">
