@@ -33,10 +33,10 @@ if (isset($_GET['resID']) && is_numeric($_GET['resID'])) { // to verify that fil
 					<li class="social_icon website"><a href="<?php gb_merchant_website($postID) ?>"><?php gb_e('Website') ?></a></li>
 				<?php endif ?>
 				<?php if (gb_has_merchant_facebook($postID)): ?>
-					<li class="social_icon facebook"><a href="<?php gb_merchant_facebook($postID) ?>"><?php gb_e('Facebook') ?></a></li>
+					<li class="social_icon facebook"><a href="<?php gb_merchant_facebook($postID) ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/img/facebookc.png"></a></a></li>
 				<?php endif ?>
 				<?php if (gb_has_merchant_twitter($postID)): ?>
-					<li class="social_icon twitter"><a href="<?php gb_merchant_twitter($postID) ?>"><?php gb_e('Twitter') ?></a></li>
+					<li class="social_icon twitter"><a href="<?php gb_merchant_twitter($postID) ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/img/twitterc.png"></a></li>
 				<?php endif ?>
 			</ul>
 		</div>

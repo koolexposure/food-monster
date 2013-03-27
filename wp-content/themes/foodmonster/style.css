@@ -183,5 +183,58 @@ display:block;
     position: relative;
 	padding:0 20px;
 }
+	#merchant_content .page_title h2{
+		background:none;
+		padding-left:0;
+	}
 	
+	.header_color, .deal_block, .current_balance, .filter_biz {
+		background:none;
+	}
+	.contrast, #content td.cart-line-item-total, .milestone_pricing li, .project_thumbnail, .no_featured_image, .contrast a, .contrast a:hover, a.contrast, #main_navigation .right_menu li a, #main_navigation .right_menu li a:hover, #locations_header_wrap li a:hover, .contrast h2, #navigation ul.sub-menu{
+		background-color:#0C79C4;
+	}
+	
+	.button, input.form-submit, input.button-primary, .cart-claimed a, .contrast a.button, .contrast a.button:hover, .deal_block a.button{
+		background-color:#0C79C4;
+	}
+	
+	#deals_loop .excerpt_content{
+		width:180px;
+		position:absolute;
+		padding:339px 0 0 340px;
+		z-index:100;
+	}
+	
+	.background_alt, .account_sidebar li.current_page a, .wp-caption, .low_contrast_button, .form-submit.checkout_next_step{
+		background:none;
+	}
+	.deals_loop{
+		width:550px;
+		
+	}
+	
+	#deals_loop h2.entry_title{
+		margin:10px -52px 0 0;
+	}
+	.loop_thumb{
+		float:left;
+		height:550px;
+		overflow:hidden;
+		padding:6px;
+		position:relative;
+		width:550px;
+		z-index:10;
+		
+	}
+	
+	.loop_thumb .logo_thumbnail{
+		
+		float:left;
+		height:550px;
+		position:relative;
+		width:550px;
+		z-index:10;
+	}
+
 }
