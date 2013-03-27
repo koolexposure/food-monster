@@ -29,14 +29,14 @@ if (isset($_GET['resID']) && is_numeric($_GET['resID'])) { // to verify that fil
 		</div>
 		<div class="section_content">
 			<ul class="clearfix">
-				<?php if (gb_has_merchant_website()): ?>
-					<li class="social_icon website"><a href="<?php gb_merchant_website() ?>"><?php gb_e('Website') ?></a></li>
+				<?php if (gb_has_merchant_website($postID)): ?>
+					<li class="social_icon website"><a href="<?php gb_merchant_website($postID) ?>"><?php gb_e('Website') ?></a></li>
 				<?php endif ?>
-				<?php if (gb_has_merchant_facebook()): ?>
-					<li class="social_icon facebook"><a href="<?php gb_merchant_facebook() ?>"><?php gb_e('Facebook') ?></a></li>
+				<?php if (gb_has_merchant_facebook($postID)): ?>
+					<li class="social_icon facebook"><a href="<?php gb_merchant_facebook($postID) ?>"><?php gb_e('Facebook') ?></a></li>
 				<?php endif ?>
-				<?php if (gb_has_merchant_twitter()): ?>
-					<li class="social_icon twitter"><a href="<?php gb_merchant_twitter() ?>"><?php gb_e('Twitter') ?></a></li>
+				<?php if (gb_has_merchant_twitter($postID)): ?>
+					<li class="social_icon twitter"><a href="<?php gb_merchant_twitter($postID) ?>"><?php gb_e('Twitter') ?></a></li>
 				<?php endif ?>
 			</ul>
 		</div>
@@ -48,4 +48,4 @@ if (isset($_GET['resID']) && is_numeric($_GET['resID'])) { // to verify that fil
 </div>
 
 
-<?php get_footer(); ?>
+<?php get_footer();

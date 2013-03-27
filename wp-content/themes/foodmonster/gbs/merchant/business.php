@@ -57,5 +57,5 @@
 				
 		</div><!-- End #content_wrap -->
 	</div><!-- End .wrapper -->
-
-<?php get_footer(); ?>
+</div>
+<?php get_footer(); 
