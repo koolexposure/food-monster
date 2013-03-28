@@ -136,7 +136,7 @@ class Group_Buying_Merchant_Meta extends Group_Buying_Controller {
 					<tr>
 						<td>
 							<label for="<?php echo self::$meta_keys['meta1'] ?>"><?php gb_e('Custom Field One') ?></label><br />
-							<input type="text" name="<?php echo self::$meta_keys['meta1'] ?>" value="<?php echo self::get_meta1($post->ID) ?>" id="<?php echo self::$meta_keys['meta1'] ?>" class="large-text" >
+						<?php wp_editor( self::get_meta1($post->ID), self::$meta_keys['meta1'], array( 'textarea_name' => self::$meta_keys['meta1']) ); ?>
 							
 						</td>
 					</tr>

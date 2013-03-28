@@ -25,10 +25,12 @@ if (isset($_GET['resID']) && is_numeric($_GET['resID'])) { // to verify that fil
 					<h2 class="gb_ff"><?php printf(gb__('Restaurant Info'), get_the_title() ); ?></h2>
 				</div><!-- End #page_title -->
 
-		<?php echo $res_content ?>
-		
 		<div class="section_content">
-			<?php gb_merchant_content($postID); ?>
+			<?php gb_merchant_meta1($postID); ?>
+			<?php
+			$content = apply_filters('the_content', gb_merchant_meta1($postID));
+			echo $content 
+			?>
 		</div>
 		<div class="section_content">
 			<?php gb_merchant_meta2($postID); ?>
