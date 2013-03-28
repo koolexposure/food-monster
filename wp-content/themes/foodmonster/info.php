@@ -28,9 +28,10 @@ if (isset($_GET['resID']) && is_numeric($_GET['resID'])) { // to verify that fil
 		<?php echo $res_content ?>
 		
 		<div class="section_content">
-			<?php echo get_post_meta($post->ID, 'restaurant_info', true); ?>
+			<?php gb_merchant_content($postID); ?>
 		</div>
 		<div class="section_content">
+			<?php gb_merchant_meta2($postID); ?>
 			<ul class="clearfix">
 				<?php if (gb_has_merchant_website($postID)): ?>
 					<li class="social_icon website"><a href="<?php gb_merchant_website($postID) ?>"><?php gb_e('Website') ?></a></li>

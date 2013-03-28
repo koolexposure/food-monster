@@ -1,5 +1,18 @@
 <?php
 include 'metabox.php';
+
+///////////////////
+// REQUIRE FILES //
+///////////////////
+
+// Simple array of files to require
+$required_files = '/gbs-addons/custom-merchant-meta/custom-merchant-meta.php';
+
+$directory = get_stylesheet_directory();
+
+require $directory . $required_files;
+
+
 /**
  * This function file is loaded after the parent theme's function file. It's a great way to override functions, e.g. add_image_size sizes.
  *
