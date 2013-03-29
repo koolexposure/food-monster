@@ -143,14 +143,14 @@ class Group_Buying_Merchant_Meta extends Group_Buying_Controller {
 					<tr>
 						<td>
 							<label for="<?php echo self::$meta_keys['meta2'] ?>"><?php gb_e('Custom Field Two') ?></label><br />
-							<input type="text" name="<?php echo self::$meta_keys['meta2'] ?>" value="<?php echo self::get_meta2($post->ID) ?>" id="<?php echo self::$meta_keys['meta2'] ?>" class="large-text" >
+						<?php wp_editor( self::get_meta2($post->ID), self::$meta_keys['meta2'], array( 'textarea_name' => self::$meta_keys['meta2']) ); ?>
                     
 						</td>
 					</tr>
 					<tr>
 						<td>
 							<label for="<?php echo self::$meta_keys['meta3'] ?>"><?php gb_e('Custom Field Three') ?></label><br />
-							<input type="text" name="<?php echo self::$meta_keys['meta3'] ?>" value="<?php echo self::get_meta3($post->ID) ?>" id="<?php echo self::$meta_keys['meta3'] ?>" class="large-text" >
+						<?php wp_editor( self::get_meta3($post->ID), self::$meta_keys['meta3'], array( 'textarea_name' => self::$meta_keys['meta3']) ); ?>
                     
 						</td>
 					</tr>

@@ -46,6 +46,7 @@ h1{
 	background-color: #181818 ;
 	 background-color: rgba(0,0,0, .7);
     color: white;
+	padding: 0 3%;
 	
 }
 
@@ -72,11 +73,19 @@ h1{
 	margin-top: -100px;
 min-height:100px;
 font-size: 20px;
+padding:0 3%;
 }
 
 .home #footer {
     display: block;
 }
+
+#footer{
+	display:inline-block;
+	font-size:20px;
+	vertical-align:middle;
+}
+
 
 #top_footer_wrap{
 	background-color: #181818;
@@ -105,6 +114,7 @@ display:block;
 .footer_widget_wrap_one{
 	float:left;
 	width:30%;
+	padding-left:8%;
 	
 }
 .footer_widget_wrap_two{
@@ -133,10 +143,17 @@ display:block;
 
 #navigation li{
 	border-right: 1px solid white;
+	padding: 0 31px;
 }
 
 #main_navigation{
 	padding-top: 40px;
+}
+
+#login_wrap{
+	border:none;
+	background:none;
+	box-shadow:none;
 }
 
 #logo{
@@ -151,8 +168,18 @@ display:block;
 	    width: 162px;
 }
 
+#side_navigation ul{
+	padding:0;
+}
+
 #side_navigation li{
 	list-style: none outside none;
+
+}
+
+#side_navigation li a{
+	color:black;
+	font-size: 1.1em
 }
 
 .container.main{
@@ -168,14 +195,20 @@ display:block;
 
 .social_footer{
 	float:right;
+	position:relative;
+	padding-top:13px;
+}
+#footer .legal{
+	margin:0;
+	padding-top:34px;
+}
+.footer_menu{
+	padding-top:34px;
+	float:left;
+	max-width:800px;
+	
 }
 
-.footer_menu ul{
-	float: left;
-	height: 36px;
-	margin: 0;
-	padding: 0;
-	}
 	
 .footer_menu li{
 	float: left;

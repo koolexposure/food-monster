@@ -26,25 +26,36 @@ if (isset($_GET['resID']) && is_numeric($_GET['resID'])) { // to verify that fil
 				</div><!-- End #page_title -->
 
 		<div class="section_content">
-			<?php gb_merchant_meta1($postID); ?>
-			<?php
-			$content = apply_filters('the_content', gb_merchant_meta1($postID));
-			echo $content 
-			?>
+			<div ="location">
+				<h2>Location</h3>
+			<?php	gb_merchant_street($postID); ?>
+			<?php	gb_merchant_city($postID); ?> ,<?php	gb_merchant_state($postID); ?>, <?php	gb_merchant_zip($postID); ?>
+			</div>
+			<div class ="hours">
+				<h2>Hours</h2>				
+				<?php gb_merchant_meta1($postID); ?>
+			</div>
+			<div class="location">
+				<h2>Contact</h2>
+			<?php	gb_merchant_phone($postID); ?>
+			</div>
+			<div class="online">
+				<h2>Online</h2>
+				<ul class="clearfix">
+					<?php if (gb_has_merchant_website($postID)): ?>
+						<li class="social_icon website"><a href="<?php gb_merchant_website($postID) ?>"><?php gb_e('Website') ?></a></li>
+					<?php endif ?>
+					<?php if (gb_has_merchant_facebook($postID)): ?>
+						<li class="social_icon facebook"><a href="<?php gb_merchant_facebook($postID) ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/img/facebookc.png"></a></a></li>
+					<?php endif ?>
+					<?php if (gb_has_merchant_twitter($postID)): ?>
+						<li class="social_icon twitter"><a href="<?php gb_merchant_twitter($postID) ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/img/twitterc.png"></a></li>
+					<?php endif ?>
+				</ul>
+				</div>
 		</div>
-		<div class="section_content">
-			<?php gb_merchant_meta2($postID); ?>
-			<ul class="clearfix">
-				<?php if (gb_has_merchant_website($postID)): ?>
-					<li class="social_icon website"><a href="<?php gb_merchant_website($postID) ?>"><?php gb_e('Website') ?></a></li>
-				<?php endif ?>
-				<?php if (gb_has_merchant_facebook($postID)): ?>
-					<li class="social_icon facebook"><a href="<?php gb_merchant_facebook($postID) ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/img/facebookc.png"></a></a></li>
-				<?php endif ?>
-				<?php if (gb_has_merchant_twitter($postID)): ?>
-					<li class="social_icon twitter"><a href="<?php gb_merchant_twitter($postID) ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/img/twitterc.png"></a></li>
-				<?php endif ?>
-			</ul>
+		<div class="map">
+					<?php	gb_merchant_meta2($postID); ?>
 		</div>
 	</div>
 	<div id="page_sidebar" class="sidebar clearfix">
