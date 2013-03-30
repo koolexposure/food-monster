@@ -139,4 +139,4 @@ jQuery(function ($) {
 	</div>
 
 	<div id="wrapper" class="clearfix">
-		<div id="page_wrapper" class="clearfix">
+

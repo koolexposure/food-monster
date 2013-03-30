@@ -12,8 +12,11 @@ template: prime-theme
 Add your custom styles below:
 */
 
-
-html, body {height: 100%;}
+html, body {
+	height: 100%;
+	padding:0;
+	margin:0;
+	}
 
 
 h1{
@@ -29,7 +32,7 @@ h1{
 	background-position: center bottom;
 	border-bottom: 1px solid #ccc;
 	border-bottom: 1px solid rgba(0,0,0,.1);
-	box-sshadow: 0 1px 1px #7d7d7d;
+	box-shadow: 0 1px 1px #7d7d7d;
 }
 
 .container{
@@ -52,6 +55,7 @@ h1{
 
 #header{
 	max-width:1240px;
+	min-height:111px;
 }
 
 
@@ -147,6 +151,7 @@ display:block;
 	float:none;
 	box-shadow:none;
 	z-index: 0;
+	margin-top:0;
 }
 
 #navigation li{
@@ -172,8 +177,10 @@ display:block;
 
 #side_navigation{
 	 float: left;
-	    padding: 30px;
+	    padding: 30px 0 30px 30px;
 	    width: 162px;
+
+
 }
 
 #side_navigation ul{
@@ -294,7 +301,24 @@ display:block;
 		width: 40px;
 		height: 40px;
 	}
+	.location, .hours, .contact {
+		border-bottom:1px dotted rgba(0, 0, 0, 0.2);
+		margin-bottom:10px;
+		padding-bottom:10px;
+	}
 	
+	.nav_item{
+		border-bottom:1px solid;
+		margin-right:-99%;
+		margin-top:5px;
+		position:relative;
+		z-index:-1;
+	}
+	#page_wrapper{
+		max-width:1240px;
+		margin:0 auto;
+	}
+
 
 
 }
