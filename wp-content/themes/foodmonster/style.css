@@ -50,6 +50,11 @@ h1{
 	
 }
 
+#header{
+	max-width:1240px;
+}
+
+
 .home #content{
 	
 	position:absolute;
@@ -93,7 +98,10 @@ padding:0 3%;
 
 }
 
-#wrapper {min-height: 100%;}
+#wrapper {
+min-height: 100%;
+}
+
 
 #slide_btn{
 	display:block;

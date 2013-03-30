@@ -5,6 +5,8 @@ Template Name: Current Deals
 
 get_header(); ?>
 
+
+
 		<div id="deals_loop" class="container prime main clearfix">
 			
 			<div id="content" class="clearfix">

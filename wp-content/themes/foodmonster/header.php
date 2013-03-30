@@ -45,12 +45,13 @@
 
 
 <script type="text/javascript">
-jQuery(function($)
-            $(window).load(function() {
-              $('.flexslider').flexslider({
-                animation: "slide"
-              });
-            }));
+jQuery(function ($) {
+    $(window).load(function () {
+        $('.flexslider').flexslider({
+            animation: "slide"
+        });
+    });
+});
 </script>
 
 	 <?php if ( is_home() ) {?>
@@ -138,3 +139,4 @@ jQuery(function($)
 	</div>
 
 	<div id="wrapper" class="clearfix">
+		<div id="page_wrapper" class="clearfix">
