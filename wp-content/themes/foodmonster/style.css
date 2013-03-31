@@ -62,7 +62,7 @@ h1{
 .home #content{
 	
 	position:absolute;
-	bottom:-110px;
+	bottom:-91px;
 	display:block;
 	background:none;
 	
@@ -75,7 +75,7 @@ h1{
 #home_page {
 	width:100%;
 	overflow:auto;
-	padding-bottom: 150px;
+	padding-bottom: 100px;
 }
 
 #footer_wrap{
