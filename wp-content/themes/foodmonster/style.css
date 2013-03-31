@@ -19,8 +19,12 @@ html, body {
 	}
 
 
-h1{
-	color:#0c79c4;
+h1, h2{
+color:#0c79c4;
+}
+
+h3, h4, h5{
+	color:#27aeff;
 }
 
 .font_medium, body, .add-to-cart option {
@@ -35,9 +39,22 @@ h1{
 	box-shadow: 0 1px 1px #7d7d7d;
 }
 
+.widget{
+	color:white;
+}
+
+.widget ul, .widget ol{
+	list-style:none;
+}
+
 .container{
 	width:100%;
 }
+
+a, .link, .merchant-title a{
+	color:#27aeff;
+}
+
 
 .home h2 {
     font-size: 20px;
