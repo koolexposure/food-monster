@@ -2,33 +2,74 @@
 /*
 Template Name: Restaurant Showcase
 */
-
-get_header(); ?>
-<?php
-$args = array( 'post_type' => 'gb_merchant', 'orderby' => 'date', 'posts_per_page=7' );
-$loop = new WP_Query( $args );
+get_header();
+ ?>
 
 
+<div id="page_wrapper" class="clearfix">
+		<div id="deals_loop" class="container prime main clearfix">
+			
+			<div id="content" class="clearfix">
 
-?>
-<div id="page_template" class="container prime main clearfix">
+				<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
-	<div id="content" class="clearfix">
-<?php
-		while ( $loop->have_posts() ) : $loop->the_post();
-			the_title();
-			echo '<div class="entry-content">';
-			the_content();
-			echo '</div>';
-		endwhile;
-		wp_reset_postdata();
-?>	
-	</div>
-	<div id="page_sidebar" class="sidebar clearfix">
-		<?php dynamic_sidebar('page-sidebar'); ?>
-	</div>
+					<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+						<div class="page_title"><!-- Begin #page_title -->
+							<h1 class="entry_title gb_ff"><?php the_title(); ?></h1>
+						</div><!-- End #page_title -->
+
+						<div class="entry_content">
+							<?php the_content(); ?>
+							<?php wp_link_pages(array('before' => '<div class="page-link">' . gb__('Pages:'), 'after' => '</div>')); ?>
+						</div><!-- .entry_content -->
+					</div><!-- #post-## -->
+				<?php endwhile;
+
+						$deal_query= null;
+						$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+						$args=array(
+						'post_type' => gb_get_deal_post_type(),
+						'post_status' => 'publish',
+						'paged' => $paged,
+						'meta_query' => array(
+						array(
+						'key' => '_expiration_date',
+						'value' => array(0, current_time('timestamp')),
+						'compare' => 'NOT BETWEEN'
+						)),
+
+						);
+						$deal_query = new WP_Query($args);
+				?>
+                
+				<?php if ( ! $deal_query->have_posts() ) : ?>
+                
+					<?php get_template_part('deals/no-deals', 'deals/index'); ?>
+                
+				<?php endif; ?>
+                <div id="showcase">
+				    <ul class="">
+				<?php $count; while ( $deal_query->have_posts() ) : $deal_query->the_post(); $count++; $zebra = ($count % 2) ? ' odd' : ' even'; ?>
+                			 
+						
+					<?php get_template_part('inc/loop-showcase', 'inc/deal-item'); ?>
+            
 	
+				<?php endwhile; ?>
+                </ul></div>
+				<?php if (  $deal_query->max_num_pages > 1 ) : ?>
+					<div id="nav-below" class="navigation clearfix">
+						<div class="nav-previous"><?php next_posts_link(gb__('<span class="meta-nav">&larr;</span> Older deals'), $deal_query -> max_num_pages); ?></div>
+						<div class="nav-next"><?php previous_posts_link(gb__('Newer deals <span class="meta-nav">&rarr;</span>'), $deal_query -> max_num_pages); ?></div>
+					</div><!-- #nav-below -->
+				<?php endif; ?>
+                
+				<?php wp_reset_query(); ?>
+
+			</div><!-- #content_wrap -->
+			
+
+		</div><!-- #single_page -->
 </div>
-
-
-<?php get_footer(); ?>
+<?php
+get_footer();

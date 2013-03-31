@@ -66,7 +66,10 @@ h1{
 	display:block;
 	background:none;
 	
-	
+}
+
+#content{
+	width: 100%;
 }
 
 #home_page {
@@ -246,11 +249,24 @@ display:block;
 	.button, input.form-submit, input.button-primary, .cart-claimed a, .contrast a.button, .contrast a.button:hover, .deal_block a.button{
 		background-color:#0C79C4;
 	}
+	#deals_loop .post{
+	box-shadow:none;
+	margin:0;
+	padding: 0;
+	}
 	
-	#deals_loop .excerpt_content{
+	#deals_loop .excerpt_content {
 		width:180px;
 		position:absolute;
 		padding:339px 0 0 340px;
+		z-index:100;
+	}
+	
+	#showcase .excerpt_content
+	{
+		width:166px;
+		position:absolute;
+		padding:247px 0 0 254px;
 		z-index:100;
 	}
 	
@@ -284,12 +300,32 @@ display:block;
 		width:550px;
 		z-index:10;
 	}
+	
+		#showcase .loop_thumb {
+		float:left;
+		height:450px;
+		overflow:hidden;
+		padding:6px;
+		position:relative;
+		width:450px;
+		z-index:10;
+		
+	}
+	
 
 	.excerpt_background{
 		background-color: rgba(0, 0, 0, 0.7);
 		width: 200px;
 		position:relative;
 		margin-left: 340px;
+		z-index:80;
+	}
+	
+	#showcase .excerpt_background{
+		background-color: rgba(0, 0, 0, 0.7);
+		width: 200px;
+		position:relative;
+		margin-left: 255px;
 		z-index:80;
 	}
 
@@ -318,6 +354,27 @@ display:block;
 		max-width:1240px;
 		margin:0 auto;
 	}
+	.roundabout-holder {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      height: 10em;
+      width: 40em;
+   }
+   .roundabout-moveable-item {
+      height: 4em;
+      width: 4em;
+      cursor: pointer;
+      background-color: #ccc;
+      border: 1px solid #999;
+   }
+   .roundabout-in-focus {
+      cursor: auto;
+   }
+   
+   #showcase{
+   	height:800px;
+   }
 
 
 

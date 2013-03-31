@@ -42,6 +42,7 @@
 
 <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/template.js"></script>
 <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/jquery.flexslider-min.js"></script>
+<script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/jquery.roundabout.min.js"></script>
 
 
 <script type="text/javascript">
@@ -51,6 +52,16 @@ jQuery(function ($) {
             animation: "slide"
         });
     });
+});
+</script>
+
+<script type="text/javascript">
+jQuery(function ($) {
+	$(document).ready(function() {
+      $('#showcase ul').roundabout({
+					tilt: -11
+      });
+   });
 });
 </script>
 

@@ -11,10 +11,7 @@
 				<?php endwhile; ?>
 			
 			</div>
-			<div id="page_sidebar" class="sidebar clearfix">
-				<?php dynamic_sidebar('page-sidebar'); ?>
-			</div>
-			
+=
 		</div>
 		
 <?php get_footer(); ?>

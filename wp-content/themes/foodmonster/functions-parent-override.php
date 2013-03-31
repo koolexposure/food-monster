@@ -18,6 +18,12 @@ require $directory . $required_files;
  *
  *
  */
+ 
+ 
+ add_theme_support( 'post-thumbnails' );
+ add_image_size( 'gbs_300x180', 300, 180, true );
+add_image_size( 'gbs_250x110', 250, 110, true );
+ 
 function add_themescript(){
     if(!is_admin()){
     wp_enqueue_script('jquery');
