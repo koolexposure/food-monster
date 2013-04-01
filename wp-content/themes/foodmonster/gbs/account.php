@@ -22,12 +22,6 @@
 		
 		<?php endwhile; // end of the loop. ?>
 
-		<div class="sidebar">
-
-			<?php get_template_part( 'inc/account-sidebar' ); ?>
-			<?php dynamic_sidebar( 'account-sidebar' ); ?>
-
-		</div>
 		
 	</div><!-- .container -->
 	

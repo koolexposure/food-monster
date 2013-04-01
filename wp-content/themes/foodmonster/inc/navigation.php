@@ -11,20 +11,7 @@
 
 			<div id="main_navigation" class="hor_navigation clearfix">
 				<?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'theme_location' => 'header', 'depth' =>'2', 'container' => 'none' ) ); ?>
-			</div><!-- #navigation -->
-
-			<?php if ( !is_user_logged_in() ): ?>
-				<div id="nav_subscription" class="subscription_form clearfix">
-					<span id="subscribe_dd" class="contrast"><?php gb_e( 'Get the Latest Deals' ) ?></span>
-					<div id="subscription_form_wrap" class="cloak">
-						<?php gb_subscription_form(); ?>
-					</div>
-				</div><!-- #header_subscription.subscription_form -->
-			<?php endif ?>
-
-		</div><!-- #navigation -->
-
-		<div class="header_meta">
+			<div class="header_meta">
 			<?php $locations = gb_get_locations();
 			if ( !empty( $locations ) && !is_wp_error( $locations ) ) : ?>
 				<div id="location">
@@ -39,7 +26,7 @@
 			<?php endif; ?>
 
 			<div id="login_form">
-				<div id="login_wrap" class="gb_ff font_small clearfix">
+				<div id="login_wrap" class="gb_ff clearfix">
 					<?php if ( !is_user_logged_in() ): ?>
 <a href="#TB_inline?height=300&width=500&inlineId=popupform" class="thickbox head-login-drop-link"><?php gb_e( 'Become a Food Monster' ) ?></a>
 
@@ -60,6 +47,21 @@
 			</div>
 
 		</div>
+			
+			
+			
+			</div><!-- #navigation -->
+
+			<?php if ( !is_user_logged_in() ): ?>
+				<div id="nav_subscription" class="subscription_form clearfix">
+					<span id="subscribe_dd" class="contrast"><?php gb_e( 'Get the Latest Deals' ) ?></span>
+					<div id="subscription_form_wrap" class="cloak">
+						<?php gb_subscription_form(); ?>
+					</div>
+				</div><!-- #header_subscription.subscription_form -->
+			<?php endif ?>
+
+		</div><!-- #navigation -->
 
 	</div><!-- #header -->
 

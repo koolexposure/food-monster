@@ -79,7 +79,7 @@ a, .link, .merchant-title a{
 .home #content{
 	
 	position:absolute;
-	bottom:-91px;
+	bottom:-61px;
 	display:block;
 	background:none;
 	
@@ -162,8 +162,6 @@ display:block;
 #navigation, #main_navigation li a, #navigation ul.sub-menu li a:hover, .account_sidebar a:hover{
 	background:none;
 
-	
-	
 }
 
 #navigation{
@@ -173,6 +171,20 @@ display:block;
 	z-index: 0;
 	margin-top:0;
 }
+
+#login_wrap a {
+	display: block;
+    font-weight: bold;
+    font-size
+    line-height: 0;
+    margin: 0;
+    padding: 5px 10px 10px 10px;
+    text-decoration: none;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);
+    text-transform: uppercase;
+
+}
+
 
 #navigation li{
 	border-right: 1px solid white;

@@ -12,14 +12,14 @@
 			</div>
 			<div class="footer_menu">
 				<ul>
-					<li><a href="">login</a></li>
+					<li><a href="<?php gb_account_register_url() ?>">login</a></li>
 					<li><a>advertise your restaurant</a></li>
 					<li><a>contact us</a></li>
 				</ul>
 			</div>
 			<div class="social_footer">
-			<a href="<?php echo site_url() ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/img/facebook.png"></a>
-			<a href="<?php echo site_url() ?>"><img src="<?php bloginfo('stylesheet_directory'); ?>/img/twitter.png"></a>
+			<a href="https://www.facebook.com/FoodMonsterDeals"><img src="<?php bloginfo('stylesheet_directory'); ?>/img/facebook.png"></a>
+			<a href="https://twitter.com/FoodMonsterDeal"><img src="<?php bloginfo('stylesheet_directory'); ?>/img/twitter.png"></a>
 			</div>
 		</div>
 		
