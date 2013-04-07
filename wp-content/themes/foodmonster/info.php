@@ -16,16 +16,16 @@ if (isset($_GET['resID']) && is_numeric($_GET['resID'])) {// to verify that file
 	<div id="side_navigation">
 		<ul>
 			<li>
-				<a href="<?php gb_merchant_url($postID); ?>">Their Story</a>
+				<a href="<?php gb_merchant_url($postID); ?>">Their Story</a><div class="nav_item"></div>
 			</li>
 			<li>
-				<a href="currrent-deals/?resID=<?php echo $postID; ?>">Food Monster Special</a>
+				<a href="currrent-deals/?resID=<?php echo $postID; ?>">Food Monster Special</a><div class="nav_item"></div>
 			</li>
 			<li>
-				<a href="restaurant-info/?resID=<?php echo $postID; ?>">Restaurant Info</a>
+				<a href="restaurant-info/?resID=<?php echo $postID; ?>">Restaurant Info</a><div class="nav_item"></div>
 			</li>
 			<li>
-				<a href="#">What's New</a>
+				<a href="#">What's New</a><div class="nav_item"></div>
 			</li>
 		</ul>
 	</div>

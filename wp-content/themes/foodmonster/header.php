@@ -43,6 +43,7 @@
 <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/template.js"></script>
 <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/jquery.flexslider-min.js"></script>
 <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/jquery.roundabout.min.js"></script>
+<script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/jquery.transit.min.js"></script>
 
 
 <script type="text/javascript">

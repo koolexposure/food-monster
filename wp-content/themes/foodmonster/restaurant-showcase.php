@@ -6,7 +6,6 @@ get_header();
  ?>
 
 
-<div id="page_wrapper" class="clearfix">
 		<div id="deals_loop" class="container prime main clearfix">
 			
 			<div id="content" class="clearfix">
@@ -70,6 +69,6 @@ get_header();
 			
 
 		</div><!-- #single_page -->
-</div>
+
 <?php
 get_footer();

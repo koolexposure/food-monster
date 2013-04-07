@@ -72,6 +72,7 @@ a, .link, .merchant-title a{
 
 #header{
 	max-width:1240px;
+	height:111px;
 	min-height:111px;
 }
 
@@ -119,6 +120,7 @@ padding:0 3%;
 #top_footer_wrap{
 	background-color: #181818;
 	 background-color: rgba(0,0,0, 0.7);
+	display:none;
 
 }
 
@@ -133,7 +135,7 @@ min-height: 100%;
 }
 
 #slide_btnbng{
-	background: url("img/slide_btnbng") no-repeat right top;
+	background: url("img/slide_btnbng.png") no-repeat right top;
    cursor: pointer;
    height: 57px;
    width: 103px;
@@ -229,11 +231,17 @@ display:block;
 	font-size: 1.1em
 }
 
+
+
 .container.main{
 	    overflow: auto;
 	    padding: 20px 20px 100px 20px;
-	    width: 78%;
+	    width: 62%;
 }
+#business{
+	width: 78%;
+}
+
 
 
 #subscribe_dd{
@@ -388,7 +396,7 @@ display:block;
       padding: 0;
       margin: 0;
       height: 10em;
-      width: 40em;
+      width: 45em;
    }
    .roundabout-moveable-item {
       height: 4em;
@@ -404,6 +412,23 @@ display:block;
    #showcase{
    	height:800px;
    }
+
+
+.slide_closed {
+   -moz-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    transform: scaleY(-1);
+    -ms-filter: flipv; /*IE*/
+    filter: flipv; /*IE*/
+
+}
+
+.slide_open {
+
+}
+
+
 
 
 
