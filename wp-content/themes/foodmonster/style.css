@@ -80,7 +80,7 @@ a, .link, .merchant-title a{
 .home #content{
 	
 	position:absolute;
-	bottom:-61px;
+	bottom: 100px;
 	display:block;
 	background:none;
 	
@@ -94,6 +94,7 @@ a, .link, .merchant-title a{
 	width:100%;
 	overflow:auto;
 	padding-bottom: 100px;
+	margin-top: -114px;
 }
 
 #footer_wrap{
@@ -172,6 +173,7 @@ display:block;
 	box-shadow:none;
 	z-index: 0;
 	margin-top:0;
+	font-size:0.8em;
 }
 
 #login_wrap a {
@@ -195,6 +197,30 @@ display:block;
 
 #main_navigation{
 	padding-top: 40px;
+}
+
+
+#citydd {
+position: absolute;
+top:76px;
+left:542px;	
+ width: 125px;
+   height: 34px;
+   overflow: hidden;
+   background: url("img/dropdownbutton.png") no-repeat right;
+}
+
+#citydd  select{
+background: transparent;
+   width: 268px;
+   padding: 5px;
+   font-size: 16px;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   height: 34px;
+   -webkit-appearance: none;
+   color:#FFFFFF;
 }
 
 #login_wrap{
