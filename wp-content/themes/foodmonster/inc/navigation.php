@@ -65,10 +65,6 @@
 			</div>
 
 			
-			<select>
-  				<option value="volvo">Baltimore</option>
- 				 <option value="saab">Washington DC</option>
-			</select> 
 		</div>
 	</div><!-- #header -->
 
