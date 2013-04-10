@@ -55,6 +55,10 @@ a, .link, .merchant-title a{
 	color:#27aeff;
 }
 
+ #navigation li a:hover, .footer_menu li a:hover, #login_wrap a:hover{
+	color:#89c35b;
+}
+
 
 .home h2 {
     font-size: 20px;
@@ -74,6 +78,13 @@ a, .link, .merchant-title a{
 	max-width:1240px;
 	height:111px;
 	min-height:111px;
+}
+
+#hoverbox{
+display:none;
+background-color: rgba(0, 128, 0, 0.37);
+position: absolute;
+padding: 10px;
 }
 
 
@@ -106,6 +117,12 @@ min-height:100px;
 font-size: 20px;
 padding:0 3%;
 }
+
+#widget_wrapper{
+max-width: 1240px;
+margin: 0 auto;
+}
+
 
 .home #footer {
     display: block;
@@ -148,18 +165,18 @@ display:block;
 
 .footer_widget_wrap_one{
 	float:left;
-	width:30%;
-	padding-left:8%;
+	width:31%;
+
 	
 }
 .footer_widget_wrap_two{
 	float:left;
-	width:30%;
+	width:40%;
 	
 }
 .footer_widget_wrap_three{
 	float:left;
-	width:30%;
+	width:25%;
 }
 
 #navigation, #main_navigation li a, #navigation ul.sub-menu li a:hover, .account_sidebar a:hover{
@@ -174,6 +191,10 @@ display:block;
 	z-index: 0;
 	margin-top:0;
 	font-size:0.8em;
+}
+
+#navigation{
+font-size:0.9em;
 }
 
 #login_wrap a {

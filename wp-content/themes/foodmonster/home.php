@@ -10,6 +10,7 @@ get_header(); ?>
 			<div id="slide_btnbng" class="slide_open"></div>
 		</div>
 		<div id="top_footer_wrap" class="clearfix">
+			<div id="widget_wrapper">
 			<div class="footer_widget_wrap_one">
 				<?php dynamic_sidebar( 'deal_footer_one' ); ?>
 			</div>
@@ -18,6 +19,7 @@ get_header(); ?>
 			</div>
 			<div class="footer_widget_wrap_three">
 				<?php dynamic_sidebar( 'deal_footer_three' ); ?>
+			</div>
 			</div>
 		</div>
 	</div>
