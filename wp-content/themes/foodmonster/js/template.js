@@ -17,4 +17,17 @@ jQuery(document).ready(function($) {
 			
 
 	});
+
+
+$("#login_bfm").hover(
+  function () {
+    $("#hoverbox").show();
+  }, 
+  function () {
+    $("#hoverbox").hide();
+  }
+);
+
+
+
 });

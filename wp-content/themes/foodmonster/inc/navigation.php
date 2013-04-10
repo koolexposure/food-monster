@@ -15,8 +15,8 @@
 						<div id="login_form">
 				<div id="login_wrap" class="gb_ff clearfix">
 					<?php if ( !is_user_logged_in() ): ?>
-<a href="#TB_inline?height=300&width=500&inlineId=popupform" class="thickbox head-login-drop-link"><?php gb_e( 'Become a Food Monster' ) ?></a>
-
+<a id="login_bfm" href="#TB_inline?height=300&width=500&inlineId=popupform" class="thickbox head-login-drop-link"><?php gb_e( 'Become a Food Monster' ) ?></a>
+<div id="hoverbox">Become of a member!<br/> Already a member? Sign In!</div>
 
 						<?php gb_facebook_button(); ?>
 					<?php else: ?>
