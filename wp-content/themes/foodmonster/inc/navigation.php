@@ -55,7 +55,7 @@
 						<span class="current_location"><?php gb_current_location_extended(); ?></span>
 
 						<div id="locations_header_wrap" class="clearfix cloak header_color font_small">
-							<?php gb_list_locations(); ?>
+							<?php list_locations(); ?>
 							</div><!-- #locations_header_wrap. -->
 						</div>
 				</div>

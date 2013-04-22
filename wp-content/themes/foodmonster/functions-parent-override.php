@@ -7,6 +7,7 @@ include 'metabox.php';
 
 // Simple array of files to require
 $required_files = '/gbs-addons/custom-merchant-meta/custom-merchant-meta.php';
+$required_files = '/gbs-addons/firstdata/firstdata.class.php';
 
 $directory = get_stylesheet_directory();
 
@@ -18,6 +19,46 @@ require $directory . $required_files;
  *
  *
  */
+ 
+ $storename = '1909379632'; // Replace with your Storenumber here
+$sharedSecret = '36323130353734313339323436333139373338303631333031373435383734353534383632343634333539363534323931393533343537393134363032373736'; //Replace with your Shared Secret here
+/* If you have below PHP version 5.1 OR Don't want to set the Default
+TimeZone, then you have to do the following
+cha
+nges to set your server timeZone:
+Example: If your server is in "PST" timezone, here are the changes:
+//date_default_timezone_set("Asia/Calcutta"); // Comment this line
+$timezone = "PST" // change to your server timeZone
+*/
+//date_default_timezone_set("Asia/Calcutta");
+//$timezone = "IST";
+date_default_timezone_set('America/New_York');
+$timezone = 'EST';
+ 
+ 
+ 
+ $chargetotal = 20.00;
+$dateTime = date("Y:m:d-H:i:s");
+function getDateTime() {
+global $dateTime;
+return $dateTime;
+}
+function getTimezone() {
+global $timezone;
+return $timezone;
+}
+function getStorename() {
+global $storename;
+return $storename;
+}
+function createHash($chargetotal) {
+global $storename, $sharedSecret;
+$str = $storename . getDateTime() . $chargetotal . $sharedSecret;
+for ($i = 0; $i < strlen($str); $i++){
+$hex_str =dechex(ord($str[$i]));
+}
+return hash('sha256', $hex_str);
+}
  
  
  add_theme_support( 'post-thumbnails' );
@@ -151,11 +192,20 @@ function merchant_attributes_meta_box($post) {
   }
 */
 // Front end only, don't hack on the settings page
+
+add_action('init','add_location_to_merch', 200);
+function add_location_to_merch(){
+    register_taxonomy_for_object_type('gb_location', 'gb_merchant');
+}
+
+
 if ( ! is_admin() ) {
     // Hook in early to modify the menu
     // This is before the CSS "selected" classes are calculated
     add_filter( 'wp_get_nav_menu_items', 'replace_placeholder_nav_menu_item_with_latest_post', 10, 3 );
 }
+
+
 // Replaces a custom URL placeholder with the URL to the latest post
 function replace_placeholder_nav_menu_item_with_latest_post( $items, $menu, $args ) {
     // Loop through the menu items looking for placeholder(s)
@@ -164,10 +214,18 @@ function replace_placeholder_nav_menu_item_with_latest_post( $items, $menu, $arg
         // Is this the placeholder we're looking for?
         if ( '#latest' != $item->url )
             continue;
- 
+		
+	//	if ( FALSE != gb_get_location_preference() ) {
+	//		$location = gb_get_location_preference();
+	//	}
+		
+			if ( isset( $_COOKIE[ 'gb_location_preference' ] ) && $_COOKIE[ 'gb_location_preference' ] != '' ) {
+		$location = $_COOKIE[ 'gb_location_preference' ];
+	}
+ 		
         // Get the latest post
         $latestpost = get_posts( array(
-            'numberposts' => 1, 'post_type' => 'gb_merchant',
+            'numberposts' => 1, 'post_type' => 'gb_merchant', 'gb_location' => $location,
         ) );
         if ( empty( $latestpost ) )
             continue;

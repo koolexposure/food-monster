@@ -62,6 +62,7 @@ function gb_set_location_preference( $location = null ) {
 	if ( !headers_sent() && isset( $_GET['location'] ) && $_GET['location'] != '' ) {
 		setcookie( 'gb_location_preference', $_GET['location'], $cookie_time, '/' );
 		do_action( 'gb_set_location_preference', $_GET['location'] );
+		 add_filter( 'wp_get_nav_menu_items1', 'replace_placeholder_nav_menu_item_with_latest_post', 10, 1 );
 		return $location;
 	}
 
@@ -75,9 +76,10 @@ function gb_set_location_preference( $location = null ) {
 	if ( !headers_sent() && null != $location ) {
 		setcookie( 'gb_location_preference', $location, $cookie_time, '/' );
 		do_action( 'gb_set_location_preference', $location );
+		 add_filter( 'wp_get_nav_menu_items2', 'replace_placeholder_nav_menu_item_with_latest_post', 10, 1 );
 		return $location;
 	}
-	// TODO Expand this out, location should be set by account.
+	
 	return FALSE;
 }
 
@@ -107,6 +109,60 @@ function gb_has_location_preference( $user_id = null ) {
 	}
 	return;
 }
+
+
+
+
+/**
+ * Return a list of locations with formatting options
+ * @param  string  $format     Format of the list: ul, ol, span, div, etc.
+ * @param  boolean $hide_empty Hide empty locations (locations without any active posts/deals assigned)
+ * @return string              formatted list of locations
+ */
+function get_list_locations( $format = 'ul', $hide_empty = TRUE ) {
+	// Form an array of all the locations ( the location term is called 'deals' )
+	$locations = gb_get_locations( $hide_empty );
+
+	if ( empty( $locations ) )
+		return '';
+
+	$tag = $format;
+
+	$list = '';
+	if ( $format == 'ul' || $format == 'ol' ) {
+		$list .= "<".$format." class='locations-ul clearfix'>";
+		$tag = 'li';
+	}
+
+	foreach ( $locations as $location ) {
+		if ( $location->taxonomy == gb_get_location_tax_slug() ) {
+			$link = get_term_link( $location->slug, gb_get_location_tax_slug() );
+			$active = ( $location->name == gb_get_current_location() ) ? 'current_item' : 'item';
+			$list .= "<".$tag." id='location_slug_".$location->slug."' class='location-item ".$active."'>";
+			$list .= "<a href='".apply_filters( 'gb_list_locations_link', $link, $location->slug )."' title='".sprintf( gb__( 'Visit %s Deals' ), $location->name )."' id='location_slug_".$location->slug."'>".$location->name."</a>";
+			$list .= "</".$tag.">";
+		}
+	}
+
+	if ( $format == 'ul' || $format == 'ol' )
+		$list .= "</".$format.">";
+
+	return apply_filters( 'gb_get_list_locations', $list, $format, $hide_empty );
+}
+
+/**
+ * Print a list of locations with formatting options
+ * @see gb_get_list_locations()
+ * @param  string  $format     Format of the list: ul, ol, span, div, etc.
+ * @param  boolean $hide_empty Hide empty locations (locations without any active posts/deals assigned)
+ * @return string              formatted list of locations
+ */
+function list_locations( $format = 'ul', $hide_empty = TRUE ) {
+	echo apply_filters( 'list_locations', get_list_locations( $format, $hide_empty ) );
+}
+
+
+
 
 ///////////////////////
 // Filter WP classes //

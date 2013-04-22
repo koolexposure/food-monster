@@ -227,7 +227,6 @@ top:76px;
 left:542px;	
  width: 125px;
    height: 34px;
-   overflow: hidden;
    background: url("img/dropdownbutton.png") no-repeat right;
 }
 
@@ -242,6 +241,18 @@ background: transparent;
    height: 34px;
    -webkit-appearance: none;
    color:#FFFFFF;
+}
+
+#location .current_location{
+background-image: none;	
+color:white;
+}
+
+#location .current_location:hover{
+color:#89c35B;
+}
+#location ul li{
+border: none;	
 }
 
 #login_wrap{
@@ -330,9 +341,28 @@ background: transparent;
 		background-color:#0C79C4;
 	}
 	
+	#locations_header_wrap{
+		background-color: rgba(0, 0, 0, 0.7);
+		    color: white;
+	}
+	
+	#locations_header_wrap li a{
+		    color: white;	
+		
+	}
+	
 	.button, input.form-submit, input.button-primary, .cart-claimed a, .contrast a.button, .contrast a.button:hover, .deal_block a.button{
 		background-color:#0C79C4;
 	}
+	
+.buy_button a:hover{
+	background-color:#89C35B;
+	}
+	
+	.cart-controls input.form-submit{
+	background-color:#0C79C4;
+		}	
+	
 	#deals_loop .post{
 	box-shadow:none;
 	margin:0;
@@ -395,7 +425,13 @@ background: transparent;
 		z-index:10;
 		
 	}
-	
+	#location{
+		margin:0;
+		position:relative;
+		left: 103px;
+		top: -14px;
+		right:0;
+	}
 
 	.excerpt_background{
 		background-color: rgba(0, 0, 0, 0.7);

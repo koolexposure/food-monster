@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Current Deals (based on preferred location)
+Template Name: Current Business (based on preferred location)
 */
 
 get_header(); ?>
