@@ -116,6 +116,8 @@ padding: 10px;
 min-height:100px;
 font-size: 20px;
 padding:0 3%;
+position:relative;
+z-index:100;
 }
 
 #widget_wrapper{
@@ -428,7 +430,7 @@ border: none;
 	#location{
 		margin:0;
 		position:relative;
-		left: 103px;
+		left: 75px;
 		top: -14px;
 		right:0;
 	}
@@ -511,7 +513,28 @@ border: none;
 
 }
 
+#main_deal_wrap .deal_thumbnail{
+width:475px;	
 
+}
+
+h2.section_heading, legend.section_heading, .section_heading a, .table_heading{
+background-color:#89C35B;
+color:white;
+}
+.account_sidebar li.current_page a, .wp-caption, .low_contrast_button, .form-submit.checkout_next_step{
+	background-color:#0C79C4;
+	color:white;
+}
+.account_sidebar li a:hover{
+	background-color:#0C79C4;
+	color:white;	
+}
+
+
+.middlefloat{
+vertical-align:85%;
+}
 
 
 

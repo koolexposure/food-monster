@@ -79,9 +79,9 @@ jQuery(function ($) {
 						autoplay				:	1,		//Slideshow starts playing automatically
 						start_slide             :   1,		//Start slide (0 is random)
 						random					: 	0,		//Randomize slide order (Ignores start slide)
-						slide_interval          :   5000,	//Length between transitions
-						transition              :   1, 		//0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
-						transition_speed		:	1000,	//Speed of transition
+						slide_interval          :   7000,	//Length between transitions
+						transition              :   3, 		//0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
+						transition_speed		:	1100,	//Speed of transition
 						new_window				:	1,		//Image links open in new window/tab
 						pause_hover             :   0,		//Pause slideshow on hover
 						keyboard_nav            :   1,		//Keyboard navigation on/off
@@ -111,9 +111,9 @@ jQuery(function ($) {
 						{image : '<?php bloginfo('stylesheet_directory'); ?>/slides/6.jpg'},	
 						{image : '<?php bloginfo('stylesheet_directory'); ?>/slides/7.jpg'},
 						{image : '<?php bloginfo('stylesheet_directory'); ?>/slides/8.jpg'},							
-						{image : '<?php bloginfo('stylesheet_directory'); ?>/slides/9.jpg'} */
+						{image : '<?php bloginfo('stylesheet_directory'); ?>/slides/9.jpg'} 
 
-
+*/	
 
 	<?php 
 	// The Query
@@ -127,6 +127,7 @@ jQuery(function ($) {
 	endwhile;
 	wp_reset_query();
 	 ?>	
+	
 	]
 
 	}); 
