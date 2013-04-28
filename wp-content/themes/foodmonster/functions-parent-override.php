@@ -13,53 +13,6 @@ $directory = get_stylesheet_directory();
 
 require $directory . $required_files;
 
-
-/**
- * This function file is loaded after the parent theme's function file. It's a great way to override functions, e.g. add_image_size sizes.
- *
- *
- */
- 
- $storename = '1909379632'; // Replace with your Storenumber here
-$sharedSecret = '36323130353734313339323436333139373338303631333031373435383734353534383632343634333539363534323931393533343537393134363032373736'; //Replace with your Shared Secret here
-/* If you have below PHP version 5.1 OR Don't want to set the Default
-TimeZone, then you have to do the following
-cha
-nges to set your server timeZone:
-Example: If your server is in "PST" timezone, here are the changes:
-//date_default_timezone_set("Asia/Calcutta"); // Comment this line
-$timezone = "PST" // change to your server timeZone
-*/
-//date_default_timezone_set("Asia/Calcutta");
-//$timezone = "IST";
-date_default_timezone_set('America/New_York');
-$timezone = 'EST';
- 
- 
- 
- $chargetotal = 20.00;
-$dateTime = date("Y:m:d-H:i:s");
-function getDateTime() {
-global $dateTime;
-return $dateTime;
-}
-function getTimezone() {
-global $timezone;
-return $timezone;
-}
-function getStorename() {
-global $storename;
-return $storename;
-}
-function createHash($chargetotal) {
-global $storename, $sharedSecret;
-$str = $storename . getDateTime() . $chargetotal . $sharedSecret;
-for ($i = 0; $i < strlen($str); $i++){
-$hex_str =dechex(ord($str[$i]));
-}
-return hash('sha256', $hex_str);
-}
- 
  
  add_theme_support( 'post-thumbnails' );
  add_image_size( 'gbs_300x180', 300, 180, true );

@@ -1,25 +1,16 @@
 <?php
+
 /**
- * This class provides a model for a payment processor. To implement a
- * different credit card payment gateway, create a new class that extends
- * Group_Buying_Credit_Card_Processors. The new class should implement
- * the following methods (at a minimum):
- *  - get_instance()
- *  - process_payment()
- *  - register()
- *  - get_payment_method()
+ * Paypal offsite payment processor.
  *
- * You may also want to register some settings for the Payment Options page
  * @package GBS
  * @subpackage Payment Processing_Processor
  */
- 
- 
 class Group_Buying_First_Data extends Group_Buying_Offsite_Processors {
-	const API_ENDPOINT_SANDBOX = 'https://connect.merchanttest.firstdataglobalgateway.com/IPGConnect/gateway/processing';
-	const API_ENDPOINT_LIVE = 'https://connect.merchanttest.firstdataglobalgateway.com/IPGConnect/gateway/processing';
-	const API_REDIRECT_SANDBOX = 'https://connect.merchanttest.firstdataglobalgateway.com/IPGConnect/gateway/processing';
-	const API_REDIRECT_LIVE = 'https://connect.firstdataglobalgateway.com/IPGConnect/gateway/processing';
+	const API_ENDPOINT_SANDBOX = '../pgw/connect.php';
+	const API_ENDPOINT_LIVE = '../pgw/connect.php';
+	const API_REDIRECT_SANDBOX = '../pgw/connect.php';
+	const API_REDIRECT_LIVE = '../pgw/connect.php';
 	const MODE_TEST = 'sandbox';
 	const MODE_LIVE = 'live';
 	const API_USERNAME_OPTION = 'gb_paypal_username';
@@ -32,6 +23,11 @@ class Group_Buying_First_Data extends Group_Buying_Offsite_Processors {
 	const PAYMENT_METHOD = 'First Data';
 	const TOKEN_KEY = 'gb_token_key'; // Combine with $blog_id to get the actual meta key
 	const PAYER_ID = 'gb_payer_id'; // Combine with $blog_id to get the actual meta key
+	
+	const STORE_NAME = "1909379632";
+	const SHARED_SECRET = "30393731383836393938303437333732313231363736303731383030333131303336313331323837313133303630313438383539383836373732393137383030";
+	const TIME_ZONE ="EST";
+	
 	const LOGS = 'gb_offsite_logs';
 
 	protected static $instance;
@@ -40,10 +36,21 @@ class Group_Buying_First_Data extends Group_Buying_Offsite_Processors {
 	private static $api_username;
 	private static $api_password;
 	private static $api_signature;
-	private static $cancel_url = '';
-	private static $return_url = '';
+	private static $responseFailURL = '';
+	private static $responseSuccessURL = '';
 	private static $currency_code = 'USD';
 	private static $version = '64';
+	private static $mode = 'payonly';
+	private static $storename = '1909379632';
+	private static $sharedsecret = '30393731383836393938303437333732313231363736303731383030333131303336313331323837313133303630313438383539383836373732393137383030';
+	private static $paymentMethod = '';
+	private static $timezone = 'EST';
+	private static $trxOrigin = 'ECI';
+	private static $txntype = 'sale';
+	private static $authenticateTransaction = false;
+	private static $cancel_url = '';
+	private static $return_url = '';
+	
 
 	public static function get_instance() {
 		if ( !( isset( self::$instance ) && is_a( self::$instance, __CLASS__ ) ) ) {
@@ -73,7 +80,7 @@ class Group_Buying_First_Data extends Group_Buying_Offsite_Processors {
 	}
 
 	public static function returned_from_offsite() {
-		return ( isset( $_GET['token'] ) && isset( $_GET['PayerID'] ) );
+		return ( isset( $_GET['token'] ) && isset( $_GET['PayerID'] ) && isset( $_GET['approval_code'] ) && isset( $_GET['status'] )  );
 	}
 
 	protected function __construct() {
@@ -83,7 +90,7 @@ class Group_Buying_First_Data extends Group_Buying_Offsite_Processors {
 		self::$api_signature = get_option( self::API_SIGNATURE_OPTION );
 		self::$api_mode = get_option( self::API_MODE_OPTION, self::MODE_TEST );
 		self::$currency_code = get_option( self::CURRENCY_CODE_OPTION, 'USD' );
-		self::$cancel_url = get_option( self::CANCEL_URL_OPTION, Group_Buying_Carts::get_url() );
+		self::$cancel_url = 'http://localhost:8888/foodmonster/cart/';
 		self::$return_url = Group_Buying_Checkouts::get_url();
 
 		add_action( 'admin_init', array( $this, 'register_settings' ), 10, 0 );
@@ -97,11 +104,11 @@ class Group_Buying_First_Data extends Group_Buying_Offsite_Processors {
 	}
 
 	public static function register() {
-		self::add_payment_processor( __CLASS__, self::__( 'First Data' ) );
+		self::add_payment_processor( __CLASS__, self::__( 'First Data Payments Standard' ) );
 	}
 
 	public static function public_name() {
-		return self::__( 'PayPal' );
+		return self::__( 'FirstData' );
 	}
 
 	public static function checkout_icon() {
@@ -122,12 +129,15 @@ class Group_Buying_First_Data extends Group_Buying_Offsite_Processors {
 			return;
 		}
 
-		if ( !isset( $_GET['token'] ) && $_REQUEST['gb_checkout_action'] == Group_Buying_Checkouts::PAYMENT_PAGE ) {
+
+		if ( !isset( $_GET['approval_code'] ) && $_REQUEST['gb_checkout_action'] == Group_Buying_Checkouts::PAYMENT_PAGE ) {
 
 			$post_data = $this->set_nvp_data( $checkout );
 			if ( !$post_data ) {
 				return; // paying for it some other way
 			}
+			
+			
 
 			if ( self::DEBUG ) {
 				error_log( '----------Filtered post_data----------' );
@@ -157,10 +167,10 @@ class Group_Buying_First_Data extends Group_Buying_Offsite_Processors {
 				error_log( print_r( $response, TRUE ) );
 			}
 
-			$ack = strtoupper( $response['ACK'] );
-			if ( $ack == 'SUCCESS' ) {
-				$_SESSION['TOKEN'] = urldecode( $response['TOKEN'] ); // needed?
-				self::$token = urldecode( $response['TOKEN'] ); // set var for redirect use
+			$ack = strtoupper( $response['status'] );
+			if ( $ack == 'Approved' ) {
+				$_SESSION['approval_code'] = urldecode( $response['approval_code'] ); // needed?
+				self::$token = urldecode( $response['approval_code'] ); // set var for redirect use
 				self::redirect();
 			} else {
 				update_option( self::LOGS, $response );
@@ -179,7 +189,7 @@ class Group_Buying_First_Data extends Group_Buying_Offsite_Processors {
 	 */
 	public function back_from_paypal() {
 		if ( self::returned_from_offsite() ) {
-			self::set_token( urldecode( $_GET['token'] ) );
+			self::set_token( urldecode( $_GET['approval_code'] ) );
 			self::set_payerid( urldecode( $_GET['PayerID'] ) );
 			// let the checkout know that this isn't a fresh start
 			$_REQUEST['gb_checkout_action'] = 'back_from_paypal';
@@ -211,11 +221,12 @@ class Group_Buying_First_Data extends Group_Buying_Offsite_Processors {
 		$nvpData['SIGNATURE'] = self::$api_signature;
 		$nvpData['VERSION'] = self::$version;
 
-		$nvpData['CANCELURL'] = self::$cancel_url;
-		$nvpData['RETURNURL'] = self::$return_url;
+		$nvpData['responseFailURL'] = self::$cancel_url;
+		$nvpData['responseSuccessURL'] = self::$return_url;
 
-		$nvpData['METHOD'] = 'SetExpressCheckout';
-		$nvpData['PAYMENTREQUEST_0_PAYMENTACTION'] = 'Authorization';
+		$nvpData['mode'] = 'ECI';
+		$nvpData['txntype'] = 'sale';
+		$nvpData['authenticateTransaction'] = 'false';
 		$nvpData['EMAIL'] = $user->user_email;
 		$nvpData['LANDINGPAGE'] = 'Billing';
 		$nvpData['SOLUTIONTYPE'] = 'Sole';
@@ -625,320 +636,6 @@ class Group_Buying_First_Data extends Group_Buying_Offsite_Processors {
 		return apply_filters( 'gb_paypal_ec_currency_code', self::$currency_code );
 	}
 
-	/**
-	 * Create recurring payment profiles for any recurring deals in the purchase
-	 *
-	 * @param Group_Buying_Checkouts $checkout
-	 * @param Group_Buying_Purchase $purchase
-	 * @return void
-	 */
-	private function create_recurring_payment_profiles( Group_Buying_Checkouts $checkout, Group_Buying_Purchase $purchase ) {
-		foreach ( $purchase->get_products() as $item ) {
-			if ( isset( $item['payment_method'][$this->get_payment_method()] ) && isset( $item['data']['recurring'] ) && $item['data']['recurring'] ) {
-				// make a separate recurring payment for each item,
-				// so they can be cancelled separately if necessary
-				$this->create_recurring_payment_profile( $item, $checkout, $purchase );
-			}
-		}
-	}
-
-	/**
-	 * Create the recurring payment profile.
-	 *
-	 * Start on the second payment, as the first payment is included in the initial purchase
-	 *
-	 * @param array   $item
-	 * @param Group_Buying_Checkouts $checkout
-	 * @param Group_Buying_Purchase $purchase
-	 * @return bool Whether we succeeded in creating a recurring payment profile
-	 */
-	private function create_recurring_payment_profile( $item, Group_Buying_Checkouts $checkout, Group_Buying_Purchase $purchase ) {
-		// see https://cms.paypal.com/us/cgi-bin/?cmd=_render-content&content_ID=developer/e_howto_api_nvp_r_CreateRecurringPayments
-		$nvpData = $this->create_recurring_payment_nvp_data( $item, $checkout, $purchase );
-		if ( !$nvpData ) {
-			return FALSE; // paying for it some other way
-		}
-
-		if ( self::DEBUG ) {
-			error_log( '----------PayPal EC Recurring Payment Request ----------' );
-			error_log( print_r( $nvpData, TRUE ) );
-		}
-
-		$response = wp_remote_post( self::get_api_url(), array(
-				'method' => 'POST',
-				'body' => $nvpData,
-				'timeout' => apply_filters( 'http_request_timeout', 15 ),
-				'sslverify' => false
-			) );
-
-		if ( self::DEBUG ) {
-			error_log( '----------PayPal EC Recurring Payment Response (Raw)----------' );
-			error_log( print_r( $response, TRUE ) );
-		}
-
-		if ( is_wp_error( $response ) ) {
-			return FALSE;
-		}
-		if ( $response['response']['code'] != '200' ) {
-			return FALSE;
-		}
-
-		$response = wp_parse_args( wp_remote_retrieve_body( $response ) );
-
-		if ( self::DEBUG ) {
-			error_log( '----------PayPal EC Recurring Payment Response (Parsed)----------' );
-			error_log( print_r( $response, TRUE ) );
-		}
-
-		if ( empty( $response['PROFILEID'] ) ) {
-			do_action( 'gb_paypal_recurring_payment_profile_failed' );
-			return FALSE;
-		}
-
-		// create a payment to store the API response
-		$payment_id = Group_Buying_Payment::new_payment( array(
-				'payment_method' => $this->get_payment_method(),
-				'purchase' => $purchase->get_id(),
-				'amount' => $item['data']['recurring']['price'],
-				'data' => array(
-					'api_response' => $response,
-				),
-			), Group_Buying_Payment::STATUS_RECURRING );
-
-		// let the world know
-		do_action( 'gb_paypal_recurring_payment_profile_created', $payment_id );
-		return TRUE;
-	}
-
-	private function create_recurring_payment_nvp_data( $item, Group_Buying_Checkouts $checkout, Group_Buying_Purchase $purchase ) {
-		$deal = Group_Buying_Deal::get_instance( $item['deal_id'] );
-		$user = get_userdata( get_current_user_id() );
-		$term = $item['data']['recurring']['term']; // day, week, month, or year
-		$duration = (int)$item['data']['recurring']['duration'];
-		$price = $item['data']['recurring']['price'];
-
-		$terms = array(
-			'day' => 'Day',
-			'week' => 'Week',
-			'month' => 'Month',
-			'year' => 'Year',
-		);
-		if ( !isset( $terms[$term] ) ) {
-			$term = 'day';
-		}
-
-		$starts = strtotime( date( 'Y-m-d' ).' +'.$duration.' '.$term );
-
-		$nvp = array(
-			'USER' => self::$api_username,
-			'PWD' => self::$api_password,
-			'SIGNATURE' => self::$api_signature,
-			'VERSION' => self::$version,
-			'METHOD' => 'CreateRecurringPaymentsProfile',
-			'TOKEN' => self::get_token(),
-			'PROFILESTARTDATE' => date( 'Y-m-d', $starts ).'T00:00:00Z',
-			'PROFILEREFERENCE' => $purchase->get_id(),
-			'DESC' => $deal->get_title( $item['data'] ),
-			'MAXFAILEDPAYMENTS' => 2,
-			'AUTOBILLOUTAMT' => 'AddToNextBilling',
-			'BILLINGPERIOD' => $terms[$term],
-			'BILLINGFREQUENCY' => $duration,
-			'TOTALBILLINGCYCLES' => 0,
-			'AMT' => gb_get_number_format( $price ),
-			'CURRENCYCODE' => self::get_currency_code(),
-			'EMAIL' => $user->user_email,
-			'L_PAYMENTREQUEST_0_ITEMCATEGORY0' => 'Digital',
-			'L_PAYMENTREQUEST_0_NAME0' => $deal->get_title( $item['data'] ),
-			'L_PAYMENTREQUEST_0_AMT0' => gb_get_number_format( $price ),
-			'L_PAYMENTREQUEST_0_NUMBER0' => $deal->get_id(),
-			'L_PAYMENTREQUEST_0_QTY0' => 1,
-		);
-		return $nvp;
-	}
-
-	/**
-	 *
-	 *
-	 * @param Group_Buying_Payment $payment
-	 * @return void
-	 */
-	public function verify_recurring_payment( Group_Buying_Payment $payment ) {
-		// Check if the payment has a recurring profile ID (in $data['api_response'])
-		$data = $payment->get_data();
-		if ( empty( $data['api_response']['PROFILEID'] ) ) {
-			return;
-		}
-		// Get the profile status
-		//  - see https://cms.paypal.com/us/cgi-bin/?cmd=_render-content&content_ID=developer/e_howto_api_nvp_r_GetRecurringPaymentsProfileDetails
-		$status = $this->get_recurring_payment_status( $data['api_response']['PROFILEID'] );
-		if ( $status != 'Active' ) {
-			$payment->set_status( Group_Buying_Payment::STATUS_CANCELLED );
-		}
-	}
-
-	private function get_recurring_payment_status( $profile_id ) {
-		$nvp = array(
-			'USER' => self::$api_username,
-			'PWD' => self::$api_password,
-			'SIGNATURE' => self::$api_signature,
-			'VERSION' => self::$version,
-			'METHOD' => 'GetRecurringPaymentsProfileDetails',
-			'PROFILEID' => $profile_id,
-		);
-
-		if ( self::DEBUG ) {
-			error_log( '----------PayPal EC Recurring Payment Details Request ----------' );
-			error_log( print_r( $nvp, TRUE ) );
-		}
-
-		$response = wp_remote_post( self::get_api_url(), array(
-				'method' => 'POST',
-				'body' => $nvp,
-				'timeout' => apply_filters( 'http_request_timeout', 15 ),
-				'sslverify' => false
-			) );
-
-		if ( self::DEBUG ) {
-			error_log( '----------PayPal EC Recurring Payment Details Response (Raw)----------' );
-			error_log( print_r( $response, TRUE ) );
-		}
-
-		if ( is_wp_error( $response ) ) {
-			return FALSE;
-		}
-		if ( $response['response']['code'] != '200' ) {
-			return FALSE;
-		}
-
-		$response = wp_parse_args( wp_remote_retrieve_body( $response ) );
-
-		if ( self::DEBUG ) {
-			error_log( '----------PayPal EC Recurring Payment Details Response (Parsed)----------' );
-			error_log( print_r( $response, TRUE ) );
-		}
-
-		if ( empty( $response['STATUS'] ) ) {
-			return FALSE;
-		}
-
-		return $response['STATUS'];
-	}
-
-	/**
-	 *
-	 *
-	 * @param Group_Buying_Payment $payment
-	 * @return void
-	 */
-	public function cancel_recurring_payment( Group_Buying_Payment $payment ) {
-		// Check if the payment has a recurring profile ID (in $data['api_response'])
-		$data = $payment->get_data();
-		if ( empty( $data['api_response']['PROFILEID'] ) ) {
-			return;
-		}
-		$profile_id = $data['api_response']['PROFILEID'];
-		// Cancel the profile
-		//  - see https://cms.paypal.com/us/cgi-bin/?cmd=_render-content&content_ID=developer/e_howto_api_nvp_r_ManageRecurringPaymentsProfileStatus
-
-		$nvp = array(
-			'USER' => self::$api_username,
-			'PWD' => self::$api_password,
-			'SIGNATURE' => self::$api_signature,
-			'VERSION' => self::$version,
-			'METHOD' => 'ManageRecurringPaymentsProfileStatus',
-			'PROFILEID' => $profile_id,
-			'ACTION' => 'Cancel',
-			'NOTE' => apply_filters( 'gbs_paypal_recurring_payment_cancelled_note', '' ),
-		);
-
-		if ( self::DEBUG ) {
-			error_log( '----------PayPal EC Cancel Recurring Payment Request ----------' );
-			error_log( print_r( $nvp, TRUE ) );
-		}
-
-		$response = wp_remote_post( self::get_api_url(), array(
-				'method' => 'POST',
-				'body' => $nvp,
-				'timeout' => apply_filters( 'http_request_timeout', 15 ),
-				'sslverify' => false
-			) );
-
-		if ( self::DEBUG ) {
-			error_log( '----------PayPal EC Cancel Recurring Payment Response (Raw)----------' );
-			error_log( print_r( $response, TRUE ) );
-		}
-		// we don't really need to do anything with the response. It's either a success message
-		// or the profile is already cancelled/suspended. Either way, we're good.
-		parent::cancel_recurring_payment( $payment );
-	}
-
-	public function register_settings() {
-		$page = Group_Buying_Payment_Processors::get_settings_page();
-		$section = 'gb_firstdata_settings';
-		add_settings_section( $section, self::__( 'FirstData Payments Standard' ), array( $this, 'display_settings_section' ), $page );
-		register_setting( $page, self::API_MODE_OPTION );
-		register_setting( $page, self::API_USERNAME_OPTION );
-		register_setting( $page, self::API_PASSWORD_OPTION );
-		register_setting( $page, self::API_SIGNATURE_OPTION );
-		register_setting( $page, self::CURRENCY_CODE_OPTION );
-		//register_setting($page, self::RETURN_URL_OPTION);
-		register_setting( $page, self::CANCEL_URL_OPTION );
-		add_settings_field( self::API_MODE_OPTION, self::__( 'Mode' ), array( get_class(), 'display_api_mode_field' ), $page, $section );
-		add_settings_field( self::API_USERNAME_OPTION, self::__( 'API Username' ), array( get_class(), 'display_api_username_field' ), $page, $section );
-		add_settings_field( self::API_PASSWORD_OPTION, self::__( 'API Password' ), array( get_class(), 'display_api_password_field' ), $page, $section );
-		add_settings_field( self::API_SIGNATURE_OPTION, self::__( 'API Signature' ), array( get_class(), 'display_api_signature_field' ), $page, $section );
-		add_settings_field( self::CURRENCY_CODE_OPTION, self::__( 'Currency Code' ), array( get_class(), 'display_currency_code_field' ), $page, $section );
-		//add_settings_field(self::RETURN_URL_OPTION, self::__('Return URL'), array(get_class(), 'display_return_field'), $page, $section);
-		add_settings_field( self::CANCEL_URL_OPTION, self::__( 'Cancel URL' ), array( get_class(), 'display_cancel_field' ), $page, $section );
-		add_settings_section( 'gb_logs', self::__( 'Logs' ), array( $this, 'display_settings_logs' ), $page );
-	}
-
-	public function display_api_username_field() {
-		echo '<input type="text" name="'.self::API_USERNAME_OPTION.'" value="'.self::$api_username.'" size="80" />';
-	}
-
-	public function display_api_password_field() {
-		echo '<input type="text" name="'.self::API_PASSWORD_OPTION.'" value="'.self::$api_password.'" size="80" />';
-	}
-
-	public function display_api_signature_field() {
-		echo '<input type="text" name="'.self::API_SIGNATURE_OPTION.'" value="'.self::$api_signature.'" size="80" />';
-	}
-
-	public function display_return_field() {
-		echo '<input type="text" name="'.self::RETURN_URL_OPTION.'" value="'.self::$return_url.'" size="80" />';
-	}
-
-	public function display_cancel_field() {
-		echo '<input type="text" name="'.self::CANCEL_URL_OPTION.'" value="'.self::$cancel_url.'" size="80" />';
-	}
-
-	public function display_api_mode_field() {
-		echo '<label><input type="radio" name="'.self::API_MODE_OPTION.'" value="'.self::MODE_LIVE.'" '.checked( self::MODE_LIVE, self::$api_mode, FALSE ).'/> '.self::__( 'Live' ).'</label><br />';
-		echo '<label><input type="radio" name="'.self::API_MODE_OPTION.'" value="'.self::MODE_TEST.'" '.checked( self::MODE_TEST, self::$api_mode, FALSE ).'/> '.self::__( 'Sandbox' ).'</label>';
-	}
-
-	public function display_currency_code_field() {
-		echo '<input type="text" name="'.self::CURRENCY_CODE_OPTION.'" value="'.self::$currency_code.'" size="5" />';
-	}
-
-	public function display_settings_logs() {
-
-?>
-			<script type="text/javascript">
-				jQuery(document).ready(function() {
-					jQuery('#debug_wrap').hide();
-					jQuery('#logs_link').click(function() {
-						jQuery('#debug_wrap').toggle();
-					});
-				});
-
-
-			</script>
-		<?php
-		echo '<a id="logs_link" class="button">'.self::__( 'Logs' ).'</a>';
-		echo '<div id="debug_wrap"><pre>'.print_r( get_option( self::LOGS ), true ).'</pre></div>';
-	}
 
 	public function cart_controls( $controls ) {
 		$controls['checkout'] = '<input type="submit" class="form-submit alignright checkout_next_step" value="Paypal" name="gb_cart_action-checkout" />';
@@ -953,7 +650,6 @@ class Group_Buying_First_Data extends Group_Buying_Offsite_Processors {
 		}
 		return $controls;
 	}
-
 
 
 	/**
@@ -971,5 +667,38 @@ class Group_Buying_First_Data extends Group_Buying_Offsite_Processors {
 		}
 	}
 }
-Group_Buying_First_Data::register();
 
+$storename ="1909379632";
+$sharedsecret="30393731383836393938303437333732313231363736303731383030333131303336313331323837313133303630313438383539383836373732393137383030";
+
+$timezone="EST";
+
+$b = time () - 14400; 
+$datetime = date("Y:m:d-H:i:s",$b);
+
+function getdatetime() {
+  global $datetime;
+  return $datetime;
+}
+
+function gettimezone() {
+  global $timezone;
+  return $timezone;
+}
+
+function getstore() {
+  global $storename;
+  return $storename;
+}
+
+function createhash($chargetotal) {
+  global $storename, $sharedsecret;
+  $str = $storename . getdatetime() . $chargetotal . $sharedsecret;
+  for ($i=0;$i<strlen($str);$i++) {
+    $hexstr .= dechex(ord($str[$i]));
+  }
+  return hash('sha256', $hexstr);
+}
+
+
+Group_Buying_First_Data::register();

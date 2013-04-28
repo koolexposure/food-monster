@@ -5,10 +5,9 @@ $sharedsecret="30393731383836393938303437333732313231363736303731383030333131303
 
 $timezone="EST";
 
-
+$datetime = date("Y:m:d-H:i:s");
 
 function getdatetime() {
-
   global $datetime;
   return $datetime;
 }
