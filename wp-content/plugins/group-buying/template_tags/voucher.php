@@ -635,7 +635,7 @@ function gb_get_voucher_locations( $voucher_id = 0 ) {
  */
 function gb_voucher_expiration_date( $voucher_id = 0, $format = '' ) {
 	if ( $format == '' ) {
-		$format = get_option( "date_format" );
+		$format = get_option( 'date_format' );
 	}
 	$date = gb_get_voucher_expiration_date( $voucher_id );
 	$date = ( $date != '' ) ? date( $format, $date ) : '';
@@ -660,7 +660,7 @@ function gb_get_voucher_expiration_date( $voucher_id = 0 ) {
 		return FALSE;
 	}
 	$date = $voucher->get_expiration_date();
-	if ( empty( $date ) ) $date = false;
+	if ( empty( $date ) ) $date = 0;
 	return apply_filters( 'gb_get_voucher_expiration_date', $date, $voucher_id );
 }
 

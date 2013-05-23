@@ -29,7 +29,7 @@ class Group_Buying_Records extends Group_Buying_Controller {
 	}
 
 	public static function new_record( $message, $type = 'mixed', $title = '', $author = 1, $associate_id = -1, $data = array() ) {
-		Group_Buying_Record::new_record( $message, $type, $title, $author, $associate_id, $data );
+		return Group_Buying_Record::new_record( $message, $type, $title, $author, $associate_id, $data );
 	}
 
 	/*

@@ -95,8 +95,9 @@ class Group_Buying_Purchase extends Group_Buying_Post_Type {
 
 
 	public static function new_purchase( $args = array() ) {
+		$title_suffix = ( isset( $args['cart'] ) && is_a( $args['cart'], 'Group_Buying_Cart' ) ) ? $args['cart']->get_id() : microtime();
 		$default = array(
-			'post_title' => self::__( 'Order' ),
+			'post_title' => sprintf( self::__( 'Order %s' ), $title_suffix ),
 			'post_status' => 'pending',
 			'post_type' => self::POST_TYPE,
 		);

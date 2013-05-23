@@ -146,7 +146,7 @@ class Group_Buying_Notifications extends Group_Buying_Controller {
 				'purchase' => array(
 					'name' => self::__( 'Deal Purchase' ),
 					'description' => self::__( 'Customize the email that is sent to users after purchase.' ),
-					'shortcodes' => array( 'date', 'name', 'username', 'purchase_details', 'transid', 'site_title', 'site_url', 'total_paid', 'credits_used', 'rewards_used', 'total', 'billing_address', 'shipping_address' ),
+					'shortcodes' => array( 'date', 'name', 'username', 'purchase_details', 'transid', 'site_title', 'site_url', 'credits_used', 'rewards_used', 'total', 'billing_address', 'shipping_address' ),
 					'default_title' => self::__( 'Purchase Confirmation from ' . get_bloginfo( 'name' ) ),
 					'default_content' => self::load_view_to_string( 'notifications/purchase', NULL )
 				),

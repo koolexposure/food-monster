@@ -617,7 +617,7 @@ class Group_Buying_Help extends Group_Buying_Controller {
 			return;
 
 
-?>
+		?>
 		<script type="text/javascript">
 		//<![CDATA[
 		jQuery(document).ready( function($) {
@@ -882,47 +882,47 @@ class Group_Buying_Help extends Group_Buying_Controller {
 		if ( $post_type == Group_Buying_Deal::POST_TYPE ) {
 
 			// Step 1
-			$close_callback = "$('.gb_pointer_step_2').fadeTo('slow', 1);";
+			$close_callback = "$('.gb_pointer_step_2').removeClass('gb_pointer_step_closed').addClass('gb_pointer_step_open').fadeTo('slow', 1);";
 			self::pointer_gb_help_tab( '_deal_help', 'gb_pointer_step_1', $close_callback );
 
 			// Step 2
 			$content = '<p>' . esc_js( self::__( 'Set deal&#8217;s price. Set dynamic pricing (if gateway permitted), tax, and shipping below. Tax and Shipping received major updates in version 3.4, make sure to review the new options pages for each.' ) ) . '</p>';
-			$close_callback = "$('.gb_pointer_step_3').ScrollTo();$('.gb_pointer_step_3').fadeTo('slow', 1)";
+			$close_callback = "$('.gb_pointer_step_3').ScrollTo();$('.gb_pointer_step_3').removeClass('gb_pointer_step_closed').addClass('gb_pointer_step_open').fadeTo('slow', 1)";
 			self::print_js(
 				'gb_deal_pricing',
 				'#deal_base_price',
 				array(
 					'content'  => $content,
 					'pointerWidth' => 300,
-					'pointerClass' => 'gb_pointer gb_pointer_step gb_pointer_step_2',
+					'pointerClass' => 'gb_pointer gb_pointer_step_closed gb_pointer_step_2',
 					'position' => array( 'edge' => 'top', 'align' => 'left' ) ),
 				$close_callback
 			);
 
 			// Step 3
 			$content = '<p>' . esc_js( self::__( 'Set purchase requirements and tipping points (if gateway permitted).' ) ) . '</p>';
-			$close_callback = "$('.gb_pointer_step_4').ScrollTo();$('.gb_pointer_step_4').fadeTo('slow', 1)";
+			$close_callback = "$('.gb_pointer_step_4').ScrollTo();$('.gb_pointer_step_4').removeClass('gb_pointer_step_closed').addClass('gb_pointer_step_open').fadeTo('slow', 1)";
 			self::print_js(
 				'gb_deal_limits',
 				'#deal_max_purchases',
 				array(
 					'content'  => $content,
 					'pointerWidth' => 300,
-					'pointerClass' => 'gb_pointer gb_pointer_step gb_pointer_step_3',
+					'pointerClass' => 'gb_pointer gb_pointer_step_closed gb_pointer_step_3',
 					'position' => array( 'edge' => 'left', 'align' => 'left' ) ),
 				$close_callback
 			);
 
 			// Step 4
 			$content = '<p>' . esc_js( self::__( 'Deal details used for front-end display, vouchers, and RSS.' ) ) . '</p>';
-			$close_callback = "$('.gb_pointer_step_5').ScrollTo();$('.gb_pointer_step_5').fadeTo('slow', 1)";
+			$close_callback = "$('.gb_pointer_step_5').ScrollTo();$('.gb_pointer_step_5').removeClass('gb_pointer_step_closed').addClass('gb_pointer_step_open').fadeTo('slow', 1)";
 			self::print_js(
 				'gb_deal_details',
 				'#deal_value',
 				array(
 					'content'  => $content,
 					'pointerWidth' => 300,
-					'pointerClass' => 'gb_pointer gb_pointer_step gb_pointer_step_4',
+					'pointerClass' => 'gb_pointer gb_pointer_step_closed gb_pointer_step_4',
 					'position' => array( 'edge' => 'left', 'align' => 'left' ) ),
 				$close_callback
 			);
@@ -930,56 +930,56 @@ class Group_Buying_Help extends Group_Buying_Controller {
 
 			// Step 5
 			$content = '<p>' . esc_js( self::__( 'Voucher details entered will be used to build the voucher generated for deal&#8217;s purchasers. Some GBS themes use this information for the front end display too.' ) ) . '</p>';
-			$close_callback = "$('.gb_pointer_step_6').ScrollTo();$('.gb_pointer_step_6').fadeTo('slow', 1)";
+			$close_callback = "$('.gb_pointer_step_6').ScrollTo();$('.gb_pointer_step_6').removeClass('gb_pointer_step_closed').addClass('gb_pointer_step_open').fadeTo('slow', 1)";
 			self::print_js(
 				'gb_deal_voucher_details',
 				'#voucher_how_to_use',
 				array(
 					'content'  => $content,
 					'pointerWidth' => 300,
-					'pointerClass' => 'gb_pointer gb_pointer_step gb_pointer_step_5',
+					'pointerClass' => 'gb_pointer gb_pointer_step_closed gb_pointer_step_5',
 					'position' => array( 'edge' => 'top', 'align' => 'left' ) ),
 				$close_callback
 			);
 
 			// Step 6
 			$content = '<p>' . self::__( 'Associating a deal with a merchant will showcase the deal&#8217;s business information (if your theme permits). It also allows for the deal to show on the merchant&#8217;s profile page.' ) . '</p>';
-			$close_callback = "$('.gb_pointer_step_7').ScrollTo();$('.gb_pointer_step_7').fadeTo('slow', 1)";
+			$close_callback = "$('.gb_pointer_step_7').ScrollTo();$('.gb_pointer_step_7').removeClass('gb_pointer_step_closed').addClass('gb_pointer_step_open').fadeTo('slow', 1)";
 			self::print_js(
 				'gb_deal_assign_merchant',
 				'#deal_merchant',
 				array(
 					'content'  => $content,
 					'pointerWidth' => 360,
-					'pointerClass' => 'gb_pointer gb_pointer_step gb_pointer_step_6',
+					'pointerClass' => 'gb_pointer gb_pointer_step_closed gb_pointer_step_6',
 					'position' => array( 'edge' => 'left', 'align' => 'left' ) ),
 				$close_callback
 			);
 
 			// Step 7
 			$content = '<p>' . self::__( 'Set the deal&#8217;s featured image for the theme to display.' ) . '</p>';
-			$close_callback = "$('.gb_pointer_step_8').ScrollTo();$('.gb_pointer_step_8').fadeTo('slow', 1)";
+			$close_callback = "$('.gb_pointer_step_8').ScrollTo();$('.gb_pointer_step_8').removeClass('gb_pointer_step_closed').addClass('gb_pointer_step_open').fadeTo('slow', 1)";
 			self::print_js(
 				'gb_deal_featured',
 				'#set-post-thumbnail',
 				array(
 					'content'  => $content,
 					'pointerWidth' => 300,
-					'pointerClass' => 'gb_pointer gb_pointer_step gb_pointer_step_7',
+					'pointerClass' => 'gb_pointer gb_pointer_step_closed gb_pointer_step_7',
 					'position' => array( 'edge' => 'right', 'align' => 'right' ) ),
 				$close_callback
 			);
 
 			// Step 8
 			$content = '<p>' . self::__( 'Assign locations to the deal. This is critical for most GBS themes since location preferences filter and direct visitors to the relavent deal(s).' ) . '</p>';
-			$close_callback = "$('.gb_pointer_step_9').ScrollTo();$('.gb_pointer_step_9').fadeTo('slow', 1)";
+			$close_callback = "$('.gb_pointer_step_9').ScrollTo();$('.gb_pointer_step_9').removeClass('gb_pointer_step_closed').addClass('gb_pointer_step_open').fadeTo('slow', 1)";
 			self::print_js(
 				'gb_deal_locations',
 				'#gb_location-add-toggle',
 				array(
 					'content'  => $content,
 					'pointerWidth' => 360,
-					'pointerClass' => 'gb_pointer gb_pointer_step gb_pointer_step_8',
+					'pointerClass' => 'gb_pointer gb_pointer_step_closed gb_pointer_step_8',
 					'position' => array( 'edge' => 'right', 'align' => 'right' ) ),
 				$close_callback
 			);
@@ -992,7 +992,7 @@ class Group_Buying_Help extends Group_Buying_Controller {
 				array(
 					'content'  => $content,
 					'pointerWidth' => 360,
-					'pointerClass' => 'gb_pointer gb_pointer_step gb_pointer_step_last gb_pointer_step_9',
+					'pointerClass' => 'gb_pointer gb_pointer_step_closed gb_pointer_step_last gb_pointer_step_9',
 					'position' => array( 'edge' => 'right', 'align' => 'right' ) ),
 				$close_callback
 			);
@@ -1004,7 +1004,7 @@ class Group_Buying_Help extends Group_Buying_Controller {
 		 */
 		elseif ( $post_type == Group_Buying_Merchant::POST_TYPE ) {
 
-			$close_callback = "$('.gb_pointer_step_2').fadeTo('slow', 1);";
+			$close_callback = "$('.gb_pointer_step_2').removeClass('gb_pointer_step_closed').addClass('gb_pointer_step_open').fadeTo('slow', 1);";
 			self::pointer_gb_help_tab( '_options', 'gb_pointer' );
 
 			$content  = '<h3>' . esc_js( self::__( 'Authorized Users' ) ). '</h3>';
@@ -1078,47 +1078,48 @@ class Group_Buying_Help extends Group_Buying_Controller {
 		if ( gb_is_authorized() ) {
 
 			// Step 1
-			$close_callback = "$('.gb_pointer_step_2').fadeTo('slow', 1);";
+			$close_callback = "$('.gb_pointer_step_2').removeClass('gb_pointer_step_closed').addClass('gb_pointer_step_open').fadeTo('slow', 1);";
 			self::pointer_gb_help_tab( '_options', 'gb_pointer_step_1', $close_callback );
 
 			// Step 2
 			$content  = '<p>' . esc_js( self::__( 'Force Login options allow for the site to be locked down until your site is available for the public.' ) ) . '</p>';
-			$close_callback = "$('.gb_pointer_step_3').ScrollTo();$('.gb_pointer_step_3').fadeTo('slow', 1)";
+			$close_callback = "$('.gb_pointer_step_4').ScrollTo();$('.gb_pointer_step_4').removeClass('gb_pointer_step_closed').addClass('gb_pointer_step_open').fadeTo('slow', 1)";
 			self::print_js(
 				'gb_settings_force_login',
 				'input[name="gb_force_login"][value="false"]',
 				array(
 					'content'  => $content,
 					'pointerWidth' => 360,
-					'pointerClass' => 'gb_pointer gb_pointer_step gb_pointer_step_2',
+					'pointerClass' => 'gb_pointer gb_pointer_step_closed gb_pointer_step_2',
 					'position' => array( 'edge' => 'top', 'align' => 'left' ) ),
 				$close_callback
 			);
 
+			/*/
 			// Step 3
 			$content  = '<p>' . esc_js( self::__( 'Select your TOC and PP pages so they can be linked on the registration page. Also set how much information should be required when your users register with full and minimal options.' ) ) . '</p>';
-			$close_callback = "$('.gb_pointer_step_4').ScrollTo();$('.gb_pointer_step_4').fadeTo('slow', 1)";
+			$close_callback = "$('.gb_pointer_step_4').ScrollTo();$('.gb_pointer_step_4').removeClass('gb_pointer_step_closed').addClass('gb_pointer_step_open').fadeTo('slow', 1)";
 			self::print_js(
 				'gb_settings_registration',
 				'#gb_pp_page',
 				array(
 					'content'  => $content,
 					'pointerWidth' => 450,
-					'pointerClass' => 'gb_pointer gb_pointer_step gb_pointer_step_3',
+					'pointerClass' => 'gb_pointer gb_pointer_step_closed gb_pointer_step_3',
 					'position' => array( 'edge' => 'left', 'align' => 'left' ) ),
 				$close_callback
 			);
-
+			/**/
 			// Step 4
 			$content  = '<p>' . esc_js( self::__( 'Set the from name and from email address for all notifications that GBS sends. HTML notifications require you modify your notifications to include HTML formatting first.' ) ) . '</p>';
-			$close_callback = "$('.gb_pointer_step_5').ScrollTo();$('.gb_pointer_step_5').fadeTo('slow', 1)";
+			$close_callback = "$('.gb_pointer_step_5').ScrollTo();$('.gb_pointer_step_5').removeClass('gb_pointer_step_closed').addClass('gb_pointer_step_open').fadeTo('slow', 1)";
 			self::print_js(
 				'gb_settings_notification_from_name',
 				'input[name="gb_notification_from_email"]:first',
 				array(
 					'content'  => $content,
 					'pointerWidth' => 360,
-					'pointerClass' => 'gb_pointer gb_pointer_step gb_pointer_step_4',
+					'pointerClass' => 'gb_pointer gb_pointer_step_closed gb_pointer_step_4',
 					'position' => array( 'edge' => 'left', 'align' => 'left' ) ),
 				$close_callback
 			);
@@ -1126,28 +1127,28 @@ class Group_Buying_Help extends Group_Buying_Controller {
 
 			// Step 5
 			$content  = '<p>' . esc_js( self::__( 'Configure the global options that are printed on your vouchers.' ) ) . '</p>';
-			$close_callback = "$('.gb_pointer_step_6').ScrollTo();$('.gb_pointer_step_6').fadeTo('slow', 1)";
+			$close_callback = "$('.gb_pointer_step_6').ScrollTo();$('.gb_pointer_step_6').removeClass('gb_pointer_step_closed').addClass('gb_pointer_step_open').fadeTo('slow', 1)";
 			self::print_js(
 				'gb_settings_voucher_logo',
 				'input[name="gb_voucher_logo"]:first',
 				array(
 					'content'  => $content,
 					'pointerWidth' => 360,
-					'pointerClass' => 'gb_pointer gb_pointer_step gb_pointer_step_5',
+					'pointerClass' => 'gb_pointer gb_pointer_step_closed gb_pointer_step_5',
 					'position' => array( 'edge' => 'left', 'align' => 'left' ) ),
 				$close_callback
 			);
 
 			// Step 6
 			$content = '<p>' . self::__( 'Customize the URLs of the GBS sections.' ) . '</p>';
-			$close_callback = "$('.gb_pointer_step_7').ScrollTo();$('.gb_pointer_step_7').fadeTo('slow', 1)";
+			$close_callback = "$('.gb_pointer_step_7').ScrollTo();$('.gb_pointer_step_7').removeClass('gb_pointer_step_closed').addClass('gb_pointer_step_open').fadeTo('slow', 1)";
 			self::print_js(
 				'gb_settings_custom_paths',
 				'#gb_account_login_path',
 				array(
 					'content'  => $content,
 					'pointerWidth' => 360,
-					'pointerClass' => 'gb_pointer gb_pointer_step gb_pointer_step_6',
+					'pointerClass' => 'gb_pointer gb_pointer_step_closed gb_pointer_step_6',
 					'position' => array( 'edge' => 'left', 'align' => 'left' ) ),
 				$close_callback
 			);
@@ -1160,7 +1161,7 @@ class Group_Buying_Help extends Group_Buying_Controller {
 				array(
 					'content'  => $content,
 					'pointerWidth' => 360,
-					'pointerClass' => 'gb_pointer gb_pointer_step gb_pointer_step_last gb_pointer_step_7',
+					'pointerClass' => 'gb_pointer gb_pointer_step_closed gb_pointer_step_last gb_pointer_step_7',
 					'position' => array( 'edge' => 'top', 'align' => 'left' ) ),
 				$close_callback
 			);

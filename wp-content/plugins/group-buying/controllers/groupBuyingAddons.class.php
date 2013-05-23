@@ -123,6 +123,24 @@ class Group_Buying_Addons extends Group_Buying_Controller {
 	}
 
 	/**
+	 * Is Addon enabled
+	 * @return void
+	 */
+	public static function is_addon_anabled( $addon ) {
+		$addons = self::addon_definitions();
+		$enabled = get_option( self::ADDONS_SETTING, array() );
+		if ( !is_array( $enabled ) ) {
+			return FALSE;
+		}
+		foreach ( $enabled as $key => $enabled ) {
+			if ( $key == $addon && $enabled && isset( $addons[$key] ) ) {
+				return TRUE;
+			}
+		}
+		return FALSE;
+	}
+
+	/**
 	 * Load an addon
 	 * @param string $key Addon slug/key
 	 * @return void

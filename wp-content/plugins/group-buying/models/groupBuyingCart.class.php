@@ -296,8 +296,8 @@ class Group_Buying_Cart extends Group_Buying_Post_Type {
 			);
 		} else {
 			$post = array(
-				'post_title' => self::__( 'Anonymous' ),
-				'post_name' => 'anonymous',
+				'post_title' => sprintf( self::__( 'Anonymous %s' ), $_SERVER['REMOTE_ADDR'] ),
+				'post_name' => sprintf( self::__( 'anonymous-%s' ), $_SERVER['REMOTE_ADDR'] ),
 				'post_status' => 'publish',
 				'post_type' => self::POST_TYPE,
 			);

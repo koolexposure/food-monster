@@ -459,12 +459,14 @@ class Group_Buying_Checkouts extends Group_Buying_Controller {
 	 */
 	public function process_payment_page( Group_Buying_Checkouts $checkout ) {
 		$valid = TRUE;
-		$fields = $checkout->get_billing_fields();
-		foreach ( $fields as $key => $data ) {
-			$checkout->cache['billing'][$key] = isset( $_POST['gb_billing_'.$key] )?$_POST['gb_billing_'.$key]:'';
-			if ( isset( $data['required'] ) && $data['required'] && !( isset( $checkout->cache['billing'][$key] ) && $checkout->cache['billing'][$key] != '' ) ) {
-				$valid = FALSE;
-				self::set_message( sprintf( self::__( '"%s" field is required.' ), $data['label'] ), self::MESSAGE_STATUS_ERROR );
+		if ( apply_filters( 'gb_valid_process_payment_page_fields', __return_true() ) ) {
+			$fields = $checkout->get_billing_fields();
+			foreach ( $fields as $key => $data ) {
+				$checkout->cache['billing'][$key] = isset( $_POST['gb_billing_'.$key] )?$_POST['gb_billing_'.$key]:'';
+				if ( isset( $data['required'] ) && $data['required'] && !( isset( $checkout->cache['billing'][$key] ) && $checkout->cache['billing'][$key] != '' ) ) {
+					$valid = FALSE;
+					self::set_message( sprintf( self::__( '"%s" field is required.' ), $data['label'] ), self::MESSAGE_STATUS_ERROR );
+				}
 			}
 		}
 		$valid = apply_filters( 'gb_valid_process_payment_page', $valid, $checkout );

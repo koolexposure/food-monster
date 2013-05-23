@@ -9,6 +9,7 @@
 class Group_Buying_Record extends Group_Buying_Post_Type {
 
 	const POST_TYPE = 'gb_record';
+	const TAXONOMY = 'gb_record_type'; // TODO
 
 	private static $instances = array();
 

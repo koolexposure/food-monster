@@ -693,6 +693,7 @@ class Group_Buying_Paypal_EC extends Group_Buying_Offsite_Processors {
 				'amount' => $item['data']['recurring']['price'],
 				'data' => array(
 					'api_response' => $response,
+					'item' => $item
 				),
 			), Group_Buying_Payment::STATUS_RECURRING );
 
@@ -760,14 +761,15 @@ class Group_Buying_Paypal_EC extends Group_Buying_Offsite_Processors {
 			return;
 		}
 		// Get the profile status
-		//  - see https://cms.paypal.com/us/cgi-bin/?cmd=_render-content&content_ID=developer/e_howto_api_nvp_r_GetRecurringPaymentsProfileDetails
+		//  - see https://www.x.com/developers/paypal/documentation-tools/api/getrecurringpaymentsprofiledetails-api-operation-nvp
 		$status = $this->get_recurring_payment_status( $data['api_response']['PROFILEID'] );
+		do_action( 'gb_verify_recurring_payment_status', $status, $payment );
 		if ( $status != 'Active' ) {
 			$payment->set_status( Group_Buying_Payment::STATUS_CANCELLED );
 		}
 	}
 
-	private function get_recurring_payment_status( $profile_id ) {
+	private function get_recurring_payment_status( $profile_id, Group_Buying_Payment $payment ) {
 		$nvp = array(
 			'USER' => self::$api_username,
 			'PWD' => self::$api_password,
@@ -802,6 +804,7 @@ class Group_Buying_Paypal_EC extends Group_Buying_Offsite_Processors {
 		}
 
 		$response = wp_parse_args( wp_remote_retrieve_body( $response ) );
+		do_action( 'gb_verify_recurring_payment', $response, $payment );
 
 		if ( self::DEBUG ) {
 			error_log( '----------PayPal EC Recurring Payment Details Response (Parsed)----------' );

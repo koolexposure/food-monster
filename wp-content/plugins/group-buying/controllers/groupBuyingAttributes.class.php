@@ -607,18 +607,22 @@ class Group_Buying_Attributes extends Group_Buying_Controller {
 				$delete[] = $id;
 			}
 		}
-
+	
 		// Create the new posts
+		$new = apply_filters( 'gb_attributes_save_meta_box_new', $new );
 		foreach ( $new as $data ) {
 			Group_Buying_Attribute::new_attribute( $deal->get_id(), $data );
 		}
 
 		// Update the existing posts
+		$update = apply_filters( 'gb_attributes_save_meta_box_update', $update );
 		foreach ( $update as $attribute_id => $data ) {
 			$attribute = Group_Buying_Attribute::get_instance( $attribute_id );
 			$attribute->update( $data );
 		}
 
+		// Delete
+		$delete = apply_filters( 'gb_attributes_save_meta_box_delete', $delete );
 		foreach ( $delete as $attribute_id ) {
 			$attribute = Group_Buying_Attribute::get_instance( $attribute_id );
 			$attribute->remove();

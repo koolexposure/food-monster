@@ -592,7 +592,17 @@ class Group_Buying_Merchants_Registration extends Group_Buying_Merchants{
 	private function process_form_submission() {
 		$errors = array();
 		$title = isset( $_POST['gb_contact_merchant_title'] ) ? esc_html( $_POST['gb_contact_merchant_title'] ) : '';
-		$content = isset( $_POST['gb_contact_merchant_description'] ) ? wp_kses_post( $_POST['gb_contact_merchant_description'] ) : '';
+		$allowed_tags = wp_kses_allowed_html( 'post' );
+		$allowed_tags['iframe'] = array(
+			'width' => true,
+			'height' => true,
+			'src' => true,
+			'frameborder' => true,
+			'webkitAllowFullScreen' => true,
+			'mozallowfullscreen' => true,
+			'allowfullscreen' => true
+		);
+		$content = isset( $_POST['gb_contact_merchant_description'] ) ? wp_kses( $_POST['gb_contact_merchant_description'], $allowed_tags ) : '';
 		$contact_title = isset( $_POST['gb_contact_title'] ) ? esc_html( $_POST['gb_contact_title'] ) : '';
 		$contact_name = isset( $_POST['gb_contact_name'] ) ? esc_html( $_POST['gb_contact_name'] ) : '';
 		$contact_street = isset( $_POST['gb_contact_street'] ) ? esc_html( $_POST['gb_contact_street'] ) : '';
@@ -741,7 +751,17 @@ class Group_Buying_Merchants_Edit extends Group_Buying_Merchants {
 	private function process_form_submission() {
 		$errors = array();
 		$title = isset( $_POST['gb_contact_merchant_title'] ) ? esc_html( $_POST['gb_contact_merchant_title'] ) : '';
-		$content = isset( $_POST['gb_contact_merchant_description'] ) ? wp_kses_post( $_POST['gb_contact_merchant_description'] ) : '';
+		$allowed_tags = wp_kses_allowed_html( 'post' );
+		$allowed_tags['iframe'] = array(
+			'width' => true,
+			'height' => true,
+			'src' => true,
+			'frameborder' => true,
+			'webkitAllowFullScreen' => true,
+			'mozallowfullscreen' => true,
+			'allowfullscreen' => true
+		);
+		$content = isset( $_POST['gb_contact_merchant_description'] ) ? wp_kses( $_POST['gb_contact_merchant_description'], $allowed_tags ) : '';
 		$contact_title = isset( $_POST['gb_contact_title'] ) ? esc_html( $_POST['gb_contact_title'] ) : '';
 		$contact_name = isset( $_POST['gb_contact_name'] ) ? esc_html( $_POST['gb_contact_name'] ) : '';
 		$contact_street = isset( $_POST['gb_contact_street'] ) ? esc_html( $_POST['gb_contact_street'] ) : '';

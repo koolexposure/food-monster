@@ -1,35 +1,3 @@
-<style type="text/css" media="screen">
-#titlediv {display: none !important;}
-table#gb_purchases_tables  {
-	border-spacing: 0;
-	width:100%;
-}
-
-#gb_purchases_tables thead th {
-	padding: 5px 8px 8px;
-	background-color: #F1F1F1;
-	padding: 20px;
-	font-weight: bold;
-	border-color: #dfdfdf;
-	border-width: 1px;
-	border-style: solid;
-}
-#gb_purchases_tables .th {
-	padding: 5px 30px 8px;
-	background-color: #F1F1F1;
-	border-color: #dfdfdf;
-	border-width: 1px;
-	border-style: solid;
-	border-top-width: 0px;
-}
-#gb_purchases_tables td {
-	padding:7px;
-	text-align:center;
-}
-.voucher_name {
-	padding-right: 20px;
-}
-</style>
 <script type="text/javascript" charset="utf-8">
 	jQuery(document).ready(function($){
 		jQuery(".gb_activate").click(function(event) {

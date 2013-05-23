@@ -12,6 +12,10 @@
   display: none !important;
 }
 
+.add-new-h2[href~='post-new.php?post_type=gb_project_post'] {
+  display: none !important;
+}
+
 #icon-group-buying {
   background: transparent url(/wp-admin/images/icons32.png ) no-repeat -492px -5px;
 }
@@ -65,8 +69,9 @@
   top: 20px !important;
 }
 
-.gb_pointer_step {
+.gb_pointer_step_closed {
   opacity: 0;
+  z-index: -1 !important;
 }
 
 .gb_pointer_step_1 .wp-pointer-buttons a.close:before, .gb_pointer_step .wp-pointer-buttons a.close:before {
@@ -253,4 +258,34 @@
 
 #addon_marketplace.single .item_attachements .thickbox img {
   width: 120px;
+}
+
+table#gb_purchases_tables  {
+  border-spacing: 0;
+  width:100%;
+}
+
+#gb_purchases_tables thead th {
+  padding: 5px 8px 8px;
+  background-color: #F1F1F1;
+  padding: 20px;
+  font-weight: bold;
+  border-color: #dfdfdf;
+  border-width: 1px;
+  border-style: solid;
+}
+#gb_purchases_tables .th {
+  padding: 5px 30px 8px;
+  background-color: #F1F1F1;
+  border-color: #dfdfdf;
+  border-width: 1px;
+  border-style: solid;
+  border-top-width: 0px;
+}
+#gb_purchases_tables td {
+  padding:7px;
+  text-align:center;
+}
+#gb_purchases_tables .voucher_name {
+  padding-right: 20px;
 }

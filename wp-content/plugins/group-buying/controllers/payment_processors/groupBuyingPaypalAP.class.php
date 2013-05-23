@@ -273,6 +273,7 @@ class Group_Buying_Paypal_AP extends Group_Buying_Offsite_Processors {
 			//wp_delete_post($payment->get_ID(),TRUE);
 			// Do we have a transaction ID to use for the capture?
 			if ( isset( $data['api_response']['preapproval_key'] ) && $data['api_response']['preapproval_key'] ) {
+
 				// items we need to capture
 				$items_to_capture = $this->items_to_capture( $payment );
 				
@@ -282,10 +283,18 @@ class Group_Buying_Paypal_AP extends Group_Buying_Offsite_Processors {
 					if ( !isset( $data['capture_response'] ) ) {
 						$data['capture_response'] = array();
 					}
+
+					// Get Quantities
+					$item_quantities = array();
+					$purchase = Group_Buying_Purchase::get_instance( $payment->get_purchase() );
+					foreach ( $purchase->get_products() as $item ) {
+						$item_quantities[$item['deal_id']] += $item['quantity'];
+					}
+
 					$payment_captured = FALSE;
 					foreach ( $items_to_capture as $deal_id => $amount ) {
 						// capture the payment individually since each capture depends on deal meta
-						$response = self::call_pay( $payment, $deal_id, $amount );
+						$response = self::call_pay( $payment, $deal_id, $amount, $item_quantities[$deal_id] );
 						if ( self::DEBUG ) {
 							error_log( '----------PayPal AP Capture Cal Pay ----------' );
 							error_log( "response: " . print_r( $response, true ) );
@@ -355,20 +364,22 @@ class Group_Buying_Paypal_AP extends Group_Buying_Offsite_Processors {
 		return $res;
 	}
 
-	private function call_pay( $payment, $deal_id, $amount ) {
-
+	private function call_pay( $payment, $deal_id, $amount, $qty = 1 ) {
 		$payment_data = $payment->get_data();
-		$deal = Group_Buying_Deal::get_instance( $deal_id );
-		$subtotal = $amount - self::get_secondary_share( $deal_id );
+		$secondary_share_per = Group_Buying_Paypal_AP::get_secondary_share( $deal_id ); 
+    	$secondary_share = $secondary_share_per*$qty;
+		$subtotal = $amount - $secondary_share;
 		
 		$receiverEmailArray = array(
 			self::get_primary( $deal_id ),
 			self::get_secondary( $deal_id ) );
 		$receiverEmailArray = apply_filters( 'gb_paypal_ap_receiver_email_array', $receiverEmailArray, $payment, $deal_id, $amount ); 
+		
 		$receiverAmountArray = array(
-			number_format( floatval( $subtotal ), 2 ),
-			self::get_secondary_share( $deal_id ) );
-		$receiverAmountArray = apply_filters( 'gb_paypal_ap_receiver_amount_array', $receiverAmountArray, $payment, $deal_id, $amount ); 
+			number_format( floatval( $amount ), 2 ),
+        	number_format( floatval( $secondary_share ), 2 ) );
+		$receiverAmountArray = apply_filters( 'gb_paypal_ap_receiver_amount_array', $receiverAmountArray, $payment, $deal_id, $amount );
+
 		$receiverPrimaryArray = array(
 			'true',
 			'false' );

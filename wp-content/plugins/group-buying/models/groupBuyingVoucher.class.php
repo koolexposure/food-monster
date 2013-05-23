@@ -386,6 +386,18 @@ class Group_Buying_Voucher extends Group_Buying_Post_Type {
 	}
 
 	/**
+	 * Transition the voucher's status from publish to pending
+	 *
+	 * @return void
+	 */
+	public function mark_pending() {
+		error_log( "class: " . print_r( TRUE, true ) );
+		$this->post->post_status = 'pending';
+		$this->save_post();
+		do_action( 'voucher_marked_pending', $this );
+	}
+
+	/**
 	 * Transition the voucher's status from pending to publish
 	 *
 	 * @return void
@@ -407,8 +419,8 @@ class Group_Buying_Voucher extends Group_Buying_Post_Type {
 	 * @param int     $deal_id
 	 * @return array The IDs of the pending vouchers
 	 */
-	public static function get_pending_vouchers( $deal_id ) {
-		$vouchers = new WP_Query( array(
+	public static function get_pending_vouchers( $deal_id, $purchase_id = 0 ) {
+		$args = array(
 				'post_type' => self::POST_TYPE,
 				'post_status' => 'pending',
 				'posts_per_page' => -1,
@@ -420,7 +432,15 @@ class Group_Buying_Voucher extends Group_Buying_Post_Type {
 						'type' => 'NUMERIC',
 					),
 				),
-			) );
+			);
+		if ( $purchase_id ) {
+			$args['meta_query'][] = array(
+						'key' => self::$meta_keys['purchase_id'],
+						'value' => $purchase_id,
+						'type' => 'NUMERIC'
+					);
+		}
+		$vouchers = new WP_Query( $args );
 		return $vouchers->posts;
 	}
 

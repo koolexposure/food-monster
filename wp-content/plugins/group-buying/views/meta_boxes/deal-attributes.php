@@ -24,6 +24,7 @@ jQuery(document).ready( function($) {
 				<th id="attributes_max_purch"><?php gb_e( 'Max.&nbsp;Purchases' ); ?></th>
 				<th id="attributes_desc"><?php gb_e( 'Description' ); ?></th>
 				<?php if ( !empty($categories) ): ?><th><?php gb_e( 'Category' ); ?></th><?php endif; ?>
+				<?php do_action( 'gb_meta_box_deal_attributes_rows_header' ) ?>
 				<th id="attributes_remove"></th>
 			</tr>
 		</thead>
@@ -57,6 +58,7 @@ jQuery(document).ready( function($) {
 						<?php endforeach; ?>
 						</table>
 					</td>
+					<?php do_action( 'gb_meta_box_deal_attributes_rows' ) ?>
 					<td class="remove" valign="middle"><a type="button" class="button gb-deal-attribute-remove" href="#" title="<?php gb_e( 'Remove New Option' ); ?>"><?php gb_e( 'Remove' ); ?></a></td>
 				</tr>
 			<?php endforeach; ?>
@@ -94,6 +96,7 @@ jQuery(document).ready( function($) {
 				</table>
 			</td>
 		<?php endif ?>
+		<?php do_action( 'gb_meta_box_deal_attributes_rows' ) ?>
 		<td class="remove" valign="middle"><a type="button" class="button gb-deal-attribute-remove" href="#" title="<?php gb_e( 'Remove This Option' ); ?>"><?php gb_e( 'Remove' ); ?></a></td>
 	</tr>
 </tbody></table>

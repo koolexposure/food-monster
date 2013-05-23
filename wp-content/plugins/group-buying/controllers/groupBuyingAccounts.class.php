@@ -220,7 +220,7 @@ class Group_Buying_Accounts extends Group_Buying_Controller {
 
 	private static function show_meta_box_gb_account_purchases( Group_Buying_Account $account, $post, $metabox ) {
 		do_action( 'gb_account_purchases_meta_box_top', $account, $post );
-		self::load_view( 'meta_boxes/account-purchases', array( 'account'=>$account ), FALSE );
+		self::load_view( 'meta_boxes/account-purchases', array( 'account'=>$account ), TRUE );
 		do_action( 'gb_account_purchases_meta_box_bottom', $account, $post );
 	}
 
@@ -1782,6 +1782,7 @@ class Group_Buying_Accounts_Checkout extends Group_Buying_Controller {
 		if ( !isset( $_POST['gb_login_or_register'] ) ) {
 			return;
 		}
+
 		if ( $_POST['log'] != '' ) {
 			$login = Group_Buying_Accounts_Login::get_instance(); // make sure the class is instantiated
 			$user = wp_signon();
@@ -1837,6 +1838,11 @@ class Group_Buying_Accounts_Checkout extends Group_Buying_Controller {
 			$cart_id = $cart->get_id();
 			Group_Buying_Cart::claim_anonymous_cart( $cart_id, $user->ID );
 		}
+		
+		// Don't validate billing fields
+		add_filter( 'gb_valid_process_payment_page_fields', '__return_false');
+		// mark checkout incomplete
+		add_filter( 'gb_valid_process_payment_page', '__return_false');
 	}
 
 	/**

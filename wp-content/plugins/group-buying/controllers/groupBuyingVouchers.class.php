@@ -323,7 +323,7 @@ class Group_Buying_Vouchers extends Group_Buying_Controller {
 			if ( in_array( $product['deal_id'], $items_captured ) ) {
 				$deal = Group_Buying_Deal::get_instance( $product['deal_id'] );
 				if ( $deal->is_successful() ) {
-					$vouchers = Group_Buying_Voucher::get_pending_vouchers( $product['deal_id'] );
+					$vouchers = Group_Buying_Voucher::get_pending_vouchers( $product['deal_id'], $purchase_id ); // Added purchase id 4.3.x so that only the purchased vouchers are activated.
 					foreach ( $vouchers as $voucher_id ) {
 						$voucher = Group_Buying_Voucher::get_instance( $voucher_id );
 						$voucher->activate();

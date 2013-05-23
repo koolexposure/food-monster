@@ -463,6 +463,7 @@ class Group_Buying_Paypal_WPP extends Group_Buying_Credit_Card_Processors {
 				'amount' => $item['data']['recurring']['price'],
 				'data' => array(
 					'api_response' => $response,
+					'item' => $item
 				),
 			), Group_Buying_Payment::STATUS_RECURRING );
 
@@ -539,13 +540,14 @@ class Group_Buying_Paypal_WPP extends Group_Buying_Credit_Card_Processors {
 		}
 		// Get the profile status
 		//  - see https://www.x.com/developers/paypal/documentation-tools/api/getrecurringpaymentsprofiledetails-api-operation-nvp
-		$status = $this->get_recurring_payment_status( $data['api_response']['PROFILEID'] );
+		$status = $this->get_recurring_payment_status( $data['api_response']['PROFILEID'], $payment );
+		do_action( 'gb_verify_recurring_payment_status', $status, $payment );
 		if ( $status != 'Active' ) {
 			$payment->set_status( Group_Buying_Payment::STATUS_CANCELLED );
 		}
 	}
 
-	private function get_recurring_payment_status( $profile_id ) {
+	private function get_recurring_payment_status( $profile_id, Group_Buying_Payment $payment ) {
 		$nvp = array(
 			'USER' => $this->api_username,
 			'PWD' => $this->api_password,
@@ -580,6 +582,7 @@ class Group_Buying_Paypal_WPP extends Group_Buying_Credit_Card_Processors {
 		}
 
 		$response = wp_parse_args( wp_remote_retrieve_body( $response ) );
+		do_action( 'gb_verify_recurring_payment', $response, $payment );
 
 		if ( self::DEBUG ) {
 			error_log( '----------PayPal WPP Recurring Payment Details Response (Parsed)----------' );

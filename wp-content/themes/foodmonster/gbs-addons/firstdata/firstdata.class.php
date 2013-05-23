@@ -7,15 +7,15 @@
  * @subpackage Payment Processing_Processor
  */
 class Group_Buying_First_Data extends Group_Buying_Offsite_Processors {
-	const API_ENDPOINT_SANDBOX = '../pgw/connect.php';
-	const API_ENDPOINT_LIVE = '../pgw/connect.php';
-	const API_REDIRECT_SANDBOX = '../pgw/connect.php';
-	const API_REDIRECT_LIVE = '../pgw/connect.php';
+	const API_ENDPOINT_SANDBOX = '.https://connect.merchanttest.firstdataglobalgateway.com/IPGConnect/gateway/processing';
+	const API_ENDPOINT_LIVE = 'https://connect.merchanttest.firstdataglobalgateway.com/IPGConnect/gateway/processing';
+	const API_REDIRECT_SANDBOX = 'https://connect.merchanttest.firstdataglobalgateway.com/IPGConnect/gateway/processing';
+	const API_REDIRECT_LIVE = 'https://connect.merchanttest.firstdataglobalgateway.com/IPGConnect/gateway/processing';
 	const MODE_TEST = 'sandbox';
 	const MODE_LIVE = 'live';
-	const API_USERNAME_OPTION = 'gb_paypal_username';
+	const API_USERNAME_OPTION = '1909379632';
 	const API_SIGNATURE_OPTION = 'gb_paypal_signature';
-	const API_PASSWORD_OPTION = 'gb_paypal_password';
+	const API_PASSWORD_OPTION = '30393731383836393938303437333732313231363736303731383030333131303336313331323837313133303630313438383539383836373732393137383030d';
 	const API_MODE_OPTION = 'gb_paypal_mode';
 	const CANCEL_URL_OPTION = 'gb_paypal_cancel_url';
 	const RETURN_URL_OPTION = 'gb_paypal_return_url';
@@ -80,7 +80,7 @@ class Group_Buying_First_Data extends Group_Buying_Offsite_Processors {
 	}
 
 	public static function returned_from_offsite() {
-		return ( isset( $_GET['token'] ) && isset( $_GET['PayerID'] ) && isset( $_GET['approval_code'] ) && isset( $_GET['status'] )  );
+		return ( isset( $_POST['approval_code'] ) && isset( $_POST['status'] ) && isset( $_POST['oid'] ) && isset( $_POST['response_hash'] )  );
 	}
 
 	protected function __construct() {
@@ -130,7 +130,7 @@ class Group_Buying_First_Data extends Group_Buying_Offsite_Processors {
 		}
 
 
-		if ( !isset( $_GET['approval_code'] ) && $_REQUEST['gb_checkout_action'] == Group_Buying_Checkouts::PAYMENT_PAGE ) {
+		if ( !isset( $_POST['approval_code'] ) && $_REQUEST['gb_checkout_action'] == Group_Buying_Checkouts::PAYMENT_PAGE ) {
 
 			$post_data = $this->set_nvp_data( $checkout );
 			if ( !$post_data ) {
@@ -152,7 +152,7 @@ class Group_Buying_First_Data extends Group_Buying_Offsite_Processors {
 				) );
 
 			if ( self::DEBUG ) {
-				error_log( '----------PayPal EC Approval Response----------' );
+				error_log( '----------First Data Approval Response----------' );
 				error_log( print_r( $response, TRUE ) );
 			}
 
@@ -163,7 +163,7 @@ class Group_Buying_First_Data extends Group_Buying_Offsite_Processors {
 			$response = wp_parse_args( wp_remote_retrieve_body( $response ) );
 
 			if ( self::DEBUG ) {
-				error_log( '----------PayPal EC Approval Response (Parsed)----------' );
+				error_log( '----------First Data Approval Response (Parsed)----------' );
 				error_log( print_r( $response, TRUE ) );
 			}
 
@@ -355,7 +355,7 @@ class Group_Buying_First_Data extends Group_Buying_Offsite_Processors {
 		$post_data = $this->process_nvp_data( $checkout, $purchase );
 
 		if ( self::DEBUG ) {
-			error_log( '----------PayPal EC Authorization Request ----------' );
+			error_log( '----------First Data Authorization Request ----------' );
 			error_log( print_r( $post_data, TRUE ) );
 		}
 
@@ -367,7 +367,7 @@ class Group_Buying_First_Data extends Group_Buying_Offsite_Processors {
 			) );
 
 		if ( self::DEBUG ) {
-			error_log( '----------PayPal EC Authorization Response (Raw) ----------' );
+			error_log( '----------First Data Authorization Response (Raw) ----------' );
 			error_log( print_r( $response, TRUE ) );
 		}
 
@@ -381,7 +381,7 @@ class Group_Buying_First_Data extends Group_Buying_Offsite_Processors {
 		$response = wp_parse_args( wp_remote_retrieve_body( $response ) );
 
 		if ( self::DEBUG ) {
-			error_log( '----------PayPal EC Authorization Response (Parsed) ----------' );
+			error_log( '----------First Data Authorization Response (Parsed) ----------' );
 			error_log( print_r( $response, TRUE ) );
 		}
 

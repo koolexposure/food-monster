@@ -86,8 +86,9 @@ class Group_Buying_Payment extends Group_Buying_Post_Type {
 	}
 
 	public static function new_payment( $args, $status = self::STATUS_COMPLETE ) {
+		$title_suffix = ( isset( $args['transaction_id'] ) ) ? $args['transaction_id'] : microtime();
 		$default = array(
-			'post_title' => self::__( 'Payment' ),
+			'post_title' => sprintf( self::__( 'Payment %s' ), $title_suffix ),
 			'post_status' => $status,
 			'post_type' => self::POST_TYPE,
 		);

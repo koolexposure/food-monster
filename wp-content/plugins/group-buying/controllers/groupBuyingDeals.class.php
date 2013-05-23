@@ -1030,7 +1030,17 @@ class Group_Buying_Deals_Submit extends Group_Buying_Controller {
 	private function process_form_submission() {
 		$errors = array();
 		$title = isset( $_POST['gb_deal_title'] ) ? esc_html( $_POST['gb_deal_title'] ) : '';
-		$description = isset( $_POST['gb_deal_description'] ) ? wp_kses_post( $_POST['gb_deal_description'] ) : '';
+		$allowed_tags = wp_kses_allowed_html( 'post' );
+		$allowed_tags['iframe'] = array(
+			'width' => true,
+			'height' => true,
+			'src' => true,
+			'frameborder' => true,
+			'webkitAllowFullScreen' => true,
+			'mozallowfullscreen' => true,
+			'allowfullscreen' => true
+		);
+		$description = isset( $_POST['gb_deal_description'] ) ? wp_kses( $_POST['gb_deal_description'], $allowed_tags ) : '';
 		$locations = isset( $_POST['gb_deal_locations'] ) ? $_POST['gb_deal_locations'] : array();
 		$expiration = isset( $_POST['gb_deal_exp'] ) ? $_POST['gb_deal_exp'] : '';
 		//$capture_before_expiration = isset( $_POST['gb_deal_capture_before_expiration'] );
@@ -1600,7 +1610,17 @@ class Group_Buying_Deals_Edit extends Group_Buying_Deals {
 	private function process_form_submission() {
 		$errors = array();
 		$title = isset( $_POST['gb_deal_title'] ) ? esc_html( $_POST['gb_deal_title'] ) : '';
-		$content = isset( $_POST['gb_deal_description'] ) ? wp_kses_post( $_POST['gb_deal_description'] ) : 'Please enter information about your business here.';
+		$allowed_tags = wp_kses_allowed_html( 'post' );
+		$allowed_tags['iframe'] = array(
+			'width' => true,
+			'height' => true,
+			'src' => true,
+			'frameborder' => true,
+			'webkitAllowFullScreen' => true,
+			'mozallowfullscreen' => true,
+			'allowfullscreen' => true
+		);
+		$content = isset( $_POST['gb_deal_description'] ) ? wp_kses( $_POST['gb_deal_description'], $allowed_tags ) : 'Please enter information about your business here.';
 		$locations = isset( $_POST['gb_deal_locations'] ) ? $_POST['gb_deal_locations'] : array();
 		$expiration = isset( $_POST['gb_deal_exp'] ) ? $_POST['gb_deal_exp'] : '';
 		//$capture_before_expiration = isset( $_POST['gb_deal_capture_before_expiration'] );

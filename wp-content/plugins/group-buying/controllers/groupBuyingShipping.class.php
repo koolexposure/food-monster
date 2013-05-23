@@ -411,12 +411,14 @@ class Group_Buying_Core_Shipping extends Group_Buying_Controller {
 	 */
 	public function valid_process_payment_page( $valid, Group_Buying_Checkouts $checkout ) {
 		if ( self::cart_shipping( $checkout->get_cart() ) ) {
-			$fields = self::get_shipping_fields();
-			foreach ( $fields as $key => $data ) {
-				$checkout->cache['shipping'][$key] = isset( $_POST['gb_shipping_'.$key] )?$_POST['gb_shipping_'.$key]:'';
-				if ( isset( $data['required'] ) && $data['required'] && !( isset( $checkout->cache['shipping'][$key] ) && $checkout->cache['shipping'][$key] != '' ) ) {
-					$valid = FALSE;
-					self::set_message( sprintf( self::__( '"%s" field is required.' ), $data['label'] ), self::MESSAGE_STATUS_ERROR );
+			if ( apply_filters( 'gb_valid_process_payment_page_fields', __return_true() ) ) {
+				$fields = self::get_shipping_fields();
+				foreach ( $fields as $key => $data ) {
+					$checkout->cache['shipping'][$key] = isset( $_POST['gb_shipping_'.$key] )?$_POST['gb_shipping_'.$key]:'';
+					if ( isset( $data['required'] ) && $data['required'] && !( isset( $checkout->cache['shipping'][$key] ) && $checkout->cache['shipping'][$key] != '' ) ) {
+						$valid = FALSE;
+						self::set_message( sprintf( self::__( '"%s" field is required.' ), $data['label'] ), self::MESSAGE_STATUS_ERROR );
+					}
 				}
 			}
 			// Set the shipping regardless if there's an error or not.

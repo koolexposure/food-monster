@@ -69,7 +69,7 @@ class Group_Buying_Deal extends Group_Buying_Post_Type {
 			),
 			'supports' => array( 'title', 'editor', 'thumbnail', 'comments', 'custom-fields', 'revisions' ),
 			'menu_icon' => GB_URL . '/resources/img/deals.png',
-			'hierarchical' => TRUE,
+			// 'hierarchical' => TRUE
 		);
 		self::register_post_type( self::POST_TYPE, 'Deal', 'Deals', $post_type_args );
 
