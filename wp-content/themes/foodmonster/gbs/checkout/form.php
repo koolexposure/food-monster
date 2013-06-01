@@ -16,7 +16,7 @@ $subtotal = $cart->get_subtotal();
 	<input type="hidden" name="timezone" value="<?php echo gettimezone() ?>" />
 	<input type="hidden" name="authenticateTransaction" value="false" />
 	<input size="50" type="hidden" name="txntype" value="sale"/>
-	<input type="hidden" name="responseSuccessURL" value="http://vps-1083582-7290.manage.myhosting.com/foodmonster/" />
+	<input type="hidden" name="responseSuccessURL" value="http://vps-1083582-7290.manage.myhosting.com/foodmonster/pgw/success.php" />
 	<input type="hidden" name="responseFailURL" value="http://vps-1083582-7290.manage.myhosting.com/foodmonster/" />
 	<input size="50" type="hidden" name="txndatetime" value="<?php echo getdatetime() ?>" />
 	<input size="50" type="hidden" name="hash" value="<?php echo createhash($chargetotal) ?>" />
