@@ -7,7 +7,7 @@ include 'metabox.php';
 
 // Simple array of files to require
 $required_files = '/gbs-addons/custom-merchant-meta/custom-merchant-meta.php';
-$required_files = '/gbs-addons/firstdata/firstdata.class.php';
+
 
 $directory = get_stylesheet_directory();
 

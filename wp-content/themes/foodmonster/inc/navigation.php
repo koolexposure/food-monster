@@ -26,7 +26,7 @@
 								<?php gb_e( 'Hi,' ) ?>
 								<a href="<?php gbs_account_link() ?>" class="name" title="<?php gb_e( 'Your Account' ) ?>"><?php gb_name() ?></a>
 							</span>
-							<span class="header_cart"><a href="<?php gb_cart_url() ?>"><?php gb_e( 'Your Cart' ) ?><span class="cart_count"> (<?php gb_cart_item_count() ?>)</span></a></span> | <?php gb_logout_url(); ?>
+							<span class="header_cart"><a href="<?php gb_cart_url() ?>"><?php gb_e( 'Your Cart' ) ?><span class="cart_count"> (<?php gb_cart_item_count() ?>)</a></span> | <?php gb_logout_url(); ?></span>
 						</div>
 					<?php endif ?>
 
@@ -36,14 +36,7 @@
 	
 			</div><!-- #navigation -->
 
-			<?php if ( !is_user_logged_in() ): ?>
-				<div id="nav_subscription" class="subscription_form clearfix">
-					<span id="subscribe_dd" class="contrast"><?php gb_e( 'Get the Latest Deals' ) ?></span>
-					<div id="subscription_form_wrap" class="cloak">
-						<?php gb_subscription_form(); ?>
-					</div>
-				</div><!-- #header_subscription.subscription_form -->
-			<?php endif ?>
+
 
 		</div><!-- #navigation -->
 		<div id="citydd">

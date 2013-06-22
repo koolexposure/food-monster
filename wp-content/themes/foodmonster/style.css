@@ -199,8 +199,12 @@ display:block;
 font-size:0.9em;
 }
 
-#login_wrap a {
+#login_bfm{
 	display: block;
+}
+
+#login_wrap a {
+
     font-weight: bold;
     font-size
     line-height: 0;

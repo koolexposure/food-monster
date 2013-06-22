@@ -5,7 +5,8 @@
  *
  * @package WordPress
  */
-
+@ini_set('log_errors','On');
+@ini_set('display_errors','On'); // displays error logs
 /**
  * Tells WordPress to load the WordPress theme and output it.
  *
