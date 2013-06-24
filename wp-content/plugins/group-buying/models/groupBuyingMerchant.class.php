@@ -40,7 +40,7 @@ class Group_Buying_Merchant extends Group_Buying_Post_Type {
 				'slug' => self::REWRITE_SLUG,
 				'with_front' => FALSE,
 			),
-			'supports' => array( 'title', 'editor', 'thumbnail', 'comments', 'custom-fields', 'revisions', 'post-formats' ),
+			'supports' => array( 'title', 'editor', 'thumbnail', 'comments', 'custom-fields', 'revisions' ),
 			'menu_icon' => GB_URL . '/resources/img/merchant.png'
 		);
 		self::register_post_type( self::POST_TYPE, 'Merchant', 'Merchants', $post_type_args );
@@ -402,7 +402,7 @@ class Group_Buying_Merchant extends Group_Buying_Post_Type {
 	/**
 	 * Add a file as a post attachment.
 	 */
-	public function set_attachement( $files ) {
+	public function set_attachement( $files, $key = '' ) {
 		if ( !function_exists( 'wp_generate_attachment_metadata' ) ) {
 			require_once ABSPATH . 'wp-admin' . '/includes/image.php';
 			require_once ABSPATH . 'wp-admin' . '/includes/file.php';
@@ -413,7 +413,14 @@ class Group_Buying_Merchant extends Group_Buying_Post_Type {
 			if ( $files[$file]['error'] !== UPLOAD_ERR_OK ) {
 				// Group_Buying_Controller::set_message('upload error : ' . $files[$file]['error']);
 			}
-			$attach_id = media_handle_upload( $file, $this->ID );
+			if ( $key !== '' ) {
+				if ( $key == $file  ) {
+					$attach_id = media_handle_upload( $file, $this->ID );
+				}
+			}
+			else {
+				$attach_id = media_handle_upload( $file, $this->ID );
+			}
 		}
 		// Make it a thumbnail while we're at it.
 		if ( !is_wp_error($attach_id) && $attach_id > 0 ) {

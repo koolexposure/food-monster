@@ -573,6 +573,9 @@ class Group_Buying_Paypal_EC extends Group_Buying_Offsite_Processors {
 							}
 						} else {
 							$this->set_error_messages( $response, FALSE );
+							if ( $response['L_ERRORCODE0'] == 10601 ) { // authorization expired
+								$payment->set_status(Group_Buying_Payment::STATUS_VOID);
+							}
 						}
 					}
 				}
@@ -762,7 +765,7 @@ class Group_Buying_Paypal_EC extends Group_Buying_Offsite_Processors {
 		}
 		// Get the profile status
 		//  - see https://www.x.com/developers/paypal/documentation-tools/api/getrecurringpaymentsprofiledetails-api-operation-nvp
-		$status = $this->get_recurring_payment_status( $data['api_response']['PROFILEID'] );
+		$status = $this->get_recurring_payment_status( $data['api_response']['PROFILEID'], $payment );
 		do_action( 'gb_verify_recurring_payment_status', $status, $payment );
 		if ( $status != 'Active' ) {
 			$payment->set_status( Group_Buying_Payment::STATUS_CANCELLED );

@@ -44,24 +44,24 @@ class Group_Buying_Payments extends Group_Buying_Controller {
 				<input type="hidden" name="page" value="<?php echo $_REQUEST['page'] ?>" />
 				<?php $wp_list_table->search_box( self::__( 'Payment ID' ), 'payment_id' ); ?>
 				<p class="search-box deal_search">
-					<label class="screen-reader-text" for="payment_deal_id-search-input"><?php self::_e('Deal ID:') ?></label>
+					<label class="screen-reader-text" for="payment_deal_id-search-input"><?php self::_e( 'Deal ID:' ) ?></label>
 					<input type="text" id="payment_deal_id-search-input" name="deal_id" value="">
 
-					<input type="submit" name="" id="search-submit" class="button" value="<?php self::_e('Deal ID') ?>">
+					<input type="submit" name="" id="search-submit" class="button" value="<?php self::_e( 'Deal ID' ) ?>">
 				</p>
 				<p class="search-box purchase_search">
 
-					<label class="screen-reader-text" for="payment_purchase_id-search-input"><?php self::_e('Purchase ID:') ?></label>
+					<label class="screen-reader-text" for="payment_purchase_id-search-input"><?php self::_e( 'Purchase ID:' ) ?></label>
 					<input type="text" id="payment_purchase_id-search-input" name="purchase_id" value="">
 
-					<input type="submit" name="" id="search-submit" class="button" value="<?php self::_e('Purchase ID') ?>">
+					<input type="submit" name="" id="search-submit" class="button" value="<?php self::_e( 'Purchase ID' ) ?>">
 				</p>
 				<p class="search-box account_search">
 
-					<label class="screen-reader-text" for="payment_account_id-search-input"><?php self::_e('Account ID:') ?></label>
+					<label class="screen-reader-text" for="payment_account_id-search-input"><?php self::_e( 'Account ID:' ) ?></label>
 					<input type="text" id="payment_account_id-search-input" name="account_id" value="">
 
-					<input type="submit" name="" id="search-submit" class="button" value="<?php self::_e('Account ID') ?>">
+					<input type="submit" name="" id="search-submit" class="button" value="<?php self::_e( 'Account ID' ) ?>">
 				</p>
 				<?php $wp_list_table->display() ?>
 			</form>
@@ -125,18 +125,15 @@ class Group_Buying_Payments_Table extends WP_List_Table {
 	}
 
 	function extra_tablenav( $which ) {
-?>
-		<div class="alignleft actions">
-<?php
+		?>
+		<div class="alignleft actions"> <?php
 		if ( 'top' == $which && !is_singular() ) {
 
 			$this->months_dropdown( self::$post_type );
 
 			submit_button( __( 'Filter' ), 'secondary', false, false, array( 'id' => 'post-query-submit' ) );
-		}
-?>
-		</div>
-<?php
+		} ?>
+		</div> <?php
 	}
 
 
@@ -169,9 +166,9 @@ class Group_Buying_Payments_Table extends WP_List_Table {
 		$account = $payment->get_account();
 		if ( !is_a( $account, 'Group_Buying_Account' ) ) { // TODO Remove this nonsense after 3.8
 			if ( get_post_status( $item->ID ) == 'trash' ) {
-				return sprintf(gb__('Want to empty the trash? <a href="%s">Empty</a>.'), 'wp-admin/edit.php?post_status=trash&post_type=gb_payment');
+				return sprintf( gb__( 'Want to empty the trash? <a href="%s">Empty</a>.' ), 'wp-admin/edit.php?post_status=trash&post_type=gb_payment' );
 			} else {
-				return sprintf(gb__('ERROR: No account associated.<br/>Want to remove this record? <a href="%s">Trash it</a>.'), get_edit_post_link($item->ID));
+				return sprintf( gb__( 'ERROR: No account associated.<br/>Want to remove this record? <a href="%s">Trash it</a>.' ), get_edit_post_link( $item->ID ) );
 			}
 		}
 		$purchase_id = $payment->get_purchase();
@@ -322,12 +319,12 @@ class Group_Buying_Payments_Table extends WP_List_Table {
 	 * */
 	function get_columns() {
 		$columns = array(
-			'status'  => gb__('Status'),
-			'title'  => gb__('Payment'),
-			'total'  => gb__('Totals'),
-			'deals'  => gb__('Deals'),
-			'account'    => gb__('Account'),
-			'data'  => gb__('Data')
+			'status'  => gb__( 'Status' ),
+			'title'  => gb__( 'Payment' ),
+			'total'  => gb__( 'Totals' ),
+			'deals'  => gb__( 'Deals' ),
+			'account'    => gb__( 'Account' ),
+			'data'  => gb__( 'Data' )
 		);
 		return apply_filters( 'gb_mngt_payments_columns', $columns );
 	}
@@ -342,9 +339,6 @@ class Group_Buying_Payments_Table extends WP_List_Table {
 	 * */
 	function get_sortable_columns() {
 		$sortable_columns = array(
-			'title'  => array( 'title', true ),     // true means its already sorted
-			'total'    => array( 'total', false ),
-			'status'  => array( 'status', false )
 		);
 		return apply_filters( 'gb_mngt_payments_sortable_columns', $sortable_columns );
 	}

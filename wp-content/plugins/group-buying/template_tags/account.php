@@ -342,7 +342,7 @@ function gb_format_address( $address, $return = 'array', $separator = "\n" ) {
 	case 'array':
 		return $lines;
 	default:
-		return implode( $separator, $lines );
+		return apply_filters( 'gb_format_address', implode( $separator, $lines ), $address, $return, $separator );
 	}
 }
 

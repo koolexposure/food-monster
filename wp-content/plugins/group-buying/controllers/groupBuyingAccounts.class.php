@@ -29,7 +29,7 @@ class Group_Buying_Accounts extends Group_Buying_Controller {
 		add_action( 'add_meta_boxes', array( get_class(), 'add_meta_boxes' ) );
 		add_action( 'save_post', array( get_class(), 'save_meta_boxes' ), 10, 2 );
 		add_filter( 'gb_admin_bar', array( get_class(), 'add_link_to_admin_bar' ), 10, 1 );
-		add_action( 'checkout_completed', array( get_class(), 'save_contact_info_from_checkout' ), 10, 1 );
+		add_action( 'completing_checkout', array( get_class(), 'save_contact_info_from_checkout' ), 10, 1 );
 		add_action( 'admin_init', array( get_class(), 'register_settings_fields' ), 50, 0 );
 
 		add_filter( 'gb_account_credit_types', array( get_class(), 'register_credit_type' ), 10, 1 );
@@ -2124,7 +2124,6 @@ class Group_Buying_Accounts_Table extends WP_List_Table {
 	 * */
 	function get_sortable_columns() {
 		$sortable_columns = array(
-			'title'  => array( 'title', true ),     // true means its already sorted
 		);
 		return apply_filters( 'gb_mngt_accounts_sortable_columns', $sortable_columns );
 	}

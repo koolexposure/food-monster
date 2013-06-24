@@ -2,32 +2,15 @@
 <?php include("fdgg-util_sha2.php"); ?>
 <HTML>
 <head><title>FDGG Connect Sample for PHP</title></head> 
-<script type="text/javascript">
-function forward(){
-var identifier = '<?php echo $_REQUEST["identifier"]; ?>'; 
-if(identifier){
-/* For Merchant Test Environment (CTE) */
-document.redirectForm.action="https://connect.merchanttest.firstdataglobalgateway.com/IPGConnect/gateway/processing";
-/* For Production Environment (PROD) */
-//document.redirectForm.action="https://connect.firstdataglobalgateway.com/IPGConnect/gateway/processing";
-//document.redirectForm.action="http://localhost:8888/fmpay/connect.php";
-document.redirectForm.submit();
-}
-}
-</script>
-<BODY onLoad="forward()">
-		<?php
 
-	var_dump($_POST);
 
-	?>
-	
+<BODY>	
 	
 <?php if ($_REQUEST["identifier"]== NULL ) { ?> 
 <P>
 <H1>Order Form </H1>
 <!--<FORM action="/connect_p.php" method=post name="mainform"><BR>-->
-<FORM action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post" 
+<FORM action="http://localhost:8888/foodmonster/pgw/success.php" method="post" 
 name="mainform"><BR>
 <TABLE border=0>
 <TBODY>

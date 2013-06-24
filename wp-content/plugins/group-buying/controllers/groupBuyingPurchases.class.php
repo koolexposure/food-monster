@@ -32,8 +32,9 @@ class Group_Buying_Purchases extends Group_Buying_Controller {
 
 	/**
 	 * Override template for the purchase post type
-	 * @param  string $template 
-	 * @return            
+	 *
+	 * @param string  $template
+	 * @return
 	 */
 	public static function override_template( $template ) {
 		$post_type = get_query_var( 'post_type' );
@@ -68,7 +69,7 @@ class Group_Buying_Purchases extends Group_Buying_Controller {
 			$purchase = Group_Buying_Purchase::get_instance( $purchase_id );
 			// Remove content filter
 			remove_filter( 'the_content', 'wpautop' );
-			
+
 			if ( self::authorized_user( $purchase_id ) ) {
 				$args = array(
 					'order_number' => $purchase_id,
@@ -80,7 +81,7 @@ class Group_Buying_Purchases extends Group_Buying_Controller {
 				$view = self::load_view_to_string( 'purchase/order', $args );
 			}
 			else { // show the authentication form
-				$view = self::lookup_page(TRUE);
+				$view = self::lookup_page( TRUE );
 			}
 			// Display content
 			global $pages;
@@ -101,7 +102,7 @@ class Group_Buying_Purchases extends Group_Buying_Controller {
 			if ( is_single() ) {
 				$filtered = self::__( 'Order Lookup' );
 				if ( self::authorized_user( $post_id ) ) {
-					$filtered .= ': '.str_replace( 'Order ', '', $title);
+					$filtered .= ': '.str_replace( 'Order ', '', $title );
 				}
 				return $filtered;
 			}
@@ -111,7 +112,8 @@ class Group_Buying_Purchases extends Group_Buying_Controller {
 
 	/**
 	 * Lookup view
-	 * @return  
+	 *
+	 * @return
 	 */
 	public function lookup_page( $return = FALSE ) {
 		$args = array( 'action' => self::get_url(), 'nonce_id' => self::NONCE_ID, 'city_option_name' => self::AUTH_FORM_INPUT, 'order_option_name' => self::AUTH_FORM_ID_INPUT );
@@ -125,9 +127,10 @@ class Group_Buying_Purchases extends Group_Buying_Controller {
 
 	/**
 	 * Check to see if the user has access to view the purchase content.
-	 * @param  int  $purchase_id 
-	 * @param  int $user_id     
-	 * @return bool|string              
+	 *
+	 * @param int     $purchase_id
+	 * @param int     $user_id
+	 * @return bool|string
 	 */
 	public static function authorized_user( $purchase_id, $user_id = 0 ) {
 		$return = FALSE;
@@ -150,7 +153,7 @@ class Group_Buying_Purchases extends Group_Buying_Controller {
 		if ( // handle both submissions and $_GET variables from a redirect
 			( isset( $_POST['gb_order_lookup_'.self::AUTH_FORM_INPUT] ) && $_POST['gb_order_lookup_'.self::AUTH_FORM_INPUT] != '' ) ||
 			( isset( $_REQUEST[self::AUTH_FORM_INPUT] ) && $_REQUEST[self::AUTH_FORM_INPUT] != '' )
-			) {
+		) {
 			// submitted form and has a matching billing city
 			$account = Group_Buying_Account::get_instance( $purchase_user_id );
 			$address = $account->get_address();
@@ -199,10 +202,10 @@ class Group_Buying_Purchases extends Group_Buying_Controller {
 						wp_redirect( $url );
 						exit();
 					} else {
-						$message = self::__('Invalid Billing City');	
+						$message = self::__( 'Invalid Billing City' );
 					}
 				} else {
-					$message = self::__('Order ID not found');
+					$message = self::__( 'Order ID not found' );
 				}
 			}
 		}
@@ -247,12 +250,12 @@ class Group_Buying_Purchases extends Group_Buying_Controller {
 		//Fetch, prepare, sort, and filter our data...
 		$wp_list_table->prepare_items();
 
-?>
+		?>
 		<script type="text/javascript" charset="utf-8">
 			jQuery(document).ready(function($){
 				jQuery(".gb_destroy").on('click', function(event) {
 					event.preventDefault();
-						if( confirm( '<?php gb_e("This will permanently trash the purchase and its associated voucher(s) and payment(s) which cannot be reversed (without manually adjusting them in the DB). This will not reverse any payments or provide a credit to the customer, that must be done manually. Are you sure?") ?>' ) ) {
+						if( confirm( '<?php gb_e( "This will permanently trash the purchase and its associated voucher(s) and payment(s) which cannot be reversed (without manually adjusting them in the DB). This will not reverse any payments or provide a credit to the customer, that must be done manually. Are you sure?" ) ?>' ) ) {
 							var $destroy_link = $( this ),
 							destroy_purchase_id = $destroy_link.attr( 'ref' );
 							$.post( ajaxurl, { action: 'gbs_destroyer', type: 'purchase', id: destroy_purchase_id, destroyer_nonce: '<?php echo wp_create_nonce( Group_Buying_Destroy::NONCE ) ?>' },
@@ -281,14 +284,14 @@ class Group_Buying_Purchases extends Group_Buying_Controller {
 				<?php $wp_list_table->search_box( self::__( 'Order ID' ), 'purchase_id' ); ?>
 				<p class="search-box deal_search">
 
-					<label class="screen-reader-text" for="payment_deal_id-search-input"><?php self::_e('Deal ID:') ?></label>
+					<label class="screen-reader-text" for="payment_deal_id-search-input"><?php self::_e( 'Deal ID:' ) ?></label>
 					<input type="text" id="payment_deal_id-search-input" name="deal_id" value="">
-					<input type="submit" name="" id="search-submit" class="button" value="<?php self::_e('Deal ID') ?>">
+					<input type="submit" name="" id="search-submit" class="button" value="<?php self::_e( 'Deal ID' ) ?>">
 				</p>
 				<p class="search-box account_search">
-					<label class="screen-reader-text" for="payment_account_id-search-input"><?php self::_e('Account ID:') ?></label>
+					<label class="screen-reader-text" for="payment_account_id-search-input"><?php self::_e( 'Account ID:' ) ?></label>
 					<input type="text" id="payment_account_id-search-input" name="account_id" value="">
-					<input type="submit" name="" id="search-submit" class="button" value="<?php self::_e('Account ID') ?>">
+					<input type="submit" name="" id="search-submit" class="button" value="<?php self::_e( 'Account ID' ) ?>">
 				</p>
 				<?php $wp_list_table->display() ?>
 			</form>
@@ -372,9 +375,8 @@ class Group_Buying_Purchases_Table extends WP_List_Table {
 	}
 
 	function extra_tablenav( $which ) {
-?>
-		<div class="alignleft actions">
-<?php
+		?>
+		<div class="alignleft actions"> <?php
 		if ( 'top' == $which && !is_singular() ) {
 
 			$this->months_dropdown( self::$post_type );
@@ -382,10 +384,8 @@ class Group_Buying_Purchases_Table extends WP_List_Table {
 			do_action( 'gb_mngt_purchases_extra_tablenav' );
 
 			submit_button( __( 'Filter' ), 'secondary', false, false, array( 'id' => 'post-query-submit' ) );
-		}
-?>
-		</div>
-<?php
+		} ?>
+		</div> <?php
 	}
 
 
@@ -489,7 +489,7 @@ class Group_Buying_Purchases_Table extends WP_List_Table {
 		$purchase = Group_Buying_Purchase::get_instance( $item->ID );
 
 		$actions = array(
-			'trash'    => '<span id="'.$purchase_id.'_destroy_result"></span><a href="javascript:void(0)" class="gb_destroy" id="'.$purchase_id.'_destroy" ref="'.$purchase_id.'">'.gb__('Delete Purchase').'</a>',
+			'trash'    => '<span id="'.$purchase_id.'_destroy_result"></span><a href="javascript:void(0)" class="gb_destroy" id="'.$purchase_id.'_destroy" ref="'.$purchase_id.'">'.gb__( 'Delete Purchase' ).'</a>',
 		);
 
 		$status = ucfirst( str_replace( 'publish', 'complete', $item->post_status ) );
@@ -511,11 +511,11 @@ class Group_Buying_Purchases_Table extends WP_List_Table {
 	 * */
 	function get_columns() {
 		$columns = array(
-			'status'  => gb__('Status'),
-			'title'  => gb__('Order'),
-			'total'  => gb__('Total'),
-			'deals'  => gb__('Deals'),
-			'payments'  => gb__('Payments')
+			'status'  => gb__( 'Status' ),
+			'title'  => gb__( 'Order' ),
+			'total'  => gb__( 'Total' ),
+			'deals'  => gb__( 'Deals' ),
+			'payments'  => gb__( 'Payments' )
 		);
 		return apply_filters( 'gb_mngt_purchases_columns', $columns );
 	}
@@ -530,9 +530,6 @@ class Group_Buying_Purchases_Table extends WP_List_Table {
 	 * */
 	function get_sortable_columns() {
 		$sortable_columns = array(
-			'title'  => array( 'title', true ),     // true means its already sorted
-			'total'    => array( 'total', false ),
-			'status'  => array( 'status', false )
 		);
 		return apply_filters( 'gb_mngt_purchases_sortable_columns', $sortable_columns );
 	}
@@ -599,7 +596,7 @@ class Group_Buying_Purchases_Table extends WP_List_Table {
 
 			$posts_in = array(
 				'post__in' => $purchase_ids
-				);
+			);
 			$args = array_merge( $args, $posts_in );
 		}
 		// Check payments based on Account ID
@@ -611,7 +608,7 @@ class Group_Buying_Purchases_Table extends WP_List_Table {
 			$purchase_ids = Group_Buying_Purchase::get_purchases( array( 'account' => $_GET['account_id'] ) );
 			$meta_query = array(
 				'post__in' => $purchase_ids,
-				);
+			);
 			$args = array_merge( $args, $meta_query );
 		}
 		// Search

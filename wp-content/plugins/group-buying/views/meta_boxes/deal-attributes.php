@@ -58,7 +58,7 @@ jQuery(document).ready( function($) {
 						<?php endforeach; ?>
 						</table>
 					</td>
-					<?php do_action( 'gb_meta_box_deal_attributes_rows' ) ?>
+					<?php do_action( 'gb_meta_box_deal_attributes_rows', $post_id, $data ) ?>
 					<td class="remove" valign="middle"><a type="button" class="button gb-deal-attribute-remove" href="#" title="<?php gb_e( 'Remove New Option' ); ?>"><?php gb_e( 'Remove' ); ?></a></td>
 				</tr>
 			<?php endforeach; ?>
@@ -96,7 +96,7 @@ jQuery(document).ready( function($) {
 				</table>
 			</td>
 		<?php endif ?>
-		<?php do_action( 'gb_meta_box_deal_attributes_rows' ) ?>
+		<?php do_action( 'gb_meta_box_deal_attributes_rows_js' ) ?>
 		<td class="remove" valign="middle"><a type="button" class="button gb-deal-attribute-remove" href="#" title="<?php gb_e( 'Remove This Option' ); ?>"><?php gb_e( 'Remove' ); ?></a></td>
 	</tr>
 </tbody></table>

@@ -626,9 +626,6 @@ class Group_Buying_Gifts_Table extends WP_List_Table {
 	 * */
 	function get_sortable_columns() {
 		$sortable_columns = array(
-			'title'  => array( 'title', true ),     // true means its already sorted
-			'total'    => array( 'total', false ),
-			'status'  => array( 'status', false )
 		);
 		return apply_filters( 'gb_mngt_gifts_sortable_columns', $sortable_columns );
 	}

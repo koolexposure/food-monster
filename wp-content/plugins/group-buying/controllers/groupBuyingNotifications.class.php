@@ -587,7 +587,16 @@ class Group_Buying_Notifications extends Group_Buying_Controller {
 		$headers = implode( "\r\n", $headers ) . "\r\n";
 		$filtered_headers = apply_filters( 'gb_notification_headers', $headers, $notification_name, $data, $from_email, $from_name, $html );
 
+		if ( self::DEBUG ) error_log( "notification sending +++++++++++++++++++++++++++++++++++++++++ ");
+		if ( self::DEBUG ) error_log( "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ ");
+		if ( self::DEBUG ) error_log( "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ ");
+		if ( self::DEBUG ) error_log( "notification headers: " . print_r( $headers, true ) );
+		if ( self::DEBUG ) error_log( "notification to: " . print_r( $to, true ) );
+		if ( self::DEBUG ) error_log( "notification notification_name: " . print_r( $notification_name, true ) );
 		if ( self::DEBUG ) error_log( "notification content: " . print_r( $notification_content, true ) );
+		if ( self::DEBUG ) error_log( "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ ");
+		if ( self::DEBUG ) error_log( "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ ");
+		if ( self::DEBUG ) error_log( "notification sent ++++++++++++++++++++++++++++++++++++++++++++ ");
 		wp_mail( $to, $notification_title, $notification_content, $filtered_headers );
 		self::mark_notification_sent( $notification_name, $data, $to );
 	}
@@ -971,11 +980,11 @@ class Group_Buying_Notifications extends Group_Buying_Controller {
 	}
 
 	public static function shortcode_sender_name( $atts, $content, $code, $data ) {
-		if ( self::DEBUG ) {
-			error_log( "shortcode_sender_name: " . print_r( $data['user_id'], true ) );
-		}
 		$user_id = self::get_notification_user_id( 0, $data );
-		if ( is_int( $user_id ) && $user_id > 0 ) {
+		if ( self::DEBUG ) {
+			error_log( "shortcode_sender_name user_id: " . print_r( $user_id, true ) );
+		}
+		if ( is_numeric( $user_id ) && $user_id ) {
 			$account = Group_Buying_Account::get_instance( $user_id );
 			if ( is_a( $account, 'Group_Buying_Account' ) ) {
 				$get_name = $account->get_name();
@@ -1097,8 +1106,11 @@ class Group_Buying_Notifications extends Group_Buying_Controller {
 		if ( false == $user ) {
 			$user = get_current_user_id();
 		}
-		if ( is_int( $user ) ) {
+		if ( is_numeric( $user ) ) {
 			$user = get_userdata( $user );
+		}
+		if ( !is_a( $user, 'WP_User' ) ) {
+			if ( self::DEBUG ) error_log( "Get User Email FAILED: " . print_r( $user, true ) );
 		}
 		$user_email = $user->user_email;
 		$name = gb_get_name( $user->ID );
@@ -1294,6 +1306,10 @@ class Group_Buying_Notifications extends Group_Buying_Controller {
 	}
 
 	function applied_credits( $account, $payment, $credits, $type ) {
+		if ( !$credits ) {
+			if ( self::DEBUG ) error_log( "Notification not sent without credits ----: " . print_r( $payment, true ) );
+			return; // don't tease the user with a notification without any credits.
+		}
 		$user_id = $account->get_user_id();
 		$to = self::get_user_email( $user_id );
 		$data = array(
@@ -1504,7 +1520,6 @@ class Group_Buying_Notifications_Table extends WP_List_Table {
 	 * */
 	function get_sortable_columns() {
 		$sortable_columns = array(
-			'title'  => array( 'title', true ),     // true means its already sorted
 		);
 		return apply_filters( 'gb_mngt_notification_sortable_columns', $sortable_columns );
 	}

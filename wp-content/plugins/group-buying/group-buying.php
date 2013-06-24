@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Group Buying Plugin
-Version: 4.3.2
+Version: 4.4
 Plugin URI: http://groupbuyingsite.com/feature-tour/
 Description: Allows for groupon like functionality. By installing this plugin you agree to the <a href="http://groupbuyingsite.com/tos/" title="I agree">terms and conditions</a> of GroupBuyingSite.
 Author: GroupBuyingSite.com
@@ -206,7 +206,7 @@ function group_buying_load() {
  * do_action when plugin is activated.
  * @package GBS
  * @subpackage Base
- * @ignore 
+ * @ignore
  */
 register_activation_hook( __FILE__, 'gb_plugin_activated' );
 function gb_plugin_activated() {
@@ -216,7 +216,7 @@ function gb_plugin_activated() {
  * do_action when plugin is deactivated.
  * @package GBS
  * @subpackage Base
- * @ignore 
+ * @ignore
  */
 register_deactivation_hook( __FILE__, 'gb_plugin_deactivated' );
 function gb_plugin_deactivated() {

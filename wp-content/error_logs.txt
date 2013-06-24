@@ -1,9 +1,31 @@
-[28-Apr-2013 19:58:37] PHP Fatal error:  Access to undeclared static property: Group_Buying_First_Data::$cancel_url in /Applications/MAMP/htdocs/foodmonster/wp-content/themes/foodmonster/gbs-addons/firstdata/firstdata.class.php on line 91
-[28-Apr-2013 19:58:42] PHP Fatal error:  Access to undeclared static property: Group_Buying_First_Data::$cancel_url in /Applications/MAMP/htdocs/foodmonster/wp-content/themes/foodmonster/gbs-addons/firstdata/firstdata.class.php on line 91
-[28-Apr-2013 20:13:18] PHP Fatal error:  Access to undeclared static property: Group_Buying_First_Data::$cancel_url in /Applications/MAMP/htdocs/foodmonster/wp-content/themes/foodmonster/gbs-addons/firstdata/firstdata.class.php on line 91
-[30-Apr-2013 22:23:32] get_addon_data not cached: 1
-[30-Apr-2013 22:23:35] set transient: 
-[19-May-2013 19:29:13] get_addon_data not cached: 1
-[19-May-2013 19:29:19] set transient: 
-[23-May-2013 00:26:39] get_addon_data not cached: 1
-[23-May-2013 00:26:46] set transient: 
+[03-Jun-2013 17:06:50] ----------PayPal EC SetCheckout Data----------
+[03-Jun-2013 17:06:50] Array
+(
+    [storename] => 1909379632
+    [hash] => 2ccd4ba558c5a6b786fa7866f364a22f652e68dac105ddce159242d1ee9d6d7c
+    [responseFailURL] => http://vps-1083582-7290.manage.myhosting.com/foodmonster/checkout
+    [responseSuccessURL] => http://vps-1083582-7290.manage.myhosting.com/foodmonster/checkout
+    [mode] => payonly
+    [trxOrigin] => ECI
+    [txntype] => sale
+    [txndatetime] => 2013:06:03-13:06:49
+    [authenticateTransaction] => false
+    [paymentMethod] => V
+    [timezone] => EST
+    [EMAIL] => koolexposure@gmail.com
+    [LANDINGPAGE] => Billing
+    [SOLUTIONTYPE] => Sole
+    [chargetotal] => 22.00
+    [PAYMENTREQUEST_0_CURRENCYCODE] => USD
+    [subtotal] => 22.00
+    [PAYMENTREQUEST_0_SHIPPINGAMT] => 0.00
+    [PAYMENTREQUEST_0_TAXAMT] => 0.00
+    [BUTTONSOURCE] => Group Buying Site
+    [L_PAYMENTREQUEST_0_NAME0] => Drink Deal
+    [L_PAYMENTREQUEST_0_AMT0] => 22.00
+    [L_PAYMENTREQUEST_0_NUMBER0] => 100
+    [L_PAYMENTREQUEST_0_QTY0] => 1
+)
+
+[09-Jun-2013 20:16:04] get_addon_data not cached: 1
+[09-Jun-2013 20:16:09] set transient: 

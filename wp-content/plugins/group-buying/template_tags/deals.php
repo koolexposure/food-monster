@@ -326,7 +326,7 @@ function gb_has_purchased( $post_id = 0, $user_id = 0 ) { // TODO
 	if ( is_array( $purchases ) && !empty( $purchases )  ) {
 		$bool = TRUE;
 	}
-	return apply_filters( 'gb_has_purchased', $bool, $post_id );
+	return apply_filters( 'gb_has_purchased', $bool, $post_id, $user_id );
 }
 
 /**
