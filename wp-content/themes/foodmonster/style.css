@@ -47,6 +47,7 @@ ul, li{
 
 .widget{
 	color:white;
+	margin:0px !important;
 }
 
 .widget ul, .widget ol{
@@ -97,7 +98,7 @@ padding: 10px;
 .home #content{
 	
 	position:absolute;
-	bottom: 100px;
+	bottom: 80px;
 	display:block;
 	background:none;
 	
@@ -117,9 +118,9 @@ padding: 10px;
 #footer_wrap{
 	background-color: #181818;
     color: white;
-	height:100px;
-	margin-top: -100px;
-min-height:100px;
+	height:80px;
+	margin-top: -80px;
+min-height:80px;
 font-size: 20px;
 padding:0 3%;
 position:relative;
@@ -132,13 +133,27 @@ margin: 0 auto;
 }
 
 
+#widget_wrapper p {
+	float: right;
+	width:350px;
+}
+
+.tumblr_post{
+    height: 80px;
+    padding-bottom: 11px;
+}
+
+.tumblr_post img {
+   float: left;
+}
+
 .home #footer {
     display: block;
 }
 
 #footer{
 	display:inline-block;
-	font-size:20px;
+	font-size:18px;
 	vertical-align:middle;
 }
 
@@ -324,6 +339,11 @@ border: none;
 	position:relative;
 	padding-top:13px;
 }
+.social_footer img{
+	height: 60px;
+}
+
+
 #footer .legal{
 	margin:0;
 	padding-top:34px;
