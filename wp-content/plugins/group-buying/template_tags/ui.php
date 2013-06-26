@@ -64,7 +64,7 @@ function gb_get_truncate( $text, $excerpt_length = 44, $more_link = false ) {
 
     $text = apply_filters( 'the_excerpt', $text );
     $text = str_replace( ']]>', ']]&gt;', $text );
-    $text = strip_tags( $text, '<a><strong><em><b><del><i><font><cite>' );
+    $text = strip_tags( $text );
 
     $words = explode( ' ', $text, $excerpt_length + 1 );
     if ( count( $words ) > $excerpt_length ) {

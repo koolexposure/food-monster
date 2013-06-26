@@ -1,12 +1,12 @@
-=== Twitter Feed for WordPress ===
-Contributors: alexmoss
+=== Twitter Feed: Embedded Timeline WordPress Plugin ===
+Contributors: alexmoss, pleer
 Donate link:  http://3doordigital.com/go/twitter-paypal/
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: twitter, tweets, twitter feed, twitter updates, seo, plugin, widget, sidebar, page, post
 Requires at least: 2.7
 Tested up to: 3.5.1
-Stable tag: 1.2.2
+Stable tag: 2.0.1
 
 A simple Twitter feed that outputs your latest tweets in HTML into any post, page, template or sidebar widget. Customisable and easy to install!
 
@@ -15,7 +15,8 @@ A simple Twitter feed that outputs your latest tweets in HTML into any post, pag
 The WordPress Twitter Feed Plugin lets you simply output any user's tweets into your WordPress page, template or sidebar! You can customise the username, number of tweets, and style of ouput.
 
 
-* [Twitter Feed](http://3doordigital.com/wordpress/plugins/wp-twitter-feed/) WordPress Plugin homepage.
+* [Twitter Feed Embedded Timeline](http://3doordigital.com/wordpress/plugins/wp-twitter-feed/) WordPress Plugin homepage.
+* [Twitter Feed PRO](http://3doordigital.com/wordpress/plugins/wp-twitter-feed-pro/) - this plugin outputs tweet using flat HTML and supports Twitter's API v1.1.
 * More [WordPress Plugins](http://3doordigital.com/wordpress/plugins/).
 
 == Installation ==
@@ -31,6 +32,16 @@ For full configuration and options please visit the [Twitter Feed WordPress Plug
 
 
 == Changelog ==
+
+= 2.0 =
+
+* Inserted end of div missed
+
+= 2.0 =
+
+* Transformed to Twitter Embedded Timeline
+* Added settings page
+* Released Twitter Feed PRO
 
 = 1.2.2 =
 

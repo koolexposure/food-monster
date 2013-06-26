@@ -1,7 +1,7 @@
 <?php
 /**
  * Paypal Adaptive Payments offsite payment processor.
- * 
+ *
  * @package GBS
  * @subpackage Payment Processing_Processor
  */
@@ -134,6 +134,10 @@ class Group_Buying_Paypal_AP extends Group_Buying_Offsite_Processors {
 
 		// Send for approval.
 		$response = self::remote_post( 'Preapproval', $nvpData );
+		if ( self::DEBUG ) {
+			error_log( '----------PayPal AP Preapproval ----------' );
+			error_log( "Preapproval: " . print_r( $response, true ) );
+		}
 
 		$ack = strtoupper( $response['responseEnvelope_ack'] );
 		if ( $ack == 'SUCCESS' ) {
@@ -212,6 +216,12 @@ class Group_Buying_Paypal_AP extends Group_Buying_Offsite_Processors {
 
 		do_action( 'payment_handle_ipn', $ipn );
 
+
+		if ( self::DEBUG ) {
+			error_log( '----------PayPal AP Handle IPN ----------' );
+			error_log( "ipn: " . print_r( $ipn, true ) );
+		}
+
 		if ( self::validate_ipn( $ipn ) ) {
 			$preapproval_key = $ipn['preapproval_key'];
 			if ( empty( $preapproval_key ) )
@@ -219,22 +229,29 @@ class Group_Buying_Paypal_AP extends Group_Buying_Offsite_Processors {
 
 			$purchase_id = Group_Buying_Purchase::get_purchase_by_key( $preapproval_key );
 			$purchase = Group_Buying_Purchase::get_instance( $purchase_id );
-			// Mark as pending so the function can proceed
-			$purchase->set_pending();
-			// Mark payments as authorized.
-			$payments = Group_Buying_Payment::get_payments_for_purchase( $purchase_id );
-			foreach ( $payments as $payment_id ) {
-				$payment = Group_Buying_Payment::get_instance( $payment_id );
-				$data = $payment->get_data();
-				$data['api_response'] = $ipn;
-				$payment->set_data( $data );
-				$payment->set_status( Group_Buying_Payment::STATUS_AUTHORIZED );
-				do_action( 'payment_authorized', $payment );
-				Group_Buying_Notifications::purchase_notification( $purchase );
+			if ( !$purchase->is_pending() ) {
+				// Mark as pending so the function can proceed
+				$purchase->set_pending();
+				// Mark payments as authorized.
+				$payments = Group_Buying_Payment::get_payments_for_purchase( $purchase_id );
+				foreach ( $payments as $payment_id ) {
+					$payment = Group_Buying_Payment::get_instance( $payment_id );
+					$data = $payment->get_data();
+					$data['api_response'] = $ipn;
+					$payment->set_data( $data );
+					$payment->set_status( Group_Buying_Payment::STATUS_AUTHORIZED );
+					do_action( 'payment_authorized', $payment );
+					Group_Buying_Notifications::purchase_notification( $purchase );
+					if ( self::DEBUG ) {
+						error_log( '----------PayPal AP Handle IPN Payment Authorized ----------' );
+						error_log( "payment: " . print_r( $payment, true ) );
+					}
+				}
+				// Mark as complete, run purchase_completed
+				$purchase->complete();
+				// todo send message instead of 404
 			}
-			// Mark as complete, run purchase_completed
-			$purchase->complete();
-			// todo send message instead of 404
+
 		}
 	}
 
@@ -276,7 +293,12 @@ class Group_Buying_Paypal_AP extends Group_Buying_Offsite_Processors {
 
 				// items we need to capture
 				$items_to_capture = $this->items_to_capture( $payment );
-				
+
+				if ( self::DEBUG ) {
+					error_log( '----------PayPal AP $items_to_capture ----------' );
+					error_log( "items_to_capture: " . print_r( $items_to_capture, true ) );
+				}
+
 				if ( $items_to_capture ) {
 
 					// if not set create an array
@@ -294,9 +316,11 @@ class Group_Buying_Paypal_AP extends Group_Buying_Offsite_Processors {
 					$payment_captured = FALSE;
 					foreach ( $items_to_capture as $deal_id => $amount ) {
 						// capture the payment individually since each capture depends on deal meta
-						$response = self::call_pay( $payment, $deal_id, $amount, $item_quantities[$deal_id] );
+						$tracking_id = $payment->get_ID().$deal_id;
+						$response = self::call_pay( $payment, $deal_id, $amount, $item_quantities[$deal_id], $tracking_id );
 						if ( self::DEBUG ) {
 							error_log( '----------PayPal AP Capture Cal Pay ----------' );
+							error_log( "deal_id: " . print_r( $deal_id, true ) );
 							error_log( "response: " . print_r( $response, true ) );
 						}
 
@@ -310,6 +334,7 @@ class Group_Buying_Paypal_AP extends Group_Buying_Offsite_Processors {
 								unset( $data['uncaptured_deals'][$deal_id] );
 							}
 						}
+						$response['tracking_id_var'] = $tracking_id;
 						// set new response
 						$data['capture_response'][] = $response;
 					}
@@ -364,17 +389,17 @@ class Group_Buying_Paypal_AP extends Group_Buying_Offsite_Processors {
 		return $res;
 	}
 
-	private function call_pay( $payment, $deal_id, $amount, $qty = 1 ) {
+	private function call_pay( $payment, $deal_id, $amount, $qty = 1, $tracking_id = 0 ) {
 		$payment_data = $payment->get_data();
-		$secondary_share_per = Group_Buying_Paypal_AP::get_secondary_share( $deal_id ); 
+		$secondary_share_per = Group_Buying_Paypal_AP::get_secondary_share( $deal_id );
     	$secondary_share = $secondary_share_per*$qty;
 		$subtotal = $amount - $secondary_share;
-		
+
 		$receiverEmailArray = array(
 			self::get_primary( $deal_id ),
 			self::get_secondary( $deal_id ) );
-		$receiverEmailArray = apply_filters( 'gb_paypal_ap_receiver_email_array', $receiverEmailArray, $payment, $deal_id, $amount ); 
-		
+		$receiverEmailArray = apply_filters( 'gb_paypal_ap_receiver_email_array', $receiverEmailArray, $payment, $deal_id, $amount );
+
 		$receiverAmountArray = array(
 			number_format( floatval( $amount ), 2 ),
         	number_format( floatval( $secondary_share ), 2 ) );
@@ -420,10 +445,10 @@ class Group_Buying_Paypal_AP extends Group_Buying_Offsite_Processors {
 		$nvpstr .= "&reverseAllParallelPaymentsOnError=FALSE";
 		//$nvpstr .= "&senderEmail=" . urlencode($payment_data['api_response']['sender_email']);
 		$nvpstr .= "&preapprovalKey=" . urlencode( $payment_data['api_response']['preapproval_key'] );
-		$nvpstr .= "&trackingId=" . urlencode( $payment->get_ID() );
-		
+		$nvpstr .= "&trackingId=" . urlencode( $tracking_id );
+
 		$nvpstr = apply_filters( 'gb_paypal_ap_nvpst', $nvpstr, $payment, $deal_id, $amount );
-		
+
 		if ( self::DEBUG ) {
 			error_log( "call: " . print_r(  wp_parse_args($nvpstr), true ) );
 		}

@@ -646,7 +646,7 @@ class Group_Buying_Merchants_Registration extends Group_Buying_Merchants{
 
 			if ( !empty( $_FILES['gb_contact_merchant_thumbnail'] ) ) {
 				// Set the uploaded field as an attachment
-				$merchant->set_attachement( $_FILES );
+				$merchant->set_attachement( $_FILES, 'gb_contact_merchant_thumbnail' );
 			}
 
 			do_action( 'gb_admin_notification', array( 'subject' => self::__( 'New Merchant Registration' ), 'content' => self::__( 'A user has registered as a merchant and needs your review.' ), $merchant ) );
@@ -803,7 +803,7 @@ class Group_Buying_Merchants_Edit extends Group_Buying_Merchants {
 
 			if ( !empty( $_FILES['gb_contact_merchant_thumbnail'] ) ) {
 				// Set the uploaded field as an attachment
-				$merchant->set_attachement( $_FILES );
+				$merchant->set_attachement( $_FILES, 'gb_contact_merchant_thumbnail' );
 			}
 
 			do_action( 'edit_merchant', $merchant );

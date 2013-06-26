@@ -539,7 +539,7 @@ class Group_Buying_Deal extends Group_Buying_Post_Type {
 	 */
 	public function get_remaining_allowed_purchases() {
 		$max = $this->get_max_purchases();
-		if ( $max == self::NO_MAXIMUM ) {
+		if ( $max == self::NO_MAXIMUM || empty( $max ) ) {
 			return self::NO_MAXIMUM;
 		}
 		return $max - $this->get_number_of_purchases();
@@ -551,7 +551,8 @@ class Group_Buying_Deal extends Group_Buying_Post_Type {
 	 * @return bool Whether this deal is sold out
 	 */
 	public function is_sold_out() {
-		if ( $this->get_max_purchases() == self::NO_MAXIMUM ) {
+		$max = $this->get_max_purchases();
+		if ( $max == self::NO_MAXIMUM || empty( $max ) ) {
 			return FALSE;
 		}
 		return $this->get_remaining_allowed_purchases() < 1;
@@ -932,7 +933,7 @@ class Group_Buying_Deal extends Group_Buying_Post_Type {
 	/**
 	 * Add a file as a post attachment.
 	 */
-	public function set_attachement( $files ) {
+	public function set_attachement( $files, $key = '' ) {
 		if ( !function_exists( 'wp_generate_attachment_metadata' ) ) {
 			require_once ABSPATH . 'wp-admin' . '/includes/image.php';
 			require_once ABSPATH . 'wp-admin' . '/includes/file.php';
@@ -943,9 +944,17 @@ class Group_Buying_Deal extends Group_Buying_Post_Type {
 			if ( $files[$file]['error'] !== UPLOAD_ERR_OK ) {
 				// Group_Buying_Controller::set_message('upload error : ' . $files[$file]['error']);
 			}
-			$attach_id = media_handle_upload( $file, $this->ID );
+			if ( $key !== '' ) {
+				if ( $key == $file  ) {
+					$attach_id = media_handle_upload( $file, $this->ID );
+				}
+			}
+			else {
+				$attach_id = media_handle_upload( $file, $this->ID );
+			}
+			
 		}
-		// Make it a thumbnail while we're at it.
+ 		// Make it a thumbnail while we're at it.
 		if ( !is_wp_error($attach_id) && $attach_id > 0 ) {
 			update_post_meta( $this->ID, '_thumbnail_id', $attach_id );
 		}

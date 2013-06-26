@@ -27,6 +27,12 @@ h3, h4, h5{
 	color:#27aeff;
 }
 
+
+ul, li{
+	list-style-type: none;
+	list-style: none;
+}
+
 .font_medium, body, .add-to-cart option {
     font-size: 0.9em;
 }
@@ -298,7 +304,8 @@ border: none;
 
 
 .container.main{
-	    overflow: auto;
+	    overflow-x: hidden;
+	    overflow-y: auto;
 	    padding: 20px 20px 100px 20px;
 	    width: 62%;
 }
@@ -384,9 +391,9 @@ border: none;
 	
 	#showcase .excerpt_content
 	{
-		width:166px;
+		width:179px;
 		position:absolute;
-		padding:247px 0 0 254px;
+		padding:0;
 		z-index:100;
 	}
 	
@@ -398,8 +405,8 @@ border: none;
 		
 	}
 	
-	#deals_loop h2.entry_title{
-		margin:10px -52px 0 0;
+	#showcase h2.entry_title{
+		margin: -6px -52px 0 -5px;
 	}
 	.loop_thumb{
 		float:left;
@@ -423,11 +430,11 @@ border: none;
 	
 		#showcase .loop_thumb {
 		float:left;
-		height:450px;
+		height:210px;
 		overflow:hidden;
-		padding:6px;
+		padding:0px;
 		position:relative;
-		width:450px;
+		width:210px;
 		z-index:10;
 		
 	}
@@ -491,16 +498,16 @@ border: none;
       height: 4em;
       width: 4em;
       cursor: pointer;
-      background-color: #ccc;
-      border: 1px solid #999;
    }
    .roundabout-in-focus {
       cursor: auto;
    }
    
-   #showcase{
-   	height:800px;
+   #showcase {
+   	height:auto;
+   	min-height:45em;
    }
+   
 
 
 .slide_closed {
@@ -540,6 +547,276 @@ color:white;
 vertical-align:85%;
 }
 
-
-
+#showcase .meta_value_worth, #showcase .meta_value_saving {
+	  float: left;
+    margin: 0;
+    padding: 7px;
+    position: relative;
+    top: 166px;
 }
+
+
+
+@import url(http://fonts.googleapis.com/css?family=Varela+Round);
+body{ background: #f5f5f5; font: 12px 'Segoe UI', 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;   margin: 0;}
+
+.wcd{width:33%; height:40px; float:left;}
+.wcd-logo{font-size: 36px; color: #fff;text-align: center; float:left; cursor: pointer;  color:#fff; font-size: 32px; font-family: 'Varela Round', sans-serif;
+-webkit-transition:color 0.3s ease-in;  -moz-transition:color 0.3s ease-in; x²-o-transition:color 0.3s ease-in; transition:color 0.3s ease-in;
+   }
+   .wcd-logo:hover{color:#3facff;}
+.wcd-tuto{ font-family: 'Varela Round', sans-serif; color: #fff; font-size: 16px; line-height: 36px;}
+.webcodo-top{width:100%; height:40px; background-color:#232323}
+
+.clear{clear: both;}
+.grid, .list, .rotate{
+	border-radius: 3px;
+	width: 15px; 
+	height:15px; 
+	margin-left: 10px; 
+	float: right; 
+	cursor:  pointer; 
+	padding: 5px; 
+}
+
+.grid{background: url(img/grid.png) 50% no-repeat;}
+.grid:hover{background: #7eb800 url(img/gridw.png) 50% no-repeat;}
+.grid-active{ background: #039fd3 url(img/gridw.png) 50% no-repeat; }
+
+.list{background:  url(img/list.png) 50% no-repeat;}
+.list:hover{background: #7eb800 url(img/listw.png) 50% no-repeat;}
+.list-active{background: #039fd3 url(img/listw.png) 50% no-repeat;}
+
+.rotate{background:  url(img/rotate.png) 50% no-repeat;}
+.rotate:hover{background: #7eb800 url(img/rotatew.png) 50% no-repeat;}
+.rotate-active{background: #039fd3 url(img/rotatew.png) 50% no-repeat;}
+
+.prods-cnt{
+	width: 720px; 
+	height:auto;
+	overflow: auto; 
+	min-height: 400px; 
+	margin: 40px auto;
+	background-color: #fafafa;
+	border: #ccc 1px dotted;
+	padding: 40px;
+}
+
+/* Grid Style */
+.loop_deal{
+	background-color: #FFFFFF;
+    float: left;
+    height: 260px;
+    margin: 15px;
+    padding: 5px;
+    width: 215px;
+}
+
+.loop_deal img:first-child, .loop_deal-list img:first-child{
+	width: 210px; 
+	float: left;
+}
+.loop_deal h3 a{
+	text-decoration: none;
+	width:140px;
+	float: left;
+	margin: 5px 0;
+	color:#888;
+	font: italic normal 14px georgia;
+	font-style: italic;
+}
+.loop_deal p{ display: none;}
+.loop_deal .deal_merchant_title{display:none}
+
+.loop_deal .old{
+	margin-right: 20px;
+	color: #be0000 !important;
+	text-decoration: line-through;
+}
+.loop_deal .price{
+	width: 60px;
+	display: inline; 
+	float: left;
+	font: italic 13px georgia;
+	color: #181818;
+}
+
+.loop_deal .buy-ico:hover{
+	background-color: #7eb800;
+}
+
+.loop_deal .section_content{
+	display:none;
+}
+
+/* List View Style */
+.loop_deal-list{
+	height: 210px;
+	width: 670px;
+	margin: 15px;
+	padding: 10px;
+	background-color: #fff;
+}
+.loop_deal-list h3 a{
+	text-decoration: none;
+	width:320px;
+	float: left;
+	padding:0;
+	margin: 0 10px;
+	color:#3c2e25;
+	font: italic normal 22px georgia;
+}
+.loop_deal-list p{
+	color: #888;
+	width:460px;
+	float: left;
+}
+.loop_deal-list .buy-ico{
+	border-radius: 5px;
+	width: 85px; 
+	height: 20px;
+	color: #fff;
+	padding: 5px 5px 5px 30px;
+	font:italic 12px georgia;
+	float: right;
+	margin: 5px;
+	cursor: pointer;
+
+	background: #039fd3 url(../img/bag-ico.png) 5% 50%  no-repeat;
+	-webkit-transition:background-color 0.3s ease-in;  
+   	-moz-transition:background-color 0.3s ease-in;  
+   	-o-transition:background-color 0.3s ease-in;  
+   	transition:background-color 0.3s ease-in;
+}
+.loop_deal-list .buy-ico:before{content: "More Details";	line-height: 22px;  }
+.loop_deal-list .buy-ico:hover{	background-color: #7eb800;}
+
+.loop_deal-list .old{	
+		color: #be0000 !important; 
+	float: right;	
+	font-style: 18px;
+	text-decoration: line-through;
+}
+.loop_deal-list .price{
+	margin-right: 10px;
+	display: block; 
+	font: italic 20px georgia;
+	color: #181818;
+	margin:7px;
+}
+.loop_deal-list .price-cnt{ width: 95px; height: auto; float: right; text-align: right;}
+
+.loop_deal-list .deal_merchant_title{display:block}
+.loop_deal-list .excerpt_content{
+	width: 679px !important;
+	margin-left: 220px;
+}
+
+.loop_deal-list  h2.entry_title{
+	margin: 0 209px 0 275px !important;	
+}
+
+.loop_deal-list .deals-loop-button{
+	 left: 345px !important;
+    top: 185px !important;
+}
+
+.loop_deal-list  .deal_meta_title{
+	 left: 427px;
+	 top:100px
+	  position: absolute;
+}
+
+.loop_deal-list .deal_meta_value{
+	 left: 457px;
+	  top:100px
+	   position: absolute;
+}
+
+
+.loop_deal-list .deal_merchant_title{
+	 left: 0px;
+    position: relative;
+    top: -39px;
+	
+} 
+
+.loop_deal-list  .meta_value_worth,.loop_deal-list  .meta_value_saving {
+	    left: -220px;
+    position: relative !important;
+    top: 97px !important;
+}
+
+.loop_deal-list .section_content{
+	display:block;
+}
+
+
+.deals-loop-button{
+	left: 100px;
+    position: absolute;
+    top: 229px;
+    width: 119px;
+}
+/* Css Shadow Effect for the loop_deal and loop_deal-list div */
+ .shadow{
+    -webkit-box-shadow: 0px 0px 18px rgba(50, 50, 50, 0.31);
+    -moz-box-shadow:    0px 0px 10px rgba(50, 50, 50, 0.31);
+    box-shadow:         0px 0px 5px rgba(50, 50, 50, 0.31);
+}
+
+.loop_deal_rotate{
+	background-color: #FFFFFF;
+    float: left;
+    height: 260px;
+    margin: 15px;
+    padding: 5px;
+    width: 215px;
+}
+
+.loop_deal_rotate img:first-child, .loop_deal-list img:first-child{
+	width: 210px; 
+	float: left;
+}
+.loop_deal_rotate h3 a{
+	text-decoration: none;
+	width:140px;
+	float: left;
+	margin: 5px 0;
+	color:#888;
+	font: italic normal 14px georgia;
+	font-style: italic;
+}
+.loop_deal_rotate p{ display: none;}
+.loop_deal_rotate .deal_merchant_title{display:none}
+
+.loop_deal_rotate .old{
+	margin-right: 20px;
+	color: #be0000 !important;
+	text-decoration: line-through;
+}
+.loop_deal_rotate .price{
+	width: 60px;
+	display: inline; 
+	float: left;
+	font: italic 13px georgia;
+	color: #181818;
+}
+
+.loop_deal_rotate .buy-ico:hover{
+	background-color: #7eb800;
+}
+
+.loop_deal_rotate .section_content{
+	display:none;
+}
+
+.thm-dark {
+background-color: none !important;
+}
+
+.timeline {
+background-color: none !important;
+}
+
+

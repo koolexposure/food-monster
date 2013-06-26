@@ -1110,7 +1110,7 @@ class Group_Buying_Deals_Submit extends Group_Buying_Controller {
 
 			if ( !empty( $_FILES['gb_deal_thumbnail'] ) ) {
 				// Set the uploaded field as an attachment
-				$deal->set_attachement( $_FILES );
+				$deal->set_attachement( $_FILES, 'gb_deal_thumbnail' );
 			}
 
 			do_action( 'gb_admin_notification', array( 'subject' => self::__( 'New Deal Submission' ), 'content' => self::__( 'A user has submitted a new deal for your review.' ), $deal ) );
@@ -1263,18 +1263,29 @@ class Group_Buying_Deals_Edit extends Group_Buying_Deals {
 	 * @return void
 	 */
 	public static function on_edit_page( $gb_edit_deal = 0 ) {
+		self::login_required();
 		// by instantiating, we process any submitted values
 		$edit_page = self::get_instance();
 
 		if ( !$gb_edit_deal ) {
-			wp_redirect( gb_account_url() );
+			wp_redirect( gb_get_account_url() );
 			exit();
 		}
 
 		self::$deal_id = $gb_edit_deal;
 
-		// display the edit form
-		$edit_page->view_edit_form();
+		$deal = Group_Buying_Deal::get_instance( $gb_edit_deal );
+		$merchant_id = $deal->get_merchant_id();
+		if ( $merchant_id ) {
+			$merchant = Group_Buying_Merchant::get_instance( $merchant_id );
+			if ( is_a( $merchant, 'Group_Buying_Merchant' ) && $merchant->is_user_authorized( get_current_user_id() ) ) {
+				// display the edit form
+				$edit_page->view_edit_form();
+				return;
+			}
+		}
+		wp_redirect( gb_get_account_url() );
+		exit();
 	}
 
 	/**
@@ -1690,7 +1701,7 @@ class Group_Buying_Deals_Edit extends Group_Buying_Deals {
 
 			if ( !empty( $_FILES['gb_deal_thumbnail'] ) ) {
 				// Set the uploaded field as an attachment
-				$deal->set_attachement( $_FILES );
+				$deal->set_attachement( $_FILES, 'gb_deal_thumbnail' );
 			}
 
 			do_action( 'gb_admin_notification', array( 'subject' => self::__( 'Deal Edited' ), 'content' => sprintf( self::__( 'A merchant has updated their deal. Deal ID #%s' ), $deal->get_id() ), $deal ) );

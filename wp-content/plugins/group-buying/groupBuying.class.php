@@ -18,7 +18,7 @@ abstract class Group_Buying {
 	/**
 	 * Current version. Should match group-buying.php plugin version.
 	 */
-	const GB_VERSION = '4.3.2';
+	const GB_VERSION = '4.4';
 	/**
 	 * DB Version
 	 */

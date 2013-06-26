@@ -100,12 +100,12 @@ class Group_Buying_Vouchers extends Group_Buying_Controller {
 
 	public static function override_template( $template ) {
 		if ( Group_Buying_Voucher::is_voucher_query() ) {
-			
+
 			// require login unless it's a validated temp access
 			if ( !Group_Buying_Voucher::temp_voucher_access_attempt() ) {
 				self::login_required();
 			}
-			
+
 			if ( is_single() ) {
 				$template = self::locate_template( array(
 						'account/voucher.php',
@@ -168,8 +168,8 @@ class Group_Buying_Vouchers extends Group_Buying_Controller {
 					'compare' => '>'
 				);
 			}
-			if ( get_query_var(self::FILTER_ACTIVE_QUERY_VAR) == self::FILTER_ACTIVE_QUERY_VAR ) {
-				if ( !isset($query->query_vars['meta_query']) || !is_array($query->query_vars['meta_query']) ) {
+			if ( get_query_var( self::FILTER_ACTIVE_QUERY_VAR ) == self::FILTER_ACTIVE_QUERY_VAR ) {
+				if ( !isset( $query->query_vars['meta_query'] ) || !is_array( $query->query_vars['meta_query'] ) ) {
 					$query->query_vars['meta_query'] = array();
 				}
 				$query->query_vars['meta_query'][] = array(
@@ -214,17 +214,17 @@ class Group_Buying_Vouchers extends Group_Buying_Controller {
 							}
 							// If active query removed expired vouchers, keep those without exp
 							elseif ( get_query_var( self::FILTER_QUERY_VAR ) == self::FILTER_ACTIVE_QUERY_VAR ) {
-									$exp = get_post_meta( $deal_id, '_voucher_expiration_date', TRUE );
-									if ( !$exp || current_time( 'timestamp' ) < $exp ) { // not expired
-										$filtered_vouchers[] = $voucher_id;
-									}
+								$exp = get_post_meta( $deal_id, '_voucher_expiration_date', TRUE );
+								if ( !$exp || current_time( 'timestamp' ) < $exp ) { // not expired
+									$filtered_vouchers[] = $voucher_id;
+								}
 							} else {
 								$filtered_vouchers[] = $voucher_id;
 							}
 						}
 					}
 					$query->query_vars['post__in'] = $filtered_vouchers;
-					
+
 				}
 			}
 
@@ -251,7 +251,7 @@ class Group_Buying_Vouchers extends Group_Buying_Controller {
 		);
 		$deal_ids = array();
 		$status = ( NULL === $status && !get_query_var( Group_Buying_Vouchers::FILTER_QUERY_VAR ) ) ? 'any' : get_query_var( Group_Buying_Vouchers::FILTER_QUERY_VAR );
-		foreach ( get_posts($args) as $voucher_id ) {
+		foreach ( get_posts( $args ) as $voucher_id ) {
 			$deal_id = get_post_meta( $voucher_id, '_voucher_deal_id', TRUE );
 			if ( !in_array( $deal_id, $deal_ids ) ) {
 				$claimed = get_post_meta( $voucher_id, '_claimed', TRUE );
@@ -320,6 +320,17 @@ class Group_Buying_Vouchers extends Group_Buying_Controller {
 		$purchase = Group_Buying_Purchase::get_instance( $purchase_id );
 		$products = $purchase->get_products();
 		foreach ( $products as $product ) {
+			/*/
+			if ( count( $product['payment_method'] ) > 1 ) { // Check to see if the item payment is split
+				foreach ( $product['payment_method'] as $payment_method ) {
+					// TODO get instance of each payment associated with this deal
+					// Confirm all payments are complete before activating the voucher
+					if ( $payment->get_status() !== Group_Buying_Payment::STATUS_COMPLETE ) {
+						continue;
+					}
+				}
+			}
+			/**/
 			if ( in_array( $product['deal_id'], $items_captured ) ) {
 				$deal = Group_Buying_Deal::get_instance( $product['deal_id'] );
 				if ( $deal->is_successful() ) {
@@ -352,16 +363,16 @@ class Group_Buying_Vouchers extends Group_Buying_Controller {
 	}
 
 	public static function mark_voucher() {
-			
+
 		if ( isset( $_REQUEST['voucher_id'] ) && $_REQUEST['voucher_id'] ) {
 			$voucher = Group_Buying_Voucher::get_instance( $_REQUEST['voucher_id'] );
 			// If destroying claim date
 			if ( isset( $_REQUEST['unmark_voucher'] ) && $_REQUEST['unmark_voucher'] ) {
 				$marked = $voucher->set_claimed_date( TRUE );
-				gb_e('Voucher Claim Date Removed.');
+				gb_e( 'Voucher Claim Date Removed.' );
 				exit();
 			}
-			
+
 			$marked = $voucher->set_claimed_date();
 			$data = array(
 				'date' => date( get_option( 'date_format' ), current_time( 'timestamp', 1 ) ),
@@ -449,12 +460,12 @@ class Group_Buying_Vouchers extends Group_Buying_Controller {
 		//Fetch, prepare, sort, and filter our data...
 		$wp_list_table->prepare_items();
 
-?>
+		?>
 		<script type="text/javascript" charset="utf-8">
 			jQuery(document).ready(function($){
 				jQuery(".gb_activate").on('click', function(event) {
 					event.preventDefault();
-						if( confirm( '<?php gb_e("Are you sure? This will make the voucher immediately available for download.") ?>' ) ){
+						if( confirm( '<?php gb_e( "Are you sure? This will make the voucher immediately available for download." ) ?>' ) ){
 							var $link = $( this ),
 							voucher_id = $link.attr( 'ref' );
 							url = $link.attr( 'href' );
@@ -470,7 +481,7 @@ class Group_Buying_Vouchers extends Group_Buying_Controller {
 				});
 				jQuery(".gb_deactivate").on('click', function(event) {
 					event.preventDefault();
-						if( confirm( '<?php gb_e("Are you sure? This will immediately remove the voucher from customer access.") ?>' ) ) {
+						if( confirm( '<?php gb_e( "Are you sure? This will immediately remove the voucher from customer access." ) ?>' ) ) {
 							var $deactivate_button = $( this ),
 							deactivate_voucher_id = $deactivate_button.attr( 'ref' );
 							$( "#"+deactivate_voucher_id+"_deactivate" ).fadeOut('slow');
@@ -485,7 +496,7 @@ class Group_Buying_Vouchers extends Group_Buying_Controller {
 				});
 				jQuery(".gb_destroy").on('click', function(event) {
 					event.preventDefault();
-						if( confirm( '<?php gb_e("This will permanently destroy the voucher from the database and remove records of it’s existence from the related purchase and payment(s) which cannot be reversed. This will not reverse any payments or provide a credit to the customer, that must be done manually. Are you sure?") ?>' ) ) {
+						if( confirm( '<?php gb_e( "This will permanently destroy the voucher from the database and remove records of it’s existence from the related purchase and payment(s) which cannot be reversed. This will not reverse any payments or provide a credit to the customer, that must be done manually. Are you sure?" ) ?>' ) ) {
 							var $destroy_link = $( this ),
 							destroy_voucher_id = $destroy_link.attr( 'ref' );
 							$.post( ajaxurl, { action: 'gbs_destroyer', type: 'voucher', id: destroy_voucher_id, destroyer_nonce: '<?php echo wp_create_nonce( Group_Buying_Destroy::NONCE ) ?>' },
@@ -505,7 +516,7 @@ class Group_Buying_Vouchers extends Group_Buying_Controller {
 							$( "#"+unclaim_voucher_id+"_unclaim" ).fadeOut('slow');
 							$.post( ajaxurl, { action: 'gb_mark_voucher', voucher_id: unclaim_voucher_id, unmark_voucher: 1 },
 								function( data ) {
-										$( "#"+unclaim_voucher_id+"_unclaim_result" ).append( '<?php gb_e("Voucher Redemption Removed.") ?>' ).fadeIn();
+										$( "#"+unclaim_voucher_id+"_unclaim_result" ).append( '<?php gb_e( "Voucher Redemption Removed." ) ?>' ).fadeIn();
 									}
 								);
 						} else {
@@ -528,19 +539,19 @@ class Group_Buying_Vouchers extends Group_Buying_Controller {
 				<input type="hidden" name="page" value="<?php echo $_REQUEST['page'] ?>" />
 				<?php $wp_list_table->search_box( self::__( 'Voucher ID' ), 'voucher_id' ); ?>
 				<p class="search-box deal_search">
-					<label class="screen-reader-text" for="voucher_deal_id-search-input"><?php self::_e('Deal ID:') ?></label>
+					<label class="screen-reader-text" for="voucher_deal_id-search-input"><?php self::_e( 'Deal ID:' ) ?></label>
 					<input type="text" id="voucher_deal_id-search-input" name="deal_id" value="">
-					<input type="submit" name="" id="search-submit" class="button" value="<?php self::_e('Deal ID') ?>">
+					<input type="submit" name="" id="search-submit" class="button" value="<?php self::_e( 'Deal ID' ) ?>">
 				</p>
 				<p class="search-box purchase_search">
-					<label class="screen-reader-text" for="voucher_purchase_id-search-input"><?php self::_e('Order ID:') ?></label>
+					<label class="screen-reader-text" for="voucher_purchase_id-search-input"><?php self::_e( 'Order ID:' ) ?></label>
 					<input type="text" id="voucher_purchase_id-search-input" name="purchase_id" value="">
-					<input type="submit" name="" id="search-submit" class="button" value="<?php self::_e('Order ID') ?>">
+					<input type="submit" name="" id="search-submit" class="button" value="<?php self::_e( 'Order ID' ) ?>">
 				</p>
 				<p class="search-box account_search">
-					<label class="screen-reader-text" for="voucher_account_id-search-input"><?php self::_e('Account ID:') ?></label>
+					<label class="screen-reader-text" for="voucher_account_id-search-input"><?php self::_e( 'Account ID:' ) ?></label>
 					<input type="text" id="voucher_account_id-search-input" name="account_id" value="">
-					<input type="submit" name="" id="search-submit" class="button" value="<?php self::_e('Account ID') ?>">
+					<input type="submit" name="" id="search-submit" class="button" value="<?php self::_e( 'Account ID' ) ?>">
 				</p>
 				<?php $wp_list_table->display() ?>
 			</form>
@@ -561,8 +572,8 @@ class Group_Buying_Vouchers_Table extends WP_List_Table {
 
 		//Set parent defaults
 		parent::__construct( array(
-				'singular' => gb__('voucher'),     // singular name of the listed records
-				'plural' => gb__('vouchers'), // plural name of the listed records
+				'singular' => gb__( 'voucher' ),     // singular name of the listed records
+				'plural' => gb__( 'vouchers' ), // plural name of the listed records
 				'ajax' => false     // does this table support ajax?
 			) );
 
@@ -603,19 +614,16 @@ class Group_Buying_Vouchers_Table extends WP_List_Table {
 		return $status_links;
 	}
 
-	function extra_tablenav( $which ) {
-?>
-		<div class="alignleft actions">
-<?php
+	function extra_tablenav( $which ) { 
+		?>
+		<div class="alignleft actions"> <?php
 		if ( 'top' == $which && !is_singular() ) {
 
 			$this->months_dropdown( self::$post_type );
 
 			submit_button( __( 'Filter' ), 'secondary', false, false, array( 'id' => 'post-query-submit' ) );
-		}
-?>
-		</div>
-<?php
+		} ?>
+		</div> <?php
 	}
 
 
@@ -656,8 +664,8 @@ class Group_Buying_Vouchers_Table extends WP_List_Table {
 
 		//Build row actions
 		$actions = array(
-			'deal'    => sprintf( '<a href="%s">'.gb__('Deal' ).'</a>', get_edit_post_link( $deal_id ) ),
-			'purchase'    => sprintf( '<a href="admin.php?page=group-buying/purchase_records&s=%s">'.gb__('Order' ).'</a>', $purchase->get_id() )
+			'deal'    => sprintf( '<a href="%s">'.gb__( 'Deal' ).'</a>', get_edit_post_link( $deal_id ) ),
+			'purchase'    => sprintf( '<a href="admin.php?page=group-buying/purchase_records&s=%s">'.gb__( 'Order' ).'</a>', $purchase->get_id() )
 		);
 		if ( $user_id == -1 ) { // gifts
 			$purchaser = array(
@@ -688,9 +696,9 @@ class Group_Buying_Vouchers_Table extends WP_List_Table {
 		$voucher_id = $item->ID;
 		if ( get_post_status( $voucher_id ) != 'publish' ) {
 			$activate_path = 'edit.php?post_type=gb_deal&activate_voucher='.$voucher_id.'&_wpnonce='.wp_create_nonce( 'activate_voucher' );
-			echo '<p><span id="'.$voucher_id.'_activate_result"></span><a href="'.admin_url( $activate_path ).'" class="gb_activate button" id="'.$voucher_id.'_activate" ref="'.$voucher_id.'">'.gb__('Activate').'</a></p>';
+			echo '<p><span id="'.$voucher_id.'_activate_result"></span><a href="'.admin_url( $activate_path ).'" class="gb_activate button" id="'.$voucher_id.'_activate" ref="'.$voucher_id.'">'.gb__( 'Activate' ).'</a></p>';
 		} else {
-			echo '<p><span id="'.$voucher_id.'_deactivate_result"></span><a href="javascript:void(0)" class="gb_deactivate button disabled" id="'.$voucher_id.'_deactivate" ref="'.$voucher_id.'">'.gb__('Deactivate').'</a></p>';
+			echo '<p><span id="'.$voucher_id.'_deactivate_result"></span><a href="javascript:void(0)" class="gb_deactivate button disabled" id="'.$voucher_id.'_deactivate" ref="'.$voucher_id.'">'.gb__( 'Deactivate' ).'</a></p>';
 		}
 	}
 
@@ -699,7 +707,7 @@ class Group_Buying_Vouchers_Table extends WP_List_Table {
 		$voucher = Group_Buying_Voucher::get_instance( $voucher_id );
 
 		$actions = array(
-			'trash'    => '<span id="'.$voucher_id.'_destroy_result"></span><a href="javascript:void(0)" class="gb_destroy" id="'.$voucher_id.'_destroy" ref="'.$voucher_id.'">'.gb__('Delete Records').'</a>',
+			'trash'    => '<span id="'.$voucher_id.'_destroy_result"></span><a href="javascript:void(0)" class="gb_destroy" id="'.$voucher_id.'_destroy" ref="'.$voucher_id.'">'.gb__( 'Delete Records' ).'</a>',
 		);
 
 		$status = ucfirst( str_replace( 'publish', 'active', $item->post_status ) );
@@ -716,7 +724,7 @@ class Group_Buying_Vouchers_Table extends WP_List_Table {
 		$status = '';
 		if ( $claim_date ) {
 			$status = '<p>' . mysql2date( get_option( 'date_format' ).' @ '.get_option( 'time_format' ), $claim_date ) . '</p>';
-			$status .= '<p><span id="'.$item->ID.'_unclaim_result"></span><a href="javascript:void(0)" class="gb_unclaim button disabled" id="'.$item->ID.'_unclaim" ref="'.$item->ID.'">'.gb__('Remove Redemption').'</a></p>';
+			$status .= '<p><span id="'.$item->ID.'_unclaim_result"></span><a href="javascript:void(0)" class="gb_unclaim button disabled" id="'.$item->ID.'_unclaim" ref="'.$item->ID.'">'.gb__( 'Remove Redemption' ).'</a></p>';
 		}
 		return $status;
 	}
@@ -732,11 +740,11 @@ class Group_Buying_Vouchers_Table extends WP_List_Table {
 	 * */
 	function get_columns() {
 		$columns = array(
-			'status'  => gb__('Status'),
-			'title'  => gb__('Order'),
-			'code'  => gb__('Code'),
-			'manage'  => gb__('Manage Status'),
-			'claimed'  => gb__('Redeemed')
+			'status'  => gb__( 'Status' ),
+			'title'  => gb__( 'Order' ),
+			'code'  => gb__( 'Code' ),
+			'manage'  => gb__( 'Manage Status' ),
+			'claimed'  => gb__( 'Redeemed' )
 		);
 		return apply_filters( 'gb_mngt_vouchers_columns', $columns );
 	}
@@ -751,9 +759,6 @@ class Group_Buying_Vouchers_Table extends WP_List_Table {
 	 * */
 	function get_sortable_columns() {
 		$sortable_columns = array(
-			'title'  => array( 'title', true ),     // true means its already sorted
-			'total'    => array( 'total', false ),
-			'status'  => array( 'status', false )
 		);
 		return apply_filters( 'gb_mngt_vouchers_sortable_columns', $sortable_columns );
 	}

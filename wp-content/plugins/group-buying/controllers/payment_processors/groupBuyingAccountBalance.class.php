@@ -45,6 +45,10 @@ class Group_Buying_Account_Balance_Payments extends Group_Buying_Payment_Process
 		return self::PAYMENT_METHOD;
 	}
 
+	public function get_credit_type() {
+		return Group_Buying_Accounts::CREDIT_TYPE;
+	}
+
 	public function register_free_payment_method( Group_Buying_Checkouts $checkout, Group_Buying_Purchase $purchase ) {
 
 		$items = $purchase->get_products();
@@ -71,7 +75,7 @@ class Group_Buying_Account_Balance_Payments extends Group_Buying_Payment_Process
 	public function filter_payment_request_total( $total, Group_Buying_Checkouts $checkout ) {
 		if ( isset( $checkout->cache['account_balance'] ) && $checkout->cache['account_balance'] ) {
 			$credit_to_use = $checkout->cache['account_balance'];
-			$credit_to_use_value = $credit_to_use/self::get_credit_exchange_rate( Group_Buying_Accounts::CREDIT_TYPE );
+			$credit_to_use_value = $credit_to_use/self::get_credit_exchange_rate( $this->get_credit_type() );
 			return max( $total - $credit_to_use_value, 0 ); // no, you can't use credit to get free money
 		}
 		return $total;
@@ -86,10 +90,10 @@ class Group_Buying_Account_Balance_Payments extends Group_Buying_Payment_Process
 	}
 	public function process_payment( Group_Buying_Checkouts $checkout, Group_Buying_Purchase $purchase ) {
 		$account = Group_Buying_Account::get_instance();
-		// $balance = $account->get_credit_balance(Group_Buying_Accounts::CREDIT_TYPE); // TODO warn the person that the balance doesn't match their submission.
+		// $balance = $account->get_credit_balance($this->get_credit_type()); // TODO warn the person that the balance doesn't match their submission.
 		$total = isset($checkout->cache['account_balance'])?$checkout->cache['account_balance']:0;
-		$total_value = $total/self::get_credit_exchange_rate( Group_Buying_Accounts::CREDIT_TYPE );
-		$account->reserve_credit( $total, Group_Buying_Accounts::CREDIT_TYPE );
+		$total_value = $total/self::get_credit_exchange_rate( $this->get_credit_type() );
+		$account->reserve_credit( $total, $this->get_credit_type() );
 		$deal_info = array();
 		foreach ( $purchase->get_products() as $item ) {
 			if ( isset( $item['payment_method'][$this->get_payment_method()] ) ) {
@@ -159,7 +163,7 @@ class Group_Buying_Account_Balance_Payments extends Group_Buying_Payment_Process
 		}
 		elseif ( isset( $checkout->cache['account_balance'] ) && $checkout->cache['account_balance'] ) {
 			$credit_to_use = $checkout->cache['account_balance'];
-			$credits_to_use_value = $credit_to_use/self::get_credit_exchange_rate( Group_Buying_Accounts::CREDIT_TYPE );
+			$credits_to_use_value = $credit_to_use/self::get_credit_exchange_rate( $this->get_credit_type() );
 			$items = $purchase->get_products();
 			foreach ( $items as $key => $item ) {
 				$remaining = $item['price'];
@@ -189,8 +193,8 @@ class Group_Buying_Account_Balance_Payments extends Group_Buying_Payment_Process
 
 	public function payment_fields( $fields, $payment_processor_class, $checkout ) {
 		$account = Group_Buying_Account::get_instance();
-		$balance = $account->get_credit_balance( Group_Buying_Accounts::CREDIT_TYPE );
-		$credit_value = $account->get_credit_balance( Group_Buying_Accounts::CREDIT_TYPE )/self::get_credit_exchange_rate( Group_Buying_Accounts::CREDIT_TYPE );
+		$balance = $account->get_credit_balance( $this->get_credit_type() );
+		$credit_value = $account->get_credit_balance( $this->get_credit_type() )/self::get_credit_exchange_rate( $this->get_credit_type() );
 		$cart = Group_Buying_Cart::get_instance();
 		$total = $cart->get_total();
 
@@ -277,7 +281,7 @@ class Group_Buying_Account_Balance_Payments extends Group_Buying_Payment_Process
 					'weight' => 1,
 				);
 			} else {
-				$amount_paid = $checkout->cache['account_balance']/self::get_credit_exchange_rate( Group_Buying_Accounts::CREDIT_TYPE );
+				$amount_paid = $checkout->cache['account_balance']/self::get_credit_exchange_rate( $this->get_credit_type() );
 				$fields['account_balance'] = array(
 					'label' => self::__( 'Account Balance' ),
 					'value' => sprintf( self::__( '%s will be paid from your account balance' ), gb_get_formatted_money( $amount_paid  ) ),
@@ -302,7 +306,7 @@ class Group_Buying_Account_Balance_Payments extends Group_Buying_Payment_Process
 		}
 		if ( isset( $_POST['gb_credit_account_balance'] ) && $_POST['gb_credit_account_balance'] ) {
 			$credit_to_use = $_POST['gb_credit_account_balance'];
-			$credits_to_use_value = $credit_to_use/self::get_credit_exchange_rate( Group_Buying_Accounts::CREDIT_TYPE );
+			$credits_to_use_value = $credit_to_use/self::get_credit_exchange_rate( $this->get_credit_type() );
 			if ( !is_numeric( $credit_to_use ) ) {
 				self::set_message( "Unknown value for Account Balance field", self::MESSAGE_STATUS_ERROR );
 				$checkout->mark_page_incomplete( Group_Buying_Checkouts::PAYMENT_PAGE );
@@ -313,7 +317,7 @@ class Group_Buying_Account_Balance_Payments extends Group_Buying_Payment_Process
 				return;
 			}
 			$account = Group_Buying_Account::get_instance();
-			$balance = $account->get_credit_balance( Group_Buying_Accounts::CREDIT_TYPE );
+			$balance = $account->get_credit_balance( $this->get_credit_type() );
 			if ( $balance < $credits_to_use_value ) {
 				self::set_message( "You account balance doesn't is too low.", self::MESSAGE_STATUS_ERROR );
 				$checkout->mark_page_incomplete( Group_Buying_Checkouts::PAYMENT_PAGE );
@@ -323,7 +327,7 @@ class Group_Buying_Account_Balance_Payments extends Group_Buying_Payment_Process
 			$total = $cart->get_total();
 			if ( $credits_to_use_value > $total ) {
 				// If trying to use more credits than what's needed set to the max.
-				$credit_to_use = $total*self::get_credit_exchange_rate( Group_Buying_Accounts::CREDIT_TYPE );;
+				$credit_to_use = $total*self::get_credit_exchange_rate( $this->get_credit_type() );;
 			}
 			$checkout->cache['account_balance'] = $credit_to_use;
 		}
@@ -378,10 +382,10 @@ class Group_Buying_Account_Balance_Payments extends Group_Buying_Payment_Process
 					unset( $data['uncaptured_deals'][$deal_id] );
 					$payment_total += $amount;
 				}
-				$credit_total = $payment_total*self::get_credit_exchange_rate( Group_Buying_Accounts::CREDIT_TYPE );
+				$credit_total = $payment_total*self::get_credit_exchange_rate( $this->get_credit_type() );
 				$total = gb_get_number_format( $credit_total );
-				$account->restore_credit( $total, Group_Buying_Accounts::CREDIT_TYPE );
-				$account->deduct_credit( $total, Group_Buying_Accounts::CREDIT_TYPE );
+				$account->restore_credit( $total, $this->get_credit_type() );
+				$account->deduct_credit( $total, $this->get_credit_type() );
 
 				$reserved = get_post_meta( $payment->get_id(), self::RESERVED_CREDIT_META, TRUE );
 
@@ -395,7 +399,7 @@ class Group_Buying_Account_Balance_Payments extends Group_Buying_Payment_Process
 				if ( $finishes_payment ) {
 					$payment->set_status( Group_Buying_Payment::STATUS_COMPLETE );
 					if ( $reserved > 0 ) {
-						$account->restore_credit( $reserved, Group_Buying_Accounts::CREDIT_TYPE );
+						$account->restore_credit( $reserved, $this->get_credit_type() );
 					}
 					do_action( 'payment_complete', $payment );
 				} else {
@@ -423,9 +427,9 @@ class Group_Buying_Account_Balance_Payments extends Group_Buying_Payment_Process
 					unset( $data['uncaptured_deals'][$deal_id] ); // remove record since the credit is being restored.
 					$payment_total += $amount;
 				}
-				$credit_total = $payment_total*self::get_credit_exchange_rate( Group_Buying_Accounts::CREDIT_TYPE );
+				$credit_total = $payment_total*self::get_credit_exchange_rate( $this->get_credit_type() );
 				$total = gb_get_number_format( $credit_total );
-				$account->restore_credit( $total, Group_Buying_Accounts::CREDIT_TYPE );
+				$account->restore_credit( $total, $this->get_credit_type() );
 
 				// Remove the reserved amount from the payment.
 				$reserved = get_post_meta( $payment->get_id(), self::RESERVED_CREDIT_META, TRUE );
@@ -456,8 +460,8 @@ class Group_Buying_Account_Balance_Payments extends Group_Buying_Payment_Process
 			$payment = Group_Buying_Payment::get_instance( $payment_id );
 			if ( $payment->get_payment_method() == $this->get_payment_method() ) {
 				$account = Group_Buying_Account::get_instance();
-				$credit_total = $payment->get_amount()*self::get_credit_exchange_rate( Group_Buying_Accounts::CREDIT_TYPE );
-				$account->restore_credit( $credit_total, Group_Buying_Accounts::CREDIT_TYPE );
+				$credit_total = $payment->get_amount()*self::get_credit_exchange_rate( $this->get_credit_type() );
+				$account->restore_credit( $credit_total, $this->get_credit_type() );
 				$payment->set_status( Group_Buying_Payment::STATUS_VOID );
 			}
 		}

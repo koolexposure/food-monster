@@ -13,8 +13,12 @@ get_header();
 				<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
 					<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+											<div id="list" class="list "></div>
+        			<div id="grid" class="grid"></div>
+        			<div id="rotate" class="rotate"></div>
 						<div class="page_title"><!-- Begin #page_title -->
 							<h1 class="entry_title gb_ff"><?php the_title(); ?></h1>
+
 						</div><!-- End #page_title -->
 
 						<div class="entry_content">

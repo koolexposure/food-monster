@@ -58,11 +58,46 @@ jQuery(function ($) {
 
 <script type="text/javascript">
 jQuery(function ($) {
-	$(document).ready(function() {
-      $('#showcase ul').roundabout({
-					tilt: -11
-      });
-   });
+    $('#list').click(function(){    
+        $('.loop_deal, .loop_deal_rotate').animate({opacity:0},function(){
+            $('.grid').removeClass('grid-active');
+            $('.rotate').removeClass('rotate-active');
+            $('.list').addClass('list-active');
+            $('.loop_deal, .loop_deal_rotate').attr('class', 'loop_deal-list shadow');
+            $('ul').removeClass('roundabout-holder');
+            $('li').removeClass('roundabout-moveable-item');
+            $('li').removeClass('roundabout-in-focus');
+            $('li').removeAttr("style");
+            $('ul').removeAttr("style");
+            $('.loop_deal-list').stop().animate({opacity:1});
+        });
+    });
+
+    $('#grid').click(function(){  
+        $('.loop_deal-list, .loop_deal_rotate').animate({opacity:0},function(){
+            $('.list').removeClass('list-active');
+            $('.rotate').removeClass('rotate-active');
+            $('.grid').addClass('grid-active');
+            $('.loop_deal-list, .loop_deal_rotate').attr('class', 'loop_deal shadow');
+            $('ul').removeClass('roundabout-holder');
+            $('li').removeClass('roundabout-moveable-item');
+            $('li').removeClass('roundabout-in-focus');
+             $('li').removeAttr("style");
+            $('ul').removeAttr("style");
+            $('.loop_deal').stop().animate({opacity:1});
+        });
+    });
+    
+     $('#rotate').click(function(){  
+        $('.loop_deal-list,.loop_deal').animate({opacity:0},function(){
+            $('.rotate').addClass('rotate-active');
+              $('.grid').addClass('grid-active');
+               $('.loop_deal-list,.loop_deal').attr('class', 'loop_deal_rotate shadow');
+             $('#showcase ul').roundabout({ tilt: -11 });
+              $('.loop_deal_rotate').stop().animate({opacity:1});
+             
+        });
+    });
 });
 </script>
 

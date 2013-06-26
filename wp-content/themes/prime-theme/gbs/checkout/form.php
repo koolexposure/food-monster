@@ -5,7 +5,10 @@
 	} ?>
 	<?php do_action('gb_checkout_form_'.$current_page); ?>
 	<?php do_action('gb_checkout_form'); ?>
+<<<<<<< HEAD
 	
 
 
+=======
+>>>>>>> 1d1087373a6051439382e20aea22d8313bdc0827
 </form>
