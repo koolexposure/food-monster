@@ -33,7 +33,7 @@
 
 					<div class="merchant_single_logo clearfix">
 						<!-- Begin .merchant-logo -->
-						<?php the_post_thumbnail('gbs_300x180', array('title' => get_the_title())); ?>
+						<?php the_field('gallery'); ?>
 					</div><!-- End .merchant-logo -->
 
 				</div>
