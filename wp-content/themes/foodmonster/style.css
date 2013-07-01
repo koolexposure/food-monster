@@ -24,7 +24,7 @@ color:#0c79c4;
 }
 
 h3, h4, h5{
-	color:#27aeff;
+	color:#0C79C4;
 }
 
 
@@ -47,6 +47,7 @@ ul, li{
 
 .widget{
 	color:white;
+	margin:0px !important;
 }
 
 .widget ul, .widget ol{
@@ -58,7 +59,7 @@ ul, li{
 }
 
 a, .link, .merchant-title a{
-	color:#27aeff;
+	color:#0C79C4;
 }
 
  #navigation li a:hover, .footer_menu li a:hover, #login_wrap a:hover{
@@ -97,7 +98,7 @@ padding: 10px;
 .home #content{
 	
 	position:absolute;
-	bottom: 100px;
+	bottom: 80px;
 	display:block;
 	background:none;
 	
@@ -117,9 +118,9 @@ padding: 10px;
 #footer_wrap{
 	background-color: #181818;
     color: white;
-	height:100px;
-	margin-top: -100px;
-min-height:100px;
+	height:80px;
+	margin-top: -80px;
+min-height:80px;
 font-size: 20px;
 padding:0 3%;
 position:relative;
@@ -132,13 +133,27 @@ margin: 0 auto;
 }
 
 
+#widget_wrapper p {
+	float: right;
+	width:350px;
+}
+
+.tumblr_post{
+    height: 80px;
+    padding-bottom: 11px;
+}
+
+.tumblr_post img {
+   float: left;
+}
+
 .home #footer {
     display: block;
 }
 
 #footer{
 	display:inline-block;
-	font-size:20px;
+	font-size:18px;
 	vertical-align:middle;
 }
 
@@ -311,6 +326,7 @@ border: none;
 }
 #business{
 	width: 78%;
+	min-height:700px;
 }
 
 
@@ -324,6 +340,11 @@ border: none;
 	position:relative;
 	padding-top:13px;
 }
+.social_footer img{
+	height: 60px;
+}
+
+
 #footer .legal{
 	margin:0;
 	padding-top:34px;
@@ -819,4 +840,19 @@ background-color: none !important;
 background-color: none !important;
 }
 
+.photospace .gal_content{
+	float:none !important;
+}
 
+.photospace .slideshow a.advance-link{
+	display:inline;
+}
+
+
+.merchant_single_logo img{
+	width:76%;
+}
+
+.flex-viewport{
+	height:590px;
+}
