@@ -1,7 +1,8 @@
 <?php
 /*
- Template Name: Restaurant Info
- */
+Template Name: What's New
+*/
+
 
 get_header();
  ?>
@@ -75,10 +76,10 @@ if (isset($_GET['resID']) && is_numeric($_GET['resID'])) {// to verify that file
 					<div id="merchant_content" class="header_color clearfix">
 						<div class="page_title business_page">
 							<!-- Begin #page_title -->
-							<h2 class="gb_ff"><?php printf(gb__('Restaurant Info'), get_the_title()); ?></h2>
+							<h2 class="gb_ff"><?php printf(gb__('What is New'), get_the_title()); ?></h2>
 						</div>
-						<div class="map">
-							<?php	gb_merchant_meta2($postID); ?>
+						<div class="whatsnew">
+							<?php	gb_merchant_meta3($postID); ?>
 						</div>
 					</div>
 				</div><!-- End .merchants-entry -->
@@ -86,5 +87,5 @@ if (isset($_GET['resID']) && is_numeric($_GET['resID'])) {// to verify that file
 		</div><!-- End #content_wrap -->
 	</div><!-- End .wrapper -->
 </div>
-
-<?php get_footer();
+<?php
+get_footer();

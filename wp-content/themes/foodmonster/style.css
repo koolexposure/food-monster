@@ -34,7 +34,7 @@ ul, li{
 }
 
 .font_medium, body, .add-to-cart option {
-    font-size: 0.9em;
+    font-size: 1.2em;
 }
 
 
@@ -217,7 +217,7 @@ display:block;
 }
 
 #navigation{
-font-size:0.9em;
+font-size:1.2em;
 }
 
 #login_bfm{
@@ -578,15 +578,14 @@ vertical-align:85%;
 
 
 
-@import url(http://fonts.googleapis.com/css?family=Varela+Round);
-body{ background: #f5f5f5; font: 12px 'Segoe UI', 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;   margin: 0;}
+body{ background: #f5f5f5; font: 12px Helvetica, Arial, sans-serif;   margin: 0;}
 
 .wcd{width:33%; height:40px; float:left;}
 .wcd-logo{font-size: 36px; color: #fff;text-align: center; float:left; cursor: pointer;  color:#fff; font-size: 32px; font-family: 'Varela Round', sans-serif;
 -webkit-transition:color 0.3s ease-in;  -moz-transition:color 0.3s ease-in; x²-o-transition:color 0.3s ease-in; transition:color 0.3s ease-in;
    }
    .wcd-logo:hover{color:#3facff;}
-.wcd-tuto{ font-family: 'Varela Round', sans-serif; color: #fff; font-size: 16px; line-height: 36px;}
+.wcd-tuto{ font-family: Helvetica, Arial, sans-serif;color: #fff; font-size: 16px; line-height: 36px;}
 .webcodo-top{width:100%; height:40px; background-color:#232323}
 
 .clear{clear: both;}
@@ -643,7 +642,7 @@ body{ background: #f5f5f5; font: 12px 'Segoe UI', 'Proxima Nova', 'Helvetica Neu
 	float: left;
 	margin: 5px 0;
 	color:#888;
-	font: italic normal 14px georgia;
+	font: italic normal 14px Arial;
 	font-style: italic;
 }
 .loop_deal p{ display: none;}
@@ -658,7 +657,7 @@ body{ background: #f5f5f5; font: 12px 'Segoe UI', 'Proxima Nova', 'Helvetica Neu
 	width: 60px;
 	display: inline; 
 	float: left;
-	font: italic 13px georgia;
+	font: italic 13px Arial;
 	color: #181818;
 }
 
@@ -685,7 +684,7 @@ body{ background: #f5f5f5; font: 12px 'Segoe UI', 'Proxima Nova', 'Helvetica Neu
 	padding:0;
 	margin: 0 10px;
 	color:#3c2e25;
-	font: italic normal 22px georgia;
+	font: italic normal 22px Arial;
 }
 .loop_deal-list p{
 	color: #888;
@@ -698,7 +697,7 @@ body{ background: #f5f5f5; font: 12px 'Segoe UI', 'Proxima Nova', 'Helvetica Neu
 	height: 20px;
 	color: #fff;
 	padding: 5px 5px 5px 30px;
-	font:italic 12px georgia;
+	font:italic 12px Arial;
 	float: right;
 	margin: 5px;
 	cursor: pointer;
@@ -721,7 +720,7 @@ body{ background: #f5f5f5; font: 12px 'Segoe UI', 'Proxima Nova', 'Helvetica Neu
 .loop_deal-list .price{
 	margin-right: 10px;
 	display: block; 
-	font: italic 20px georgia;
+	font: italic 20px Arial;
 	color: #181818;
 	margin:7px;
 }
@@ -805,7 +804,7 @@ body{ background: #f5f5f5; font: 12px 'Segoe UI', 'Proxima Nova', 'Helvetica Neu
 	float: left;
 	margin: 5px 0;
 	color:#888;
-	font: italic normal 14px georgia;
+	font: italic normal 14px Arial;
 	font-style: italic;
 }
 .loop_deal_rotate p{ display: none;}
@@ -820,7 +819,7 @@ body{ background: #f5f5f5; font: 12px 'Segoe UI', 'Proxima Nova', 'Helvetica Neu
 	width: 60px;
 	display: inline; 
 	float: left;
-	font: italic 13px georgia;
+	font: italic 13px Arial;
 	color: #181818;
 }
 
@@ -855,4 +854,13 @@ background-color: none !important;
 
 .flex-viewport{
 	height:590px;
+}
+
+.flexslider .slides img{
+	width:100% !important;
+}
+
+.whatsnew{
+	font-size: 19px;
+margin-top:20px;
 }

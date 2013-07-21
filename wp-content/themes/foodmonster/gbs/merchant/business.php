@@ -14,7 +14,7 @@
 				<a href="restaurant-info/?resID=<?php echo $post -> ID; ?>">Restaurant Info</a><div class="nav_item"></div>
 			</li>
 			<li>
-				<a href="#">What's New</a><div class="nav_item"></div>
+				<a href="whats-new/?resID=<?php echo $post -> ID; ?>">What's New</a><div class="nav_item"></div>
 			</li>
 		</ul>
 	</div>
