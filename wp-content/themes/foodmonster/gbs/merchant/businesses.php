@@ -11,11 +11,7 @@
 					<?php gb_get_all_merchant_types_list( 'ul', 'All', 'biz_filter_links inline' ) ?>
 				</div><!-- End .filter_biz -->
 				
-				<?php if ( ! have_posts() ) : ?>
-					
-					<?php get_template_part( 'deal/no-deals', 'deal/index' ); ?>
-					
-				<?php endif; ?>
+	
 
 				<?php while ( have_posts() ) : the_post(); ?>
 

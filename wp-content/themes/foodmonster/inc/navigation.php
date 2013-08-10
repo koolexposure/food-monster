@@ -11,7 +11,14 @@
 		<div id="navigation" class="container gb_ff clearfix">
 
 			<div id="main_navigation" class="hor_navigation clearfix">
-				<?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'theme_location' => 'header', 'depth' =>'2', 'container' => 'none' ) ); ?>
+				<!-- TODO Removed this to hard code menu, until I figure out a way to add the dynamic menu -->
+				<!-- <?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'theme_location' => 'header', 'depth' =>'2', 'container' => 'none' ) ); ?> -->
+				<ul  id="menu-main" class="menu mobileMenu-subMenu" >
+					<li><a href="<?php get_featured_restaurant_by_city() ?>">Restaurants</a></li>
+					<li><a href="weekly-showcase">Specials Showcase</a></li>
+					<li><a href="how-it-works">How It Works</a></li>
+					<li><a href="our-story">Our Story</a></li>
+				<li>
 						<div id="login_form">
 				<div id="login_wrap" class="gb_ff clearfix">
 					<?php if ( !is_user_logged_in() ): ?>
@@ -31,9 +38,9 @@
 					<?php endif ?>
 
 				</div><!-- #login_wrap -->
-			</div>
+			</div></li>
 
-	
+	</ul>
 			</div><!-- #navigation -->
 
 

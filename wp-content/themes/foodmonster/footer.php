@@ -13,7 +13,8 @@
 			<div class="footer_menu">
 				<ul>
 					<li><a href="<?php gb_account_register_url() ?>">login</a></li>
-					<li><a href="advertise-your-restaurant">advertise your restaurant</a></li>
+					<li class="hidemobile"><a href="advertise-your-restaurant">advertise your restaurant</a></li>
+					<li class="displaymobile"><a href="advertise-your-restaurant">advertise</a></li>
 					<li><a href="contact-us">contact us</a></li>
 				</ul>
 			</div>

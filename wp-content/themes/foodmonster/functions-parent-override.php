@@ -1,6 +1,6 @@
 <?php
 include 'metabox.php';
-
+error_reporting(E_ALL | E_STRICT);
 ///////////////////
 // REQUIRE FILES //
 ///////////////////
@@ -188,4 +188,28 @@ function replace_placeholder_nav_menu_item_with_latest_post( $items, $menu, $arg
     // Return the modified (or maybe unmodified) menu items array
     return $items;
 }
+
+
+
+// Replaces a custom URL placeholder with the URL to the latest post
+function get_featured_restaurant_by_city( ) {
+    // Loop through the menu items looking for placeholder(s)
+    		
+	if ( isset( $_COOKIE[ 'gb_location_preference' ] ) && $_COOKIE[ 'gb_location_preference' ] != '' ) {
+		$location = $_COOKIE[ 'gb_location_preference' ];
+	}
+ 		
+        // Get the latest post
+        $latestpost = get_posts( array(
+            'numberposts' => 1, 'post_type' => 'gb_merchant', 'gb_location' => $location,
+        ) );
+        if ( empty( $latestpost ) )
+            continue;
+        // Replace the placeholder with the real URL
+        $reslocation = get_permalink( $latestpost[0]->ID );
+
+    // Return the modified (or maybe unmodified) menu items array
+    echo $reslocation;
+}
+
 ?>

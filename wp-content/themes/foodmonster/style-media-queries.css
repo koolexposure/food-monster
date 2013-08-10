@@ -1,0 +1,711 @@
+@media (max-width: 1250px) {
+
+#navigation li {
+    padding: 0 0px;
+}
+
+#business {
+width: 75%;
+}
+
+#citydd{
+left: 440px;
+}
+} 
+
+/* Tablet-sized devices and the like */
+@media (max-width: 900px) {
+
+#sidebar, .sidebar {
+	display: none;
+}
+
+.main_block{
+margin-bottom: 20px;
+}
+
+.nav_item{
+margin-right: -349%;
+}
+.container {
+	width: 100%;
+	margin: 0 auto 0;
+}
+.container.main {
+	width: 92% !important;
+	padding: 5%;
+}
+#content, #content.full {
+	width: 100%;
+}
+.mini_header, .home #subscription_form {
+	width: 90%;
+	float: none;
+	padding: 20px;
+}
+#deals_loop .loop_deal {
+	position: relative;
+	padding: 1%;
+	min-height: 130px;
+}
+
+#showcase .loop_deal {
+	position: relative;
+	padding: 1%;
+	min-height: 130px;
+	width:215px;
+}
+
+#deals_loop .loop_deal_spec {
+	position: relative;
+	padding: 1%;
+	min-height: 130px;
+}
+#deals_loop .excerpt_content {
+	width: 74%;
+}
+.loop_thumb {
+	width: 97%;
+	height: auto;
+	position: absolute;
+}
+.loop_thumb img {
+	width: 100%;
+	height: auto;
+}
+.loop_thumb .logo_thumbnail {
+	width: 100%;
+}
+#location {
+	right: 215px;
+}
+
+#citydd {
+	  background: url("img/m_list.png") no-repeat scroll right center transparent;
+    height: 31px;
+    left: 591px;
+    position: absolute;
+    top: 3px;
+    width: 125px;
+}
+
+
+#navigation {
+	padding: 0;
+}
+#navigation ul {
+	margin-left: 10px;
+	width: 473PX;
+}
+#navigation li {
+    padding: 0;
+}
+#logo img {
+	width: 143px;
+	height: auto;
+}
+#login_wrap {
+	margin-right: 10px;
+}
+#deals_loop h2.entry_title {
+	margin: -6px -52px 0 -5px;
+}
+#meta_amount_saved {
+	display: none;
+}
+#main_deal_wrap .deal_thumbnail {
+	height: auto;
+	width: 100%;
+	float: none;
+}
+.purchase_options_meta {
+	width: 100%;
+}
+#account_menu_sidebar_wrap {
+	margin: 0;
+}
+.top_sidebar {
+	display: block;
+}
+.account_sidebar {
+	top: 130px;
+	left: 10px;
+	width: 100%;
+}
+.account_sidebar ul {
+	margin-bottom: 5px;
+	float: left;
+}
+.account_sidebar ul li {
+	float: left;
+}
+.account_sidebar ul li a, .account_sidebar ul .current_page a {
+	padding-left: 10px;
+	background-image: none;
+	margin-right: 10px;
+}
+.account_sidebar .merchant {
+	display: none;
+}
+.page_title h1 {
+	margin: 0 15px 15px;
+}
+.current_balance {
+	margin: 5px;
+}
+.contact_title {
+	margin-right: 30px;
+}
+th.cart-remove {
+	text-indent: -100px;
+	color: #000;
+}
+th.cart-remove:after {
+	content: "x";
+	margin-left: 40px;
+	color: #fff;
+}
+td.cart-remove {
+	text-align: center;
+}
+th.cart-quantity, th.cart-price {
+	text-indent: -100px;
+	overflow: hidden;
+}
+td.cart-quantity {
+	text-align: center
+}
+th.cart-quantity:after {
+	content: "#";
+	margin-left: 80px;
+}
+th.cart-price:after {
+	content: "$";
+	margin-left: 80px;
+}
+.map_section iframe {
+	display: none;
+}
+.section_heading {
+	font-size: 18px;
+}
+.checkout_block.left_form, .checkout_block.right_form {
+	width: auto;
+	float: none;
+}
+.amount_bought {
+	float: none;
+}
+tbody tr td span.required {
+	margin-top: 0;
+}
+.deals_loop .deal_meta {
+	margin-top: -5px;
+}
+#gb_checkout_payment {
+	margin: 0;
+}
+.checkout_block table {
+	width: 100%;
+}
+#logo img {
+	max-width: 95%;
+}
+
+}
+
+/* Phone-sized devices and the like */
+@media only screen and (max-width: 680px) {
+
+body {
+	margin: 0;
+}
+.page_title h1 {
+	font-size: 1.4em;
+	margin: 0;
+}
+
+
+.main_block{
+margin-bottom: 20px;
+}
+
+
+.container.main {
+	width: 92% !important;
+	padding: 5%;
+}
+
+.header_meta {
+    display: block;
+}
+
+
+.nav_item{
+margin-right: -65%;
+}
+
+#logo {
+	margin: 0;
+	padding: 0;
+	float: none;
+}
+
+#logo img{
+width: 105px;
+}
+#deals_loop .loop_thumb {
+	display: block;
+}
+#deals_loop .deal_merchant_title {
+	margin-left: 10px;
+	margin-top: 10px;
+	margin-bottom: -10px;
+}
+#deals_loop .meta_value .the_time {
+	padding-top: 0;
+}
+.deals-loop-buy {
+	float: none;
+	clear: both;
+	display: block;
+}
+.deals-loop-buy a {
+	display: block;
+	text-align: center;
+	width: 95%;
+	padding: 2%;
+	margin-left: 2px;
+}
+#deals_loop .excerpt_content {
+	float: none;
+	width: 100%;
+}
+
+#showcase .excerpt_content {
+	width: 80%;
+}
+
+#showcase li {
+	padding-bottom:20px;
+}
+#deals_loop h2.entry_title {
+	margin: -6px -52px 0 -5px;
+}
+.deals_loop_price {
+	display: none;
+}
+.header_meta {
+	display: block;
+}
+.home #wrapper {
+	width: 100%;
+	margin-top: -30px;
+	margin-right: auto;
+	margin-left: auto;
+}
+.deals_loop #meta_amount_saved {
+	display: inline;
+}
+.social_buttons {
+	display: none;
+}
+.deal_meta {
+	width: 95%;
+	padding: 2%;
+}
+
+
+#showcase .meta_value_worth, #showcase .meta_value_saving{
+display: none;
+}
+#milestone_wrap .ms {
+	display: none;
+}
+#milestone_wrap .ms.instance_1 {
+	display: block;
+	width: 100%;
+}
+.social_share {
+	display: block;
+	float: none;
+	clear: both;
+	width: auto;
+}
+#progress_bar {
+	display: block;
+	float: none;
+	clear: both;
+	width: auto ;
+	margin-top: 10px;
+	height: 45px;
+}
+#merchant_meta {
+	display: block;
+	width: 100%;
+	min-height:0;
+	background-image:none;
+}
+.merchants-entry {
+	float: none;
+	width: 100%;
+}
+.checkout_block h2.section_heading {
+	font-size: 1em;
+}
+#container {
+	padding: 0;
+}
+#navigation ul {
+	margin: 0 0 0 -10px;
+}
+
+#rotate {
+	display:none;
+}
+
+
+#citydd {
+	  background: url("img/m_list.png") no-repeat scroll right center transparent;
+    height: 31px;
+    left: 160px;
+    position: absolute;
+    top: 3px;
+    width: 125px;
+}
+
+#locations_header_wrap{
+width: 175px;
+}
+
+#location{
+left: -30px;
+}
+
+#location .current_location{
+width: 93px;
+}
+
+.mobile_fb {
+	display: block;
+	padding: 6px;
+	text-align: center;
+}
+#sidebar, .sidebar {
+	display: none;
+}
+
+#slide_btn{
+display: none;
+}
+
+.social_footer{
+display: none;
+}
+
+
+#footer{
+font-size: 14px;
+}
+
+#footer .footer_widget_wrap {
+	width: 100%;
+	float: none;
+}
+
+
+#footer .legal{
+padding-top: 10px;
+}
+
+.footer_menu li{
+padding: 0 5px;
+}
+
+
+#footer_wrap {
+    background-color: #181818;
+    color: white;
+    font-size: 10px;
+    height: 40px;
+    margin-top: -39px;
+    min-height: 46px;
+    padding: 0 3%;
+    position: relative;
+    z-index: 100;
+}
+
+.footer_menu{
+padding-top: 10px;
+width: 200px;
+}
+.deal_meta_wrapper {
+	float: none;
+}
+.buy_button a {
+	float: none;
+	display: block;
+	width: auto;
+}
+.small_attribute_buttons {
+	float: none;
+	display: block;
+	width: auto;
+	font-size: 2em;
+}
+#deal_attributes_wrap #purchase_options {
+	display: none;
+}
+#deal_attributes_wrap {
+	margin-top: 8px;
+	z-index: 1000;
+	position: relative;
+}
+.expand {
+	display: block;
+}
+.section_content {
+	display: none;
+}
+.loop_deal {
+	float: none;
+	width: auto;
+	margin: 0;
+}
+
+.loop_deal_spec {
+	height: 355px;
+	float: none;
+	width: auto;
+	margin: 0;
+}
+
+.deals_loop .post {
+	float: none;
+	width: auto;
+	margin: 0;
+}
+.loop_thumb {
+	float: none;
+}
+.deals_loop .excerpt_content {
+	float: none;
+	width: auto;
+}
+.deals_loop h2.entry_title a .title_text {
+	float: none;
+	width: auto;
+}
+.deals_loop_price {
+	float: none;
+}
+#main_deal_wrap .deal_thumbnail, .purchase_options, .deal_meta, .deal_details {
+	float: none;
+	width: 100%;
+	min-height: 1px;
+}
+.countdown_amount {
+	font-size: 1.5em;
+}
+
+.legal  {
+	width: 33%;
+}
+
+.legal img {
+	display: block;
+}
+#main_navigation {
+	display: none;
+}
+#navigation select {
+	width: 97%;
+	margin: 5px;
+}
+.billing_info textarea, .billing_info input[type="text"], .billing_info select {
+	width: 93%;
+}
+#comment {
+	width: 95%;
+}
+.merchant_meta li {
+	font-size: 14px;
+}
+#gbs_login .text-input {
+	width: 93%;
+}
+#gbs_login .forgot_password {
+	float: none;
+	display: block;
+}
+#gbs_login .form-table {
+	margin-top: 20px;
+}
+#gb_checkout_payment input[type="text"], #gb_checkout_payment textarea, #gb_checkout_payment select {
+	width: 65%;
+}
+
+/* @group Table */
+table.collapsable {
+	border: none;
+}
+table.collapsable td.first,
+#checkout_login_register_wrap .checkout_block td.first {
+	text-align: left;
+	width: 100%;
+	background: none;
+	margin-bottom: -2px;
+	height: 0;
+	padding: 0;
+	margin-left: 15px;
+}
+table.collapsable td label {
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	background: none;
+}
+table.collapsable td {
+	display: block;
+	clear: both;
+	border-style: none;
+	background: none;
+}
+table.collapsable .heading {
+	padding: 0;
+	margin: 10px 0 20px 10px;
+	height: 20px;
+}
+table.collapsable tbody tr td span.required {
+	margin-right: 40px;
+	float: right;
+}
+/* @end */
+
+.checkout_block tbody tr td span.required {
+	margin-top: -10px;
+}
+.checkout_block td label {
+	margin: 0 2px -10px;
+	text-align: left;
+	text-wrap: normal;
+}
+#checkout_login_register_wrap .checkout_block td.first {
+	margin: 0 5px -10px;
+	text-align: left;
+	text-wrap: normal;
+}
+.checkout_block td {
+	display: block;
+	clear: both;
+	border-style: none;
+	background-color: transparent;
+}
+.checkout_block tbody tr td {
+	background: none;
+}
+.checkout_block td.first {
+	margin-bottom: 10px;
+}
+.merchant_single_logo {
+	width: 20%;
+}
+.merchant_single_logo img {
+	width: 100%;
+}
+.merchants_meta_wrap {
+	width: 75%;
+}
+.button, .form-submit, .button-primary {
+	width: 100%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+#gbs_login .remember_me_td {
+	margin-top: 50px;
+}
+#gb_account_register table {
+	margin: 0 auto;
+}
+#gb_account_register td.first small {
+	float: left;
+}
+#lostpasswordform {
+	height: 220px;
+}
+.voucher_left {
+	display: none;
+}
+.purchase_table {
+	border: none;
+}
+tbody tr.odd th,
+tbody tr.odd td {
+	border: none;
+	background: none;
+}
+.voucher_table_wrap table {
+	float: none;
+	width: 100%;
+}
+.vouchers_table .merchant_link {
+	display: none;
+}
+.vouchers_table .th_status, .vouchers_table .td_status {
+	display: none;
+}
+.vouchers_table .purchase_deal_title {
+	width: 100%;
+	font-weight: bold;
+	font-size: 1.5em;
+}
+.vouchers_table .td_expires {
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	padding-bottom: 25px;
+	margin-bottom: 25px;
+}
+.vouchers_table th {
+	display: none;
+}
+.vouchers_table td {
+	display: block;
+	clear: both;
+	border-style: none;
+	background: none;
+	padding: 0;
+}
+.vouchers_table .voucher_download, .vouchers_table .td_expires {
+	display: block;
+	text-transform: uppercase;
+}
+.merchant_dashboard .td_total_sold, .merchant_dashboard .th_total_sold, .merchant_dashboard .td_published, .merchant_dashboard .th_published {
+	display: none;
+	clear: both;
+}
+.my_deals_details .vouchers_table .td_expires {
+	display: none;
+}
+#gb-credit-card span.gb-form-field-radios label #paypal_icon {
+	float: none;
+	height: 30px;
+}
+#gb-credit-card span.gb-form-field-radios label {
+	height: 50px;
+}
+#gb_checkout_payment input[type="text"], #gb_checkout_payment textarea, #gb_checkout_payment select {
+	width: 93%;
+}
+.checkout_block tbody tr td.odd, .checkout_block tbody tr td {
+	width: auto;
+}
+.checkout_block span.required {
+	padding-top: 12px;
+}
+.displaymobile{
+	display:block;
+}
+
+.hidemobile{
+display:none;
+}
+}

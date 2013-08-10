@@ -25,7 +25,7 @@ if (isset($_GET['resID']) && is_numeric($_GET['resID'])) {// to verify that file
 				<a href="restaurant-info/?resID=<?php echo $postID; ?>">Restaurant Info</a><div class="nav_item"></div>
 			</li>
 			<li>
-				<a href="whats-new/?resID=<?php echo $post -> ID; ?>">What's New</a><div class="nav_item"></div>
+				<a href="whats-new/?resID=<?php echo $postID; ?>">What's New</a><div class="nav_item"></div>
 			</li>
 		</ul>
 	</div>

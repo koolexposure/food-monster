@@ -1,8 +1,8 @@
-<div class="biz_listing contrast_light clearfix"><!-- Begin .biz_listing -->
+<div class="biz_listing clearfix"><!-- Begin .biz_listing -->
 	
 	<div class="biz_wrapper clearfix">
 	
-		<div class="merchant_logo contrast"><!-- Begin .merchant-logo -->
+		<div class="merchant_logo"><!-- Begin .merchant-logo -->
 			<?php the_post_thumbnail('gbs_150w', array('title' => get_the_title())); ?>
 		</div><!-- End .merchant-logo -->
 	

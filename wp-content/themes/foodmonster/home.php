@@ -5,7 +5,7 @@
 get_header(); ?>
 
 <div id="home_page" class="container clearfix">
-	<div id="content" class="home prime clearfix">
+	<div id="content" class="home clearfix">
 		<div id="slide_btn">
 			<div id="slide_btnbng" class="slide_open"></div>
 		</div>

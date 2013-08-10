@@ -23,13 +23,13 @@ get_header(); ?>
 				<a href="<?php gb_merchant_url(get_the_ID()); ?>">Their Story</a><div class="nav_item"></div>
 			</li>
 			<li>
-				<a href="currrent-deals/?resID=<?php echo $post -> ID; ?>">Food Monster Special</a><div class="nav_item"></div>
+				<a href="currrent-deals/?resID=<?php echo $postID; ?>">Food Monster Special</a><div class="nav_item"></div>
 			</li>
 			<li>
-				<a href="restaurant-info/?resID=<?php echo $post -> ID; ?>">Restaurant Info</a><div class="nav_item"></div>
+				<a href="restaurant-info/?resID=<?php echo $postID; ?>">Restaurant Info</a><div class="nav_item"></div>
 			</li>
 			<li>
-				<a href="#">What's New</a><div class="nav_item"></div>
+				<a href="whats-new/?resID=<?php echo $postID; ?>">What's New</a><div class="nav_item"></div>
 			</li>
 		</ul>
 	</div>

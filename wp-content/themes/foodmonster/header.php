@@ -39,7 +39,7 @@
 
 	<?php wp_head(); ?>
 
-
+ <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/style-media-queries.css" media="screen" />
 <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/template.js"></script>
 <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/jquery.flexslider-min.js"></script>
 <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/jquery.roundabout.min.js"></script>
@@ -189,4 +189,3 @@ jQuery(function ($) {
 	</div>
 
 	<div id="wrapper" class="clearfix">
-

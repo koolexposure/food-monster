@@ -38,7 +38,7 @@
 						<span class="the_time"><?php gb_deal_countdown( true ) ?></span>
 					</div>
 				<?php endif ?>
-				<div class="deals-loop-button">
+				<div class="showcase-loop-button">
 					<?php if ( gb_can_purchase() || ( function_exists('gb_is_deal_aggregated') && gb_is_deal_aggregated() ) ) { ?>
 						<a href="<?php gb_add_to_cart_url() ?>" class="button form-submit"><?php gb_e('Buy it!') ?> <span class="button_price"><?php gb_price(); ?></span></a>
 					<?php  }  else { ?>
