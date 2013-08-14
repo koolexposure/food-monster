@@ -638,7 +638,7 @@ body{ background: #f5f5f5; font: 12px Helvetica, Arial, sans-serif;   margin: 0;
 }
 
 /* Grid Style */
-.loop_deal{
+.loop_deal_grid{
 	background-color: #FFFFFF;
     float: left;
     height: 260px;
@@ -657,11 +657,11 @@ body{ background: #f5f5f5; font: 12px Helvetica, Arial, sans-serif;   margin: 0;
     width: 562px;
 }
 
-.loop_deal img:first-child, .loop_deal-list img:first-child{
+.loop_deal_grid img:first-child, .loop_deal-list img:first-child{
 	width: 210px; 
 	float: left;
 }
-.loop_deal h3 a{
+.loop_deal_grid h3 a{
 	text-decoration: none;
 	width:140px;
 	float: left;
@@ -670,15 +670,15 @@ body{ background: #f5f5f5; font: 12px Helvetica, Arial, sans-serif;   margin: 0;
 	font: italic normal 14px Arial;
 	font-style: italic;
 }
-.loop_deal p{ display: none;}
-.loop_deal .deal_merchant_title{display:none}
+.loop_deal_grid p{ display: none;}
+.loop_deal_grid .deal_merchant_title{display:none}
 
-.loop_deal .old{
+.loop_deal_grid .old{
 	margin-right: 20px;
 	color: #be0000 !important;
 	text-decoration: line-through;
 }
-.loop_deal .price{
+.loop_deal_grid .price{
 	width: 60px;
 	display: inline; 
 	float: left;
@@ -686,11 +686,11 @@ body{ background: #f5f5f5; font: 12px Helvetica, Arial, sans-serif;   margin: 0;
 	color: #181818;
 }
 
-.loop_deal .buy-ico:hover{
+.loop_deal_grid .buy-ico:hover{
 	background-color: #7eb800;
 }
 
-.loop_deal .section_content{
+.loop_deal_grid .section_content{
 	display:none;
 }
 .section_content{
@@ -845,7 +845,7 @@ body{ background: #f5f5f5; font: 12px Helvetica, Arial, sans-serif;   margin: 0;
     box-shadow:         0px 0px 5px rgba(50, 50, 50, 0.31);
 }
 
-.loop_deal_rotate{
+.loop_deal{
 	background-color: #FFFFFF;
     float: left;
     height: 260px;
@@ -854,11 +854,11 @@ body{ background: #f5f5f5; font: 12px Helvetica, Arial, sans-serif;   margin: 0;
     width: 215px;
 }
 
-.loop_deal_rotate img:first-child, .loop_deal-list img:first-child{
+.loop_deal img:first-child, .loop_deal-list img:first-child{
 	width: 210px; 
 	float: left;
 }
-.loop_deal_rotate h3 a{
+.loop_deal h3 a{
 	text-decoration: none;
 	width:140px;
 	float: left;
@@ -867,15 +867,15 @@ body{ background: #f5f5f5; font: 12px Helvetica, Arial, sans-serif;   margin: 0;
 	font: italic normal 14px Arial;
 	font-style: italic;
 }
-.loop_deal_rotate p{ display: none;}
-.loop_deal_rotate .deal_merchant_title{display:none}
+.loop_deal p{ display: none;}
+.loop_deal .deal_merchant_title{display:none}
 
-.loop_deal_rotate .old{
+.loop_deal .old{
 	margin-right: 20px;
 	color: #be0000 !important;
 	text-decoration: line-through;
 }
-.loop_deal_rotate .price{
+.loop_deal .price{
 	width: 60px;
 	display: inline; 
 	float: left;
@@ -883,11 +883,11 @@ body{ background: #f5f5f5; font: 12px Helvetica, Arial, sans-serif;   margin: 0;
 	color: #181818;
 }
 
-.loop_deal_rotate .buy-ico:hover{
+.loop_deal .buy-ico:hover{
 	background-color: #7eb800;
 }
 
-.loop_deal_rotate .section_content{
+.loop_deal .section_content{
 	display:none;
 }
 
